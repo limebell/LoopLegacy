@@ -1,0 +1,88 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: NPC Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: NPC
+  m_TableCollectionNameGuidString: bfecbbb2c900e45468cd4a7385dcf053
+  m_Entries:
+  - m_Id: 8406958080
+    m_Key: shop_equipment-name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 65923448832
+    m_Key: shop_equipment-description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 358924943360
+    m_Key: shop_upgrade-name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 399475474432
+    m_Key: shop_upgrade-description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1749273804800
+    m_Key: game_start-name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12207380758528
+    m_Key: codex-name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27120389655625728
+    m_Key: shop_maid-name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27120428629098496
+    m_Key: shop_maid-description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28193216873889792
+    m_Key: shop_relic-name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28193268434468864
+    m_Key: shop_relic-description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33639114319855616
+    m_Key: bard-name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33639150604779520
+    m_Key: worker-name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33639162789232640
+    m_Key: worker-description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33641272624807936
+    m_Key: library-name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37212319924092928
+    m_Key: library-description
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 2660121147153318883
+  references:
+    version: 2
+    RefIds:
+    - rid: 2660121147153318883
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1754301723083

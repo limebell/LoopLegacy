@@ -1,0 +1,410 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Relic_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 044923cdf22f33e4095b9f4d62b7af84, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 21335966075060239
+    m_Localized: Golden Apple
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966075060237
+    m_Localized: Six-Sided Dice
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966075060235
+    m_Localized: Iron Knuckle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966075060233
+    m_Localized: Sharp Blade
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966075060238
+    m_Localized: Every {0}th attack is guaranteed to be a critical hit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966075060236
+    m_Localized: Increase crit damage by {0}%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966075060234
+    m_Localized: Increase crit rate by {0}%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966075060232
+    m_Localized: Increase evade rate by {0}%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966075060231
+    m_Localized: Feather of Evasion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966075060230
+    m_Localized: Increase drop rate by {0}%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966075060229
+    m_Localized: Four-Leaf Clover
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966075060228
+    m_Localized: Increase gold gain by {0}%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966075060227
+    m_Localized: Ring of Greed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966075060226
+    m_Localized: Increase exp gain by {0}%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966075060225
+    m_Localized: Book of Experience
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966075060224
+    m_Localized: Increase LUC stat by {0}
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21334751408816128
+    m_Localized: Gem of HP
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21334751501090816
+    m_Localized: Increase HP stat by {0}
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335820859867136
+    m_Localized: Increase ATK stat by {0}
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335820859867137
+    m_Localized: Gem of Defence
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335820859867138
+    m_Localized: Increase DEF stat by {0}
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335820859867139
+    m_Localized: Gem of Luck
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335136223625216
+    m_Localized: Gem of Attack
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966075060240
+    m_Localized: Increase total battle point by {0}
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966075060241
+    m_Localized: Hermes's Shoes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966075060242
+    m_Localized: Increase movement speed by {0}%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966075060243
+    m_Localized: ' White King'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966075060244
+    m_Localized: Increase damage dealt to bosses by {0}%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966075060245
+    m_Localized: Black Pawn
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966075060246
+    m_Localized: Increase damage dealt to non-boss enemies by {0}%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966075060247
+    m_Localized: Black Scroll
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966075060248
+    m_Localized: Prevent loss of battle point on loss by {0}% probability
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966075060249
+    m_Localized: White Scroll
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966075060250
+    m_Localized: Prevent loss of battle point on victory by {0}% probability
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966075060251
+    m_Localized: Repel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966075060252
+    m_Localized: Decrease encounter rate by {0}%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966075060253
+    m_Localized: Relic Backpack
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966075060254
+    m_Localized: Increase all stats by {0} per each relic
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966075060255
+    m_Localized: Money Gun
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966075060256
+    m_Localized: Add {0} fixed damage per gold
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966075060257
+    m_Localized: Whetstone
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966083448832
+    m_Localized: Increase base spec of equipment by {0}%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966083448833
+    m_Localized: Shuriken
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966083448834
+    m_Localized: Add {0} fixed damage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966083448835
+    m_Localized: Chain of Thunder
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966083448836
+    m_Localized: Increase chain rate by {0}%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966083448837
+    m_Localized: Blood Dagger
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966083448838
+    m_Localized: Execute enemy when HP is below {0}%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966083448839
+    m_Localized: No Pain No Gain
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966083448840
+    m_Localized: Increase damage by {0}% per every defeat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966083448841
+    m_Localized: Rusted Shield
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966083448842
+    m_Localized: Evade first {0} attacks.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966083448843
+    m_Localized: Emberwake
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966083448844
+    m_Localized: Decrease damage by {0}% and gradually increase damage by {1}% every
+      turn.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966083448845
+    m_Localized: Embermark
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966083448846
+    m_Localized: Increase damage by {0}% and gradually decrease damage by {1}% every
+      turn.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966083448847
+    m_Localized: Bookworm
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966083448848
+    m_Localized: Deal more damage by {0}% and drop rate by {1}% to monsters killed
+      over 100.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966083448849
+    m_Localized: Beer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966083448850
+    m_Localized: Reduce damage taken by {0}% from higher level monster.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966083448851
+    m_Localized: Dragon's Eye
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966083448852
+    m_Localized: Execute on lower level monster with {0}% probability.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966083448853
+    m_Localized: Heartsteel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966083448854
+    m_Localized: Increase ATK stat by {0} per directly invested HP.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966083448855
+    m_Localized: Healing Shrine
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966083448856
+    m_Localized: Heal {0} HP every turn.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966083448857
+    m_Localized: Voodoo Doll
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966083448858
+    m_Localized: Weaken enemy attack by {0}% on every hit.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966083448859
+    m_Localized: Berserk
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966083448860
+    m_Localized: Increase damage by {0}% when HP is below {1}%.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966083448861
+    m_Localized: Scope
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966083448862
+    m_Localized: Critical hit on first {0} attacks.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966083448863
+    m_Localized: Chain of Chain
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966083448864
+    m_Localized: First attack lands {0} chains.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966083448865
+    m_Localized: Thornmail
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966087643136
+    m_Localized: Reflect {0}% of received damage.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966087643137
+    m_Localized: Guillotine
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966087643138
+    m_Localized: Execute enemy with {0}% probability.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966087643139
+    m_Localized: Recovery Necklace
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966087643140
+    m_Localized: Restores HP by {0}% of dealt damage.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966087643141
+    m_Localized: Pirate Flag
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966087643142
+    m_Localized: Increase damage by {0}% when HP is full.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966087643143
+    m_Localized: Mourning Skeleton
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966087643144
+    m_Localized: Increase stack every hit deal {0} fixed damage per stack.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966087643145
+    m_Localized: Book of Weapon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966087643146
+    m_Localized: Increase all stats by {0} per fully collected weapon.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966087643147
+    m_Localized: Book of Armor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966087643148
+    m_Localized: Increase all stats by {0} per fully collected armor.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966087643149
+    m_Localized: Gem of Stat Point Boost
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966087643150
+    m_Localized: Increase stat point gain by {0}.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966087643151
+    m_Localized: Wolf's Fang
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966087643152
+    m_Localized: Deal {0} fixed damage per enemy HP.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966087643153
+    m_Localized: Goat Foot
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966087643154
+    m_Localized: Increase damage by {0}% per kill.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966087643155
+    m_Localized: Dog Sculpture
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966087643156
+    m_Localized: Restart with owned gold.
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

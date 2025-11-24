@@ -1,0 +1,623 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Monster_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: b9a934e5ba5e2174094df0782712d9b7, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 5668077568
+    m_Localized: Training Dummy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11988893696
+    m_Localized: Chicken
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15386279936
+    m_Localized: White Chicken
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18947244032
+    m_Localized: Brawler Chicken
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22751477760
+    m_Localized: Wild Dog
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26341801984
+    m_Localized: Stained Dog
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30213144576
+    m_Localized: Dingo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32947830784
+    m_Localized: Wild Dingo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1062884343808
+    m_Localized: Pink Slime
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1078034169856
+    m_Localized: Yellow Mushromm
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38731776000
+    m_Localized: Purple Slime
+    m_Metadata:
+      m_Items: []
+  - m_Id: 35900620800
+    m_Localized: Green Slime
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2849783372316672
+    m_Localized: Green Mushroom
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2849842981765120
+    m_Localized: Gray Wolf
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2850049081475072
+    m_Localized: Blue Wolf
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2850130903957504
+    m_Localized: Small Snail
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2850358088433664
+    m_Localized: Ladybug
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2850400434126848
+    m_Localized: Toad
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2850485066792960
+    m_Localized: Wild Snake
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2850508051578880
+    m_Localized: Poison Mushroom
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39090467653550080
+    m_Localized: Small Land Spirit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39090598390005760
+    m_Localized: Land Spirit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39090654069391360
+    m_Localized: Large Land Spirit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39090721740292096
+    m_Localized: Guardian of Land
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39090990775533568
+    m_Localized: Gnom
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39090988854542336
+    m_Localized: Brown Dwarf
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39091146577149952
+    m_Localized: Guardian of River
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39091296666124288
+    m_Localized: Guardian of Spring Pool
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39091316496793600
+    m_Localized: Spring Pool Spirit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39091695519268864
+    m_Localized: Stone Hog
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39092028597338112
+    m_Localized: Stone Slime
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39092093487415296
+    m_Localized: Stone Eagle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39092152841011200
+    m_Localized: Tinker Bell
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39092648364474368
+    m_Localized: Stone Golem
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39092736310640640
+    m_Localized: Rock Golem
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39092781034504192
+    m_Localized: Rock Warrior
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39092852631273472
+    m_Localized: Small Sand Storm
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39092952854167552
+    m_Localized: Scorpion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39093329951457280
+    m_Localized: Miniramid
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39093932341592064
+    m_Localized: Bat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39093934010925056
+    m_Localized: Albino Bat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39093931553062912
+    m_Localized: Sandripper
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39092951491018752
+    m_Localized: Dunerug
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39095231170740224
+    m_Localized: Skeleton Soldier
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39095339794825216
+    m_Localized: Skeleton Brawler
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39095428391108608
+    m_Localized: Skeleton Trooper
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39095673053249536
+    m_Localized: Skeleton Shield
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39095789973667840
+    m_Localized: Skeleton Guardian Dog
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39096538111672320
+    m_Localized: Skeleton Guardian Captain
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39096644743462912
+    m_Localized: Skeleton Shaman
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39096849350000640
+    m_Localized: Mimic
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39096897056014336
+    m_Localized: Small Cubeslime
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39096970456334336
+    m_Localized: Medium Cubeslime
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39097039045787648
+    m_Localized: Brown Cubeslime
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39097110067937280
+    m_Localized: Green Cubeslime
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39097170910511104
+    m_Localized: Miniduck
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39097219795124224
+    m_Localized: Brownduck
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39097416080162816
+    m_Localized: Fat Wolf
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39097615599009792
+    m_Localized: Dwarf Brawler
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39097287415693312
+    m_Localized: Dwarf Wanderer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39097413701992448
+    m_Localized: Grass Mauler
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39098144127451136
+    m_Localized: Dwarf Warrior
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39098205955686400
+    m_Localized: Lunapell
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39098443357487104
+    m_Localized: Velosha
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39098761692577792
+    m_Localized: Stirge
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39098713164480512
+    m_Localized: Sticky Slime
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39098714473103360
+    m_Localized: Giant Sticky Slime
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39098716020801536
+    m_Localized: Dark Rock Spirit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39099316829683712
+    m_Localized: Lunar Stirge
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39099400787066880
+    m_Localized: Snowman
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39099314652839936
+    m_Localized: Darktail
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39099312962535424
+    m_Localized: Shadown Crow
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39099310643085312
+    m_Localized: Gromtree
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39099307841290240
+    m_Localized: Stumpy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39098770458673152
+    m_Localized: Mud Golem
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39120998202081280
+    m_Localized: Icebit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39121189382651904
+    m_Localized: Ice Crawler
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39121333062729728
+    m_Localized: Foggler
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39121580660883456
+    m_Localized: Ice Wisp
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39121511068991488
+    m_Localized: Ice Drakker
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39121729256685568
+    m_Localized: Snow Golem
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39121773082968064
+    m_Localized: Ice Slime
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39121968818552832
+    m_Localized: Frost Magician
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39122019749986304
+    m_Localized: Glacial Golem
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39122247509082112
+    m_Localized: Ice Draggon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39191850000056320
+    m_Localized: Sludge Golem
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39192413970366464
+    m_Localized: Murk Guard
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39192468957691904
+    m_Localized: Gloomroot
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39192930524069888
+    m_Localized: Poison Slime
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39192850106679296
+    m_Localized: Murk Orb
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39193164708839424
+    m_Localized: Muddy Howler
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39193316588781568
+    m_Localized: Moss Bandit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39193492275593216
+    m_Localized: Swamp Snapper
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39193783737778176
+    m_Localized: Swamp Growler
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39194017670889472
+    m_Localized: Tentacle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39194069478932480
+    m_Localized: Swamp Reaper
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39194784465158144
+    m_Localized: Bogrin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39194785895415808
+    m_Localized: Bograk
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39194870108651520
+    m_Localized: Mudrog
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39195018427629568
+    m_Localized: Onryo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39195047766786048
+    m_Localized: Pure Onryo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39195260791291904
+    m_Localized: The Revived One
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39195306987356160
+    m_Localized: The Rotten One
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39195356769550336
+    m_Localized: Graveyard Keeper
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39195571471777792
+    m_Localized: Sewer Slug
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39195776275447808
+    m_Localized: Sewer Snake
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39195888263364608
+    m_Localized: Rotten Apple
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39195949533757440
+    m_Localized: Giant Maggot
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39196123396046848
+    m_Localized: Triple Eyes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39196189590552576
+    m_Localized: Flying Eye
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39196240995942400
+    m_Localized: Hepta Eyes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39204105357885440
+    m_Localized: Ownerless Hand
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39204220629942272
+    m_Localized: Ownerless Foot
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39205240902778880
+    m_Localized: Ownerless Eye
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39214062983708672
+    m_Localized: Ownerless Brain
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39214226192465920
+    m_Localized: Ownerless Head
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39214317397606400
+    m_Localized: Cobra
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39214530417917952
+    m_Localized: Haunted Guard
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39214553692110848
+    m_Localized: Viper
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39215042156560384
+    m_Localized: Demon Core
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39215439348760576
+    m_Localized: Red Potion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39215220863270912
+    m_Localized: Gazing Horror
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39215511461429248
+    m_Localized: Humanoid
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39215649902821376
+    m_Localized: Crawling Hatred
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39215671520264192
+    m_Localized: Crawling Disgust
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39216350271897600
+    m_Localized: Emotion Amplifier
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39216467041320960
+    m_Localized: Witch's Hat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39216710474530816
+    m_Localized: Guardian Golem
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39216790858366976
+    m_Localized: Frost Wraith
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39216872097841152
+    m_Localized: Whispering Maw
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39217377347895296
+    m_Localized: Ectoplasm
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39217676506628096
+    m_Localized: Sealed Abomination
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39218325633892352
+    m_Localized: Baby Demon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39218347108728832
+    m_Localized: Red Demon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39218364934520832
+    m_Localized: Summoner
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39218382487683072
+    m_Localized: Demon Summoner
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39218432689307648
+    m_Localized: Reaper
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39218436736811008
+    m_Localized: Calamity One
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39220327583580160
+    m_Localized: King Slime
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39220470768730112
+    m_Localized: Giant Hornet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39220513164754944
+    m_Localized: Acient Toadstool
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39220651690033152
+    m_Localized: Skull of the Pharaoh
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39220864651624448
+    m_Localized: Ice King Slime
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39220929269071872
+    m_Localized: Bog Devourer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39221164863127552
+    m_Localized: Gatekeeper
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39221211063386112
+    m_Localized: Zombie King
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39221308853583872
+    m_Localized: Lamia
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39221351186694144
+    m_Localized: Djinn
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39221647824650240
+    m_Localized: Succubus
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39221687867670528
+    m_Localized: Ruler of the Devil
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

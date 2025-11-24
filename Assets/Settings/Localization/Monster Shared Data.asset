@@ -1,0 +1,628 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Monster Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: Monster
+  m_TableCollectionNameGuidString: b9a934e5ba5e2174094df0782712d9b7
+  m_Entries:
+  - m_Id: 5668077568
+    m_Key: start-0_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11988893696
+    m_Key: start-1_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15386279936
+    m_Key: start-2_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18947244032
+    m_Key: start-3_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22751477760
+    m_Key: start-4_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26341801984
+    m_Key: start-5_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30213144576
+    m_Key: start-6_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32947830784
+    m_Key: start-7_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 35900620800
+    m_Key: start-8_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38731776000
+    m_Key: start-9_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1062884343808
+    m_Key: start-10_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1078034169856
+    m_Key: forest-0_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2849783372316672
+    m_Key: forest-1_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2849842981765120
+    m_Key: forest-2_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2850049081475072
+    m_Key: forest-2_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2850130903957504
+    m_Key: forest-3_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2850358088433664
+    m_Key: forest-4_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2850400434126848
+    m_Key: forest-5_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2850485066792960
+    m_Key: forest-6_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2850508051578880
+    m_Key: forest-7_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39090467653550080
+    m_Key: spring-pool-0_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39090598390005760
+    m_Key: spring-pool-1_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39090654069391360
+    m_Key: spring-pool-2_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39090721740292096
+    m_Key: spring-pool-3_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39090988854542336
+    m_Key: spring-pool-4_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39090990775533568
+    m_Key: spring-pool-4_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39091146577149952
+    m_Key: spring-pool-5_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39091296666124288
+    m_Key: spring-pool-6_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39091316496793600
+    m_Key: spring-pool-6_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39091695519268864
+    m_Key: high-mountain-0_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39092028597338112
+    m_Key: high-mountain-1_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39092093487415296
+    m_Key: high-mountain-2_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39092152841011200
+    m_Key: high-mountain-2_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39092648364474368
+    m_Key: high-mountain-3_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39092736310640640
+    m_Key: high-mountain-4_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39092781034504192
+    m_Key: high-mountain-5_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39092852631273472
+    m_Key: desert-0_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39092951491018752
+    m_Key: desert-1_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39092952854167552
+    m_Key: desert-2_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39093329951457280
+    m_Key: desert-3_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39093931553062912
+    m_Key: desert-4_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39093932341592064
+    m_Key: pyramid-0_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39093934010925056
+    m_Key: pyramid-1_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39095231170740224
+    m_Key: pyramid-2_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39095339794825216
+    m_Key: pyramid-2_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39095428391108608
+    m_Key: pyramid-3_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39095673053249536
+    m_Key: pyramid-4_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39095789973667840
+    m_Key: pyramid-5_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39096538111672320
+    m_Key: pyramid-5_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39096644743462912
+    m_Key: pyramid-5_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39096849350000640
+    m_Key: pyramid-5_3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39096897056014336
+    m_Key: forest-lake-0_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39096970456334336
+    m_Key: forest-lake-1_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39097039045787648
+    m_Key: forest-lake-2_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39097110067937280
+    m_Key: forest-lake-3_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39097170910511104
+    m_Key: lake-0_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39097219795124224
+    m_Key: lake-1_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39097287415693312
+    m_Key: lake-2_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39097413701992448
+    m_Key: lake-3_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39097416080162816
+    m_Key: lake-4_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39097615599009792
+    m_Key: lake-5_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39098144127451136
+    m_Key: lake-6_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39098205955686400
+    m_Key: lake-7_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39098443357487104
+    m_Key: lake-8_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39098713164480512
+    m_Key: lake-deep-forest-0_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39098714473103360
+    m_Key: lake-deep-forest-1_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39098716020801536
+    m_Key: lake-deep-forest-2_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39098761692577792
+    m_Key: lake-deep-forest-3_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39098770458673152
+    m_Key: deep-forest-0_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39099307841290240
+    m_Key: deep-forest-1_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39099310643085312
+    m_Key: deep-forest-2_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39099312962535424
+    m_Key: deep-forest-3_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39099314652839936
+    m_Key: deep-forest-4_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39099316829683712
+    m_Key: deep-forest-5_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39099400787066880
+    m_Key: forest-ice-0_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39120998202081280
+    m_Key: forest-ice-1_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39121189382651904
+    m_Key: forest-ice-2_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39121333062729728
+    m_Key: ice-0_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39121511068991488
+    m_Key: ice-1_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39121580660883456
+    m_Key: ice-2_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39121729256685568
+    m_Key: ice-3_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39121773082968064
+    m_Key: ice-4_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39121968818552832
+    m_Key: ice-5_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39122019749986304
+    m_Key: ice-6_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39122247509082112
+    m_Key: ice-7_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39191850000056320
+    m_Key: deep-forest-swamp-0_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39192413970366464
+    m_Key: deep-forest-swamp-1_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39192468957691904
+    m_Key: deep-forest-swamp-2_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39192850106679296
+    m_Key: deep-forest-swamp-3_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39192930524069888
+    m_Key: swamp-0_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39193164708839424
+    m_Key: swamp-1_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39193316588781568
+    m_Key: swamp-2_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39193492275593216
+    m_Key: swamp-3_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39193783737778176
+    m_Key: swamp-4_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39194017670889472
+    m_Key: swamp-5_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39194069478932480
+    m_Key: swamp-6_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39194784465158144
+    m_Key: swamp-7_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39194785895415808
+    m_Key: swamp-7_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39194870108651520
+    m_Key: swamp-8_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39195018427629568
+    m_Key: swamp-deep-forest-0_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39195047766786048
+    m_Key: swamp-deep-forest-0_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39195260791291904
+    m_Key: cemetery-0_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39195306987356160
+    m_Key: cemetery-0_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39195356769550336
+    m_Key: cemetery-0_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39195571471777792
+    m_Key: secret-hallway-0_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39195776275447808
+    m_Key: secret-hallway-1_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39195888263364608
+    m_Key: secret-hallway-2_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39195949533757440
+    m_Key: secret-hallway-3_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39196123396046848
+    m_Key: castle-0_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39196189590552576
+    m_Key: castle-0_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39196240995942400
+    m_Key: castle-0_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39204105357885440
+    m_Key: castle-1_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39204220629942272
+    m_Key: castle-1_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39205240902778880
+    m_Key: castle-2_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39214062983708672
+    m_Key: castle-3_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39214226192465920
+    m_Key: castle-4_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39214317397606400
+    m_Key: castle-5_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39214530417917952
+    m_Key: castle-6_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39214553692110848
+    m_Key: castle-7_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39215042156560384
+    m_Key: castle-8_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39215220863270912
+    m_Key: castle-9_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39215439348760576
+    m_Key: castle-10_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39215511461429248
+    m_Key: castle-11_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39215649902821376
+    m_Key: castle-12_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39215671520264192
+    m_Key: castle-12_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39216350271897600
+    m_Key: castle-13_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39216467041320960
+    m_Key: castle-14_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39216710474530816
+    m_Key: castle-15_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39216790858366976
+    m_Key: castle-16_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39216872097841152
+    m_Key: castle-17_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39217377347895296
+    m_Key: castle-18_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39217676506628096
+    m_Key: castle-19_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39218325633892352
+    m_Key: castle-20_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39218347108728832
+    m_Key: castle-21_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39218364934520832
+    m_Key: castle-22_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39218382487683072
+    m_Key: castle-22_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39218432689307648
+    m_Key: castle-23_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39218436736811008
+    m_Key: castle-24_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39220327583580160
+    m_Key: boss_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39220470768730112
+    m_Key: boss_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39220513164754944
+    m_Key: boss_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39220651690033152
+    m_Key: boss_3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39220864651624448
+    m_Key: boss_4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39220929269071872
+    m_Key: boss_5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39221164863127552
+    m_Key: boss_6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39221211063386112
+    m_Key: boss_7
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39221308853583872
+    m_Key: boss_8
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39221351186694144
+    m_Key: boss_9
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39221647824650240
+    m_Key: boss_10
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39221687867670528
+    m_Key: boss_11
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 2660121169793646775
+  references:
+    version: 2
+    RefIds:
+    - rid: 2660121169793646775
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1754382377059

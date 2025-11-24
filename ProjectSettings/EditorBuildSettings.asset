@@ -1,0 +1,102 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Initial.unity
+    guid: 3f8eadceb6fbf6445b5d6e5ef14a8268
+  - enabled: 1
+    path: Assets/Scenes/Title.unity
+    guid: 5dd48c4263faa9f4d9821a9fa884f828
+  - enabled: 1
+    path: Assets/Scenes/Cutscene.unity
+    guid: f29f1e65c5898534086c747ca27fe279
+  - enabled: 1
+    path: Assets/Scenes/Territory.unity
+    guid: b675ad4882244ed43b365d8f0dcf5951
+  - enabled: 1
+    path: Assets/Scenes/PreGame.unity
+    guid: 4a9ab1a831550764f84fb65246621322
+  - enabled: 1
+    path: Assets/Scenes/Games/G-Tutorial.unity
+    guid: e66774e7ac0a1d64a8efde48c4f257f4
+  - enabled: 1
+    path: Assets/Scenes/Games/G-Start.unity
+    guid: cbdda23f2edaca54ca4fd0465f31e8c1
+  - enabled: 1
+    path: Assets/Scenes/Games/G-Forest.unity
+    guid: 95dfce5ab48aa094994a690776b808b9
+  - enabled: 1
+    path: Assets/Scenes/Games/G-SpringPool.unity
+    guid: ed2b162b64f43524c98127fe817a5f88
+  - enabled: 1
+    path: Assets/Scenes/Games/G-ForestLake.unity
+    guid: af0c12263b7105f459b17b869aa922dc
+  - enabled: 1
+    path: Assets/Scenes/Games/G-Lake.unity
+    guid: e247d9b9cf2edc64bab4b513f474e89c
+  - enabled: 1
+    path: Assets/Scenes/Games/G-LakeDeepForest.unity
+    guid: 0b1df1837d2bd84448c02a08e31f8966
+  - enabled: 1
+    path: Assets/Scenes/Games/G-HighMountain.unity
+    guid: c6555578e1e6a6c40804f156d89e5937
+  - enabled: 1
+    path: Assets/Scenes/Games/G-Desert.unity
+    guid: 6a5580d07c4510f46b2aff14020edb50
+  - enabled: 1
+    path: Assets/Scenes/Games/G-Pyramid.unity
+    guid: 9679f404a47afd649bb0c55222a7765a
+  - enabled: 1
+    path: Assets/Scenes/Games/G-DeepForest.unity
+    guid: 2b6b3afcfd6540949a49b24f573777b1
+  - enabled: 1
+    path: Assets/Scenes/Games/G-DeepForestSwamp.unity
+    guid: 4ba0930b782655642ac17be45a5661ba
+  - enabled: 1
+    path: Assets/Scenes/Games/G-Swamp.unity
+    guid: 4030fbaa60fb8454b82d0d053c0a3898
+  - enabled: 1
+    path: Assets/Scenes/Games/G-SwampDeepForest.unity
+    guid: 42f4a73ac37fc2b43995b5b050064535
+  - enabled: 1
+    path: Assets/Scenes/Games/G-ForestIce.unity
+    guid: 0efc5c534c7440b4996fc15ea2c09823
+  - enabled: 1
+    path: Assets/Scenes/Games/G-Ice.unity
+    guid: 0b9e4238e655b6c49b6507bb24a4c09c
+  - enabled: 1
+    path: Assets/Scenes/Games/G-Cemetery.unity
+    guid: 71a604510c48ee742adc8c60e7702590
+  - enabled: 1
+    path: Assets/Scenes/Games/G-SecretHallway.unity
+    guid: 63ca6750d4bd27f48891889a865b7904
+  - enabled: 1
+    path: Assets/Scenes/Games/G-CastleLoby.unity
+    guid: c6b787bd5dc17394da5ee43ba5b6f385
+  - enabled: 1
+    path: Assets/Scenes/Games/G-CastleSecretRoom.unity
+    guid: 4b1fc08692b0bf94080e17df9586de30
+  - enabled: 1
+    path: Assets/Scenes/Games/G-Castle1.unity
+    guid: 6360159dfdc813f4d9806b4508902b44
+  - enabled: 1
+    path: Assets/Scenes/Games/G-Castle2.unity
+    guid: 8cc197c3becfc4a43881c36ee614626b
+  - enabled: 1
+    path: Assets/Scenes/Games/G-Castle3.unity
+    guid: 9234c0a267ab7864a9fc3042766c7ee5
+  - enabled: 1
+    path: Assets/Scenes/Games/G-Castle4.unity
+    guid: 9b2ff14af05dbe24d83fb64cf13ee49b
+  - enabled: 1
+    path: Assets/Scenes/Games/G-CastleBoss.unity
+    guid: 831a2a639bad63f419ae7659b0b4e68b
+  m_configObjects:
+    com.unity.addressableassets: {fileID: 11400000, guid: aacdc4fc4fa937d4b8ff5edd1f776c11, type: 2}
+    com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+    com.unity.localization.settings: {fileID: 11400000, guid: fbb70499c2693fc4db44edb605addc11, type: 2}
+  m_UseUCBPForAssetBundles: 0

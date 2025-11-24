@@ -1,0 +1,148 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Armor_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: e21c8ee02e94f7f47a5a4fa67ecb6580, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 5156372480
+    m_Localized: Tattered Clothing
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7723286528
+    m_Localized: Leather Vest
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27111438742454272
+    m_Localized: Copper Armor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27111443331022848
+    m_Localized: Chain Armor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27111447974117376
+    m_Localized: Iron Armor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27111451354726400
+    m_Localized: Knight's Armor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27971619118383104
+    m_Localized: Silver Chestplate
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27971627150475264
+    m_Localized: Silk Cloak
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27971646641405952
+    m_Localized: Sapphire Armor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27971654191153152
+    m_Localized: Armor 9
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27971656607072256
+    m_Localized: Dragon King's Armor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27971662957248512
+    m_Localized: Night Cloak
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27971665557716992
+    m_Localized: Guardian's Armor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27971668246265856
+    m_Localized: Demonic Armor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32669487817293824
+    m_Localized: Long-worn clothes.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32669487842459648
+    m_Localized: Gear made of leather.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32669487842459649
+    m_Localized: Crude armor made of copper.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32669487842459650
+    m_Localized: Armor sewn with chains for excellent mobility.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32669487842459651
+    m_Localized: Armor with a huge steel plate to provide high defense.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32669487842459652
+    m_Localized: Light and strong armor known to have been worn by medieval knights.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32669487842459653
+    m_Localized: Armor that provides extreme activity while protecting vital points.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36952663301554176
+    m_Localized: Devil King's Robe
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36952671786631168
+    m_Localized: The robe worn by the evil king. The evil spirit is overflowing.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32669487842459654
+    m_Localized: Soft cape woven from silk. Gently spills out enemy attacks.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32669487842459659
+    m_Localized: Basic armor given by the Devil's Guard. Hard and light enough that
+      humans dare not make it.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32669487842459658
+    m_Localized: Cloak that contains the energy of the night. Weakens the opponent's
+      attack with its magical power.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32669487842459656
+    m_Localized: Armor infused with enemy blood from numerous combat experiences.
+      Numerous grudges curse the wearer.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32669487842459655
+    m_Localized: Sophisticated armor made from sapphires.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32669487842459657
+    m_Localized: Armor stolen from the dragon king. Due to the dragon king's brash
+      personality, it is said that there are as many as 10 of these armor pieces
+      in the world.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32669487842459660
+    m_Localized: Armor made for the elite members of the Devil King's Army.
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

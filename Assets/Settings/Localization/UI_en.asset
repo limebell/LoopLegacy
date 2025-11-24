@@ -1,0 +1,800 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: UI_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 0082d6ce3b7ec624284d5744bf40c49b, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 28590466400256
+    m_Localized: Start
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28658783223808
+    m_Localized: Option
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28701032448000
+    m_Localized: Credit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 256530080858112
+    m_Localized: Give Up
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31859494354944
+    m_Localized: Language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32007607812096
+    m_Localized: Close
+    m_Metadata:
+      m_Items: []
+  - m_Id: 247147678662656
+    m_Localized: English
+    m_Metadata:
+      m_Items: []
+  - m_Id: 247239324205056
+    m_Localized: "\uD55C\uAD6D\uC5B4"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 253041367842816
+    m_Localized: Confirm
+    m_Metadata:
+      m_Items: []
+  - m_Id: 254143270223872
+    m_Localized: Equipment
+    m_Metadata:
+      m_Items: []
+  - m_Id: 254311973519360
+    m_Localized: Armor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 254233888161792
+    m_Localized: Weapon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 254603548950528
+    m_Localized: Equipment List
+    m_Metadata:
+      m_Items: []
+  - m_Id: 254885926273024
+    m_Localized: Game Over
+    m_Metadata:
+      m_Items: []
+  - m_Id: 255001223495680
+    m_Localized: Back To Territory
+    m_Metadata:
+      m_Items: []
+  - m_Id: 255227191623680
+    m_Localized: Back To Title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 255413091565568
+    m_Localized: Stats
+    m_Metadata:
+      m_Items: []
+  - m_Id: 257988251615232
+    m_Localized: Are you sure you want to give up on the game?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 269373006151680
+    m_Localized: You already equipped [{0}].
+    m_Metadata:
+      m_Items: []
+  - m_Id: 269930215243776
+    m_Localized: Are you sure to equip [{0}]?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 271017546612736
+    m_Localized: No equipped item
+    m_Metadata:
+      m_Items: []
+  - m_Id: 271367456423936
+    m_Localized: Accessory slot not opened
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28128071623639040
+    m_Localized: Damage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28128108386713600
+    m_Localized: Protection
+    m_Metadata:
+      m_Items: []
+  - m_Id: 273949318971392
+    m_Localized: Apply
+    m_Metadata:
+      m_Items: []
+  - m_Id: 274068932132864
+    m_Localized: Revert
+    m_Metadata:
+      m_Items: []
+  - m_Id: 274531471589376
+    m_Localized: Stat Points
+    m_Metadata:
+      m_Items: []
+  - m_Id: 277601811169280
+    m_Localized: Skip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 277786868056064
+    m_Localized: Menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 277971572621312
+    m_Localized: Encounter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 278059128717312
+    m_Localized: End
+    m_Metadata:
+      m_Items: []
+  - m_Id: 304105450373120
+    m_Localized: Not enough gold. You need {0}G.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 304741575294976
+    m_Localized: Buy [{0}] with {1}G?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 305192915959808
+    m_Localized: Upgrade [{0}] to level {2} with {1}G?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 308488720351232
+    m_Localized: Owned Gold
+    m_Metadata:
+      m_Items: []
+  - m_Id: 312706814443520
+    m_Localized: Quantity
+    m_Metadata:
+      m_Items: []
+  - m_Id: 602158812102656
+    m_Localized: Delete
+    m_Metadata:
+      m_Items: []
+  - m_Id: 602765723697152
+    m_Localized: Start Game
+    m_Metadata:
+      m_Items: []
+  - m_Id: 604151576264704
+    m_Localized: Are you sure to quit the game?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 604844177489920
+    m_Localized: '{0} Hero'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 608612369563648
+    m_Localized: Slot
+    m_Metadata:
+      m_Items: []
+  - m_Id: 608847883927552
+    m_Localized: New Game
+    m_Metadata:
+      m_Items: []
+  - m_Id: 609056852541440
+    m_Localized: Are you sure to delete slot {0}?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 609454216708096
+    m_Localized: Slot data corrupted
+    m_Metadata:
+      m_Items: []
+  - m_Id: 631286907011072
+    m_Localized: Kills
+    m_Metadata:
+      m_Items: []
+  - m_Id: 633050112720896
+    m_Localized: Victory
+    m_Metadata:
+      m_Items: []
+  - m_Id: 633061693194240
+    m_Localized: Defeat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 688387654156288
+    m_Localized: '{0} Combo'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 688273908826112
+    m_Localized: Critical!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 688234159407104
+    m_Localized: You dealt {1} damage to {0}!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 688437859975168
+    m_Localized: '{0} dealt {1} damage to you!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 688206686715904
+    m_Localized: You encountered {0}!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 712843982274560
+    m_Localized: Equipped
+    m_Metadata:
+      m_Items: []
+  - m_Id: 753248631259136
+    m_Localized: Are you sure you want to go back to the title?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 952813942734848
+    m_Localized: Drops
+    m_Metadata:
+      m_Items: []
+  - m_Id: 999757838811136
+    m_Localized: Victory! Touch to continue...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 999785244393472
+    m_Localized: Defeat. Touch to continue...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1290088471855104
+    m_Localized: Loop Legacy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1325591942397952
+    m_Localized: BGM
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1325766874234880
+    m_Localized: SFX
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1328667562606592
+    m_Localized: Combat Speed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1329079577477120
+    m_Localized: Slow
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1330628076765184
+    m_Localized: Medium
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1330713422462976
+    m_Localized: Fast
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1843526016434176
+    m_Localized: 'Really start the journey of the {0} hero?
+
+      <b>Unused {1}G
+      will be lost!</b>'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1853511903477760
+    m_Localized: Master Volume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1853695421054976
+    m_Localized: Quality
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1854024208351232
+    m_Localized: Medium
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1853987671769088
+    m_Localized: Low
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1854036598325248
+    m_Localized: High
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1855499785469952
+    m_Localized: Reset
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1860075913740288
+    m_Localized: You really want to reset all options?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1867558090702848
+    m_Localized: Frame Rate
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2086211994255360
+    m_Localized: WARNING
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2126012386639872
+    m_Localized: Your level is lower than recommended level!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2126850521825280
+    m_Localized: Recommended Level
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2448516007329792
+    m_Localized: Add BattlePoint
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2497455423225856
+    m_Localized: 'The {0} hero''s power has run out.
+
+      His achievements will
+      be passed down to his descendants.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2497874669076480
+    m_Localized: 'Combat Count: {0}
+
+      Wins: {1}
+
+      Losses: {2}
+
+      Defeated
+      Bosses: {3}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2497947452833792
+    m_Localized: Final Level
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2498015501221888
+    m_Localized: Earned Gold
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3201726380769280
+    m_Localized: Stat Auto Distribution
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3226651955036160
+    m_Localized: Enable Auto Distribution
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3253449942106112
+    m_Localized: Cancel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3256129724874752
+    m_Localized: If Auto Distribution is enabled, any stat points acquired are automatically
+      added according to the ratios below. If a ratio of 0 is entered, no points
+      will be automatically added to the stat.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4550376453308416
+    m_Localized: EXP
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5085389968113664
+    m_Localized: Select Hero
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5091474187747328
+    m_Localized: Would you like to proceed with the tutorial?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5712658071814144
+    m_Localized: Yes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5712680750415872
+    m_Localized: No
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6412689787584512
+    m_Localized: Relic Reward
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6413582419361792
+    m_Localized: Select
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6415857720229888
+    m_Localized: Select one reward.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9019741206740992
+    m_Localized: Codex
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9020436035141632
+    m_Localized: Monster
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9020634593492992
+    m_Localized: Weapon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9020731427389440
+    m_Localized: Armor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9020864512655360
+    m_Localized: Relic
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14496727307911168
+    m_Localized: Control
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14497133878575104
+    m_Localized: Touch
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14497220742610944
+    m_Localized: Joystick A
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14844345175244800
+    m_Localized: Common
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14844400653303808
+    m_Localized: Uncommon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14844419007578112
+    m_Localized: Rare
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14844438125215744
+    m_Localized: Epic
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14844453296013312
+    m_Localized: Legendary
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14845978256867328
+    m_Localized: Abandon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19471303762771968
+    m_Localized: Joystick B
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24617622982623232
+    m_Localized: New Hero
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25310793307783168
+    m_Localized: Stats and Equipments
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26336700562669568
+    m_Localized: Discard
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26337460306313216
+    m_Localized: Skip Reward
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26341924954177536
+    m_Localized: Owned Relics
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26342161831690240
+    m_Localized: Choose one relic to obtain
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26343989042479104
+    m_Localized: You already have the maximum number of relics.\nYou can discard
+      one of your relics or skip the reward.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26345113703153664
+    m_Localized: Acquire
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26351394673393664
+    m_Localized: Are you sure you want to discard the relic [{0}]?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26444538601537536
+    m_Localized: Equipments / Armor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26444568662114304
+    m_Localized: Equipments / Weapon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26707586193031168
+    m_Localized: The monster who defeated you
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27166884761174016
+    m_Localized: Price
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27167180560269312
+    m_Localized: Buy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27370698407673856
+    m_Localized: Touch anywhere to continue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28128878859386880
+    m_Localized: Level
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28133609447096320
+    m_Localized: Monster {0} executed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28134190362394624
+    m_Localized: You evaded monster {0}'s attack
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28240338130305024
+    m_Localized: You restored {0} HP
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28461574303252480
+    m_Localized: 'You earned weapon [{0}]'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28461621552087040
+    m_Localized: 'You earned armor [{0}]'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28518157376815104
+    m_Localized: Relic Count
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28820963048554496
+    m_Localized: Already reached max leve
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28998368853753856
+    m_Localized: You have reached the maximum amount you can collect
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29231441503584256
+    m_Localized: You really want to discard changes?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29699402739744768
+    m_Localized: Rerolls
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29699502971027456
+    m_Localized: No reroll count left
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30100233142140928
+    m_Localized: Upgrade
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30102143232376832
+    m_Localized: Quit tutorial and start game?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32537420672532480
+    m_Localized: '! TIP
+
+      Invest in HP, ATK, and DEF evenly'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32955290602700800
+    m_Localized: You will start with this relic next time you start
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32957053502226432
+    m_Localized: No relic
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32957159240630272
+    m_Localized: Start without relic
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32959400936734720
+    m_Localized: Initial Relic
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33195304511078400
+    m_Localized: Maximum selectable grade
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33250872609210368
+    m_Localized: Territory has reached max level
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33577191591116800
+    m_Localized: 'You unlocked relic [{0}]'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33900048409952256
+    m_Localized: Preset
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33926825492611072
+    m_Localized: Locked
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33931786712514560
+    m_Localized: 'Required relics: {0}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33931799823908864
+    m_Localized: 'Not enough relics have been unlocked for purchase.
+
+      Required:
+      {0}, Current: {1}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33962375138246656
+    m_Localized: Opened
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33962704948953088
+    m_Localized: Not Opened
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33963161024987136
+    m_Localized: The shortcut already opened
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33965356919291904
+    m_Localized: You really want to open shortcut [{0}] with {1}G?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 35933482598793216
+    m_Localized: Loading...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36289904817733632
+    m_Localized: Special
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37143597008027648
+    m_Localized: 'The relic slot is full!
+
+      Either give up the reward or discard
+      the existing relic.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37340677848694784
+    m_Localized: Dropped Items
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37347239275266048
+    m_Localized: ...and {0} more
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37353289969827840
+    m_Localized: Select a relic to acquire or discard first.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37512391123533824
+    m_Localized: Library
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37512429102956544
+    m_Localized: Collections
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37517554483724288
+    m_Localized: Applied Effects
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37517652773044224
+    m_Localized: Management
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37551958765600768
+    m_Localized: Unexpected error occurred during loading gamestate. Return to the
+      territory.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37623214584102912
+    m_Localized: Accumulated Level
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39033700634591232
+    m_Localized: Collected weapons
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39033724093333504
+    m_Localized: Fully collected weapons
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38659287095443456
+    m_Localized: NFS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38659807281414144
+    m_Localized: The relic of the level is not for sale
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38716202651484160
+    m_Localized: Critical Rate
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38716245009760256
+    m_Localized: Critical Damage Multiplier
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38719822180646912
+    m_Localized: Fixed Damage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38719879558725632
+    m_Localized: Drain Percentage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38720925785915392
+    m_Localized: Exp Multiplier
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38721008422092800
+    m_Localized: Gold Multiplier
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38721136310616064
+    m_Localized: Drop Multiplier
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38723826704973824
+    m_Localized: Damage Multiplier
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38723927737368576
+    m_Localized: Heal Every Turn
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39020470277242880
+    m_Localized: Drop boost by kill count
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39022558625398784
+    m_Localized: Player base level by accumulated level
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39022560458309632
+    m_Localized: Stat multiplier by player base level
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39022794554998784
+    m_Localized: Stat boost per fully collected equipment
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39022924918161408
+    m_Localized: Stat boost by fully collected equipment
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39023253269250048
+    m_Localized: Drop multiplier by monster kill count
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39023360450494464
+    m_Localized: Monster killed moner than {0}
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39033738970529792
+    m_Localized: Collected armors
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39033755001159680
+    m_Localized: Fully collected armors
+    m_Metadata:
+      m_Items: []
+  - m_Id: 40583286184476672
+    m_Localized: Fully collected equipments
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

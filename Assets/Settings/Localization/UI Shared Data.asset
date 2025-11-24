@@ -1,0 +1,788 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: UI Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: UI
+  m_TableCollectionNameGuidString: 0082d6ce3b7ec624284d5744bf40c49b
+  m_Entries:
+  - m_Id: 28590466400256
+    m_Key: start
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28658783223808
+    m_Key: option
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28701032448000
+    m_Key: credit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31859494354944
+    m_Key: option_language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32007607812096
+    m_Key: close
+    m_Metadata:
+      m_Items: []
+  - m_Id: 247147678662656
+    m_Key: language_en
+    m_Metadata:
+      m_Items: []
+  - m_Id: 247239324205056
+    m_Key: language_ko-KR
+    m_Metadata:
+      m_Items: []
+  - m_Id: 253041367842816
+    m_Key: confirm
+    m_Metadata:
+      m_Items: []
+  - m_Id: 254143270223872
+    m_Key: equipment
+    m_Metadata:
+      m_Items: []
+  - m_Id: 254233888161792
+    m_Key: weapon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 254311973519360
+    m_Key: armor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 254603548950528
+    m_Key: equipment-list
+    m_Metadata:
+      m_Items: []
+  - m_Id: 254885926273024
+    m_Key: game-over
+    m_Metadata:
+      m_Items: []
+  - m_Id: 255001223495680
+    m_Key: back-to-territory
+    m_Metadata:
+      m_Items: []
+  - m_Id: 255227191623680
+    m_Key: back-to-title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 255413091565568
+    m_Key: stats
+    m_Metadata:
+      m_Items: []
+  - m_Id: 256530080858112
+    m_Key: giveup
+    m_Metadata:
+      m_Items: []
+  - m_Id: 257988251615232
+    m_Key: giveup-confirmation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 269373006151680
+    m_Key: already-equipped
+    m_Metadata:
+      m_Items: []
+  - m_Id: 269930215243776
+    m_Key: equip-confirmation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 271017546612736
+    m_Key: no-equipment
+    m_Metadata:
+      m_Items: []
+  - m_Id: 271367456423936
+    m_Key: accessory-slot-not-opened
+    m_Metadata:
+      m_Items: []
+  - m_Id: 273949318971392
+    m_Key: apply
+    m_Metadata:
+      m_Items: []
+  - m_Id: 274068932132864
+    m_Key: revert
+    m_Metadata:
+      m_Items: []
+  - m_Id: 274531471589376
+    m_Key: stat-points
+    m_Metadata:
+      m_Items: []
+  - m_Id: 277601811169280
+    m_Key: skip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 277786868056064
+    m_Key: menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 277971572621312
+    m_Key: encounter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 278059128717312
+    m_Key: end
+    m_Metadata:
+      m_Items: []
+  - m_Id: 304105450373120
+    m_Key: not-enough-gold
+    m_Metadata:
+      m_Items: []
+  - m_Id: 304741575294976
+    m_Key: buy-confirmation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 305192915959808
+    m_Key: upgrade-confirmation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 308488720351232
+    m_Key: owned-gold
+    m_Metadata:
+      m_Items: []
+  - m_Id: 312706814443520
+    m_Key: owned-count
+    m_Metadata:
+      m_Items: []
+  - m_Id: 602158812102656
+    m_Key: delete
+    m_Metadata:
+      m_Items: []
+  - m_Id: 602765723697152
+    m_Key: game-start
+    m_Metadata:
+      m_Items: []
+  - m_Id: 604151576264704
+    m_Key: quit-confirmation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 604844177489920
+    m_Key: slot-description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 608612369563648
+    m_Key: slot-name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 608847883927552
+    m_Key: new-game
+    m_Metadata:
+      m_Items: []
+  - m_Id: 609056852541440
+    m_Key: delete-slot-confirmation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 609454216708096
+    m_Key: slot-data-corrupted
+    m_Metadata:
+      m_Items: []
+  - m_Id: 631286907011072
+    m_Key: kill-count
+    m_Metadata:
+      m_Items: []
+  - m_Id: 633050112720896
+    m_Key: victory
+    m_Metadata:
+      m_Items: []
+  - m_Id: 633061693194240
+    m_Key: defeat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 688206686715904
+    m_Key: battle-log_encounter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 688234159407104
+    m_Key: battle-log_player-attack
+    m_Metadata:
+      m_Items: []
+  - m_Id: 688273908826112
+    m_Key: battle-log_critical
+    m_Metadata:
+      m_Items: []
+  - m_Id: 688387654156288
+    m_Key: battle-log_combo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 688437859975168
+    m_Key: battle-log_monster-attack
+    m_Metadata:
+      m_Items: []
+  - m_Id: 712843982274560
+    m_Key: equipped
+    m_Metadata:
+      m_Items: []
+  - m_Id: 753248631259136
+    m_Key: back-to-title-confirmation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 952813942734848
+    m_Key: drops
+    m_Metadata:
+      m_Items: []
+  - m_Id: 999757838811136
+    m_Key: battle-log_victory
+    m_Metadata:
+      m_Items: []
+  - m_Id: 999785244393472
+    m_Key: battle-log_defeat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1290088471855104
+    m_Key: app-name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1325591942397952
+    m_Key: option_bgm
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1325766874234880
+    m_Key: option_sfx
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1328667562606592
+    m_Key: option_combat-speed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1329079577477120
+    m_Key: option_combat-speed_slow
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1330628076765184
+    m_Key: option_combat-speed_medium
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1330713422462976
+    m_Key: option_combat-speed_fast
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1843526016434176
+    m_Key: start-game-confirmation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1853511903477760
+    m_Key: option_master-volume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1853695421054976
+    m_Key: option_quality
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1853987671769088
+    m_Key: option_quality_low
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1854024208351232
+    m_Key: option_quality_medium
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1854036598325248
+    m_Key: option_quality_high
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1855499785469952
+    m_Key: option_reset
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1860075913740288
+    m_Key: reset-options-confirmation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1867558090702848
+    m_Key: option_frame-rate
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2086211994255360
+    m_Key: warning
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2126012386639872
+    m_Key: warning_detail
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2126850521825280
+    m_Key: recommended-level
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2448516007329792
+    m_Key: add-battle-point-with-advertise
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2497455423225856
+    m_Key: game-over_commentary
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2497874669076480
+    m_Key: game-over_combat-summary
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2497947452833792
+    m_Key: game-over_final-level
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2498015501221888
+    m_Key: game-over_earned-gold
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3201726380769280
+    m_Key: auto-distribution-setting
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3226651955036160
+    m_Key: auto-distribution-enable
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3253449942106112
+    m_Key: cancel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3256129724874752
+    m_Key: auto-distribution_description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4550376453308416
+    m_Key: exp
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5085389968113664
+    m_Key: select-hero
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5091474187747328
+    m_Key: start-tutorial-confirmation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5712658071814144
+    m_Key: yes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5712680750415872
+    m_Key: no
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6412689787584512
+    m_Key: relic-reward
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6413582419361792
+    m_Key: select
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6415857720229888
+    m_Key: relic-reward_description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9019741206740992
+    m_Key: codex
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9020436035141632
+    m_Key: monster
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9020864512655360
+    m_Key: relic
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14496727307911168
+    m_Key: option_control-type
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14497133878575104
+    m_Key: option_control-type_touch
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14497220742610944
+    m_Key: option_control-type_joystick-static
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14844345175244800
+    m_Key: grade_common
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14844400653303808
+    m_Key: grade_uncommon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14844419007578112
+    m_Key: grade_rare
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14844438125215744
+    m_Key: grade_epic
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14844453296013312
+    m_Key: grade_legendary
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14845978256867328
+    m_Key: abandon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19471303762771968
+    m_Key: option_control-type_joystick-dynamic
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24617622982623232
+    m_Key: new-hero
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25310793307783168
+    m_Key: stats-and-equipment
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26336700562669568
+    m_Key: discard
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26337460306313216
+    m_Key: skip-reward
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26341924954177536
+    m_Key: owned-relics
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26342161831690240
+    m_Key: choose-one-relic
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26343989042479104
+    m_Key: relic-full-warning
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26345113703153664
+    m_Key: acquire
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26351394673393664
+    m_Key: relic-reward_discard-relic-confirmation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26361431139549184
+    m_Key: stat-description-hp
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26361457534304256
+    m_Key: stat-description-atk
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26361468015869952
+    m_Key: stat-description-def
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26361475792109568
+    m_Key: stat-description-luc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26444538601537536
+    m_Key: equipment-title_armor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26444568662114304
+    m_Key: equipment-title_weapon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26707586193031168
+    m_Key: game-over_summary_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27166884761174016
+    m_Key: price
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27167180560269312
+    m_Key: buy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27370698407673856
+    m_Key: touch-to-continue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28128071623639040
+    m_Key: damage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28128108386713600
+    m_Key: protection
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28128878859386880
+    m_Key: level
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28133609447096320
+    m_Key: battle-log_execution
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28134190362394624
+    m_Key: battle-log_monster-attack-evaded
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28240338130305024
+    m_Key: battle-log_heal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28461574303252480
+    m_Key: drop-dialogue_weapon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28461621552087040
+    m_Key: drop-dialogue_armor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33577191591116800
+    m_Key: drop-dialogue_relic
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28518157376815104
+    m_Key: max-relic-count
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28820963048554496
+    m_Key: max-level
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28998368853753856
+    m_Key: max-duplicate-count
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29231441503584256
+    m_Key: auto-distribution-cancel-confirmation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29699402739744768
+    m_Key: reroll-count
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29699502971027456
+    m_Key: relic-reward_no-reroll-count
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30100233142140928
+    m_Key: upgrade
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30102143232376832
+    m_Key: skip-territory-tutorial-confirmation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32537420672532480
+    m_Key: stat-auto-distribute-tip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32955290602700800
+    m_Key: initial-relic_description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32957053502226432
+    m_Key: initial-relic_none
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32957159240630272
+    m_Key: initial-relic_none_description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32959400936734720
+    m_Key: initial-relic
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33195304511078400
+    m_Key: initial-relic_max-grade
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33250872609210368
+    m_Key: max-territory-level
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33900048409952256
+    m_Key: preset
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33926825492611072
+    m_Key: locked
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33931786712514560
+    m_Key: relic-upgrade-condition
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33931799823908864
+    m_Key: relic-upgrade-condition_warning
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33962375138246656
+    m_Key: shortcut_opened
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33962704948953088
+    m_Key: shortcut_not-opened
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33963161024987136
+    m_Key: shortcut_already-opened
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33965356919291904
+    m_Key: shortcut_purchase-confirmation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 35933482598793216
+    m_Key: loading
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36289904817733632
+    m_Key: special
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37143597008027648
+    m_Key: relic-reward_max-relic-slot
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37340677848694784
+    m_Key: dropped-items
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37347239275266048
+    m_Key: extra-drops
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37353289969827840
+    m_Key: relic-reward_no-relic-selected
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37512391123533824
+    m_Key: library
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37512429102956544
+    m_Key: library_collected-title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37517554483724288
+    m_Key: library_effect-title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37517652773044224
+    m_Key: library_management
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37551958765600768
+    m_Key: slot-data-game-state-corrupted
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37623214584102912
+    m_Key: accumulated-level
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38659287095443456
+    m_Key: not-for-sale
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38659807281414144
+    m_Key: not-for-sale_description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38716202651484160
+    m_Key: critical-rate
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38716245009760256
+    m_Key: critical-damage-multiplier
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38719822180646912
+    m_Key: fixed-damage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38719879558725632
+    m_Key: drain-percentage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38720925785915392
+    m_Key: exp-multiplier
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38721008422092800
+    m_Key: gold-multiplier
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38721136310616064
+    m_Key: drop-multiplier
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38723826704973824
+    m_Key: damage-multiplier
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38723927737368576
+    m_Key: heal-every-turn
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39020470277242880
+    m_Key: library_monster-killcount-effect
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39022558625398784
+    m_Key: library_accumulated-level-bonus
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39022560458309632
+    m_Key: library_stat-multiplier-by-accumulated-level
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39022794554998784
+    m_Key: library_stat-boost-per-fully-collected-equipment
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39022924918161408
+    m_Key: library_stat-boost-by-fully-collected-equipment
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39023253269250048
+    m_Key: library_monster-drop-multiplier
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39023360450494464
+    m_Key: library_monster-drop-multiplier-by-kill-count
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39033700634591232
+    m_Key: library_collected-weapon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39033724093333504
+    m_Key: library_fully-collected-weapon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39033738970529792
+    m_Key: library_collected-armor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39033755001159680
+    m_Key: library_fully-collected-armor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 40583286184476672
+    m_Key: library_fully-collected-equipments
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 2660121129601728789
+  references:
+    version: 2
+    RefIds:
+    - rid: 2660121129601728789
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1754229703848

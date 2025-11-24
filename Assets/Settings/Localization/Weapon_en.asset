@@ -1,0 +1,222 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Weapon_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 757e3d32565eac54a80268708fd67a32, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 10072096768
+    m_Localized: Wooden Sword
+    m_Metadata:
+      m_Items: []
+  - m_Id: 91751972864
+    m_Localized: Mace
+    m_Metadata:
+      m_Items: []
+  - m_Id: 87440228352
+    m_Localized: Broad Sword
+    m_Metadata:
+      m_Items: []
+  - m_Id: 84055425024
+    m_Localized: Steel Sword
+    m_Metadata:
+      m_Items: []
+  - m_Id: 77847855104
+    m_Localized: Guandao
+    m_Metadata:
+      m_Items: []
+  - m_Id: 64686129152
+    m_Localized: Spear
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61318103040
+    m_Localized: Rapier
+    m_Metadata:
+      m_Items: []
+  - m_Id: 57681641472
+    m_Localized: Double-edged axe
+    m_Metadata:
+      m_Items: []
+  - m_Id: 53919350784
+    m_Localized: Rusted Axe
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42112385024
+    m_Localized: Basic Sword
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37095997440
+    m_Localized: Crude Sword
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3598550827008
+    m_Localized: Two-sided Spear
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27974992018276352
+    m_Localized: Trident
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27974996535541760
+    m_Localized: Venom Dagger
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27975001157664768
+    m_Localized: Gungnir
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27975004001402880
+    m_Localized: Golden Sword
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27975007826608128
+    m_Localized: Thorn Whip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27975067838709760
+    m_Localized: Minotauros' Broad Sword
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27975104140410880
+    m_Localized: Sapphire Staff
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27975112306720768
+    m_Localized: Destroyer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27975118539456512
+    m_Localized: Bow?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27975124356956160
+    m_Localized: Terminator
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27975126932258816
+    m_Localized: Stormbow
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27979738615644160
+    m_Localized: Angelic Gauntlet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32673007123562496
+    m_Localized: A wooden sword. Better than nothing.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32673007173894144
+    m_Localized: An old clunky sword.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32673007173894145
+    m_Localized: The easiest textbook weapon to make.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32673007173894146
+    m_Localized: An old axe that shows signs of use.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32673007173894147
+    m_Localized: Axe with two blades and twice the attack power. In fact, it is said
+      not to be twice as strong.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32673007173894148
+    m_Localized: Long, thin, pointed sword. Quite light.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32673007173894158
+    m_Localized: A magnificent sword plated in gold. Its striking power is matched
+      only by its splendor.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32673007173894157
+    m_Localized: A sharp spear wielded by Odin. Upon closer inspection, I noticed
+      the small letters "TM" engraved on it...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32673007173894155
+    m_Localized: A sharp weapon with three blades
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32673007173894153
+    m_Localized: A blunt instrument with a heavy head
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32673007173894152
+    m_Localized: A sword as heavy as a large blade. It is said that anyone struck
+      by it will be crushed.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32673007173894151
+    m_Localized: A long sharp blade made with steel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32673007173894149
+    m_Localized: A weapon that pierces the opponent with its long reach
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32673007173894150
+    m_Localized: A weapon with a long, single-edged handle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32673007173894154
+    m_Localized: A spear that can also be used to control the rear. Its true value
+      is revealed when swinging it.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32673007173894156
+    m_Localized: A poisoned dagger that paralyzes the opponent
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32673007173894163
+    m_Localized: When you pull the trigger, an arrow? comes out with a loud noise.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32673007173894161
+    m_Localized: A stick inlaid with a sapphire. It exudes mystical power.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32673007173894165
+    m_Localized: A sacred bow that fires arrows without stopping like storm.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32673007173894159
+    m_Localized: A blood-soaked whip with thorns attached. If not handled with care,
+      it can injure the user.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32673007173894160
+    m_Localized: A greatsword said to have been wielded by the monstrous Minotaur.
+      Its sheer size and immense weight make it a formidable weapon.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32673007173894166
+    m_Localized: Gauntlets that allow you to control the power of heaven.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32673007173894164
+    m_Localized: A rifle that takes lives in an instant.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32673007173894162
+    m_Localized: An axe that destroys everything in sight.
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Shortcut Shared Data
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.SharedTableData
+  m_TableCollectionName: Shortcut
+  m_TableCollectionNameGuidString: 45281545843be8d44b58ad0c878d2145
+  m_Entries:
+  - m_Id: 39725826048
+    m_Key: Desert
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49410473984
+    m_Key: Desert-description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 71032111104
+    m_Key: Castle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 86177742848
+    m_Key: Castle-description
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 1362322511209169031
+  references:
+    version: 2
+    RefIds:
+    - rid: 1362322511209169031
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1762326570468

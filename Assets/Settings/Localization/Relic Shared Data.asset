@@ -1,0 +1,412 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Relic Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: Relic
+  m_TableCollectionNameGuidString: 044923cdf22f33e4095b9f4d62b7af84
+  m_Entries:
+  - m_Id: 21334751408816128
+    m_Key: stat_boost_hp
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21334751501090816
+    m_Key: stat_boost_hp-description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335136223625216
+    m_Key: stat_boost_atk
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335820859867136
+    m_Key: stat_boost_atk-description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335820859867137
+    m_Key: stat_boost_def
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335820859867138
+    m_Key: stat_boost_def-description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335820859867139
+    m_Key: stat_boost_luc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966075060224
+    m_Key: stat_boost_luc-description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966075060225
+    m_Key: exp_boost
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966075060226
+    m_Key: exp_boost-description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966075060227
+    m_Key: gold_boost
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966075060228
+    m_Key: gold_boost-description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966075060229
+    m_Key: drop_boost
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966075060230
+    m_Key: drop_boost-description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966075060231
+    m_Key: evade_rate
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966075060232
+    m_Key: evade_rate-description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966075060233
+    m_Key: crit_rate
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966075060234
+    m_Key: crit_rate-description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966075060235
+    m_Key: crit_dmg
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966075060236
+    m_Key: crit_dmg-description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966075060237
+    m_Key: crit_every_n
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966075060238
+    m_Key: crit_every_n-description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966075060239
+    m_Key: bp_boost
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966075060240
+    m_Key: bp_boost-description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966075060241
+    m_Key: speed_boost
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966075060242
+    m_Key: speed_boost-description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966075060243
+    m_Key: dmg_boost_boss
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966075060244
+    m_Key: dmg_boost_boss-description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966075060245
+    m_Key: dmg_boost_normal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966075060246
+    m_Key: dmg_boost_normal-description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966075060247
+    m_Key: bp_loss_prevent_defeat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966075060248
+    m_Key: bp_loss_prevent_defeat-description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966075060249
+    m_Key: bp_loss_prevent_victory
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966075060250
+    m_Key: bp_loss_prevent_victory-description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966075060251
+    m_Key: decrease_encounter_increment
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966075060252
+    m_Key: decrease_encounter_increment-description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966075060253
+    m_Key: stat_boost_per_relic_count
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966075060254
+    m_Key: stat_boost_per_relic_count-description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966075060255
+    m_Key: fixed_dmg_per_gold
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966075060256
+    m_Key: fixed_dmg_per_gold-description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966075060257
+    m_Key: equipment_base_spec_boost
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966083448832
+    m_Key: equipment_base_spec_boost-description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966083448833
+    m_Key: fixed_dmg
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966083448834
+    m_Key: fixed_dmg-description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966083448835
+    m_Key: chain_rate
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966083448836
+    m_Key: chain_rate-description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966083448837
+    m_Key: execute_low_health
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966083448838
+    m_Key: execute_low_health-description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966083448839
+    m_Key: dmg_boost_per_defeat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966083448840
+    m_Key: dmg_boost_per_defeat-description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966083448841
+    m_Key: evade_first_n
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966083448842
+    m_Key: evade_first_n-description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966083448843
+    m_Key: dmg_gradual_increase
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966083448844
+    m_Key: dmg_gradual_increase-description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966083448845
+    m_Key: dmg_gradual_decrease
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966083448846
+    m_Key: dmg_gradual_decrease-description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966083448847
+    m_Key: dmg_drop_boost_monster_codex
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966083448848
+    m_Key: dmg_drop_boost_monster_codex-description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966083448849
+    m_Key: reduce_dmg_higher_level
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966083448850
+    m_Key: reduce_dmg_higher_level-description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966083448851
+    m_Key: execute_lower_level
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966083448852
+    m_Key: execute_lower_level-description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966083448853
+    m_Key: stat_boost_atk_per_hp
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966083448854
+    m_Key: stat_boost_atk_per_hp-description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966083448855
+    m_Key: heal_every_turn
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966083448856
+    m_Key: heal_every_turn-description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966083448857
+    m_Key: weak_every_hit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966083448858
+    m_Key: weak_every_hit-description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966083448859
+    m_Key: dmg_boost_when_low_hp
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966083448860
+    m_Key: dmg_boost_when_low_hp-description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966083448861
+    m_Key: crit_first_n
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966083448862
+    m_Key: crit_first_n-description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966083448863
+    m_Key: chain_first
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966083448864
+    m_Key: chain_first-description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966083448865
+    m_Key: reflect
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966087643136
+    m_Key: reflect-description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966087643137
+    m_Key: execute
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966087643138
+    m_Key: execute-description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966087643139
+    m_Key: drain
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966087643140
+    m_Key: drain-description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966087643141
+    m_Key: dmg_boost_when_full_hp
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966087643142
+    m_Key: dmg_boost_when_full_hp-description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966087643143
+    m_Key: fixed_dmg_per_hit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966087643144
+    m_Key: fixed_dmg_per_hit-description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966087643145
+    m_Key: stat_boost_collect_weapon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966087643146
+    m_Key: stat_boost_collect_weapon-description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966087643147
+    m_Key: stat_boost_collect_armor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966087643148
+    m_Key: stat_boost_collect_armor-description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966087643149
+    m_Key: stat_point_boost
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966087643150
+    m_Key: stat_point_boost-description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966087643151
+    m_Key: fixed_dmg_enemy_hp
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966087643152
+    m_Key: fixed_dmg_enemy_hp-description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966087643153
+    m_Key: dmg_boost_per_kill
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966087643154
+    m_Key: dmg_boost_per_kill-description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966087643155
+    m_Key: restart_with_gold
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335966087643156
+    m_Key: restart_with_gold-description
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 2660121529798885596
+  references:
+    version: 2
+    RefIds:
+    - rid: 2660121529798885596
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1755759528471

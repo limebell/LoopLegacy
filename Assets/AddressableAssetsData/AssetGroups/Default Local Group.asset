@@ -1,0 +1,1308 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Default Local Group
+  m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
+  m_GroupName: Default Local Group
+  m_GUID: 87b8fd85affe54e429f042faa17640c8
+  m_SerializeEntries:
+  - m_GUID: 003b00305b9f61b4d977d1a288b3cb98
+    m_Address: Images/Enemies/lake-3_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 00abf4b3d82147a4c9e2187e47dc2c76
+    m_Address: Images/Relics/bp_boost
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 011f419d64c83234d973e7ea0f394202
+    m_Address: Images/Enemies/Bosses/boss_8
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0226907d64819bf42a93dda5df829fd2
+    m_Address: Images/Cutscenes/initial_3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 02ad12be8a7a3a4439a5761a67ae3ecd
+    m_Address: Images/Equipments/Armors/2
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 03c396bd609e94f4aa32195ab3939929
+    m_Address: Images/Enemies/deep-forest-swamp-0_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 04fffce729b96674dbc2a2093c338628
+    m_Address: Images/Equipments/Weapons/0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0636a85d473db5b44954a38683f4e810
+    m_Address: Images/Equipments/Weapons/23
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 080691f8a23ebca4db56dfadef59e4e8
+    m_Address: Images/Enemies/spring-pool-1_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 084d14d3e801b164493f74ed57f64424
+    m_Address: Images/Equipments/Weapons/20
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 08b1e8cdb2d18d04f8dc98835db0f388
+    m_Address: Images/Enemies/forest-ice-0_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 093a60eb04b3da8468af4fb89b971f19
+    m_Address: Images/Enemies/start-7_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 09d44d8995f9a2348af41a494d53990c
+    m_Address: Images/Relics/fixed_dmg
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0d2cc4737ace2254ba2568416305f2dc
+    m_Address: Images/Enemies/ice-0_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0ef7c607cc008104f969bd6082cb60a4
+    m_Address: Images/Relics/crit_rate
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0f1452aab721db74382fe54c16b6802c
+    m_Address: Images/Enemies/cemetery-0_2
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0f3361554d9bb4d4eb562c5495346c66
+    m_Address: Images/Enemies/start-8_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0feeaf61a4d3f80439ed616910733a64
+    m_Address: Images/Enemies/high-mountain-1_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 109982a5900e495439007c6dfb222bce
+    m_Address: Images/Equipments/Armors/14
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1287075456d9f8c48a2ee10e0b1516e3
+    m_Address: Images/Enemies/spring-pool-4_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 12c6711f216b2bb47936dd25ef32163d
+    m_Address: Images/Enemies/deep-forest-2_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 13b2d3bc05f812d478613aa21736ad7e
+    m_Address: Images/Equipments/Weapons/9
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 14746587a698a414db60d3bcc0a95d90
+    m_Address: Images/Enemies/spring-pool-4_1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 16239e6c5befb0140b68032f7b80771b
+    m_Address: Images/Enemies/forest-2_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 168c12966db565649a5efea5426a0f36
+    m_Address: Images/Relics/fixed_dmg_enemy_hp
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 16c5104afc72cc04b9f517af1c52ba4c
+    m_Address: Images/Equipments/Weapons/7
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 19fc9823bb52a6740bd99279a6baa9c3
+    m_Address: Images/Enemies/lake-deep-forest-2_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1a78e17aaa8fb2c47a7ebed003f6df5c
+    m_Address: Images/Enemies/swamp-8_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1aea6397efef5274e93fd9a9a3565af9
+    m_Address: Images/Enemies/ice-5_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1bffe8138326f2e448ae8c35a2c1ac6d
+    m_Address: Images/Enemies/castle-19_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1e5623186debfc946b25034340676e2f
+    m_Address: Images/Enemies/castle-4_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1f3d39c273c18b34baa326b437cbf66e
+    m_Address: Images/Enemies/ice-7_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1f61a1bdc20fc4b4695ff6b30731a915
+    m_Address: Images/Enemies/swamp-deep-forest-0_1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 20e2f302d7bbc1a46930c6b024c0cde7
+    m_Address: Images/Relics/dmg_boost_per_defeat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 21954f28fca258e4e824661c0ea83f40
+    m_Address: Images/Enemies/Bosses/boss_7
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 21cc1e846f587dd43b3a3e882f41bc07
+    m_Address: Data/weapon_table
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 226a44e5752fa4d4d9003ace4da2628c
+    m_Address: Images/Enemies/lake-deep-forest-0_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 23b5200f3b83e42468862fb70fb0a701
+    m_Address: Images/Enemies/forest-3_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 23ee28bb6cce8e14891b745579920d78
+    m_Address: Images/Relics/speed_boost
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 24129e1c937bb4946bdc4282ba6f2e8a
+    m_Address: Data/Cutscenes/tutorial_territory
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2519fe2ff4aaf6f4f9f0509200f378cf
+    m_Address: Images/Relics/exp_boost
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 272007c90fe9b5944840ad7dfebd4b9c
+    m_Address: Images/Relics/weak_every_hit
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 279fbe6b8826a0b49a44775f24dae953
+    m_Address: Images/Enemies/Bosses/boss_4
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2909562757212204b8276dba226f01ce
+    m_Address: Images/NPC/shop_maid
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2b7d3920f8cdc0445a433436cdcd9745
+    m_Address: Images/Relics/execute
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2cb892367dbe44a4d818da1118abf6f3
+    m_Address: Images/Relics/drain
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2cf75354701b5714f9236b0a5c630348
+    m_Address: Images/Enemies/start-6_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2d25c631d5cd24e4895503bbeadda5ea
+    m_Address: Images/Relics/stat_boost_hp
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2e759ca5ad58afa43867e313b0c002af
+    m_Address: Data/relic_table
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2f20782df0b15f5448d1496bc61698f3
+    m_Address: Images/Enemies/castle-12_1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 30dcac0001db7c34a99e8faf9f474f64
+    m_Address: Images/Enemies/desert-1_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 30e5fc92dd6c4f142b3e69477b8b7f49
+    m_Address: Images/Enemies/start-0_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 324d31125b1ea9246bb6056faaf9f434
+    m_Address: Images/Enemies/start-3_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 325533d81e5910948b9206d00143c19f
+    m_Address: Images/Relics/dmg_boost_when_full_hp
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3396323893cf80c4e9b02fba8b1a78bd
+    m_Address: Images/Enemies/swamp-3_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 34405d8c91aefa947a6aa56b877ed08d
+    m_Address: Images/Equipments/Armors/10
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 35470cd0e4d655d40b170b41aafbcbaf
+    m_Address: Images/Enemies/lake-0_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 37a68fa83a0fc194d931e15e49c02eb8
+    m_Address: Images/Enemies/forest-lake-2_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 38e04abdcfc5f374d9d8f6685a9e5452
+    m_Address: Images/Enemies/deep-forest-swamp-3_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 394195788c41cd04587aaf3049b2247a
+    m_Address: Images/Enemies/cemetery-0_1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 39ff0c300f5a92c4c8912ba71dce6613
+    m_Address: Images/Relics/stat_boost_def
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3a6187dde4b01c54e9864c576db8e4b9
+    m_Address: Images/Relics/stat_boost_atk_per_hp
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3a76f707c0564ef48a3c5d3ba7a433d3
+    m_Address: Images/Equipments/Armors/6
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3a9879edfc11c0f4db714deafc5d6616
+    m_Address: Images/Enemies/ice-6_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 401a975bd4222514e84700a4742df131
+    m_Address: Images/Equipments/Weapons/3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 40f8bad8c55040d4f90c0cb9a23d8501
+    m_Address: Data/Cutscenes/tutorial_script
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 42c37aa853e4d534cac01e0c2d25a63d
+    m_Address: Images/Enemies/ice-1_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 42fd11b1bd884014b8909299914bc572
+    m_Address: Images/Cutscenes/initial_4
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4386e906d3327594fa6a233514ffc4ca
+    m_Address: Images/Enemies/castle-18_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 456a2e793d1a04a4b8e4f9dfe5db4b48
+    m_Address: Images/Enemies/forest-4_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4631700c81c2c284897619e108d9eb1a
+    m_Address: Images/Enemies/secret-hallway-2_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 46b17f61f402c784e90da458df5f0a13
+    m_Address: Images/Enemies/pyramid-3_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 478805610b86d5a42bf8725f819661b7
+    m_Address: Images/Enemies/lake-deep-forest-3_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 48154a508c0ad814cbb1c4de53978d25
+    m_Address: Images/Equipments/Armors/12
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 482665b21e7c2b748b7841d31e31ab2f
+    m_Address: Images/Enemies/lake-8_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 48ad8ed1bf4faf04baefce45146d7773
+    m_Address: Images/Relics/bp_loss_prevent_victory
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 494d72db903fe814084cc12b384ad407
+    m_Address: Images/Equipments/Weapons/11
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4c1a69226929f4e42a0288b1facf9a4d
+    m_Address: Images/Enemies/forest-5_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4d6a4f915088476458fd82f5126fc095
+    m_Address: Images/Enemies/spring-pool-6_1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4e938bbd79e09814e9bd74f4f64977a3
+    m_Address: Images/Equipments/Weapons/15
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4f2bf57953d5f5b4f8906a8e5294ffe2
+    m_Address: Images/Equipments/Weapons/8
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4f46d990bf8ca4f4b8abb905a19cdfa3
+    m_Address: Images/Equipments/Armors/9
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4f6b09174a041cb4e9b76b1d73bd4d70
+    m_Address: Images/Enemies/start-5_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4fe53b799d81e7548994303103f2739b
+    m_Address: Images/Relics/stat_point_boost
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 518644210dbc3e84795ecca6a53112fc
+    m_Address: Images/Enemies/Bosses/boss_10
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 51f764e73cb64b04099978734c74372e
+    m_Address: Images/Enemies/Bosses/boss_3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5275a43021e288342ba094f7d0faa48e
+    m_Address: Images/Enemies/ice-2_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5308cba2e1c8d6b42bb826aa436a5e69
+    m_Address: Images/Enemies/pyramid-5_3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5349c01c09f4978449cba86cb8ce3c25
+    m_Address: Images/Enemies/castle-21_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 55e83ec492efd6d47a5bd3ed210ddfeb
+    m_Address: Images/Enemies/lake-6_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 570b54de3e5956f429e5ea5fbba02ce7
+    m_Address: Images/Enemies/spring-pool-5_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 57cb46686fe727b459098ee195c4ed94
+    m_Address: Images/Enemies/pyramid-2_1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 57e6bf8d78bb13a44874ca73d71441f8
+    m_Address: Images/Equipments/Weapons/2
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 58839f58bad886147923ee48e3b16b78
+    m_Address: Images/Enemies/start-4_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 59b50ce6d9f505443966fad0668b6d2a
+    m_Address: Images/Enemies/castle-22_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5a24eb99a29a1c94cb6c5f20867c4b5e
+    m_Address: Images/Relics/stat_boost_collect_armor
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5a59aa5bf2849084e95f3c3343e928ef
+    m_Address: Data/boss_table
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5ae741d44edb4b546a835ddb6677d14f
+    m_Address: Images/Enemies/high-mountain-3_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5d4d82cf3c8be134a9831299a76d6265
+    m_Address: Images/Enemies/pyramid-1_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5ec072062230b5a4789d22d5de1b5d28
+    m_Address: Images/Equipments/Armors/3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5f549cf658e0680478e6b12713827fb5
+    m_Address: Images/Enemies/spring-pool-3_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 606379b17a79f1b4eb959a61281151ee
+    m_Address: Images/Equipments/Weapons/12
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 61f2b46f954a4d242b589a011667aad2
+    m_Address: Images/Equipments/Weapons/14
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 64868bcfb8543464693e3e2c722ca751
+    m_Address: Images/Enemies/lake-1_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 652360dbbf6d8694692e42b311bd64ec
+    m_Address: Images/Enemies/deep-forest-swamp-2_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6581eb1cf158abf41bc49e9c5b134c0f
+    m_Address: Images/Equipments/Weapons/18
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 658ab4b150d6a3f4dab85da2cd81b086
+    m_Address: Images/Enemies/deep-forest-3_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 662d018dfacc3e14aadd7909c0db18ed
+    m_Address: Images/Relics/evade_rate
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 674046a5603328b4c989b737229dc210
+    m_Address: Images/Enemies/forest-lake-0_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 674b14403d9b4414ab646b81806715d2
+    m_Address: Images/Equipments/Weapons/4
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 67725df16f508ed438f3bc50482f65bc
+    m_Address: Images/Relics/restart_with_gold
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 679f20f90a9e2d7429b2d9c9cb0acae6
+    m_Address: Images/Equipments/Weapons/13
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 67e5592b37d69ed4dbc17dfd4b032aac
+    m_Address: Images/Equipments/Weapons/10
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 68465def02575a843a54b1dfb2aaaf1a
+    m_Address: Images/Relics/reflect
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 68fc300c74d6d6b489e882bcfdbadf09
+    m_Address: Images/Enemies/castle-1_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6b1da4db2ffd9ef42834c267c0848da3
+    m_Address: Images/Enemies/forest-7_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6b878e61b08821a4d9dce9ddc71ff6ea
+    m_Address: Images/Relics/dmg_boost_per_kill
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6c011768dd20579409c58e108811e6c1
+    m_Address: Images/Enemies/lake-5_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6d290da2a407ed14dac0d7ebbc20f55c
+    m_Address: Images/Enemies/swamp-0_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6f5ecb33c52652149a49d0db37812f55
+    m_Address: Images/Equipments/Armors/1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 704cae4c715f90843b11c897e1c1a2d7
+    m_Address: Images/Enemies/castle-2_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 711f642f2ee602446b66260ae8aff07c
+    m_Address: Images/Enemies/Bosses/boss_1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 71a86ca8d59ece64bae933a6a4b2f324
+    m_Address: Images/Relics/evade_first_n
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 72b0c7a21f36cb24fa4fd5e7a093e8c3
+    m_Address: Images/Enemies/Bosses/boss_6
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 736defc94cf1d2a4faaa603f908438c1
+    m_Address: Images/Enemies/castle-5_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 740e2472679afe34cb1d9393d5e82a22
+    m_Address: Images/Relics/stat_boost_collect_weapon
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 744f4557f3c8e7a418aececb25ff4f68
+    m_Address: Images/Relics/chain_rate
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7520d95b5dbacb242971fbc7fb39f16d
+    m_Address: Images/Enemies/castle-13_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 75c77902ba187874cb1c382269ed2481
+    m_Address: Images/Relics/decrease_encounter_increment
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 760fc6666e48f7a4db9ac5add346a50b
+    m_Address: Images/Equipments/Weapons/17
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7aff9a13e7f1d50479f7d009592836e0
+    m_Address: Images/Enemies/deep-forest-5_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7b1399d473f53574ca8ae82cbf100eda
+    m_Address: Images/Relics/chain_first
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7e208030c05552d47af60806d2fb4db4
+    m_Address: Data/armor_table
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7f0c0a66aad991a4daeb93337717bf4c
+    m_Address: Images/Equipments/Weapons/22
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7fc6238065713f54d91e6651c08617c3
+    m_Address: Images/Relics/crit_dmg
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 81679b60c3bde8044bf50901750b60f6
+    m_Address: Images/Relics/dmg_boost_normal
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 82885c684067fb843a2f345dc68a6e7e
+    m_Address: Images/Equipments/Weapons/5
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 83ce39cd76d652a4f9970991286e74f7
+    m_Address: Images/Enemies/high-mountain-5_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 84161701c8154744b967e0f1727997ff
+    m_Address: Images/Enemies/secret-hallway-1_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8500bb1ef1ee4ba41b07f068f0b857af
+    m_Address: Images/Equipments/Armors/11
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 85eea44a0e8dbda469a8e75a99108483
+    m_Address: Data/Cutscenes/bard
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 876f50d36087c794890ecfb98e547138
+    m_Address: Images/Enemies/swamp-6_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8817742c0b9e8654ca479b74618f3f6b
+    m_Address: Images/Enemies/pyramid-0_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 898babbf3a683fb479bb685e18cf2fe2
+    m_Address: Images/Relics/reduce_dmg_higher_level
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8adca295e71f69146b0c00fa09678fea
+    m_Address: Images/Relics/dmg_gradual_decrease
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8cc8945ef744da74dbe722f921dd2f09
+    m_Address: Images/Enemies/castle-24_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8d9ddf959db69a840a8283d688c44df3
+    m_Address: Images/Enemies/desert-2_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8da9fb5e0caeb954c8a3d2955f580891
+    m_Address: Images/Equipments/Armors/8
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9017234013a531c409bc849ea2d2251a
+    m_Address: Data/monster_table
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 920fbaaaadbff2a40a2bed5072f916dd
+    m_Address: Images/Equipments/Weapons/1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9306c996cdfc8e44caed292955206984
+    m_Address: Images/Enemies/castle-9_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 93b6f8bc863d4ea439f7b058fb3f60fb
+    m_Address: Images/Enemies/115-0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 940d00617c59d9043a358a0af100864b
+    m_Address: Images/Enemies/forest-ice-2_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 951ab88ed06014849ae2ee84c53334cd
+    m_Address: Images/Relics/gold_boost
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 952e30148270a824cbfa087231318760
+    m_Address: Images/Enemies/spring-pool-6_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 959d31e61d838f7418bfcec8591eb134
+    m_Address: Images/Enemies/high-mountain-2_1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9685af79551536c40b1a0fcf5e862cef
+    m_Address: Images/Enemies/desert-0_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9a7b688dc5182a44d99951efcbe9d7bc
+    m_Address: Images/Enemies/castle-3_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9ace81429caa72b43924b85f00dc2631
+    m_Address: Images/Equipments/Weapons/6
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9b7546e9a9bc0c745802af19be5c7697
+    m_Address: Images/Enemies/ice-3_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9cdf8415330bd9a448ef0a3c94168518
+    m_Address: Images/Equipments/Armors/7
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9e0f3643e40766d47abf35f1604a71ff
+    m_Address: Images/Enemies/84-0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9e3ab854d3a98684898c88e9719873c9
+    m_Address: Images/Enemies/swamp-7_1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9f0e86205d3008849b2c93d420e286a6
+    m_Address: Images/Enemies/high-mountain-4_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a00a1007a0ae8994fb1ddd78f1e72ce8
+    m_Address: Images/Enemies/castle-22_1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a078a7a763e19294eafa430f2d516937
+    m_Address: Images/Enemies/Bosses/boss_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a0a65d83a72012a44a0701b47e61bc8b
+    m_Address: Images/Enemies/lake-7_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a19335b6ea842bd4eb7361f550c3255b
+    m_Address: Images/Relics/stat_boost_per_relic_count
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a1c7c7289f70ed644ae03efee4c76c22
+    m_Address: Images/Relics/dmg_gradual_increase
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a2b4a203c87b85e44865d76f1752a328
+    m_Address: Images/Relics/fixed_dmg_per_hit
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a3c4cd0df38be044dad65a1aba4cd6ec
+    m_Address: Images/Enemies/spring-pool-0_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a3da1a2b715ab7141a0714229e419841
+    m_Address: Images/Enemies/pyramid-5_1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a3dc9d6be97b33447b59738f4ea220b0
+    m_Address: Images/Cutscenes/initial_1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a3f1d5eb4c88e5541bd74c6a46b08271
+    m_Address: Images/Enemies/castle-17_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a5cec87d47497aa4793740803b4f77f0
+    m_Address: Images/Enemies/forest-lake-3_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a776636ed009ad64588252187889a503
+    m_Address: Images/Enemies/castle-0_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ac7eac4902fba734f880668f6aa95eb9
+    m_Address: Images/Enemies/swamp-7_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ad468bc1ed0376b41b387be9caace994
+    m_Address: Images/Enemies/swamp-2_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: af3e7036959b66d409208d8fd26047f5
+    m_Address: Images/Enemies/castle-23_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: af861c21a0b49d042b9fba06ed5a25fd
+    m_Address: Images/Enemies/forest-2_1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: afcde17bfa759914cb0b167b5fa4d9bc
+    m_Address: Images/Equipments/Armors/5
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b13e415c4269ed44bb01bee1680cb647
+    m_Address: Images/Enemies/castle-14_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b1e1601a3f2e40249b48c9a31fa58526
+    m_Address: Images/Relics/dmg_boost_when_low_hp
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b24b7b7a6b3d44c4790a804b713ef59a
+    m_Address: Images/Enemies/castle-12_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b3197358c71697d439417a331d0db478
+    m_Address: Images/Enemies/deep-forest-4_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b64b80bbb3c17d64192de7c3911d9fc9
+    m_Address: Images/Enemies/forest-0_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b65282db3e45b3148b0df66dd5617def
+    m_Address: Images/Relics/fixed_dmg_per_gold
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b6efecbb94037ca4e9bfa7059602a122
+    m_Address: Images/Enemies/start-10_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b94ee1237dfa76c4aaab84c009802d90
+    m_Address: Images/Enemies/pyramid-2_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ba59acac1b5fa35478e40b200005f28d
+    m_Address: Images/Relics/drop_boost
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ba82f240cd65aaf47a3bd1219558882f
+    m_Address: Images/Enemies/lake-2_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bbff00261cbfa3949ba6a633b8920d13
+    m_Address: Images/Enemies/castle-7_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bd7fb066a8b34e54a95d5b0da13a4c2b
+    m_Address: Images/Enemies/start-1_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: be081edde224e864c8ad093347fe4ae6
+    m_Address: Images/Enemies/pyramid-5_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: beaa043c7a02b244286fb8da3bca6e74
+    m_Address: Images/Relics/heal_every_turn
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c0471ede13275af4e8c6e769a05e2184
+    m_Address: Images/Enemies/swamp-4_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c065ba8def11cbd47b4cb990c144d3da
+    m_Address: Images/Enemies/castle-6_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c1f4a24e7339d0345bab1bb472767435
+    m_Address: Images/Enemies/desert-3_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c216f0692e69b94469ea06d1697fc713
+    m_Address: Images/Enemies/cemetery-0_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c2f01f6c557a8b54a86daaf23c19e9bc
+    m_Address: Data/upgrade_table
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c361b82a371bc2e4ab1a5b3dd2ac8dbc
+    m_Address: Images/Relics/bp_loss_prevent_defeat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c483837e2118a3e44b23db4637c3d726
+    m_Address: Images/Enemies/castle-16_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c5bbe12c345bb3c4f8d95b40183e9567
+    m_Address: Images/Enemies/ice-4_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c60342d5430bcb64e80c5d5f54fef239
+    m_Address: Images/Enemies/pyramid-5_2
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ccde2727052b70e468c23b2cdec5abef
+    m_Address: Images/Enemies/deep-forest-0_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cd20712a370ced54581497a3fc86292d
+    m_Address: Images/Enemies/swamp-deep-forest-0_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cd4517816fb26794dae6a793c771b82e
+    m_Address: Images/Cutscenes/initial_2
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cf0791c697ad2f3409e5fa0cec1fdcf3
+    m_Address: Images/Enemies/castle-20_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cf7fc70b4e6f4c54b844f9f471b4911a
+    m_Address: Images/Enemies/high-mountain-2_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d15121600ef77964d81ce38e774fd3bf
+    m_Address: Images/Enemies/lake-deep-forest-1_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d3cd411dddf45a8478a7b55c70241837
+    m_Address: Images/Enemies/pyramid-4_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d6fea55da0c9dc448a076625f00fdb1c
+    m_Address: Images/Relics/dmg_boost_boss
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d83b01c8f9e86f540b9c3860b8a8dcf1
+    m_Address: Images/Enemies/spring-pool-2_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d8474af90d165e6498b5ab2049af7346
+    m_Address: Images/Enemies/forest-lake-1_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d84f9ff26cc68b248a579ade703d69ec
+    m_Address: Images/Enemies/secret-hallway-3_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d9df26b428a9e7b459201b55be913064
+    m_Address: Data/Cutscenes/initial_cutscene
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: db888aba895544d4cb646f8947c758ec
+    m_Address: Images/Enemies/deep-forest-1_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dc0dd4efe9a9891409e0509c1931b13b
+    m_Address: Images/Enemies/castle-1_1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dc79434f234137647ad8fa403c9d03c3
+    m_Address: Images/Relics/crit_first_n
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dd8775b7b0d72cf4ba4094f9cd3f0e89
+    m_Address: Images/Relics/dmg_drop_boost_monster_codex
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: deb2a18274444b34b8ea6842ccf99d4b
+    m_Address: Images/Relics/execute_low_health
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ded905dc7e8b7f5479aa3b27783ec93a
+    m_Address: Images/Enemies/castle-10_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: df13787bc3e06a240bc59b7f5c36000a
+    m_Address: Images/Enemies/forest-ice-1_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e0ac53c3fc9b2ea4da287811844cc183
+    m_Address: Images/Enemies/swamp-5_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e207a6898f6084d449829063ba0f0e54
+    m_Address: Images/Enemies/Bosses/boss_9
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e23c6ba3ca94d004aa6e34d5b067e9f6
+    m_Address: Images/Enemies/lake-4_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e30ee226affc35d4aa17a7a5fe611092
+    m_Address: Images/Enemies/forest-6_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e3417ef9410b90a4683fdbd726ab8d8c
+    m_Address: Images/Enemies/deep-forest-swamp-1_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e5320de4c3e56a54386d4ace00ee51e6
+    m_Address: Images/Enemies/desert-4_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e698d7f81ea5f3c4699e3fd5dfaf29f0
+    m_Address: Images/Relics/stat_boost_luc
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ea5275362cdee644c94b393184d7032d
+    m_Address: Images/Cutscenes/initial_5
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ea8ebd38059a4fe43918b9e39bf9dfbe
+    m_Address: Images/Enemies/Bosses/boss_11
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ead01727746e8b8478d42a889acbaa41
+    m_Address: Images/Equipments/Armors/0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: eafda27708edd5b419af1bd589ccccc4
+    m_Address: Images/Equipments/Weapons/19
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: eb779df90c17c424c987c99620b96ea4
+    m_Address: Images/Relics/stat_boost_atk
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ecdcafb471fddba40a30e48f422731e5
+    m_Address: Images/Equipments/Armors/13
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: edb45d9a2706cf1409dcc4c45b8a5fb9
+    m_Address: Images/Enemies/high-mountain-0_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: eec8b224ad629f840a8f5372cefb343b
+    m_Address: Images/Equipments/Weapons/16
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ef7b4c3e16891c843aa533986a48e4c1
+    m_Address: Images/Enemies/castle-0_1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f21d40c737c1cb540b0319c2c084421d
+    m_Address: Images/Equipments/Weapons/21
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f2a4f2047e15f2f4fb826d4493c76496
+    m_Address: Images/Enemies/Bosses/boss_5
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f2d069969bb35dd4abb2881d16b60fa7
+    m_Address: Images/Enemies/castle-11_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f30e5ad93bdac5e4586a1aac69266c89
+    m_Address: Images/Enemies/castle-0_2
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f4925bf56e284f142a73f6074c70cc23
+    m_Address: Images/Relics/crit_every_n
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f51ef88ae5295c045b70e623cb4a237c
+    m_Address: Images/Enemies/start-2_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f56018f2eb0fdc141b34827286b4048c
+    m_Address: Images/Enemies/swamp-1_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f57056f6ac06e0d42b44c5b8df618ed1
+    m_Address: Images/Enemies/start-9_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f583602e309bbcf40a1807bffd7664b8
+    m_Address: Images/Enemies/Bosses/boss_2
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f59a20c3ccd74624e8ce09a797317243
+    m_Address: Images/Enemies/forest-1_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f835c5de1b1d27d4ab1f4191e36c3fdd
+    m_Address: Images/Enemies/secret-hallway-0_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f9a8dd3dec68101498fb827b28a67245
+    m_Address: Data/region_table
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fa716bc9c2301964289c5b13e282c2ec
+    m_Address: Images/Relics/execute_lower_level
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: faa9061ef6d22cf4d9a24ff089fb89e4
+    m_Address: Images/UI/lock
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fd7136010bd609f4e92539765fe44f54
+    m_Address: Images/Enemies/castle-8_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fe4bda5c2b6977446a44fbd9a50a659a
+    m_Address: Images/Enemies/castle-15_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ffc4c6c2be4f2da4ea921969e0b1361e
+    m_Address: Images/Relics/equipment_base_spec_boost
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fff0ec6300c5eac46890150bfdf96e31
+    m_Address: Images/Equipments/Armors/4
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 4c12a90858fe64b4abc164f8577966c6, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: f4e038dd47863b94a948f806ab28ea73, type: 2}
+    - {fileID: 11400000, guid: a2c874f3a2f4cc947ab1de3bda4d6092, type: 2}

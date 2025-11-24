@@ -1,0 +1,176 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Upgrade Shared Data
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.SharedTableData
+  m_TableCollectionName: Upgrade
+  m_TableCollectionNameGuidString: 06debbabbd2cda542bec3d0e0d57d904
+  m_Entries:
+  - m_Id: 18720751616
+    m_Key: BaseHP
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10260477742940160
+    m_Key: BaseHP-description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44100485120
+    m_Key: BaseATK
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10260477780688896
+    m_Key: BaseATK-description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61028696064
+    m_Key: BaseDEF
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10260477780688897
+    m_Key: BaseDEF-description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73250897920
+    m_Key: BaseLUC
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10260477780688898
+    m_Key: BaseLUC-description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93421305856
+    m_Key: BoostExp
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10260477780688899
+    m_Key: BoostExp-description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10255981826539520
+    m_Key: BoostGold
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10260477780688900
+    m_Key: BoostGold-description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 127592300544
+    m_Key: MaxRelicCount
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4703584144326656
+    m_Key: MaxRelicCount-description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1234260846968832
+    m_Key: MovementSpeed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4703584228212736
+    m_Key: MovementSpeed-description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1234390711009280
+    m_Key: EncounterRate
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4703584228212737
+    m_Key: EncounterRate-description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1234472864841728
+    m_Key: RelicRewardChoiceCount
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4703584228212738
+    m_Key: RelicRewardChoiceCount-description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1234563612803072
+    m_Key: RelicRewardRerollCount
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4703584228212739
+    m_Key: RelicRewardRerollCount-description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1234657460355072
+    m_Key: RelicRewardRarity
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4703584228212740
+    m_Key: RelicRewardRarity-description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1250240042106880
+    m_Key: InstantEncounter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4703584228212741
+    m_Key: InstantEncounter-description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1580000312033280
+    m_Key: InitialRelicSelect
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4703584232407040
+    m_Key: InitialRelicSelect-description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4096865072578560
+    m_Key: TerritoryLevel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4096906654908416
+    m_Key: TerritoryLevel-description-0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4097115694825472
+    m_Key: TerritoryLevel-description-1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4097505333084160
+    m_Key: TerritoryLevel-description-2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4098827100880896
+    m_Key: TerritoryLevel-description-3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4783163525562368
+    m_Key: TerritoryLevel-description-4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4783667341164544
+    m_Key: TerritoryLevel-description-5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9053345701953536
+    m_Key: LibraryManagement
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9053698983985152
+    m_Key: LibraryManagement-description
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 3630816571301298272
+  references:
+    version: 2
+    RefIds:
+    - rid: 3630816571301298272
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1761016453722
