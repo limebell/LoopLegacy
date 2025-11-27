@@ -116,12 +116,12 @@ class PlayerStats:
     
         # 초기 스탯 설정
         if initial_stats:
-            self.stats[StatType.HP] = initial_stats.get('hp', 10)
+            self.stats[StatType.HP] = initial_stats.get('hp', 100)
             self.stats[StatType.ATK] = initial_stats.get('atk', 0)
             self.stats[StatType.DEF] = initial_stats.get('def', 0)
             self.stats[StatType.LUC] = initial_stats.get('luc', 0)
         else:
-            self.stats[StatType.HP] = 10  # 기본 HP
+            self.stats[StatType.HP] = 100  # 기본 HP
         
         # 스탯 투자
         if level > 1 and stat_distribution:
@@ -134,10 +134,22 @@ class PlayerStats:
     
     
     def add_stat(self, stat_type: StatType, amount: int):
-        """스탯 포인트 사용"""
+        """스탯 포인트 사용 (스탯 타입별 배수 적용)"""
         if amount <= 0:
             return False
-        self.stats[stat_type] += amount
+        
+        # 스탯 타입별 배수
+        stat_multiplier = 1
+        if stat_type == StatType.HP:
+            stat_multiplier = 4
+        elif stat_type == StatType.ATK:
+            stat_multiplier = 2
+        elif stat_type == StatType.DEF:
+            stat_multiplier = 2
+        elif stat_type == StatType.LUC:
+            stat_multiplier = 1
+        
+        self.stats[stat_type] += amount * stat_multiplier
         return True
     
     def get_stat(self, stat_type: StatType) -> int:
@@ -152,69 +164,73 @@ class MonsterStatCalculator:
     def __init__(self):
         # 기본 스탯 계수들
         self.base_gold = 120
-        self.base_exp = 20
+        self.base_exp = 16
         
         # 레벨별 스탯 증가 계수 (선형 증가량)
-        self.gold_growth = 5  # 골드는 레벨당 5 증가
+        self.gold_growth = 3  # 골드는 레벨당 3 증가
         
     def calculate_stats(self, level: int) -> MonsterStats:
         """레벨에 따른 몬스터 스탯 계산 (단계별 성장률 조정)"""
         if level <= 0:
             raise ValueError("레벨은 1 이상이어야 합니다.")
         
-        # 몬스터 스탯 계산 (체력 2배, 공격력 0.6배 조정)
+        # 몬스터 스탯 계산 - 구간별 공식 (HP 70%)
         if level <= 300:
             # 초반부: 플레이어 유리
-            hp = int(5.8 * level * 2)
-            atk = int(0.76 * level * 0.6)
+            hp = int(23.2 * level * 0.7)
+            atk = int(1.8 * level)
         elif level <= 800:
             # 초중반부: 플레이어 약간 유리
-            hp = int((1740 + 7.5 * (level - 300)) * 2)
-            atk = int((228 + 0.912 * (level - 300)) * 0.6)
+            hp = int((6960 + 30.0 * (level - 300)) * 0.7)
+            atk = int(540 + 2.1 * (level - 300))
         elif level <= 1800:
             # 중반부: 균형잡힌 전투
-            hp = int((5520 + 9.0 * (level - 800)) * 2)
-            atk = int((684 + 1.064 * (level - 800)) * 0.6)
+            hp = int((21960 + 36.0 * (level - 800)) * 0.7)
+            atk = int(1590 + 2.5 * (level - 800))
         elif level <= 3333:
             # 중후반부: 몬스터 강화
-            hp = int((14520 + 11.5 * (level - 1800)) * 2)
-            atk = int((1672 + 1.368 * (level - 1800)) * 0.6)
+            hp = int((57960 + 46.0 * (level - 1800)) * 0.7)
+            atk = int(4090 + 3.2 * (level - 1800))
         elif level <= 5000:
             # 후반부: 몬스터 압도적
-            hp = int((32149.5 + 12.0 * (level - 3333)) * 2)
-            atk = int((3769.144 + 1.368 * (level - 3333)) * 0.6)
+            hp = int((128478 + 48.0 * (level - 3333)) * 0.7)
+            atk = int(8995.6 + 3.2 * (level - 3333))
         elif level <= 20000:
             # 극후반부: 매우 어려움
-            hp = int((52153.5 + 16.0 * (level - 5000)) * 2)
-            atk = int((6049.6 + 1.824 * (level - 5000)) * 0.6)
+            hp = int((208494 + 64.0 * (level - 5000)) * 0.7)
+            atk = int(14330.0 + 4.3 * (level - 5000))
         elif level <= 30000:
             # 초극후반부: 극한 난이도
-            hp = int((292153.5 + 20.0 * (level - 20000)) * 2)
-            atk = int((33413.144 + 2.304 * (level - 20000)) * 0.6)
+            hp = int((1168494 + 80.0 * (level - 20000)) * 0.7)
+            atk = int(78830.0 + 5.5 * (level - 20000))
         elif level <= 50000:
             # 초극후반부2: 극한 난이도
-            hp = int((492153.5 + 24.0 * (level - 30000)) * 2)
-            atk = int((56453.144 + 2.784 * (level - 30000)) * 0.6)
+            hp = int((1968494 + 96.0 * (level - 30000)) * 0.7)
+            atk = int(133830.0 + 6.6 * (level - 30000))
         elif level <= 60000:
             # 초극후반부3: 극한 난이도
-            hp = int((972153.5 + 28.0 * (level - 50000)) * 2)
-            atk = int((112133.144 + 3.264 * (level - 50000)) * 0.6)
+            hp = int((3888494 + 112.0 * (level - 50000)) * 0.7)
+            atk = int(265830.0 + 7.8 * (level - 50000))
         elif level <= 70000:
             # 초극후반부4: 극한 난이도
-            hp = int((1252153.5 + 32.0 * (level - 60000)) * 2)
-            atk = int((146093.144 + 3.744 * (level - 60000)) * 0.6)
+            hp = int((5008494 + 128.0 * (level - 60000)) * 0.7)
+            atk = int(343830.0 + 8.9 * (level - 60000))
         elif level <= 80000:
             # 초극후반부5: 극한 난이도
-            hp = int((1572153.5 + 32.0 * (level - 70000)) * 2)
-            atk = int((185093.144 + 3.744 * (level - 70000)) * 0.6)
+            hp = int((6288494 + 128.0 * (level - 70000)) * 0.7)
+            atk = int(432830.0 + 8.9 * (level - 70000))
         elif level <= 90000:
             # 초극후반부6: 극한 난이도
-            hp = int((1892153.5 + 32.0 * (level - 80000)) * 2)
-            atk = int((224093.144 + 3.744 * (level - 80000)) * 0.6)
+            hp = int((7568494 + 128.0 * (level - 80000)) * 0.7)
+            atk = int(521830.0 + 8.9 * (level - 80000))
         else:
             # 최종구간: 최종 난이도
-            hp = int((2212153.5 + 36.0 * (level - 90000)) * 2)
-            atk = int((263093.144 + 4.224 * (level - 90000)) * 0.6)
+            hp = int((8848494 + 144.0 * (level - 90000)) * 0.7)
+            atk = int(610830.0 + 10.1 * (level - 90000))
+        
+        # 지수함수 근사 (참고용 주석)
+        # hp = int(8.9 * (level ** 1.19))
+        # atk = int(0.7 * (level ** 1.18))
         
         gold = int(self.base_gold + self.gold_growth * (level ** 0.8))
         # 경험치 공식: level^1.7 * log(level + 1) * level * 2 / (10000 + level)
@@ -276,6 +292,13 @@ class BattleSimulator:
         # 대미지 계산 (랜덤 변동 80%~120%)
         damage_multiplier = 0.8 + random.uniform(0, 1) * 0.4
         damage = int(math.ceil(base_damage * damage_multiplier))
+        
+        # 몬스터 ATK 기반 대미지 감소 (실험적 기능 - ATK * 0.1 사용)
+        monster_atk = self.monster.atk
+        if damage > 0 and monster_atk > 0:
+            atk_tenth = monster_atk * 0.1
+            reduction_rate = atk_tenth / (damage + atk_tenth)
+            damage = int(damage * (1 - reduction_rate))
         
         # 대미지 적용
         self.current_monster_hp = max(0, self.current_monster_hp - damage)

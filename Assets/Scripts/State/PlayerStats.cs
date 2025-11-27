@@ -3,8 +3,10 @@ using LoopLegacy.Battle.RelicEffects;
 using LoopLegacy.Manager;
 using R3;
 using System;
+using System.Diagnostics;
 using System.Linq;
 using System.Numerics;
+using System.Threading;
 using System.Threading.Tasks;
 using UnityEngine;
 
@@ -71,7 +73,25 @@ namespace LoopLegacy.State
             }
 
             StatPoints.Value -= amount;
-            Stats[(int)stat].Value += amount;
+            int statMultiplier = 1;
+            switch (stat)
+            {
+                case StatType.HP:
+                    statMultiplier = 4;
+                    break;
+                case StatType.ATK:
+                    statMultiplier = 2;
+                    break;
+                case StatType.DEF:
+                    statMultiplier = 2;
+                    break;
+                case StatType.LUC:
+                    statMultiplier = 1;
+                    break;
+                default:
+                    break;
+            }
+            Stats[(int)stat].Value += amount * statMultiplier;
         }
 
         /// <summary>
@@ -187,18 +207,24 @@ namespace LoopLegacy.State
         /// 
         /// 사용 예시:
         /// 1. 몬스터 조우 시:
-        ///    var task = playerStats.CalculateLevelUpAsync(monsterExp);
+        ///    var cts = new CancellationTokenSource();
+        ///    var task = playerStats.CalculateLevelUpAsync(monsterExp, cts.Token);
         /// 2. 전투 결과창에서:
         ///    var result = await task;
         ///    displayExpectedLevel(result.FinalLevel);
         /// 3. 경험치 적용 시:
         ///    playerStats.ApplyLevelUpResult(result);
+        /// 4. 취소 시:
+        ///    cts.Cancel();
         /// </summary>
-        public async Task<LevelUpResult> CalculateLevelUpAsync(BigInteger expToAdd)
+        public async Task<LevelUpResult> CalculateLevelUpAsync(BigInteger expToAdd, CancellationToken cancellationToken = default)
         {
             // 비동기 작업으로 실행 (메인 스레드 블로킹 방지)
             return await Task.Run(() =>
             {
+                Debug.Log("[PlayerStats] CalculateLevelUpAsync Started: " + EXP.Value + " + " + expToAdd + " = " + (EXP.Value + expToAdd));
+                Stopwatch stopwatch = new Stopwatch();
+                stopwatch.Start();
                 BigInteger totalExp = EXP.Value + expToAdd;
                 BigInteger remainingEXP = totalExp;
                 int currentLevel = Level.Value;
@@ -206,6 +232,12 @@ namespace LoopLegacy.State
                 // 레벨업 계산
                 while (remainingEXP > 0)
                 {
+                    // 취소 요청 확인
+                    if (cancellationToken.IsCancellationRequested)
+                    {
+                        cancellationToken.ThrowIfCancellationRequested();
+                    }
+                    
                     BigInteger needed = new BigInteger((long)Math.Pow(currentLevel, 1.4));
                     if (remainingEXP >= needed)
                     {
@@ -219,7 +251,7 @@ namespace LoopLegacy.State
                 }
                 
                 int levelUps = currentLevel - Level.Value;
-                
+                Debug.Log("[PlayerStats] CalculateLevelUpAsync Finished: " + Level.Value + " -> " + currentLevel + " (" + levelUps + " levels) in " + stopwatch.Elapsed.TotalMilliseconds + "ms");
                 return new LevelUpResult
                 {
                     InitialLevel = Level.Value,
@@ -229,7 +261,7 @@ namespace LoopLegacy.State
                     AddedEXP = expToAdd,
                     RemainingEXP = remainingEXP
                 };
-            });
+            }, cancellationToken);
         }
         
         /// <summary>
@@ -291,7 +323,7 @@ namespace LoopLegacy.State
         public static BigInteger CalculateAdjustedEXP(BigInteger baseExp, int playerLevel, int monsterLevel)
         {
             return baseExp;
-            // 기본 비율
+            /*// 기본 비율
             double levelRatio = (double)monsterLevel / playerLevel;
             
             // 지수적 완화: (1 - 0.99^level) 공식 사용
@@ -300,7 +332,7 @@ namespace LoopLegacy.State
             // 최소 0.7배, 최대 1.5배
             double adjustedRatio = Math.Clamp(1.0 + (levelRatio - 1.0) * easingFactor, 0.7, 1.5);
             
-            return new BigInteger((double)baseExp * adjustedRatio);
+            return new BigInteger((double)baseExp * adjustedRatio);*/
         }
 
         public string ToJson()

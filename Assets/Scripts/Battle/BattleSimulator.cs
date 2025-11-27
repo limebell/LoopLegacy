@@ -95,7 +95,15 @@ namespace LoopLegacy.Battle
                 battleContext.CritHits++;
             }
 
-            // 고정 피해 추가
+            // 몬스터 ATK 기반 대미지 감소 (실험적 기능)
+            if (damage > 0 && MonsterATK > 0)
+            {
+                float atkTenth = MonsterATK * 0.1f;
+                float reductionRate = atkTenth / (damage + atkTenth);
+                damage = (int)(damage * (1 - reductionRate));
+            }
+
+            // 고정 피해 추가 (대미지 감소 영향 받지 않음)
             damage += relicContext.FixedDamage;
 
             // 대미지 적용

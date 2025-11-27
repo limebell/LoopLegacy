@@ -18,6 +18,7 @@ namespace LoopLegacy
     public enum BattleStep
     {
         Prepare,
+        PrepareComplete,
         Simulating,
         End,
         Result,

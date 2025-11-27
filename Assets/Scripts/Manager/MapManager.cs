@@ -40,7 +40,7 @@ namespace LoopLegacy.Manager
                 !PersistentGameState.Instance.CompletedTutorials[TutorialType.GameStart])
             {
                 Debug.Log("[MapManager] Start: ShowConfirmation");
-                string startTutorialConfirmation = Utils.GetUIString("start-tutorial-confirmation");
+                string startTutorialConfirmation = Utils.GetUIString("start-tutorial-confirmation_basic");
                 string yesText = Utils.GetUIString("yes");
                 string noText = Utils.GetUIString("no");
                 ConfirmationController.Instance.ShowConfirmation(
@@ -77,15 +77,17 @@ namespace LoopLegacy.Manager
             {
                 GameObject.Find("Shortcut_Desert-cover")?.SetActive(false);
                 GameObject.Find("Shortcut_Desert")?.SetActive(true);
-                GameObject.Find("Region0")?.SetActive(false);
-                GameObject.Find("Region-shortcut")?.SetActive(true);
+                GameObject.Find("Region-desert-0")?.SetActive(false);
+                GameObject.Find("Region-desert-shortcut")?.SetActive(true);
+                GameObject.Find("Region-pyramid-shortcut")?.SetActive(true);
             }
             else
             {
                 GameObject.Find("Shortcut_Desert-cover")?.SetActive(true);
                 GameObject.Find("Shortcut_Desert")?.SetActive(false);
-                GameObject.Find("Region0")?.SetActive(true);
-                GameObject.Find("Region-shortcut")?.SetActive(false);
+                GameObject.Find("Region-desert-0")?.SetActive(true);
+                GameObject.Find("Region-desert-shortcut")?.SetActive(false);
+                GameObject.Find("Region-pyramid-shortcut")?.SetActive(false);
             }
 
             if (PersistentGameState.Instance.HouseState.GetShortcut(Shortcut.Castle))

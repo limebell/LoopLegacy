@@ -189836,7 +189836,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3414446316604435632, guid: da247f1e93dc6d540967660136513d59, type: 3}
       propertyPath: m_Name
-      value: Region-shortcut
+      value: Region-pyramid-shortcut
       objectReference: {fileID: 0}
     - target: {fileID: 3868482671308398266, guid: da247f1e93dc6d540967660136513d59, type: 3}
       propertyPath: m_LocalPosition.x

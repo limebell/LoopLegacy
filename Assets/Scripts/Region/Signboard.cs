@@ -109,7 +109,7 @@ namespace LoopLegacy.Region
         private void SetSignboardText(string text)
         {
             _signboardText.text = text;
-            _signboardSprite.size = new Vector2(_signboardText.preferredWidth * 0.018f, _signboardSprite.size.y);
+            _signboardSprite.size = new Vector2(_signboardText.preferredWidth + 1, _signboardSprite.size.y);
         }
 
         private void HideSignboard()

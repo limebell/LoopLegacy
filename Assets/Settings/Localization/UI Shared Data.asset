@@ -355,10 +355,6 @@ MonoBehaviour:
     m_Key: select-hero
     m_Metadata:
       m_Items: []
-  - m_Id: 5091474187747328
-    m_Key: start-tutorial-confirmation
-    m_Metadata:
-      m_Items: []
   - m_Id: 5712658071814144
     m_Key: yes
     m_Metadata:
@@ -773,6 +769,14 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 40583286184476672
     m_Key: library_fully-collected-equipments
+    m_Metadata:
+      m_Items: []
+  - m_Id: 41625407708463104
+    m_Key: start-tutorial-confirmation_basic
+    m_Metadata:
+      m_Items: []
+  - m_Id: 41625579142250496
+    m_Key: start-tutorial-confirmation_territory
     m_Metadata:
       m_Items: []
   m_Metadata:

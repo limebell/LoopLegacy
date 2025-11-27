@@ -59,7 +59,7 @@ namespace LoopLegacy.Manager
             if (!PersistentGameState.Instance.CompletedTutorials[TutorialType.Territory])
             {
                 ConfirmationController.Instance.ShowConfirmation(
-                    Utils.GetUIString("start-tutorial-confirmation"),
+                    Utils.GetUIString("start-tutorial-confirmation_territory"),
                     onConfirm: () => {
                         _territoryHUDController.HideGameStartElement();
                         ScriptManager.Instance.StartScript("tutorial_territory");

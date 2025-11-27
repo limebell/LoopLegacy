@@ -64,6 +64,8 @@ namespace LoopLegacy.UI.Controller
         private void OnOpenButtonClicked()
         {
             _element.SetActive(true);
+            LayoutRebuilder.ForceRebuildLayoutImmediate(_logText.rectTransform);
+            Canvas.ForceUpdateCanvases();
             _logScrollRect.verticalNormalizedPosition = 0;
         }
 

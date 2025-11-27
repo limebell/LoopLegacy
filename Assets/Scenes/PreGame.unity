@@ -11159,7 +11159,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: BattlePoint
+  m_text: BATTLE POINT
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 428da3cb4c0c1f445ab8b0078cd68107, type: 2}
   m_sharedMaterial: {fileID: 8897723492806414295, guid: 428da3cb4c0c1f445ab8b0078cd68107, type: 2}
@@ -11823,6 +11823,8 @@ MonoBehaviour:
   _dropDialogue: {fileID: 2088783703}
   _dropDialogueText: {fileID: 2036372415}
   _victoryBGM: {fileID: 8300000, guid: 4c8f4e96baba9294dbbd729ffbb118df, type: 3}
+  _displaySFX: {fileID: 8300000, guid: 25820e56d1b2c7e468c3daaf34b9dd32, type: 3}
+  _infoText: {fileID: 1955495175}
 --- !u!114 &1608895514
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13855,7 +13857,7 @@ GameObject:
   - component: {fileID: 1955495177}
   - component: {fileID: 1955495179}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: InfoText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

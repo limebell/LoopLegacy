@@ -202,16 +202,25 @@ namespace LoopLegacy.UI.Controller
                     GameManager.Instance.GameState.PlayerStats.InitializeStats(StatType.LUC, PersistentGameState.Instance.GetBaseStat(StatType.LUC));
                     break;
 
-                case "earnExp":
+                case "addLevel":
                     if (args.Length != 1)
                     {
-                        Trace("Usage: earnExp <exp>");
+                        Trace("Usage: addLevel <level>");
                     }
                     else
                     {
-                        var exp = BigInteger.Parse(args[0]);
-                        GameManager.Instance.GameState.PlayerStats.AddEXP(exp);
-                        Trace($"Earned {exp} exp");
+                        var level = int.Parse(args[0]);
+                        var result = new LevelUpResult
+                        {
+                            InitialLevel = GameManager.Instance.GameState.PlayerStats.Level.Value,
+                            FinalLevel = GameManager.Instance.GameState.PlayerStats.Level.Value + level,
+                            LevelUps = level,
+                            InitialEXP = GameManager.Instance.GameState.PlayerStats.EXP.Value,
+                            AddedEXP = 0,
+                            RemainingEXP = 0
+                        };
+                        GameManager.Instance.GameState.PlayerStats.ApplyLevelUpResult(result);
+                        Trace($"Added {level} level");
                     }
                     break;
 
@@ -330,7 +339,7 @@ namespace LoopLegacy.UI.Controller
                 case "moveMap":
                     if (args.Length != 1)
                     {
-                        Trace("Usage: moveMap <mapId>");
+                        Trace("Usage: moveMap <mapCode>");
                     }
                     else
                     {
@@ -543,7 +552,7 @@ namespace LoopLegacy.UI.Controller
                     Trace("calculateExp <level>: Calculate the required experience for a given level");
                     Trace("calculateTotalExp <level>: Calculate the total experience for a given level");
                     Trace("resetCharacter: Reset the character's stats and level");
-                    Trace("earnExp <exp>: Earn experience points");
+                    Trace("addLevel <level>: Add a level to the character");
                     Trace("increaseLevel <level>: Increase the character's level");
                     Trace("setLevel <level>: Set the character's level");
                     Trace("resetStats: Reset the stats");
@@ -553,7 +562,7 @@ namespace LoopLegacy.UI.Controller
                     Trace("addEquipment <itemId> <type> <quantity>: Add equipment to the player's inventory");
                     Trace("encounter: Encounter a monster");
                     Trace("encounter <monsterId>: Encounter a specific monster");
-                    Trace("moveMap <mapId>: Move to a specific map");
+                    Trace("moveMap <mapCode>: Move to a specific map");
                     Trace("teleport <x> <y>: Teleport to a specific position");
                     Trace("enableEncounter: Enable encounter");
                     Trace("disableEncounter: Disable encounter");

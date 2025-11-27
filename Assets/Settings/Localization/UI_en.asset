@@ -381,10 +381,6 @@ MonoBehaviour:
     m_Localized: Select Hero
     m_Metadata:
       m_Items: []
-  - m_Id: 5091474187747328
-    m_Localized: Would you like to proceed with the tutorial?
-    m_Metadata:
-      m_Items: []
   - m_Id: 5712658071814144
     m_Localized: Yes
     m_Metadata:
@@ -793,6 +789,33 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 40583286184476672
     m_Localized: Fully collected equipments
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26361431139549184
+    m_Localized: Maximum health point increases by 4 per stat invested.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26361457534304256
+    m_Localized: The ATK increases by 2 per stat invested. The amount of damage increases
+      in proportion to the constant of the weapon and ATK.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26361468015869952
+    m_Localized: The DEF increases by 2 per stat invested. The protection value increases
+      in proportion to the constant of the armor and DEF.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26361475792109568
+    m_Localized: The LUC increases by 1 per stat invested. The higher the LUC value,
+      the more gold you get, and more likely to get an item when you win a battle.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 41625407708463104
+    m_Localized: Would you like to proceed with the basic control tutorial?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 41625579142250496
+    m_Localized: Would you like to proceed with the territory tutorial?
     m_Metadata:
       m_Items: []
   references:

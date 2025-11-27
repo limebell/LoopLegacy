@@ -2,6 +2,8 @@ using LoopLegacy.Battle;
 using LoopLegacy.Loader;
 using LoopLegacy.Manager;
 using UnityEngine;
+using UnityEngine.Localization;
+using UnityEngine.Localization.Settings;
 
 namespace LoopLegacy.Region
 {
@@ -26,6 +28,14 @@ namespace LoopLegacy.Region
         private void Awake()
         {
             _lineRenderer = GetComponent<LineRenderer>();
+        }
+
+        private void OnDestroy()
+        {
+            if (_type == InteractionType.NPC)
+            {
+                LocalizationSettings.SelectedLocaleChanged -= OnLocaleChanged;
+            }
         }
 
         private void SetupLineRenderer()
@@ -64,7 +74,10 @@ namespace LoopLegacy.Region
             if (_type == InteractionType.NPC)
             {
                 _signboard.gameObject.SetActive(true);
-                _signboard.DisplayText = Utils.GetNPCName(_npcType);
+                UpdateSignboardText();
+                
+                // Locale 변경 시 표지판 텍스트 업데이트
+                LocalizationSettings.SelectedLocaleChanged += OnLocaleChanged;
             }
             else
             {
@@ -80,6 +93,19 @@ namespace LoopLegacy.Region
             if (Debug.IsDebug)
             {
                 SetupLineRenderer();
+            }
+        }
+
+        private void OnLocaleChanged(Locale locale)
+        {
+            UpdateSignboardText();
+        }
+
+        private void UpdateSignboardText()
+        {
+            if (_type == InteractionType.NPC && _signboard != null)
+            {
+                _signboard.DisplayText = Utils.GetNPCName(_npcType);
             }
         }
 

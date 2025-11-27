@@ -14,7 +14,7 @@ from typing import List, Dict, Tuple, Optional
 
 class RegionData:
     """지역 데이터 클래스"""
-    def __init__(self, region_id: int, region_name: str, recommended_level: str, monster_ratio: str):
+    def __init__(self, region_id: str, region_name: str, recommended_level: str, monster_ratio: str):
         self.region_id = region_id
         self.region_name = region_name
         self.recommended_level = recommended_level
@@ -60,10 +60,10 @@ def parse_region_table(file_path: str) -> List[RegionData]:
                 if len(parts) < 3:
                     continue
                 
-                # 지역 정보 (예: 0,1,1.0) - 3개 컬럼
+                # 지역 정보 (예: start-0,1,1.0) - 3개 컬럼
                 if len(parts) == 3 and parts[1] and not parts[1].startswith('level'):
                     try:
-                        region_id = int(parts[0])
+                        region_id = parts[0]  # 문자열로 처리
                         recommended_level = parts[1]
                         monster_ratio = parts[2] if len(parts) > 2 else "1.0"
                         
@@ -73,7 +73,7 @@ def parse_region_table(file_path: str) -> List[RegionData]:
                         
                         current_region = RegionData(region_id, region_name, recommended_level, monster_ratio)
                         continue
-                    except ValueError:
+                    except (ValueError, IndexError):
                         pass
                 
                 # 몬스터 데이터 (예: 1,8,0,125,435,-1,,) - 레벨만 사용

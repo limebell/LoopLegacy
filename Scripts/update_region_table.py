@@ -55,7 +55,7 @@ def update_region_table(input_file: str, output_file: str):
                 # 새로운 몬스터 스탯 계산
                 monster_stats = calculator.calculate_stats(level)
                 
-                # HP, ATK, gold, exp 모두 새 값으로 교체
+                # HP, ATK, gold만 업데이트, exp는 원본 유지
                 new_line = f"{level},{monster_stats.hp},{monster_stats.atk},{monster_stats.gold},{monster_stats.exp}"
                 
                 # 나머지 컬럼들 추가 (bp, drops, actions 등)
@@ -84,7 +84,7 @@ def update_region_table(input_file: str, output_file: str):
 def main():
     """메인 함수"""
     print("region_table.csv 업데이트 스크립트")
-    print("새로운 경험치 공식 (level^1.7, level*2/(10000+level)) 적용")
+    print("gold_growth: 5 → 3으로 변경된 값 적용")
     print("="*50)
     
     input_file = 'Assets/Data/region_table.csv'
@@ -99,8 +99,8 @@ def main():
     print()
     
     # 자동 실행 (사용자 확인 생략)
-    print("새로운 경험치 공식으로 파일을 생성합니다...")
-    print("HP, ATK, Gold, EXP가 모두 업데이트됩니다.")
+    print("gold_growth를 5에서 3으로 변경하여 파일을 생성합니다...")
+    print("HP, ATK, Gold만 업데이트되며, EXP는 원본 값을 유지합니다.")
     print()
     
     update_region_table(input_file, output_file)

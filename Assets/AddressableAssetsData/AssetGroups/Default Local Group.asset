@@ -220,6 +220,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 26fcc1e180d8cd747aabcf42fceba58e
+    m_Address: Images/NPC/shop_relic
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 272007c90fe9b5944840ad7dfebd4b9c
     m_Address: Images/Relics/weak_every_hit
     m_ReadOnly: 0
@@ -227,11 +232,6 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 279fbe6b8826a0b49a44775f24dae953
     m_Address: Images/Enemies/Bosses/boss_4
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 2909562757212204b8276dba226f01ce
-    m_Address: Images/NPC/shop_maid
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -287,6 +287,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 3396323893cf80c4e9b02fba8b1a78bd
     m_Address: Images/Enemies/swamp-3_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 33b5ee9764c780b4e8f8572fb8d61681
+    m_Address: Images/NPC/shop_upgrade
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -690,6 +695,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7fe69c1f619eb4c499347081ee87e3a8
+    m_Address: Images/NPC/bard
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 81679b60c3bde8044bf50901750b60f6
     m_Address: Images/Relics/dmg_boost_normal
     m_ReadOnly: 0
@@ -717,6 +727,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 85eea44a0e8dbda469a8e75a99108483
     m_Address: Data/Cutscenes/bard
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 860512b96077e8f4a9a9f5bc9c6cee2b
+    m_Address: Images/NPC/shop_maid
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -802,6 +817,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 9a7b688dc5182a44d99951efcbe9d7bc
     m_Address: Images/Enemies/castle-3_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9a907276c7b2efe4ca9ca4993f064665
+    m_Address: Images/NPC/worker
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -1235,6 +1255,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f51b93b1234701b4d9876e85de359ad4
+    m_Address: Images/NPC/shop_equipment
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: f51ef88ae5295c045b70e623cb4a237c
     m_Address: Images/Enemies/start-2_0
     m_ReadOnly: 0
@@ -1257,6 +1282,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: f59a20c3ccd74624e8ce09a797317243
     m_Address: Images/Enemies/forest-1_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f64c3525348282d459ef4617a3c49fbc
+    m_Address: Images/NPC/library
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
