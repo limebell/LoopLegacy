@@ -69,7 +69,7 @@ namespace LoopLegacy.UI.Controller
 
         public void Show()
         {
-            if (Debug.IsDebug)
+            if (Debug.isDebugBuild)
             {
                 _gameObject.SetActive(true);
                 _inputField.text = "";
@@ -115,7 +115,7 @@ namespace LoopLegacy.UI.Controller
 
         private void OnSubmit()
         {
-            if (gameObject.activeSelf && Debug.IsDebug)
+            if (gameObject.activeSelf && Debug.isDebugBuild)
             {
                 ProcessCommand(_inputField.text);
                 _inputField.text = "";

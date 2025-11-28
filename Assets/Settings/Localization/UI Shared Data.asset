@@ -779,6 +779,14 @@ MonoBehaviour:
     m_Key: start-tutorial-confirmation_territory
     m_Metadata:
       m_Items: []
+  - m_Id: 42245613787021312
+    m_Key: game-over_advertise_already_advertised
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42245640257273856
+    m_Key: game-over_advertise_not_ready
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

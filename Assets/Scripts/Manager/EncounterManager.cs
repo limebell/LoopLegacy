@@ -123,8 +123,6 @@ namespace LoopLegacy.Manager
                 return;
             }
             
-            ResetGauge();
-            
             // 전투 시작
             BattleManager.Instance.StartBattle(selectedMonster, _ => { });
         }

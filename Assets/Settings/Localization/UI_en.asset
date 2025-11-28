@@ -818,6 +818,14 @@ MonoBehaviour:
     m_Localized: Would you like to proceed with the territory tutorial?
     m_Metadata:
       m_Items: []
+  - m_Id: 42245613787021312
+    m_Localized: Already rewarded by watching the advertisement.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42245640257273856
+    m_Localized: The advertisement is not ready yet.
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

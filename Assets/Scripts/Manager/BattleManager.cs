@@ -70,6 +70,7 @@ namespace LoopLegacy.Manager
                 case BattleStep.Result:
                     _battleResultController.HideBattleResult();
                     ApplyBattleResult(_currentBattleResult.Value);
+                    GameManager.Instance.EncounterManager.ResetGauge();
                     CurrentBattleStep.Value = BattleStep.None;
                     break;
                 case BattleStep.None:

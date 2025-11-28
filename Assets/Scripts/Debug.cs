@@ -33,17 +33,6 @@ public static class Debug
     {
 	get { return UnityEngine.Debug.isDebugBuild; }
     }
-
-    public static bool IsDebug
-    {
-        get {
-            #if ENABLE_LOGGING
-                return true;
-            #else
-                return false;
-            #endif
-        }
-    }
     
     // Debug 클래스 초기화 - Application.logMessageReceived 이벤트 등록
     public static void Initialize()

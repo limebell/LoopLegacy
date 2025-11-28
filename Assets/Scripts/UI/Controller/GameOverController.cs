@@ -29,9 +29,6 @@ namespace LoopLegacy.UI.Controller
         {
             _advertiseButton.onClick.AddListener(OnAdvertiseButtonClicked);
             _territoryButton.onClick.AddListener(OnTerritoryButtonClicked);
-
-            // If more than one ad is required, should call this after ads are loaded
-            RewardedAdManager.Instance.IsLoaded.Subscribe(isLoaded => _advertiseButton.enabled = isLoaded);
         }
 
         public void Show(
@@ -129,19 +126,35 @@ namespace LoopLegacy.UI.Controller
             }
 
 #if UNITY_ANDROID || UNITY_IOS
-            RewardedAdManager.Instance.ShowRewardedAd(_ =>
+
+            if (!RewardedAdManager.Instance.IsLoaded.Value)
             {
-                GameManager.Instance.GameState.PlayerStats.BattlePoint.Value = 5;
-                GameManager.Instance.GameState.IsAdvertised = true;
-                GameManager.Instance.Save();
-                Hide();
-            });
+                ConfirmationController.Instance.ShowWarning(Utils.GetUIString("game-over_advertise_not_ready"));
+                return;
+            }
+
+            if (Debug.isDebugBuild)
+            {
+                RewardAdvertise();
+            }
+            else
+            {
+                RewardedAdManager.Instance.ShowRewardedAd(_ =>
+                {
+                    RewardAdvertise();
+                });
+            }
 #else
+            RewardAdvertise();
+#endif
+        }
+
+        private void RewardAdvertise()
+        {
             GameManager.Instance.GameState.PlayerStats.BattlePoint.Value = 5;
             GameManager.Instance.GameState.IsAdvertised = true;
             GameManager.Instance.Save();
             Hide();
-#endif
         }
 
         private void OnTerritoryButtonClicked()

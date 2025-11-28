@@ -32,7 +32,7 @@ namespace LoopLegacy.UI.Controller
 
         void Awake()
         {
-            if (!Debug.IsDebug)
+            if (!Debug.isDebugBuild)
             {
                 Destroy(gameObject);
                 return;

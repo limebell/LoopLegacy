@@ -21,6 +21,13 @@ namespace LoopLegacy.Region
 
         void Start()
         {
+            if (Camera.main == null)
+            {
+                Debug.LogError("ParallaxBackground: Main Camera를 찾을 수 없습니다. 카메라에 'MainCamera' 태그가 설정되어 있는지 확인하세요.");
+                enabled = false;
+                return;
+            }
+            
             _cameraTransform = Camera.main.transform;
             _initialCameraPosition = _cameraTransform.position;
             _lastCameraPosition = _cameraTransform.position;
@@ -44,6 +51,12 @@ namespace LoopLegacy.Region
 
         void LateUpdate()
         {
+            // 카메라가 파괴되었거나 존재하지 않는 경우 처리 중단
+            if (_cameraTransform == null)
+            {
+                return;
+            }
+            
             // 카메라의 이동 거리 계산
             Vector3 deltaMovement = _cameraTransform.position - _lastCameraPosition;
             

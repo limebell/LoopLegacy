@@ -164,7 +164,7 @@ class MonsterStatCalculator:
     def __init__(self):
         # 기본 스탯 계수들
         self.base_gold = 120
-        self.base_exp = 16
+        self.base_exp = 20
         
         # 레벨별 스탯 증가 계수 (선형 증가량)
         self.gold_growth = 3  # 골드는 레벨당 3 증가
@@ -200,33 +200,33 @@ class MonsterStatCalculator:
             hp = int((208494 + 64.0 * (level - 5000)) * 0.7)
             atk = int(14330.0 + 4.3 * (level - 5000))
         elif level <= 30000:
-            # 초극후반부: 극한 난이도
-            hp = int((1168494 + 80.0 * (level - 20000)) * 0.7)
-            atk = int(78830.0 + 5.5 * (level - 20000))
+            # 초극후반부: 극한 난이도 (소폭 강화)
+            hp = int((1168494 + 90.0 * (level - 20000)) * 0.7)
+            atk = int(78830.0 + 6.2 * (level - 20000))
         elif level <= 50000:
-            # 초극후반부2: 극한 난이도
-            hp = int((1968494 + 96.0 * (level - 30000)) * 0.7)
-            atk = int(133830.0 + 6.6 * (level - 30000))
+            # 초극후반부2: 극한 난이도 (추가 강화)
+            hp = int((2068494 + 122.0 * (level - 30000)) * 0.7)
+            atk = int(140830.0 + 8.5 * (level - 30000))
         elif level <= 60000:
-            # 초극후반부3: 극한 난이도
-            hp = int((3888494 + 112.0 * (level - 50000)) * 0.7)
-            atk = int(265830.0 + 7.8 * (level - 50000))
+            # 초극후반부3: 극한 난이도 (5만 이후 추가 강화)
+            hp = int((4508494 + 160.0 * (level - 50000)) * 0.7)
+            atk = int(310830.0 + 11.3 * (level - 50000))
         elif level <= 70000:
-            # 초극후반부4: 극한 난이도
-            hp = int((5008494 + 128.0 * (level - 60000)) * 0.7)
-            atk = int(343830.0 + 8.9 * (level - 60000))
+            # 초극후반부4: 극한 난이도 (5만 이후 추가 강화)
+            hp = int((6108494 + 182.0 * (level - 60000)) * 0.7)
+            atk = int(423830.0 + 12.8 * (level - 60000))
         elif level <= 80000:
-            # 초극후반부5: 극한 난이도
-            hp = int((6288494 + 128.0 * (level - 70000)) * 0.7)
-            atk = int(432830.0 + 8.9 * (level - 70000))
+            # 초극후반부5: 극한 난이도 (7만 이후 추가 강화)
+            hp = int((7928494 + 205.0 * (level - 70000)) * 0.7)
+            atk = int(551830.0 + 14.5 * (level - 70000))
         elif level <= 90000:
-            # 초극후반부6: 극한 난이도
-            hp = int((7568494 + 128.0 * (level - 80000)) * 0.7)
-            atk = int(521830.0 + 8.9 * (level - 80000))
+            # 초극후반부6: 극한 난이도 (7만 이후 추가 강화)
+            hp = int((9978494 + 205.0 * (level - 80000)) * 0.7)
+            atk = int(696830.0 + 14.5 * (level - 80000))
         else:
-            # 최종구간: 최종 난이도
-            hp = int((8848494 + 144.0 * (level - 90000)) * 0.7)
-            atk = int(610830.0 + 10.1 * (level - 90000))
+            # 최종구간: 최종 난이도 (최종 구간 추가 강화)
+            hp = int((12028494 + 260.0 * (level - 90000)) * 0.7)
+            atk = int(841830.0 + 18.4 * (level - 90000))
         
         # 지수함수 근사 (참고용 주석)
         # hp = int(8.9 * (level ** 1.19))
@@ -237,7 +237,7 @@ class MonsterStatCalculator:
         # n^1.4 필요 경험치 시스템에 맞춰 조정됨
         log_val = math.log(level + 1)
         level_factor = level * 2 / (10000 + level)  # 저레벨 억제, 고레벨 성장
-        exp = int(self.base_exp * (level ** 1.7) * log_val * level_factor)
+        exp = int(self.base_exp * (level ** 1.6) * log_val * level_factor)
         
         return MonsterStats(
             level=level,

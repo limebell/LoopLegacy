@@ -40,7 +40,7 @@ namespace LoopLegacy.Region
 
         private void SetupLineRenderer()
         {
-            if (Debug.IsDebug && (_trigger == null || _lineRenderer == null)) return;
+            if (Debug.isDebugBuild && (_trigger == null || _lineRenderer == null)) return;
 
             // LineRenderer 기본 설정
             _lineRenderer.useWorldSpace = false;
@@ -90,7 +90,7 @@ namespace LoopLegacy.Region
                 }
             }
 
-            if (Debug.IsDebug)
+            if (Debug.isDebugBuild)
             {
                 SetupLineRenderer();
             }
