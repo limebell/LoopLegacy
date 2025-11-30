@@ -16,9 +16,8 @@ namespace LoopLegacy.UI.Component
         {
             if (drop.itemType == DropType.Relic)
             {
-                var relicId = TableManager.GetRelicId(drop.relicEffectName);
                 var relicLevel = drop.relicLevel;
-                RelicData relic = TableManager.GetRelic(relicId);
+                RelicData relic = TableManager.GetRelic(drop.relicEffectName);
                 _image.sprite = relic.sprite;
                 string name = Utils.GetRelicName(relic.effectName);
                 _nameText.text = $"{name} Lv. {relicLevel + 1}";

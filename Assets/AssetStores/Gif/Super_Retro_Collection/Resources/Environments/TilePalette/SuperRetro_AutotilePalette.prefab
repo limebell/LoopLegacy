@@ -2498,7 +2498,7 @@ Tilemap:
       - {fileID: 2779415328086690592, guid: f0b4f6290c4f310428e21f05de0c8b55, type: 2}
       - {fileID: -6973977165561408746, guid: f0b4f6290c4f310428e21f05de0c8b55, type: 2}
       - {fileID: 6133877134844019706, guid: f0b4f6290c4f310428e21f05de0c8b55, type: 2}
-      m_AnimationSpeed: 3.0000002
+      m_AnimationSpeed: 3
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 1, y: -1, z: 0}

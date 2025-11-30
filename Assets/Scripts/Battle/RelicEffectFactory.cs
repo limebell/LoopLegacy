@@ -43,9 +43,15 @@ namespace LoopLegacy.Battle
                     return new DamageBoostEffect(effectType, MonsterType.Normal, int.Parse(value));
 
                 case "bp_loss_prevent_defeat":
-                    return new BattlePointLossPreventDefeatEffect(effectType, int.Parse(value));
+                {
+                    var values = value.Split(':');
+                    return new BattlePointLossPreventDefeatEffect(effectType, float.Parse(values[0]), int.Parse(values[1]));
+                }
                 case "bp_loss_prevent_victory":
-                    return new BattlePointLossPreventVictoryEffect(effectType, int.Parse(value));
+                {
+                    var values = value.Split(':');
+                    return new BattlePointLossPreventVictoryEffect(effectType, float.Parse(values[0]), int.Parse(values[1]));
+                }
                 case "decrease_encounter_increment":
                     return new DecreaseEncounterIncrementEffect(effectType, int.Parse(value));
                 case "stat_boost_per_relic_count":
@@ -56,6 +62,9 @@ namespace LoopLegacy.Battle
                     return new EquipmentBaseSpecBoostEffect(effectType, float.Parse(value));
                 case "fixed_dmg":
                     return new FixedDamageEffect(effectType, int.Parse(value));
+
+                case "dmg_boost_any":
+                    return new DamageBoostEffect(effectType, MonsterType.Any, int.Parse(value));
                 case "chain_rate":
                     return new ChainRateEffect(effectType, int.Parse(value));
                 case "execute_low_health":
@@ -65,18 +74,30 @@ namespace LoopLegacy.Battle
                 case "evade_first_n":
                     return new EvadeFirstNEffect(effectType, int.Parse(value));
                 case "dmg_gradual_increase":
+                {
                     var values = value.Split(':');
                     return new DamageGradualIncreaseEffect(effectType, int.Parse(values[0]), int.Parse(values[1]));
+                }
                 case "dmg_gradual_decrease":
-                    values = value.Split(':');
+                {
+                    var values = value.Split(':');
                     return new DamageGradualDecreaseEffect(effectType, int.Parse(values[0]), int.Parse(values[1]));
+                }
                 case "dmg_drop_boost_monster_codex":
-                    values = value.Split(':');
+                {
+                    var values = value.Split(':');
                     return new DamageDropBoostMonster100KillsEffect(effectType, int.Parse(values[0]), int.Parse(values[1]));
+                }
                 case "reduce_dmg_higher_level":
-                    return new ReduceDamageHigherLevelEffect(effectType, int.Parse(value));
+                {
+                    var values = value.Split(':');
+                    return new ReduceDamageHigherLevelEffect(effectType, int.Parse(values[0]), int.Parse(values[1]));
+                }
                 case "execute_lower_level":
-                    return new ExecuteLowerLevelEffect(effectType, int.Parse(value));
+                {
+                    var values = value.Split(':');
+                    return new ExecuteLowerLevelEffect(effectType, int.Parse(values[0]), int.Parse(values[1]));
+                }
                 case "stat_boost_atk_per_hp":
                     return new StatBoostATKPerHPEffect(effectType, int.Parse(value));
                 case "heal_every_turn":
@@ -84,8 +105,10 @@ namespace LoopLegacy.Battle
                 case "weak_every_hit":
                     return new WeakEveryHitEffect(effectType, int.Parse(value));
                 case "dmg_boost_when_low_hp":
-                    values = value.Split(':');
+                {
+                    var values = value.Split(':');
                     return new DamageBoostWhenLowHealthEffect(effectType, int.Parse(values[0]), int.Parse(values[1]));
+                }
                 case "crit_first_n":
                     return new CriticalFirstNEffect(effectType, int.Parse(value));
                 case "chain_first":

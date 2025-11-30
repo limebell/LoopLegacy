@@ -62,6 +62,8 @@ namespace LoopLegacy.Manager
                     break;
                 case BattleStep.Simulating:
                     break;
+                case BattleStep.PreEnd:
+                    break;
                 case BattleStep.End:
                     _battleController.HideBattleUI();
                     // Task 완료를 기다린 후 BattleStep.Result로 전환
@@ -239,12 +241,13 @@ namespace LoopLegacy.Manager
         
         private IEnumerator SetBattleStepDelayedCoroutine()
         {
-            yield return new WaitForSeconds(0.4f);
+            yield return new WaitForSeconds(0.5f);
             CurrentBattleStep.Value = BattleStep.PrepareComplete;
         }
 
         public void GiveupBattle()
         {
+            if (CurrentBattleStep.Value != BattleStep.Simulating) return;
             if (_giveupBattle == true) return;
             _giveupBattle = true;
             
@@ -259,7 +262,7 @@ namespace LoopLegacy.Manager
                 EarnedGold = 0,
                 DroppedItems = new List<DropEntry>(),
             };
-            BattleEnd(looseContext, null, _monsterData);
+            EndBattle(looseContext, null, _monsterData);
         }
 
         private void ExecuteBattle(MonsterData monsterData)
@@ -300,11 +303,13 @@ namespace LoopLegacy.Manager
                 result.TurnCount++;
             }
 
-            BattleEnd(result, simulator, monsterData);
+            EndBattle(result, simulator, monsterData);
         }
 
-        private void BattleEnd(BattleContext result, BattleSimulator simulator, MonsterData monsterData)
+        private void EndBattle(BattleContext result, BattleSimulator simulator, MonsterData monsterData)
         {
+            CurrentBattleStep.Value = BattleStep.PreEnd;
+            
             // 전투 결과 메시지
             if (simulator != null && simulator.IsMonsterDead)
             {
@@ -322,6 +327,7 @@ namespace LoopLegacy.Manager
                 // 드롭 아이템 계산 (LUC 스탯 및 Relic 효과 적용)
                 int luc = GameManager.GetStat(StatType.LUC);
                 float lucMultiplier = 1.0f + Mathf.Min(1.0f, (float)luc / (300 + luc + monsterData.level));
+                Debug.Log($"Luc Multiplier: {lucMultiplier}");
                 var context = new RelicEffectContext
                 {
                     ExpMultiplier = 1.0f,
@@ -358,17 +364,11 @@ namespace LoopLegacy.Manager
                                 }
                                 break;
                             case DropType.Relic:
-                                if (!PersistentGameState.Instance.IsRelicFeatureUnlocked())
-                                {
-                                    Debug.Log($"Relic feature not unlocked, skipping drop {drop.itemType} {drop.itemId}");
-                                    continue;
-                                }
-                                Debug.Log($"Relic feature unlocked, checking drop {drop.itemType} {drop.relicEffectName}");
-                                var relicId = TableManager.GetRelicId(drop.relicEffectName);
-                                var myRelic = PersistentGameState.Instance.CodexState.GetRelic(relicId);
+                                Debug.Log($"Checking drop {drop.itemType} {drop.relicEffectName}");
+                                var myRelic = PersistentGameState.Instance.CodexState.GetRelic(drop.relicEffectName);
                                 if (myRelic != null && myRelic.Level >= drop.relicLevel)
                                 {
-                                    Debug.Log($"Relic {relicId} level {drop.relicLevel} already unlocked");
+                                    Debug.Log($"Relic {drop.relicEffectName} level {drop.relicLevel} already unlocked");
                                     continue;
                                 }
                                 break;
@@ -417,7 +417,7 @@ namespace LoopLegacy.Manager
         
         private IEnumerator SetBattleStepEndDelayedCoroutine()
         {
-            yield return new WaitForSeconds(0.4f);
+            yield return new WaitForSeconds(0.5f);
             CurrentBattleStep.Value = BattleStep.End;
         }
 
@@ -426,8 +426,6 @@ namespace LoopLegacy.Manager
             if (result.IsVictory)
             {
                 // 경험치 적용 (ShowBattleResult에서 이미 완료된 결과 사용)
-                Debug.Log($"Adding EXP: {result.EarnedEXP}");
-                
                 if (_completedLevelUpResult.HasValue)
                 {
                     GameManager.Instance.GameState.PlayerStats.ApplyLevelUpResult(_completedLevelUpResult.Value);
@@ -454,13 +452,12 @@ namespace LoopLegacy.Manager
                     if (entry.itemType == DropType.Relic)
                     {
                         Debug.Log($"Unlocking relic {entry.relicEffectName} {entry.relicLevel}");
-                        var relicId = TableManager.GetRelicId(entry.relicEffectName);
                         var relicLevel = entry.relicLevel;
-                        PersistentGameState.Instance.CodexState.UnlockRelicWithLevel(relicId, relicLevel);
+                        PersistentGameState.Instance.CodexState.UnlockRelicWithLevel(entry.relicEffectName, relicLevel);
                         GameManager.Instance.GameState.AddDroppedItem(new DropEntryData
                         {
                             itemType = DropType.Relic,
-                            itemId = relicId,
+                            relicEffectName = entry.relicEffectName,
                             relicLevel = relicLevel,
                             count = 1,
                         });

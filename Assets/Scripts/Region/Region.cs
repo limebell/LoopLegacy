@@ -152,14 +152,15 @@ namespace LoopLegacy.Region
 
         private void OnDrawGizmos()
         {
-            if (_collider == null) return;
+            var collider = GetComponent<PolygonCollider2D>();
+            if (collider == null) return;
 
             // 에디터에서만 콜라이더 영역 표시
             Gizmos.color = Color.hotPink;
             Gizmos.matrix = transform.localToWorldMatrix;
 
             // 폴리곤 콜라이더의 각 점을 그리기
-            Vector2[] points = _collider.points;
+            Vector2[] points = collider.points;
             for (int i = 0; i < points.Length; i++)
             {
                 Vector2 currentPoint = points[i];

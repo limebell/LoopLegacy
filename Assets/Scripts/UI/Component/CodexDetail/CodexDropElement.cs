@@ -50,11 +50,11 @@ public class CodexDropElement : MonoBehaviour
             }
             case DropType.Relic:
             {
-                var relic = TableManager.GetRelic(TableManager.GetRelicId(_drop.relicEffectName));
+                var relic = TableManager.GetRelic(_drop.relicEffectName);
                 _itemImage.sprite = relic.sprite;
                 _itemNameText.text = Utils.GetRelicName(_drop.relicEffectName) + $" Lv. {_drop.relicLevel + 1}";
                 _checkIcon.gameObject.SetActive(
-                    (PersistentGameState.Instance.CodexState.GetRelic(relic.id)?.Level ?? -1) >= _drop.relicLevel);
+                    (PersistentGameState.Instance.CodexState.GetRelic(relic.effectName)?.Level ?? -1) >= _drop.relicLevel);
                 break;
             }
             default:
@@ -89,7 +89,7 @@ public class CodexDropElement : MonoBehaviour
             }
             case DropType.Relic:
             {
-                var relic = TableManager.GetRelic(TableManager.GetRelicId(_drop.relicEffectName));
+                var relic = TableManager.GetRelic(_drop.relicEffectName);
                 ConfirmationController.Instance.ShowRelic(new Relic(relic, _drop.relicLevel));
                 break;
             }

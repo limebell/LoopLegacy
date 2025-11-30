@@ -7,10 +7,12 @@ namespace LoopLegacy.Battle.RelicEffects
     /// </summary>
     public class ExecuteLowerLevelEffect : RelicEffect
     {
+        private readonly int damageIncresase;
         private readonly int executeProbability;
 
-        public ExecuteLowerLevelEffect(string effectType, int executeProbability) : base(effectType)
+        public ExecuteLowerLevelEffect(string effectType, int damageIncresase, int executeProbability) : base(effectType)
         {
+            this.damageIncresase = damageIncresase;
             this.executeProbability = executeProbability;
         }
 
@@ -23,6 +25,7 @@ namespace LoopLegacy.Battle.RelicEffects
             
             if (context.MonsterData.level < GameManager.Instance.GameState.PlayerStats.Level.Value)
             {
+                context.EnemyAttackReductionRate += damageIncresase / 100f;
                 if (UnityEngine.Random.Range(0, 100) < executeProbability)
                 {
                     context.ShouldExecute = true;
@@ -31,8 +34,9 @@ namespace LoopLegacy.Battle.RelicEffects
         }
 
         public override string GetDescription() =>
-            GetDescriptionWithArgs(new object[] { executeProbability });
+            GetDescriptionWithArgs(new object[] { damageIncresase, executeProbability });
 
+        public int GetDamageIncresase() => damageIncresase;
         public int GetExecuteProbability() => executeProbability;
     }
 }

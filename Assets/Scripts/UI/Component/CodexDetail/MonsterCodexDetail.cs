@@ -48,12 +48,12 @@ namespace LoopLegacy.UI.Component.CodexDetail
             var killCount = PersistentGameState.Instance.CodexState.GetMobKillCount(monsterData.code);
             string killCountString = Utils.GetUIString("kill-count");
             _nameText.text = Utils.GetMonsterName(monsterData);
-            _levelText.text = monsterData.level.ToString();
-            _killCountText.text = killCount.ToString();
-            _hpText.text = monsterData.hp.ToString();
-            _atkText.text = monsterData.atk.ToString();
-            _goldText.text = monsterData.gold.ToString();
-            _expText.text = monsterData.exp.ToString();
+            _levelText.text = monsterData.level.ToString("n0");
+            _killCountText.text = killCount.ToString("n0");
+            _hpText.text = monsterData.hp.ToString("n0");
+            _atkText.text = monsterData.atk.ToString("n0");
+            _goldText.text = monsterData.gold.ToString("n0");
+            _expText.text = monsterData.exp.ToString("n0");
             _dropTitleText.SetActive(monsterData.drops.Any());
             
             // 모든 drop element를 먼저 생성

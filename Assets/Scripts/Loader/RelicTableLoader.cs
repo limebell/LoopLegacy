@@ -45,7 +45,6 @@ namespace LoopLegacy.Loader
 
                     var data = new RelicData
                     {
-                        id = id,
                         sprite = sprite,
                         grade = (RelicGrade)int.Parse(tokens[0]),
                         effectName = tokens[1],

@@ -322,17 +322,15 @@ namespace LoopLegacy.State
         
         public static BigInteger CalculateAdjustedEXP(BigInteger baseExp, int playerLevel, int monsterLevel)
         {
-            return baseExp;
-            /*// 기본 비율
             double levelRatio = (double)monsterLevel / playerLevel;
             
             // 지수적 완화: (1 - 0.99^level) 공식 사용
             // 레벨 1: 0.01, 레벨 10: 0.096, 레벨 50: 0.39, 레벨 100: 0.63
             double easingFactor = 1.0 - Math.Pow(0.99, playerLevel);
             // 최소 0.7배, 최대 1.5배
-            double adjustedRatio = Math.Clamp(1.0 + (levelRatio - 1.0) * easingFactor, 0.7, 1.5);
+            double adjustedRatio = Math.Clamp(1.0 + (levelRatio - 1.0) * easingFactor, 0.5, 2.0);
             
-            return new BigInteger((double)baseExp * adjustedRatio);*/
+            return new BigInteger((double)baseExp * adjustedRatio);
         }
 
         public string ToJson()

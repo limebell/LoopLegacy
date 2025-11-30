@@ -203,7 +203,7 @@ namespace LoopLegacy.UI.Controller
 
                 try
                 {
-                    GameManager.Instance.AcquireRelic(_selectedRelic.relic.Id);
+                    GameManager.Instance.AcquireRelic(_selectedRelic.relic.EffectName);
                     Hide();
                 }
                 catch (Exception e)
@@ -225,7 +225,7 @@ namespace LoopLegacy.UI.Controller
                 () => {
                     try
                     {
-                        GameManager.Instance.DiscardRelic(relic.Id);
+                        GameManager.Instance.DiscardRelic(relic.EffectName);
                         AddToAlreadyRolledRelics(new[] { relic });
                         RefreshOwnedRelics();
                         SelectRelic(null, null, true);
@@ -240,7 +240,7 @@ namespace LoopLegacy.UI.Controller
 
         private void AddToAlreadyRolledRelics(IEnumerable<Relic> relics)
         {
-            var relicsToAddToAlreadyRolledRelics = relics.Where(r => !_alreadyRolledRelics.Any(ar => ar.Id == r.Id));
+            var relicsToAddToAlreadyRolledRelics = relics.Where(r => !_alreadyRolledRelics.Any(ar => ar.EffectName == r.EffectName));
             if (relicsToAddToAlreadyRolledRelics.Any())
             {
                 _alreadyRolledRelics = _alreadyRolledRelics.Concat(relicsToAddToAlreadyRolledRelics).ToArray();

@@ -171,7 +171,7 @@ namespace LoopLegacy.Region
             
             // 플레이어 collider의 크기 계산
             Vector3 playerExtents = playerBounds.extents;
-            const float MARGIN = 0.1f;
+            const float MARGIN = 0.3f;
             
             if (tangent > triggerHalfSize.y / triggerHalfSize.x)
             {

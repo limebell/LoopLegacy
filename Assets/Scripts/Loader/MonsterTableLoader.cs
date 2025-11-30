@@ -52,7 +52,7 @@ namespace LoopLegacy.Loader
                     if (string.IsNullOrWhiteSpace(line)) continue;
                     var tokens = line.Split(',');
                     var code = tokens[0];
-                    var properties = tokens.Skip(1).ToArray();
+                    var properties = tokens.Skip(2).ToArray();
 
                     var data = ParseMonsterData(properties, code, MonsterType.Boss);
 

@@ -62,8 +62,8 @@ namespace LoopLegacy.UI.Controller
                 _dropElements.Add(dropElement.GetComponent<DropElement>());
                 if (dropEntryData.itemType == DropType.Relic)
                 {
-                    Debug.Log($"Relic: {dropEntryData.itemId} {dropEntryData.relicLevel} {dropEntryData.count}");
-                    var relicData = TableManager.GetRelic(dropEntryData.itemId);
+                    Debug.Log($"Relic: {dropEntryData.relicEffectName} {dropEntryData.relicLevel} {dropEntryData.count}");
+                    var relicData = TableManager.GetRelic(dropEntryData.relicEffectName);
                     var image = relicData.sprite;
                     dropElement.GetComponent<DropElement>().UpdateElement(
                         image: image,

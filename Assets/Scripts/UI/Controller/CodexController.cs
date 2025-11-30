@@ -114,8 +114,7 @@ namespace LoopLegacy.UI.Controller
                     {
                         if (drop.itemType == DropType.Relic)
                         {
-                            int relicId = TableManager.GetRelicId(drop.relicEffectName);
-                            if (PersistentGameState.Instance.CodexState.GetRelic(relicId) is { } relic)
+                            if (PersistentGameState.Instance.CodexState.GetRelic(drop.relicEffectName) is { } relic)
                             {
                                 if (drop.relicLevel > relic.Level)
                                 {
@@ -189,7 +188,7 @@ namespace LoopLegacy.UI.Controller
 
         private void UpdateRelicElement(ListElement listElement, RelicData relicData, int index)
         {
-            var relic = PersistentGameState.Instance.CodexState.GetRelic(relicData.id);
+            var relic = PersistentGameState.Instance.CodexState.GetRelic(relicData.effectName);
             if (relic == null)
             {
                 listElement.UpdateElement(

@@ -22,7 +22,7 @@ namespace LoopLegacy.UI.Controller
         [SerializeField] private TMP_Text _gradeText;
         [SerializeField] private TMP_Text _descriptionText;
 
-        private List<int> _relicIds = new List<int>();
+        private List<string> _relicEffectNames = new List<string>();
         private int _currentIndex;
 
         void Start()
@@ -41,14 +41,14 @@ namespace LoopLegacy.UI.Controller
                 Enum.GetValues(typeof(RelicGrade)).Length - 1);
             _maxGradeText.text = Utils.GetUIString("grade_" + maxGrade.ToString().ToLowerInvariant());
             _maxGradeText.color = Utils.GetRelicGradeColor(maxGrade);
-            _relicIds = PersistentGameState.Instance.CodexState.GetAvailableRelics()
+            _relicEffectNames = PersistentGameState.Instance.CodexState.GetAvailableRelics()
                 .Where(relic => relic.Grade <= maxGrade)
-                .Select(relic => relic.Id).ToList();
-            _relicIds.Insert(0, -1);
-            _indexText.text = $"{_currentIndex + 1} / {_relicIds.Count}";
-            _currentIndex = _relicIds.FindIndex(id => id == PersistentGameState.Instance.HouseState.InitialRelic.Value);
+                .Select(relic => relic.EffectName).ToList();
+            _relicEffectNames.Insert(0, string.Empty);
+            _indexText.text = $"{_currentIndex + 1} / {_relicEffectNames.Count}";
+            _currentIndex = _relicEffectNames.FindIndex(effectName => effectName == PersistentGameState.Instance.HouseState.InitialRelic.Value);
             _leftButton.gameObject.SetActive(_currentIndex > 0);
-            _rightButton.gameObject.SetActive(_currentIndex < _relicIds.Count - 1);
+            _rightButton.gameObject.SetActive(_currentIndex < _relicEffectNames.Count - 1);
         }
 
         private void OnClickRelic()
@@ -61,35 +61,35 @@ namespace LoopLegacy.UI.Controller
             if (_currentIndex > 0)
             {
                 _currentIndex--;
-                PersistentGameState.Instance.HouseState.InitialRelic.Value = _relicIds[_currentIndex];
-                _indexText.text = $"{_currentIndex + 1} / {_relicIds.Count}";
+                PersistentGameState.Instance.HouseState.InitialRelic.Value = _relicEffectNames[_currentIndex];
+                _indexText.text = $"{_currentIndex + 1} / {_relicEffectNames.Count}";
                 _leftButton.gameObject.SetActive(_currentIndex > 0);
-                _rightButton.gameObject.SetActive(_currentIndex < _relicIds.Count - 1);
+                _rightButton.gameObject.SetActive(_currentIndex < _relicEffectNames.Count - 1);
                 PersistentGameState.Instance.SaveState();
             }
         }
 
         private void OnRightButtonClicked()
         {
-            if (_currentIndex < _relicIds.Count - 1)
+            if (_currentIndex < _relicEffectNames.Count - 1)
             {
                 _currentIndex++;
-                PersistentGameState.Instance.HouseState.InitialRelic.Value = _relicIds[_currentIndex];
-                _indexText.text = $"{_currentIndex + 1} / {_relicIds.Count}";
+                PersistentGameState.Instance.HouseState.InitialRelic.Value = _relicEffectNames[_currentIndex];
+                _indexText.text = $"{_currentIndex + 1} / {_relicEffectNames.Count}";
                 _leftButton.gameObject.SetActive(_currentIndex > 0);
-                _rightButton.gameObject.SetActive(_currentIndex < _relicIds.Count - 1);
+                _rightButton.gameObject.SetActive(_currentIndex < _relicEffectNames.Count - 1);
                 PersistentGameState.Instance.SaveState();
             }
         }
 
-        private void OnInitialRelicChanged(int id)
+        private void OnInitialRelicChanged(string effectName)
         {
-            var leftRelic = _currentIndex > 0 ? PersistentGameState.Instance.CodexState.GetRelic(_relicIds[_currentIndex - 1]) : null;
-            var rightRelic = _currentIndex < _relicIds.Count - 1 ? PersistentGameState.Instance.CodexState.GetRelic(_relicIds[_currentIndex + 1]) : null;
-            var relic = PersistentGameState.Instance.CodexState.GetRelic(id);
+            var leftRelic = _currentIndex > 0 ? PersistentGameState.Instance.CodexState.GetRelic(_relicEffectNames[_currentIndex - 1]) : null;
+            var rightRelic = _currentIndex < _relicEffectNames.Count - 1 ? PersistentGameState.Instance.CodexState.GetRelic(_relicEffectNames[_currentIndex + 1]) : null;
+            var relic = PersistentGameState.Instance.CodexState.GetRelic(effectName);
             _itemContainers[0].gameObject.SetActive(_currentIndex > 0);
             _itemContainers[0].SetRelic(leftRelic);
-            _itemContainers[2].gameObject.SetActive(_currentIndex < _relicIds.Count - 1);
+            _itemContainers[2].gameObject.SetActive(_currentIndex < _relicEffectNames.Count - 1);
             _itemContainers[2].SetRelic(rightRelic);
             if (relic == null)
             {

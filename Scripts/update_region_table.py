@@ -55,8 +55,8 @@ def update_region_table(input_file: str, output_file: str):
                 # 새로운 몬스터 스탯 계산
                 monster_stats = calculator.calculate_stats(level)
                 
-                # HP, ATK, gold만 업데이트, exp는 원본 유지
-                new_line = f"{level},{monster_stats.hp},{monster_stats.atk},{monster_stats.gold},{monster_stats.exp}"
+                # HP, ATK만 업데이트, gold와 exp는 원본 유지
+                new_line = f"{level},{monster_stats.hp},{monster_stats.atk},{gold},{exp}"
                 
                 # 나머지 컬럼들 추가 (bp, drops, actions 등)
                 if len(parts) > 5:

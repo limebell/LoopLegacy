@@ -9,11 +9,6 @@ namespace LoopLegacy.Loader
     public class RelicData
     {
         /// <summary>
-        /// 유물 ID
-        /// </summary>
-        public int id;
-        
-        /// <summary>
         /// 유물 스프라이트
         /// </summary>
         public Sprite sprite;

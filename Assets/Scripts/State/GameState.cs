@@ -51,7 +51,7 @@ namespace LoopLegacy.State
             DefeatedBosses = saveData.defeatedBosses?.ToList() ?? new List<string>();
             RelicRewardRerollCount = new ReactiveProperty<int>(saveData.relicRewardRerollCount);
             OwnedRelics = new ReactiveProperty<IReadOnlyList<Relic>>(
-                saveData.ownedRelics?.Select(id => PersistentGameState.Instance.CodexState.GetRelic(id)).ToList() ?? new List<Relic>());
+                saveData.ownedRelics?.Select(effectName => PersistentGameState.Instance.CodexState.GetRelic(effectName)).ToList() ?? new List<Relic>());
             CurrentMapCode = saveData.currentMapCode;
             PlayerPosition = new Vector2(saveData.playerPositionX, saveData.playerPositionY);
             CurrentEncounterGauge = saveData.currentEncounterGauge;
@@ -88,7 +88,7 @@ namespace LoopLegacy.State
                 combatInfoData = CombatInfo.ToJson(),
                 defeatedBosses = DefeatedBosses.ToArray(),
                 relicRewardRerollCount = RelicRewardRerollCount.Value,
-                ownedRelics = OwnedRelics.Value.Select(relic => relic.Id).ToArray(),
+                ownedRelics = OwnedRelics.Value.Select(relic => relic.EffectName).ToArray(),
                 currentMapCode = CurrentMapCode,
                 playerPositionX = PlayerPosition.x,
                 playerPositionY = PlayerPosition.y,
@@ -107,7 +107,7 @@ namespace LoopLegacy.State
         public string combatInfoData;
         public string[] defeatedBosses;
         public int relicRewardRerollCount;
-        public int[] ownedRelics;
+        public string[] ownedRelics;
         public string currentMapCode;
         public float playerPositionX;
         public float playerPositionY;
@@ -122,6 +122,7 @@ namespace LoopLegacy.State
     {
         public DropType itemType;
         public int itemId;
+        public string relicEffectName;
         public int relicLevel;
         public int count;
     }

@@ -31,6 +31,9 @@ namespace LoopLegacy.State
                 {
                     instance = new PersistentGameState();
                     instance.InitializeDefaultState();
+                    #if UNITY_EDITOR
+                    instance.InitializeDefaultStateForEditor();
+                    #endif
                 }
                 return instance;
             }
@@ -120,20 +123,30 @@ namespace LoopLegacy.State
         private void InitializeDefaultState()
         {
             CurrentLoopCount = 0;
-
-#if UNITY_EDITOR
-            Gold.Value = 100000000;
-#else
             Gold.Value = 0;
-#endif
 
             // 기본 스탯 초기화
             InventoryState.InitializeDefaultState();
             AccumulatedLevel = 0;
-#if UNITY_EDITOR
+
+            // 기본 장비 장착
+            Equip(EquipmentType.Armor, 0);
+            Equip(EquipmentType.Weapon, 0);
+
+            IsInGame = false;
+            LastLoadTime = DateTime.Now;
+            PlayTime = TimeSpan.Zero;
+            _autoDistributeRate[0][(int)StatType.HP] = 1;
+            _autoDistributeRate[0][(int)StatType.ATK] = 2;
+            _autoDistributeRate[0][(int)StatType.DEF] = 1;
+            _autoDistributeRate[0][(int)StatType.LUC] = 0;
+        }
+
+        private void InitializeDefaultStateForEditor()
+        {
+            Gold.Value = 100000000;
             CompletedTutorials[TutorialType.GameStart] = true;
             CompletedTutorials[TutorialType.Territory] = true;
-            HouseState.Upgrade(UpgradeType.InstantEncounter);
             foreach (var i in Enumerable.Range(0, TableManager.GetUpgrade(UpgradeType.TerritoryLevel).maxLevel - 1))
             {
                 HouseState.Upgrade(UpgradeType.TerritoryLevel);
@@ -146,15 +159,35 @@ namespace LoopLegacy.State
             {
                 CodexState.AddMobKillCount(boss.code);
             }
-#endif
+            AutoDistributeStats = true;
 
-            // 기본 장비 장착
-            Equip(EquipmentType.Armor, 0);
-            Equip(EquipmentType.Weapon, 0);
+            foreach (var relic in TableManager.GetAllRelics())
+            {
+                CodexState.UnlockRelicWithLevel(relic.effectName, 0);
+            }
 
-            IsInGame = false;
-            LastLoadTime = DateTime.Now;
-            PlayTime = TimeSpan.Zero;
+            foreach (var equipment in TableManager.GetEquipments(EquipmentType.Weapon))
+            {
+                for (int i = 0; i < 1; i++)
+                {
+                    InventoryState.AddEquipment(EquipmentType.Weapon, equipment.id);
+                }
+            }
+
+            foreach (var equipment in TableManager.GetEquipments(EquipmentType.Armor))
+            {
+                for (int i = 0; i < 1; i++)
+                {
+                    InventoryState.AddEquipment(EquipmentType.Armor, equipment.id);
+                }
+            }
+
+            HouseState.Upgrade(UpgradeType.MaxRelicCount);
+            HouseState.Upgrade(UpgradeType.MaxRelicCount);
+            HouseState.Upgrade(UpgradeType.MaxRelicCount);
+
+            HouseState.Upgrade(UpgradeType.RelicRewardChoiceCount);
+            HouseState.Upgrade(UpgradeType.RelicRewardChoiceCount);
         }
 
         private void SetCurrentSlotIndex(int slotIndex)
@@ -411,11 +444,6 @@ namespace LoopLegacy.State
             {
                 CompletedTutorials[tutorialType] = true;
             }
-        }
-
-        public bool IsRelicFeatureUnlocked()
-        {
-            return HouseState.GetUpgradeLevel(UpgradeType.TerritoryLevel) > 1;
         }
 
         public static string GetSavePath(int slotIndex)

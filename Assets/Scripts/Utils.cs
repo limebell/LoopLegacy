@@ -46,7 +46,7 @@ namespace LoopLegacy
             int count = 3)
         {
             var candidates = relics
-                .Where(r => !excludeRelics.Any(e => e.Id == r.Id))
+                .Where(r => !excludeRelics.Any(e => e.EffectName == r.EffectName))
                 .Where(r => rarityWeights.TryGetValue(r.Grade, out var w) && w > 0f)
                 .ToList();
 
@@ -57,7 +57,7 @@ namespace LoopLegacy
             var keyed = new List<(float key, Relic relic)>(candidates.Count);
             foreach (var c in candidates)
             {
-                float w = rarityWeights[c.Grade] * (alreadyRolledRelics.Any(r => r.Id == c.Id) ? 0.1f : 1f); // 한 번 뽑았던 유물은 확률 1/10으로 감소
+                float w = rarityWeights[c.Grade] * (alreadyRolledRelics.Any(r => r.EffectName == c.EffectName) ? 0.1f : 1f); // 한 번 뽑았던 유물은 확률 1/10으로 감소
                 float u = Mathf.Clamp01(Random.value);
                 if (u <= 0f) u = Mathf.Epsilon; // 로그 보호
                 float key = -Mathf.Log(u) / w;  // 작을수록 선택 우선

@@ -19,12 +19,12 @@ namespace LoopLegacy.State
 
         public bool CanViewCodex => TerritoryLevel.Value >= 2;
 
-        public ReactiveProperty<int> InitialRelic { get; private set; }
+        public ReactiveProperty<string> InitialRelic { get; private set; }
 
         public HouseState()
         {
             TerritoryLevel = new ReactiveProperty<int>(0);
-            InitialRelic = new ReactiveProperty<int>(-1);
+            InitialRelic = new ReactiveProperty<string>(string.Empty);
             Upgrades = new Dictionary<UpgradeType, int>();
             foreach (var upgrade in Enum.GetValues(typeof(UpgradeType)))
             {
@@ -59,17 +59,6 @@ namespace LoopLegacy.State
             if (type == UpgradeType.TerritoryLevel)
             {
                 TerritoryLevel.Value = Upgrades[type];
-
-                if (TerritoryLevel.Value == 3)
-                {
-                    // 유물 기능 해금되면서 기초 기능들과 유물 해금
-                    Upgrades[UpgradeType.MaxRelicCount] = 1;
-                    Upgrades[UpgradeType.RelicRewardChoiceCount] = 1;
-                    PersistentGameState.Instance.CodexState.UnlockRelicWithLevel(0, 0);
-                    PersistentGameState.Instance.CodexState.UnlockRelicWithLevel(1, 0);
-                    PersistentGameState.Instance.CodexState.UnlockRelicWithLevel(2, 0);
-                    PersistentGameState.Instance.CodexState.UnlockRelicWithLevel(3, 0);
-                }
 
                 if (TerritoryLevel.Value == 6)
                 {
@@ -107,15 +96,15 @@ namespace LoopLegacy.State
             return Shortcuts[shortcut];
         }
 
-        public void SetInitialRelic(int id)
+        public void SetInitialRelic(string effectName)
         {
-            if (PersistentGameState.Instance.CodexState.GetAvailableRelics().Any(relic => relic.Id == id))
+            if (PersistentGameState.Instance.CodexState.GetAvailableRelics().Any(relic => relic.EffectName == effectName))
             {
-                InitialRelic.Value = id;
+                InitialRelic.Value = effectName;
             }
             else
             {
-                InitialRelic.Value = -1;
+                InitialRelic.Value = string.Empty;
             }
         }
 
@@ -125,7 +114,7 @@ namespace LoopLegacy.State
             {
                 upgrades = Upgrades.Values.ToArray(),
                 shortcuts = Shortcuts.Values.ToArray(),
-                initialRelicId = InitialRelic.Value,
+                initialRelicEffectName = InitialRelic.Value,
             };
 
             return JsonUtility.ToJson(saveData);
@@ -154,7 +143,7 @@ namespace LoopLegacy.State
                     houseState.Shortcuts[(Shortcut)i] = saveData.shortcuts[i];
                 }
             }
-            houseState.InitialRelic.Value = saveData.initialRelicId;
+            houseState.InitialRelic.Value = saveData.initialRelicEffectName;
             houseState.TerritoryLevel.Value = houseState.Upgrades[UpgradeType.TerritoryLevel];
             return houseState;
         }
@@ -165,7 +154,7 @@ namespace LoopLegacy.State
     {
         public int[] upgrades;
         public bool[] shortcuts;
-        public int initialRelicId;
+        public string initialRelicEffectName;
     }
 
     public enum Shortcut : byte

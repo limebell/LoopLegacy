@@ -11,7 +11,7 @@ namespace LoopLegacy.State
     {
         private readonly List<string> _visitedRegions;
         private readonly Dictionary<string, int> _mobKillCount;
-        private readonly List<int> _relicLevels;
+        private readonly Dictionary<string, int> _relicLevels;
 
         public CodexState()
         {
@@ -22,7 +22,11 @@ namespace LoopLegacy.State
                 _mobKillCount.Add(boss.code, 0);
             }
 
-            _relicLevels = TableManager.GetAllRelics().Select(_ => -1).ToList();
+            _relicLevels = TableManager.GetAllRelics().ToDictionary(data => data.effectName, _ => -1);
+            _relicLevels["stat_boost_hp"] = 0;
+            _relicLevels["stat_boost_atk"] = 0;
+            _relicLevels["stat_boost_def"] = 0;
+            _relicLevels["stat_boost_luc"] = 0;
         }
 
         public bool IsRegionVisited(string code)
@@ -64,40 +68,53 @@ namespace LoopLegacy.State
             return count;
         }
 
-        public void UnlockRelicWithLevel(int id, int level)
+        public void UnlockRelicWithLevel(string effectName, int level)
         {
             if (level < 0)
             {
                 throw new ArgumentException("Relic level must be greater than or equal to 0");
             }
 
-            _relicLevels[id] = level;
+            if (!_relicLevels.ContainsKey(effectName))
+            {
+                string errorMessage =
+                    $"CodexState: relic does not contain key: {effectName}";
+                Debug.LogError(errorMessage);
+                return;
+            }
+
+            if (_relicLevels[effectName] >= level)
+            {
+                Debug.Log($"CodexState: relic {effectName} level {level} already unlocked");
+                return;
+            }
+
+            _relicLevels[effectName] = level;
         }
 
-        public Relic GetRelic(int id)
+        public Relic GetRelic(string effectName)
         {
-            if (id < 0 || id >= _relicLevels.Count)
+            if (!_relicLevels.TryGetValue(effectName, out int level))
             {
                 return null;
             }
-            
-            int level = _relicLevels[id];
+
             if (level < 0)
             {
                 return null;
             }
             
-            return new Relic(TableManager.GetRelic(id), level);
+            return new Relic(TableManager.GetRelic(effectName), level);
         }
 
         public List<Relic> GetAvailableRelics()
         {
             List<Relic> relics = new List<Relic>();
-            for (int i = 0; i < _relicLevels.Count; i++)
+            foreach (var data in _relicLevels)
             {
-                if (_relicLevels[i] >= 0)
+                if (data.Value >= 0)
                 {
-                    relics.Add(new Relic(TableManager.GetRelic(i), _relicLevels[i]));
+                    relics.Add(new Relic(TableManager.GetRelic(data.Key), data.Value));
                 }
             }
 
@@ -110,7 +127,7 @@ namespace LoopLegacy.State
             {
                 visitedRegions = _visitedRegions.OrderBy(code => code).ToArray(),
                 mobKillCount = _mobKillCount.Select(data => new DictionaryElement { key = data.Key, value = data.Value }).ToArray(),
-                relicLevels = _relicLevels.ToArray(),
+                relicLevels = _relicLevels.Select(data => new DictionaryElement { key = data.Key, value = data.Value }).ToArray(),
             };
             return JsonUtility.ToJson(saveData);
         }
@@ -138,18 +155,17 @@ namespace LoopLegacy.State
                 codexState._visitedRegions.Add(data);
             }
 
-            for (int i = 0; i < TableManager.GetAllRelics().Count(); i++)
+            foreach (var data in saveData.relicLevels)
             {
-                if (i < saveData.relicLevels.Length)
-                    codexState._relicLevels[i] = saveData.relicLevels[i];
-                else
+                if (!codexState._relicLevels.ContainsKey(data.key))
                 {
                     string errorMessage =
-                        $"CodexState: relic mismatch: {saveData.relicLevels.Length} != " +
-                        $"{TableManager.GetAllRelics().Count()}";
+                        $"CodexState: relic does not contain key: {data.key}";
                     Debug.LogError(errorMessage);
-                    codexState._relicLevels[i] = -1;
+                    continue;
                 }
+
+                codexState._relicLevels[data.key] = data.value;
             }
 
             return codexState;
@@ -161,7 +177,7 @@ namespace LoopLegacy.State
     {
         public string[] visitedRegions;
         public DictionaryElement[] mobKillCount;
-        public int[] relicLevels;
+        public DictionaryElement[] relicLevels;
     }
 
     [Serializable]

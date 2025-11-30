@@ -150,32 +150,14 @@ namespace LoopLegacy.Manager
             }
         }
 
-        public static RelicData GetRelic(int id)
+        public static RelicData GetRelic(string effectName)
         {
             if (!isInitialized)
             {
                 LoadAllTables();
             }
 
-            return _relics[id];
-        }
-
-        public static int GetRelicId(string effectName)
-        {
-            if (!isInitialized)
-            {
-                LoadAllTables();
-            }
-
-            foreach (var relic in _relics)
-            {
-                if (string.Equals(relic.effectName, effectName))
-                {
-                    return relic.id;
-                }
-            }
-
-            return -1;
+            return _relics.Find(relic => relic.effectName == effectName);
         }
 
         public static List<RelicData> GetAllRelics()

@@ -4,7 +4,6 @@ using LoopLegacy.Manager;
 using LoopLegacy.State;
 using LoopLegacy.UI.Component;
 using System.Collections;
-using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -64,8 +63,7 @@ namespace LoopLegacy.UI.Controller
         {
             if (drop.itemType == DropType.Relic)
             {
-                var relicId = TableManager.GetRelicId(drop.relicEffectName);
-                var relicData = TableManager.GetRelic(relicId);
+                var relicData = TableManager.GetRelic(drop.relicEffectName);
                 _drops[index].UpdateElement(
                     image: relicData.sprite,
                     type: "UNLOCK",
@@ -113,8 +111,7 @@ namespace LoopLegacy.UI.Controller
         {
             if (drop.itemType == DropType.Relic)
             {
-                var relicId = TableManager.GetRelicId(drop.relicEffectName);
-                var relicName = $"{Utils.GetRelicName(TableManager.GetRelic(relicId).effectName)} Lv. {drop.relicLevel + 1}";
+                var relicName = $"{Utils.GetRelicName(drop.relicEffectName)} Lv. {drop.relicLevel + 1}";
                 return Utils.GetUIString("drop-dialogue_relic", new object[] { relicName });
             }
             else
@@ -276,10 +273,10 @@ namespace LoopLegacy.UI.Controller
                     // Drop이 있었다면 대기, 없었다면 대기 없음
                     yield return WaitForSecondsSkippable(RESULT_ANIMATION_DELAY);
                     
-                    // 새 드랍이 있었다면 추가로 0.5초 대기
+                    // 새 드랍이 있었다면 추가로 0.6초 대기
                     if (hasNewDrop)
                     {
-                        yield return WaitForSecondsSkippable(0.5f);
+                        yield return new WaitForSeconds(0.6f);
                     }
                     
                     _infoText.SetActive(true);
@@ -345,10 +342,10 @@ namespace LoopLegacy.UI.Controller
                     _dropDialogueText.text = completeText.ToString();
                 }
                 
-                // 새 드랍이 있으면 스킵했어도 0.5초 대기
+                // 새 드랍이 있으면 스킵했어도 0.6초 대기 (스킵 불가)
                 if (hasNewDrop)
                 {
-                    yield return new WaitForSeconds(0.5f);
+                    yield return new WaitForSeconds(0.6f);
                 }
                 
                 // 스킵 시 infoText도 소리 없이 표시

@@ -5,21 +5,24 @@ namespace LoopLegacy.Battle.RelicEffects
     /// </summary>
     public class BattlePointLossPreventVictoryEffect : RelicEffect
     {
+        private readonly float damageIncrease;
         private readonly int protectionPercentage;
 
-        public BattlePointLossPreventVictoryEffect(string effectType, int protectionPercentage) : base(effectType)
+        public BattlePointLossPreventVictoryEffect(string effectType, float damageIncrease, int protectionPercentage) : base(effectType)
         {
+            this.damageIncrease = damageIncrease;
             this.protectionPercentage = protectionPercentage;
         }
 
         public override void ApplyEffect(RelicEffectContext context)
         {
-            // 전투 패배 방어는 전투 패배 시 적용되므로 여기서는 별도 처리 없음
-            // 실제 적용은 GameManager에서 처리
+            context.DamageMultiplier += damageIncrease / 100f;
         }
 
         public override string GetDescription() =>
-            GetDescriptionWithArgs(new object[] { protectionPercentage });
+            GetDescriptionWithArgs(new object[] { damageIncrease, protectionPercentage });
+
+        public float GetDamageIncrease() => damageIncrease;
 
         public int GetProtectionPercentage() => protectionPercentage;
     }

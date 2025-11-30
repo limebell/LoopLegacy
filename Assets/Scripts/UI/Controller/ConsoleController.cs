@@ -196,10 +196,8 @@ namespace LoopLegacy.UI.Controller
                 case "resetCharacter":
                     GameManager.Instance.GameState.PlayerStats.EXP.Value = 0;
                     GameManager.Instance.GameState.PlayerStats.Level.Value = 1;
-                    GameManager.Instance.GameState.PlayerStats.InitializeStats(StatType.HP, PersistentGameState.Instance.GetBaseStat(StatType.HP));
-                    GameManager.Instance.GameState.PlayerStats.InitializeStats(StatType.ATK, PersistentGameState.Instance.GetBaseStat(StatType.ATK));
-                    GameManager.Instance.GameState.PlayerStats.InitializeStats(StatType.DEF, PersistentGameState.Instance.GetBaseStat(StatType.DEF));
-                    GameManager.Instance.GameState.PlayerStats.InitializeStats(StatType.LUC, PersistentGameState.Instance.GetBaseStat(StatType.LUC));
+                    GameManager.Instance.InitializeStats();
+                    GameManager.Instance.GameState.PlayerStats.StatPoints.Value = 0;
                     break;
 
                 case "addLevel":
@@ -315,6 +313,35 @@ namespace LoopLegacy.UI.Controller
                     }
                     break;
 
+                case "addAllEquipments":
+                {
+                    int quantity = 1;
+                    if (args.Length == 1)
+                    {
+                        quantity = int.Parse(args[0]);
+                    }
+
+                    foreach (var equipment in TableManager.GetEquipments(EquipmentType.Weapon))
+                    {
+                        for (int i = 0; i < quantity; i++)
+                        {
+                            PersistentGameState.Instance.InventoryState.AddEquipment(EquipmentType.Weapon, equipment.id);
+                        }
+                    }
+
+                    foreach (var equipment in TableManager.GetEquipments(EquipmentType.Armor))
+                    {
+                        for (int i = 0; i < quantity; i++)
+                        {
+                            PersistentGameState.Instance.InventoryState.AddEquipment(EquipmentType.Armor, equipment.id);
+                        }
+                    }
+
+                    Trace($"Added all equipments {quantity} times");
+
+                    break;
+                }
+
                 case "encounter":
                     if (args.Length == 0)
                     {
@@ -336,7 +363,7 @@ namespace LoopLegacy.UI.Controller
 
                     break;
 
-                case "moveMap":
+                case "moveToMap":
                     if (args.Length != 1)
                     {
                         Trace("Usage: moveMap <mapCode>");
@@ -377,18 +404,18 @@ namespace LoopLegacy.UI.Controller
                     }
                     else
                     {
-                        var relicId = int.Parse(args[0]);
+                        var effectName = args[0];
                         var level = int.Parse(args[1]);
-                        PersistentGameState.Instance.CodexState.UnlockRelicWithLevel(relicId, level);
-                        Trace($"Unlocked relic {relicId} level {level}");
+                        PersistentGameState.Instance.CodexState.UnlockRelicWithLevel(effectName, level);
+                        Trace($"Unlocked relic {effectName} level {level}");
                     }
                     break;
 
                 case "unlockAllRelics":
                     foreach (var relic in TableManager.GetAllRelics())
                     {
-                        PersistentGameState.Instance.CodexState.UnlockRelicWithLevel(relic.id, 0);
-                        Trace($"Unlocked relic {relic.id}");
+                        PersistentGameState.Instance.CodexState.UnlockRelicWithLevel(relic.effectName, 0);
+                        Trace($"Unlocked relic {relic.effectName}");
                     }
                     break;
 
@@ -408,28 +435,28 @@ namespace LoopLegacy.UI.Controller
                 case "addRelic":
                     if (args.Length != 1)
                     {
-                        Trace("Usage: addRelic <relicId>");
+                        Trace("Usage: addRelic <effectName>");
                     }
                     else
                     {
-                        var relicId = int.Parse(args[0]);
-                        GameManager.Instance.AcquireRelic(relicId);
-                        Trace($"Acquired relic {relicId}");
+                        var effectName = args[0];
+                        GameManager.Instance.AcquireRelic(effectName);
+                        Trace($"Acquired relic {effectName}");
                     }
                     break;
 
                 case "removeRelic":
                     if (args.Length != 1)
                     {
-                        Trace("Usage: removeRelic <relicId>");
+                        Trace("Usage: removeRelic <effectName>");
                     }
                     else
                     {
-                        var relicId = int.Parse(args[0]);
+                        var effectName = args[0];
                         var ownedRelics = GameManager.Instance.GameState.OwnedRelics.Value.ToList();
-                        ownedRelics.Remove(ownedRelics.First(relic => relic.Id == relicId));
+                        ownedRelics.Remove(ownedRelics.First(relic => relic.EffectName == effectName));
                         GameManager.Instance.GameState.OwnedRelics.Value = ownedRelics;
-                        Trace($"Removed relic {relicId}");
+                        Trace($"Removed relic {effectName}");
                     }
                     break;
 
@@ -537,7 +564,7 @@ namespace LoopLegacy.UI.Controller
 
                         foreach (var relic in TableManager.GetAllRelics())
                         {
-                            PersistentGameState.Instance.CodexState.UnlockRelicWithLevel(relic.id, relic.values.Length - 1);
+                            PersistentGameState.Instance.CodexState.UnlockRelicWithLevel(relic.effectName, relic.values.Length - 1);
                         }
 
                         PersistentGameState.Instance.SetAutoDistributeStats(true);
@@ -560,17 +587,18 @@ namespace LoopLegacy.UI.Controller
                     Trace("setGold <gold>: Set the player's gold");
                     Trace("addBattlePoint <amount>: Add battle points to the player's stats");
                     Trace("addEquipment <itemId> <type> <quantity>: Add equipment to the player's inventory");
+                    Trace("addAllEquipments <quantity>: Add all equipment to the player's inventory");
                     Trace("encounter: Encounter a monster");
                     Trace("encounter <monsterId>: Encounter a specific monster");
-                    Trace("moveMap <mapCode>: Move to a specific map");
+                    Trace("moveToMap <mapCode>: Move to a specific map");
                     Trace("teleport <x> <y>: Teleport to a specific position");
                     Trace("enableEncounter: Enable encounter");
                     Trace("disableEncounter: Disable encounter");
-                    Trace("unlockRelic <relicId> <level>: Unlock a relic with a specific level");
+                    Trace("unlockRelic <effectName> <level>: Unlock a relic with a specific level");
                     Trace("unlockAllRelics: Unlock all relics");
                     Trace("addRerollCount <count>: Add reroll count to the player's stats");
-                    Trace("addRelic <relicId>: Add a relic to the player's inventory");
-                    Trace("removeRelic <relicId>: Remove a relic from the player's inventory");
+                    Trace("addRelic <effectName>: Add a relic to the player's inventory");
+                    Trace("removeRelic <effectName>: Remove a relic from the player's inventory");
                     Trace("rewardRelic <weight>: Reward a relic from a monster");
                     Trace("upgrade <upgradeType>: Upgrade a specific upgrade");
                     Trace("upgradeAll: Upgrade all upgrades");

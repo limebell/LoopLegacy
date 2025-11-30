@@ -618,6 +618,10 @@ MonoBehaviour:
     m_Localized: Ruler of the Devil
     m_Metadata:
       m_Items: []
+  - m_Id: 39120998202081281
+    m_Localized: Snow Toad
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

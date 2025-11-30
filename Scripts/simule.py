@@ -164,7 +164,7 @@ class MonsterStatCalculator:
     def __init__(self):
         # 기본 스탯 계수들
         self.base_gold = 120
-        self.base_exp = 20
+        self.base_exp = 70
         
         # 레벨별 스탯 증가 계수 (선형 증가량)
         self.gold_growth = 3  # 골드는 레벨당 3 증가
@@ -174,59 +174,59 @@ class MonsterStatCalculator:
         if level <= 0:
             raise ValueError("레벨은 1 이상이어야 합니다.")
         
-        # 몬스터 스탯 계산 - 구간별 공식 (HP 70%)
+        # 몬스터 스탯 계산 - 구간별 공식 (후반부 HP 증가율 추가 상향)
         if level <= 300:
             # 초반부: 플레이어 유리
-            hp = int(23.2 * level * 0.7)
-            atk = int(1.8 * level)
+            hp = int(19.0 * level)
+            atk = int(1.3 * level)
         elif level <= 800:
             # 초중반부: 플레이어 약간 유리
-            hp = int((6960 + 30.0 * (level - 300)) * 0.7)
-            atk = int(540 + 2.1 * (level - 300))
+            hp = int(5700 + 28.0 * (level - 300))
+            atk = int(390 + 1.4 * (level - 300))
         elif level <= 1800:
             # 중반부: 균형잡힌 전투
-            hp = int((21960 + 36.0 * (level - 800)) * 0.7)
-            atk = int(1590 + 2.5 * (level - 800))
+            hp = int(19700 + 39.0 * (level - 800))
+            atk = int(1090 + 1.5 * (level - 800))
         elif level <= 3333:
             # 중후반부: 몬스터 강화
-            hp = int((57960 + 46.0 * (level - 1800)) * 0.7)
-            atk = int(4090 + 3.2 * (level - 1800))
+            hp = int(58700 + 49.0 * (level - 1800))
+            atk = int(2590 + 1.6 * (level - 1800))
         elif level <= 5000:
             # 후반부: 몬스터 압도적
-            hp = int((128478 + 48.0 * (level - 3333)) * 0.7)
-            atk = int(8995.6 + 3.2 * (level - 3333))
+            hp = int(133817 + 64.0 * (level - 3333))
+            atk = int(5042 + 1.85 * (level - 3333))
         elif level <= 20000:
-            # 극후반부: 매우 어려움
-            hp = int((208494 + 64.0 * (level - 5000)) * 0.7)
-            atk = int(14330.0 + 4.3 * (level - 5000))
+            # 극후반부: 매우 어려움 (ATK 증가율 완만화)
+            hp = int(240505 + 82.0 * (level - 5000))
+            atk = int(8125 + 2.0 * (level - 5000))
         elif level <= 30000:
-            # 초극후반부: 극한 난이도 (소폭 강화)
-            hp = int((1168494 + 90.0 * (level - 20000)) * 0.7)
-            atk = int(78830.0 + 6.2 * (level - 20000))
+            # 초극후반부: 극한 난이도 (ATK 증가율 완만화)
+            hp = int(1470505 + 135.0 * (level - 20000))
+            atk = int(38125 + 2.3 * (level - 20000))
         elif level <= 50000:
-            # 초극후반부2: 극한 난이도 (추가 강화)
-            hp = int((2068494 + 122.0 * (level - 30000)) * 0.7)
-            atk = int(140830.0 + 8.5 * (level - 30000))
+            # 초극후반부2: 극한 난이도 (ATK 증가율 완만화)
+            hp = int(2820505 + 182.0 * (level - 30000))
+            atk = int(61125 + 2.45 * (level - 30000))
         elif level <= 60000:
-            # 초극후반부3: 극한 난이도 (5만 이후 추가 강화)
-            hp = int((4508494 + 160.0 * (level - 50000)) * 0.7)
-            atk = int(310830.0 + 11.3 * (level - 50000))
+            # 초극후반부3: 극한 난이도 (ATK 증가율 완만화)
+            hp = int(6460505 + 240.0 * (level - 50000))
+            atk = int(110125 + 2.7 * (level - 50000))
         elif level <= 70000:
-            # 초극후반부4: 극한 난이도 (5만 이후 추가 강화)
-            hp = int((6108494 + 182.0 * (level - 60000)) * 0.7)
-            atk = int(423830.0 + 12.8 * (level - 60000))
+            # 초극후반부4: 극한 난이도 (ATK 증가율 완만화)
+            hp = int(8860505 + 273.0 * (level - 60000))
+            atk = int(137125 + 2.9 * (level - 60000))
         elif level <= 80000:
-            # 초극후반부5: 극한 난이도 (7만 이후 추가 강화)
-            hp = int((7928494 + 205.0 * (level - 70000)) * 0.7)
-            atk = int(551830.0 + 14.5 * (level - 70000))
+            # 초극후반부5: 극한 난이도 (ATK 증가율 완만화)
+            hp = int(11590505 + 296.0 * (level - 70000))
+            atk = int(166125 + 3.1 * (level - 70000))
         elif level <= 90000:
-            # 초극후반부6: 극한 난이도 (7만 이후 추가 강화)
-            hp = int((9978494 + 205.0 * (level - 80000)) * 0.7)
-            atk = int(696830.0 + 14.5 * (level - 80000))
+            # 초극후반부6: 극한 난이도 (ATK 증가율 완만화)
+            hp = int(14550505 + 315.0 * (level - 80000))
+            atk = int(197125 + 3.3 * (level - 80000))
         else:
-            # 최종구간: 최종 난이도 (최종 구간 추가 강화)
-            hp = int((12028494 + 260.0 * (level - 90000)) * 0.7)
-            atk = int(841830.0 + 18.4 * (level - 90000))
+            # 최종구간: 최종 난이도 (ATK 증가율 완만화)
+            hp = int(17700505 + 390.0 * (level - 90000))
+            atk = int(230125 + 3.5 * (level - 90000))
         
         # 지수함수 근사 (참고용 주석)
         # hp = int(8.9 * (level ** 1.19))
@@ -237,7 +237,7 @@ class MonsterStatCalculator:
         # n^1.4 필요 경험치 시스템에 맞춰 조정됨
         log_val = math.log(level + 1)
         level_factor = level * 2 / (10000 + level)  # 저레벨 억제, 고레벨 성장
-        exp = int(self.base_exp * (level ** 1.6) * log_val * level_factor)
+        exp = int(self.base_exp * (level ** 1.4) * log_val * level_factor)
         
         return MonsterStats(
             level=level,

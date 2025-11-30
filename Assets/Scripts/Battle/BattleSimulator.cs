@@ -98,8 +98,7 @@ namespace LoopLegacy.Battle
             // 몬스터 ATK 기반 대미지 감소 (실험적 기능)
             if (damage > 0 && MonsterATK > 0)
             {
-                float atkTenth = MonsterATK * 0.1f;
-                float reductionRate = atkTenth / (damage + atkTenth);
+                float reductionRate = MonsterATK / (damage + MonsterATK);
                 damage = (int)(damage * (1 - reductionRate));
             }
 

@@ -7,10 +7,12 @@ namespace LoopLegacy.Battle.RelicEffects
     /// </summary>
     public class ReduceDamageHigherLevelEffect : RelicEffect
     {
+        private readonly int damageIncrease;
         private readonly int damageReductionPercentage;
 
-        public ReduceDamageHigherLevelEffect(string effectType,int damageReductionPercentage) : base(effectType)
+        public ReduceDamageHigherLevelEffect(string effectType, int damageIncrease, int damageReductionPercentage) : base(effectType)
         {
+            this.damageIncrease = damageIncrease;
             this.damageReductionPercentage = damageReductionPercentage;
         }
 
@@ -23,13 +25,15 @@ namespace LoopLegacy.Battle.RelicEffects
             
             if (context.MonsterData.level > GameManager.Instance.GameState.PlayerStats.Level.Value)
             {
+                context.EnemyAttackReductionRate += damageIncrease / 100f;
                 context.EnemyAttackReductionRate *= 1.0f - damageReductionPercentage / 100f;
             }
         }
 
         public override string GetDescription() =>
-            GetDescriptionWithArgs(new object[] { damageReductionPercentage });
+            GetDescriptionWithArgs(new object[] { damageIncrease, damageReductionPercentage });
             
+        public int GetDamageIncrease() => damageIncrease;
         public int GetDamageReductionPercentage() => damageReductionPercentage;
     }
 }

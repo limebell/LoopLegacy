@@ -1,0 +1,912 @@
+<?xml version="1.0"?>
+<xliff xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0" srcLang="en" trgLang="en" xmlns="urn:oasis:names:tc:xliff:document:2.0">
+  <file id="621ae691fac7dba4aa412fd3fbc707b2" original="Assets/Settings/Localization/Monster_en.asset">
+    <group id="b9a934e5ba5e2174094df0782712d9b7" name="Monster">
+      <unit id="5668077568" name="start-0_0" xml:space="preserve">
+        <segment>
+          <source>Training Dummy</source>
+          <target>Training Dummy</target>
+        </segment>
+      </unit>
+      <unit id="11988893696" name="start-1_0" xml:space="preserve">
+        <segment>
+          <source>Chicken</source>
+          <target>Chicken</target>
+        </segment>
+      </unit>
+      <unit id="15386279936" name="start-2_0" xml:space="preserve">
+        <segment>
+          <source>White Chicken</source>
+          <target>White Chicken</target>
+        </segment>
+      </unit>
+      <unit id="18947244032" name="start-3_0" xml:space="preserve">
+        <segment>
+          <source>Brawler Chicken</source>
+          <target>Brawler Chicken</target>
+        </segment>
+      </unit>
+      <unit id="22751477760" name="start-4_0" xml:space="preserve">
+        <segment>
+          <source>Wild Dog</source>
+          <target>Wild Dog</target>
+        </segment>
+      </unit>
+      <unit id="26341801984" name="start-5_0" xml:space="preserve">
+        <segment>
+          <source>Stained Dog</source>
+          <target>Stained Dog</target>
+        </segment>
+      </unit>
+      <unit id="30213144576" name="start-6_0" xml:space="preserve">
+        <segment>
+          <source>Dingo</source>
+          <target>Dingo</target>
+        </segment>
+      </unit>
+      <unit id="32947830784" name="start-7_0" xml:space="preserve">
+        <segment>
+          <source>Wild Dingo</source>
+          <target>Wild Dingo</target>
+        </segment>
+      </unit>
+      <unit id="35900620800" name="start-8_0" xml:space="preserve">
+        <segment>
+          <source>Green Slime</source>
+          <target>Green Slime</target>
+        </segment>
+      </unit>
+      <unit id="38731776000" name="start-9_0" xml:space="preserve">
+        <segment>
+          <source>Purple Slime</source>
+          <target>Purple Slime</target>
+        </segment>
+      </unit>
+      <unit id="1062884343808" name="start-10_0" xml:space="preserve">
+        <segment>
+          <source>Pink Slime</source>
+          <target>Pink Slime</target>
+        </segment>
+      </unit>
+      <unit id="1078034169856" name="forest-0_0" xml:space="preserve">
+        <segment>
+          <source>Yellow Mushromm</source>
+          <target>Yellow Mushromm</target>
+        </segment>
+      </unit>
+      <unit id="2849783372316672" name="forest-1_0" xml:space="preserve">
+        <segment>
+          <source>Green Mushroom</source>
+          <target>Green Mushroom</target>
+        </segment>
+      </unit>
+      <unit id="2849842981765120" name="forest-2_0" xml:space="preserve">
+        <segment>
+          <source>Gray Wolf</source>
+          <target>Gray Wolf</target>
+        </segment>
+      </unit>
+      <unit id="2850049081475072" name="forest-2_1" xml:space="preserve">
+        <segment>
+          <source>Blue Wolf</source>
+          <target>Blue Wolf</target>
+        </segment>
+      </unit>
+      <unit id="2850130903957504" name="forest-3_0" xml:space="preserve">
+        <segment>
+          <source>Small Snail</source>
+          <target>Small Snail</target>
+        </segment>
+      </unit>
+      <unit id="2850358088433664" name="forest-4_0" xml:space="preserve">
+        <segment>
+          <source>Ladybug</source>
+          <target>Ladybug</target>
+        </segment>
+      </unit>
+      <unit id="2850400434126848" name="forest-5_0" xml:space="preserve">
+        <segment>
+          <source>Toad</source>
+          <target>Toad</target>
+        </segment>
+      </unit>
+      <unit id="2850485066792960" name="forest-6_0" xml:space="preserve">
+        <segment>
+          <source>Wild Snake</source>
+          <target>Wild Snake</target>
+        </segment>
+      </unit>
+      <unit id="2850508051578880" name="forest-7_0" xml:space="preserve">
+        <segment>
+          <source>Poison Mushroom</source>
+          <target>Poison Mushroom</target>
+        </segment>
+      </unit>
+      <unit id="39090467653550080" name="spring-pool-0_0" xml:space="preserve">
+        <segment>
+          <source>Small Land Spirit</source>
+          <target>Small Land Spirit</target>
+        </segment>
+      </unit>
+      <unit id="39090598390005760" name="spring-pool-1_0" xml:space="preserve">
+        <segment>
+          <source>Land Spirit</source>
+          <target>Land Spirit</target>
+        </segment>
+      </unit>
+      <unit id="39090654069391360" name="spring-pool-2_0" xml:space="preserve">
+        <segment>
+          <source>Large Land Spirit</source>
+          <target>Large Land Spirit</target>
+        </segment>
+      </unit>
+      <unit id="39090721740292096" name="spring-pool-3_0" xml:space="preserve">
+        <segment>
+          <source>Guardian of Land</source>
+          <target>Guardian of Land</target>
+        </segment>
+      </unit>
+      <unit id="39090988854542336" name="spring-pool-4_0" xml:space="preserve">
+        <segment>
+          <source>Brown Dwarf</source>
+          <target>Brown Dwarf</target>
+        </segment>
+      </unit>
+      <unit id="39090990775533568" name="spring-pool-4_1" xml:space="preserve">
+        <segment>
+          <source>Gnom</source>
+          <target>Gnom</target>
+        </segment>
+      </unit>
+      <unit id="39091146577149952" name="spring-pool-5_0" xml:space="preserve">
+        <segment>
+          <source>Guardian of River</source>
+          <target>Guardian of River</target>
+        </segment>
+      </unit>
+      <unit id="39091296666124288" name="spring-pool-6_0" xml:space="preserve">
+        <segment>
+          <source>Guardian of Spring Pool</source>
+          <target>Guardian of Spring Pool</target>
+        </segment>
+      </unit>
+      <unit id="39091316496793600" name="spring-pool-6_1" xml:space="preserve">
+        <segment>
+          <source>Spring Pool Spirit</source>
+          <target>Spring Pool Spirit</target>
+        </segment>
+      </unit>
+      <unit id="39091695519268864" name="high-mountain-0_0" xml:space="preserve">
+        <segment>
+          <source>Stone Hog</source>
+          <target>Stone Hog</target>
+        </segment>
+      </unit>
+      <unit id="39092028597338112" name="high-mountain-1_0" xml:space="preserve">
+        <segment>
+          <source>Stone Slime</source>
+          <target>Stone Slime</target>
+        </segment>
+      </unit>
+      <unit id="39092093487415296" name="high-mountain-2_0" xml:space="preserve">
+        <segment>
+          <source>Stone Eagle</source>
+          <target>Stone Eagle</target>
+        </segment>
+      </unit>
+      <unit id="39092152841011200" name="high-mountain-2_1" xml:space="preserve">
+        <segment>
+          <source>Tinker Bell</source>
+          <target>Tinker Bell</target>
+        </segment>
+      </unit>
+      <unit id="39092648364474368" name="high-mountain-3_0" xml:space="preserve">
+        <segment>
+          <source>Stone Golem</source>
+          <target>Stone Golem</target>
+        </segment>
+      </unit>
+      <unit id="39092736310640640" name="high-mountain-4_0" xml:space="preserve">
+        <segment>
+          <source>Rock Golem</source>
+          <target>Rock Golem</target>
+        </segment>
+      </unit>
+      <unit id="39092781034504192" name="high-mountain-5_0" xml:space="preserve">
+        <segment>
+          <source>Rock Warrior</source>
+          <target>Rock Warrior</target>
+        </segment>
+      </unit>
+      <unit id="39092852631273472" name="desert-0_0" xml:space="preserve">
+        <segment>
+          <source>Small Sand Storm</source>
+          <target>Small Sand Storm</target>
+        </segment>
+      </unit>
+      <unit id="39092951491018752" name="desert-1_0" xml:space="preserve">
+        <segment>
+          <source>Dunerug</source>
+          <target>Dunerug</target>
+        </segment>
+      </unit>
+      <unit id="39092952854167552" name="desert-2_0" xml:space="preserve">
+        <segment>
+          <source>Scorpion</source>
+          <target>Scorpion</target>
+        </segment>
+      </unit>
+      <unit id="39093329951457280" name="desert-3_0" xml:space="preserve">
+        <segment>
+          <source>Miniramid</source>
+          <target>Miniramid</target>
+        </segment>
+      </unit>
+      <unit id="39093931553062912" name="desert-4_0" xml:space="preserve">
+        <segment>
+          <source>Sandripper</source>
+          <target>Sandripper</target>
+        </segment>
+      </unit>
+      <unit id="39093932341592064" name="pyramid-0_0" xml:space="preserve">
+        <segment>
+          <source>Bat</source>
+          <target>Bat</target>
+        </segment>
+      </unit>
+      <unit id="39093934010925056" name="pyramid-1_0" xml:space="preserve">
+        <segment>
+          <source>Albino Bat</source>
+          <target>Albino Bat</target>
+        </segment>
+      </unit>
+      <unit id="39095231170740224" name="pyramid-2_0" xml:space="preserve">
+        <segment>
+          <source>Skeleton Soldier</source>
+          <target>Skeleton Soldier</target>
+        </segment>
+      </unit>
+      <unit id="39095339794825216" name="pyramid-2_1" xml:space="preserve">
+        <segment>
+          <source>Skeleton Brawler</source>
+          <target>Skeleton Brawler</target>
+        </segment>
+      </unit>
+      <unit id="39095428391108608" name="pyramid-3_0" xml:space="preserve">
+        <segment>
+          <source>Skeleton Trooper</source>
+          <target>Skeleton Trooper</target>
+        </segment>
+      </unit>
+      <unit id="39095673053249536" name="pyramid-4_0" xml:space="preserve">
+        <segment>
+          <source>Skeleton Shield</source>
+          <target>Skeleton Shield</target>
+        </segment>
+      </unit>
+      <unit id="39095789973667840" name="pyramid-5_0" xml:space="preserve">
+        <segment>
+          <source>Skeleton Guardian Dog</source>
+          <target>Skeleton Guardian Dog</target>
+        </segment>
+      </unit>
+      <unit id="39096538111672320" name="pyramid-5_1" xml:space="preserve">
+        <segment>
+          <source>Skeleton Guardian Captain</source>
+          <target>Skeleton Guardian Captain</target>
+        </segment>
+      </unit>
+      <unit id="39096644743462912" name="pyramid-5_2" xml:space="preserve">
+        <segment>
+          <source>Skeleton Shaman</source>
+          <target>Skeleton Shaman</target>
+        </segment>
+      </unit>
+      <unit id="39096849350000640" name="pyramid-5_3" xml:space="preserve">
+        <segment>
+          <source>Mimic</source>
+          <target>Mimic</target>
+        </segment>
+      </unit>
+      <unit id="39096897056014336" name="forest-lake-0_0" xml:space="preserve">
+        <segment>
+          <source>Small Cubeslime</source>
+          <target>Small Cubeslime</target>
+        </segment>
+      </unit>
+      <unit id="39096970456334336" name="forest-lake-1_0" xml:space="preserve">
+        <segment>
+          <source>Medium Cubeslime</source>
+          <target>Medium Cubeslime</target>
+        </segment>
+      </unit>
+      <unit id="39097039045787648" name="forest-lake-2_0" xml:space="preserve">
+        <segment>
+          <source>Brown Cubeslime</source>
+          <target>Brown Cubeslime</target>
+        </segment>
+      </unit>
+      <unit id="39097110067937280" name="forest-lake-3_0" xml:space="preserve">
+        <segment>
+          <source>Green Cubeslime</source>
+          <target>Green Cubeslime</target>
+        </segment>
+      </unit>
+      <unit id="39097170910511104" name="lake-0_0" xml:space="preserve">
+        <segment>
+          <source>Miniduck</source>
+          <target>Miniduck</target>
+        </segment>
+      </unit>
+      <unit id="39097219795124224" name="lake-1_0" xml:space="preserve">
+        <segment>
+          <source>Brownduck</source>
+          <target>Brownduck</target>
+        </segment>
+      </unit>
+      <unit id="39097287415693312" name="lake-2_0" xml:space="preserve">
+        <segment>
+          <source>Dwarf Wanderer</source>
+          <target>Dwarf Wanderer</target>
+        </segment>
+      </unit>
+      <unit id="39097413701992448" name="lake-3_0" xml:space="preserve">
+        <segment>
+          <source>Grass Mauler</source>
+          <target>Grass Mauler</target>
+        </segment>
+      </unit>
+      <unit id="39097416080162816" name="lake-4_0" xml:space="preserve">
+        <segment>
+          <source>Fat Wolf</source>
+          <target>Fat Wolf</target>
+        </segment>
+      </unit>
+      <unit id="39097615599009792" name="lake-5_0" xml:space="preserve">
+        <segment>
+          <source>Dwarf Brawler</source>
+          <target>Dwarf Brawler</target>
+        </segment>
+      </unit>
+      <unit id="39098144127451136" name="lake-6_0" xml:space="preserve">
+        <segment>
+          <source>Dwarf Warrior</source>
+          <target>Dwarf Warrior</target>
+        </segment>
+      </unit>
+      <unit id="39098205955686400" name="lake-7_0" xml:space="preserve">
+        <segment>
+          <source>Lunapell</source>
+          <target>Lunapell</target>
+        </segment>
+      </unit>
+      <unit id="39098443357487104" name="lake-8_0" xml:space="preserve">
+        <segment>
+          <source>Velosha</source>
+          <target>Velosha</target>
+        </segment>
+      </unit>
+      <unit id="39098713164480512" name="lake-deep-forest-0_0" xml:space="preserve">
+        <segment>
+          <source>Sticky Slime</source>
+          <target>Sticky Slime</target>
+        </segment>
+      </unit>
+      <unit id="39098714473103360" name="lake-deep-forest-1_0" xml:space="preserve">
+        <segment>
+          <source>Giant Sticky Slime</source>
+          <target>Giant Sticky Slime</target>
+        </segment>
+      </unit>
+      <unit id="39098716020801536" name="lake-deep-forest-2_0" xml:space="preserve">
+        <segment>
+          <source>Dark Rock Spirit</source>
+          <target>Dark Rock Spirit</target>
+        </segment>
+      </unit>
+      <unit id="39098761692577792" name="lake-deep-forest-3_0" xml:space="preserve">
+        <segment>
+          <source>Stirge</source>
+          <target>Stirge</target>
+        </segment>
+      </unit>
+      <unit id="39098770458673152" name="deep-forest-0_0" xml:space="preserve">
+        <segment>
+          <source>Mud Golem</source>
+          <target>Mud Golem</target>
+        </segment>
+      </unit>
+      <unit id="39099307841290240" name="deep-forest-1_0" xml:space="preserve">
+        <segment>
+          <source>Stumpy</source>
+          <target>Stumpy</target>
+        </segment>
+      </unit>
+      <unit id="39099310643085312" name="deep-forest-2_0" xml:space="preserve">
+        <segment>
+          <source>Gromtree</source>
+          <target>Gromtree</target>
+        </segment>
+      </unit>
+      <unit id="39099312962535424" name="deep-forest-3_0" xml:space="preserve">
+        <segment>
+          <source>Shadown Crow</source>
+          <target>Shadown Crow</target>
+        </segment>
+      </unit>
+      <unit id="39099314652839936" name="deep-forest-4_0" xml:space="preserve">
+        <segment>
+          <source>Darktail</source>
+          <target>Darktail</target>
+        </segment>
+      </unit>
+      <unit id="39099316829683712" name="deep-forest-5_0" xml:space="preserve">
+        <segment>
+          <source>Lunar Stirge</source>
+          <target>Lunar Stirge</target>
+        </segment>
+      </unit>
+      <unit id="39099400787066880" name="forest-ice-0_0" xml:space="preserve">
+        <segment>
+          <source>Snowman</source>
+          <target>Snowman</target>
+        </segment>
+      </unit>
+      <unit id="39120998202081280" name="forest-ice-1_0" xml:space="preserve">
+        <segment>
+          <source>Icebit</source>
+          <target>Icebit</target>
+        </segment>
+      </unit>
+      <unit id="39120998202081280" name="forest-ice-2_0" xml:space="preserve">
+        <segment>
+          <source />
+        </segment>
+      </unit>
+      <unit id="39121189382651904" name="forest-ice-3_0" xml:space="preserve">
+        <segment>
+          <source>Ice Crawler</source>
+          <target>Ice Crawler</target>
+        </segment>
+      </unit>
+      <unit id="39121333062729728" name="ice-0_0" xml:space="preserve">
+        <segment>
+          <source>Foggler</source>
+          <target>Foggler</target>
+        </segment>
+      </unit>
+      <unit id="39121511068991488" name="ice-1_0" xml:space="preserve">
+        <segment>
+          <source>Ice Drakker</source>
+          <target>Ice Drakker</target>
+        </segment>
+      </unit>
+      <unit id="39121580660883456" name="ice-2_0" xml:space="preserve">
+        <segment>
+          <source>Ice Wisp</source>
+          <target>Ice Wisp</target>
+        </segment>
+      </unit>
+      <unit id="39121729256685568" name="ice-3_0" xml:space="preserve">
+        <segment>
+          <source>Snow Golem</source>
+          <target>Snow Golem</target>
+        </segment>
+      </unit>
+      <unit id="39121773082968064" name="ice-4_0" xml:space="preserve">
+        <segment>
+          <source>Ice Slime</source>
+          <target>Ice Slime</target>
+        </segment>
+      </unit>
+      <unit id="39121968818552832" name="ice-5_0" xml:space="preserve">
+        <segment>
+          <source>Frost Magician</source>
+          <target>Frost Magician</target>
+        </segment>
+      </unit>
+      <unit id="39122019749986304" name="ice-6_0" xml:space="preserve">
+        <segment>
+          <source>Glacial Golem</source>
+          <target>Glacial Golem</target>
+        </segment>
+      </unit>
+      <unit id="39122247509082112" name="ice-7_0" xml:space="preserve">
+        <segment>
+          <source>Ice Draggon</source>
+          <target>Ice Draggon</target>
+        </segment>
+      </unit>
+      <unit id="39191850000056320" name="deep-forest-swamp-0_0" xml:space="preserve">
+        <segment>
+          <source>Sludge Golem</source>
+          <target>Sludge Golem</target>
+        </segment>
+      </unit>
+      <unit id="39192413970366464" name="deep-forest-swamp-1_0" xml:space="preserve">
+        <segment>
+          <source>Murk Guard</source>
+          <target>Murk Guard</target>
+        </segment>
+      </unit>
+      <unit id="39192468957691904" name="deep-forest-swamp-2_0" xml:space="preserve">
+        <segment>
+          <source>Gloomroot</source>
+          <target>Gloomroot</target>
+        </segment>
+      </unit>
+      <unit id="39192850106679296" name="deep-forest-swamp-3_0" xml:space="preserve">
+        <segment>
+          <source>Murk Orb</source>
+          <target>Murk Orb</target>
+        </segment>
+      </unit>
+      <unit id="39192930524069888" name="swamp-0_0" xml:space="preserve">
+        <segment>
+          <source>Poison Slime</source>
+          <target>Poison Slime</target>
+        </segment>
+      </unit>
+      <unit id="39193164708839424" name="swamp-1_0" xml:space="preserve">
+        <segment>
+          <source>Muddy Howler</source>
+          <target>Muddy Howler</target>
+        </segment>
+      </unit>
+      <unit id="39193316588781568" name="swamp-2_0" xml:space="preserve">
+        <segment>
+          <source>Moss Bandit</source>
+          <target>Moss Bandit</target>
+        </segment>
+      </unit>
+      <unit id="39193492275593216" name="swamp-3_0" xml:space="preserve">
+        <segment>
+          <source>Swamp Snapper</source>
+          <target>Swamp Snapper</target>
+        </segment>
+      </unit>
+      <unit id="39193783737778176" name="swamp-4_0" xml:space="preserve">
+        <segment>
+          <source>Swamp Growler</source>
+          <target>Swamp Growler</target>
+        </segment>
+      </unit>
+      <unit id="39194017670889472" name="swamp-5_0" xml:space="preserve">
+        <segment>
+          <source>Tentacle</source>
+          <target>Tentacle</target>
+        </segment>
+      </unit>
+      <unit id="39194069478932480" name="swamp-6_0" xml:space="preserve">
+        <segment>
+          <source>Swamp Reaper</source>
+          <target>Swamp Reaper</target>
+        </segment>
+      </unit>
+      <unit id="39194784465158144" name="swamp-7_0" xml:space="preserve">
+        <segment>
+          <source>Bogrin</source>
+          <target>Bogrin</target>
+        </segment>
+      </unit>
+      <unit id="39194785895415808" name="swamp-7_1" xml:space="preserve">
+        <segment>
+          <source>Bograk</source>
+          <target>Bograk</target>
+        </segment>
+      </unit>
+      <unit id="39194870108651520" name="swamp-8_0" xml:space="preserve">
+        <segment>
+          <source>Mudrog</source>
+          <target>Mudrog</target>
+        </segment>
+      </unit>
+      <unit id="39195018427629568" name="swamp-deep-forest-0_0" xml:space="preserve">
+        <segment>
+          <source>Onryo</source>
+          <target>Onryo</target>
+        </segment>
+      </unit>
+      <unit id="39195047766786048" name="swamp-deep-forest-0_1" xml:space="preserve">
+        <segment>
+          <source>Pure Onryo</source>
+          <target>Pure Onryo</target>
+        </segment>
+      </unit>
+      <unit id="39195260791291904" name="cemetery-0_0" xml:space="preserve">
+        <segment>
+          <source>The Revived One</source>
+          <target>The Revived One</target>
+        </segment>
+      </unit>
+      <unit id="39195306987356160" name="cemetery-0_1" xml:space="preserve">
+        <segment>
+          <source>The Rotten One</source>
+          <target>The Rotten One</target>
+        </segment>
+      </unit>
+      <unit id="39195356769550336" name="cemetery-0_2" xml:space="preserve">
+        <segment>
+          <source>Graveyard Keeper</source>
+          <target>Graveyard Keeper</target>
+        </segment>
+      </unit>
+      <unit id="39195571471777792" name="secret-hallway-0_0" xml:space="preserve">
+        <segment>
+          <source>Sewer Slug</source>
+          <target>Sewer Slug</target>
+        </segment>
+      </unit>
+      <unit id="39195776275447808" name="secret-hallway-1_0" xml:space="preserve">
+        <segment>
+          <source>Sewer Snake</source>
+          <target>Sewer Snake</target>
+        </segment>
+      </unit>
+      <unit id="39195888263364608" name="secret-hallway-2_0" xml:space="preserve">
+        <segment>
+          <source>Rotten Apple</source>
+          <target>Rotten Apple</target>
+        </segment>
+      </unit>
+      <unit id="39195949533757440" name="secret-hallway-3_0" xml:space="preserve">
+        <segment>
+          <source>Giant Maggot</source>
+          <target>Giant Maggot</target>
+        </segment>
+      </unit>
+      <unit id="39196123396046848" name="castle-0_0" xml:space="preserve">
+        <segment>
+          <source>Triple Eyes</source>
+          <target>Triple Eyes</target>
+        </segment>
+      </unit>
+      <unit id="39196189590552576" name="castle-0_1" xml:space="preserve">
+        <segment>
+          <source>Flying Eye</source>
+          <target>Flying Eye</target>
+        </segment>
+      </unit>
+      <unit id="39196240995942400" name="castle-0_2" xml:space="preserve">
+        <segment>
+          <source>Hepta Eyes</source>
+          <target>Hepta Eyes</target>
+        </segment>
+      </unit>
+      <unit id="39204105357885440" name="castle-1_0" xml:space="preserve">
+        <segment>
+          <source>Ownerless Hand</source>
+          <target>Ownerless Hand</target>
+        </segment>
+      </unit>
+      <unit id="39204220629942272" name="castle-1_1" xml:space="preserve">
+        <segment>
+          <source>Ownerless Foot</source>
+          <target>Ownerless Foot</target>
+        </segment>
+      </unit>
+      <unit id="39205240902778880" name="castle-2_0" xml:space="preserve">
+        <segment>
+          <source>Ownerless Eye</source>
+          <target>Ownerless Eye</target>
+        </segment>
+      </unit>
+      <unit id="39214062983708672" name="castle-3_0" xml:space="preserve">
+        <segment>
+          <source>Ownerless Brain</source>
+          <target>Ownerless Brain</target>
+        </segment>
+      </unit>
+      <unit id="39214226192465920" name="castle-4_0" xml:space="preserve">
+        <segment>
+          <source>Ownerless Head</source>
+          <target>Ownerless Head</target>
+        </segment>
+      </unit>
+      <unit id="39214317397606400" name="castle-5_0" xml:space="preserve">
+        <segment>
+          <source>Cobra</source>
+          <target>Cobra</target>
+        </segment>
+      </unit>
+      <unit id="39214530417917952" name="castle-6_0" xml:space="preserve">
+        <segment>
+          <source>Haunted Guard</source>
+          <target>Haunted Guard</target>
+        </segment>
+      </unit>
+      <unit id="39214553692110848" name="castle-7_0" xml:space="preserve">
+        <segment>
+          <source>Viper</source>
+          <target>Viper</target>
+        </segment>
+      </unit>
+      <unit id="39215042156560384" name="castle-8_0" xml:space="preserve">
+        <segment>
+          <source>Demon Core</source>
+          <target>Demon Core</target>
+        </segment>
+      </unit>
+      <unit id="39215220863270912" name="castle-9_0" xml:space="preserve">
+        <segment>
+          <source>Gazing Horror</source>
+          <target>Gazing Horror</target>
+        </segment>
+      </unit>
+      <unit id="39215439348760576" name="castle-10_0" xml:space="preserve">
+        <segment>
+          <source>Red Potion</source>
+          <target>Red Potion</target>
+        </segment>
+      </unit>
+      <unit id="39215511461429248" name="castle-11_0" xml:space="preserve">
+        <segment>
+          <source>Humanoid</source>
+          <target>Humanoid</target>
+        </segment>
+      </unit>
+      <unit id="39215649902821376" name="castle-12_0" xml:space="preserve">
+        <segment>
+          <source>Crawling Hatred</source>
+          <target>Crawling Hatred</target>
+        </segment>
+      </unit>
+      <unit id="39215671520264192" name="castle-12_1" xml:space="preserve">
+        <segment>
+          <source>Crawling Disgust</source>
+          <target>Crawling Disgust</target>
+        </segment>
+      </unit>
+      <unit id="39216350271897600" name="castle-13_0" xml:space="preserve">
+        <segment>
+          <source>Emotion Amplifier</source>
+          <target>Emotion Amplifier</target>
+        </segment>
+      </unit>
+      <unit id="39216467041320960" name="castle-14_0" xml:space="preserve">
+        <segment>
+          <source>Witch's Hat</source>
+          <target>Witch's Hat</target>
+        </segment>
+      </unit>
+      <unit id="39216710474530816" name="castle-15_0" xml:space="preserve">
+        <segment>
+          <source>Guardian Golem</source>
+          <target>Guardian Golem</target>
+        </segment>
+      </unit>
+      <unit id="39216790858366976" name="castle-16_0" xml:space="preserve">
+        <segment>
+          <source>Frost Wraith</source>
+          <target>Frost Wraith</target>
+        </segment>
+      </unit>
+      <unit id="39216872097841152" name="castle-17_0" xml:space="preserve">
+        <segment>
+          <source>Whispering Maw</source>
+          <target>Whispering Maw</target>
+        </segment>
+      </unit>
+      <unit id="39217377347895296" name="castle-18_0" xml:space="preserve">
+        <segment>
+          <source>Ectoplasm</source>
+          <target>Ectoplasm</target>
+        </segment>
+      </unit>
+      <unit id="39217676506628096" name="castle-19_0" xml:space="preserve">
+        <segment>
+          <source>Sealed Abomination</source>
+          <target>Sealed Abomination</target>
+        </segment>
+      </unit>
+      <unit id="39218325633892352" name="castle-20_0" xml:space="preserve">
+        <segment>
+          <source>Baby Demon</source>
+          <target>Baby Demon</target>
+        </segment>
+      </unit>
+      <unit id="39218347108728832" name="castle-21_0" xml:space="preserve">
+        <segment>
+          <source>Red Demon</source>
+          <target>Red Demon</target>
+        </segment>
+      </unit>
+      <unit id="39218364934520832" name="castle-22_0" xml:space="preserve">
+        <segment>
+          <source>Summoner</source>
+          <target>Summoner</target>
+        </segment>
+      </unit>
+      <unit id="39218382487683072" name="castle-22_1" xml:space="preserve">
+        <segment>
+          <source>Demon Summoner</source>
+          <target>Demon Summoner</target>
+        </segment>
+      </unit>
+      <unit id="39218432689307648" name="castle-23_0" xml:space="preserve">
+        <segment>
+          <source>Reaper</source>
+          <target>Reaper</target>
+        </segment>
+      </unit>
+      <unit id="39218436736811008" name="castle-24_0" xml:space="preserve">
+        <segment>
+          <source>Calamity One</source>
+          <target>Calamity One</target>
+        </segment>
+      </unit>
+      <unit id="39220327583580160" name="boss_0" xml:space="preserve">
+        <segment>
+          <source>King Slime</source>
+          <target>King Slime</target>
+        </segment>
+      </unit>
+      <unit id="39220470768730112" name="boss_1" xml:space="preserve">
+        <segment>
+          <source>Giant Hornet</source>
+          <target>Giant Hornet</target>
+        </segment>
+      </unit>
+      <unit id="39220513164754944" name="boss_2" xml:space="preserve">
+        <segment>
+          <source>Acient Toadstool</source>
+          <target>Acient Toadstool</target>
+        </segment>
+      </unit>
+      <unit id="39220651690033152" name="boss_3" xml:space="preserve">
+        <segment>
+          <source>Skull of the Pharaoh</source>
+          <target>Skull of the Pharaoh</target>
+        </segment>
+      </unit>
+      <unit id="39220864651624448" name="boss_4" xml:space="preserve">
+        <segment>
+          <source>Ice King Slime</source>
+          <target>Ice King Slime</target>
+        </segment>
+      </unit>
+      <unit id="39220929269071872" name="boss_5" xml:space="preserve">
+        <segment>
+          <source>Bog Devourer</source>
+          <target>Bog Devourer</target>
+        </segment>
+      </unit>
+      <unit id="39221164863127552" name="boss_6" xml:space="preserve">
+        <segment>
+          <source>Gatekeeper</source>
+          <target>Gatekeeper</target>
+        </segment>
+      </unit>
+      <unit id="39221211063386112" name="boss_7" xml:space="preserve">
+        <segment>
+          <source>Zombie King</source>
+          <target>Zombie King</target>
+        </segment>
+      </unit>
+      <unit id="39221308853583872" name="boss_8" xml:space="preserve">
+        <segment>
+          <source>Lamia</source>
+          <target>Lamia</target>
+        </segment>
+      </unit>
+      <unit id="39221351186694144" name="boss_9" xml:space="preserve">
+        <segment>
+          <source>Djinn</source>
+          <target>Djinn</target>
+        </segment>
+      </unit>
+      <unit id="39221647824650240" name="boss_10" xml:space="preserve">
+        <segment>
+          <source>Succubus</source>
+          <target>Succubus</target>
+        </segment>
+      </unit>
+      <unit id="39221687867670528" name="boss_11" xml:space="preserve">
+        <segment>
+          <source>Ruler of the Devil</source>
+          <target>Ruler of the Devil</target>
+        </segment>
+      </unit>
+    </group>
+  </file>
+</xliff>

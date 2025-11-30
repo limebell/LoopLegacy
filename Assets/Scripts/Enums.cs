@@ -20,6 +20,7 @@ namespace LoopLegacy
         Prepare,
         PrepareComplete,
         Simulating,
+        PreEnd,
         End,
         Result,
         None,
@@ -51,7 +52,8 @@ namespace LoopLegacy
     public enum MonsterType
     {
         Normal,
-        Boss
+        Boss,
+        Any,
     }
 
     public enum MonsterActionType

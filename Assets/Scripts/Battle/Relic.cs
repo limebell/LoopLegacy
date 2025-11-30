@@ -9,7 +9,7 @@ namespace LoopLegacy.Battle
 {
     public class Relic
     {
-        public int Id { get; private set; }
+        public string EffectName { get; private set; }
         public RelicGrade Grade { get; private set; }
         public int Level { get; private set; }
         public Sprite Sprite { get; private set; }
@@ -38,7 +38,7 @@ namespace LoopLegacy.Battle
                 throw new ArgumentException("Relic level must be greater than or equal to 0");
             }
 
-            Id = relicData.id;
+            EffectName = relicData.effectName;
             Grade = relicData.grade;
             if (level >= relicData.values.Length)
             {

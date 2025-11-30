@@ -21,7 +21,7 @@ namespace LoopLegacy.UI.Helper
             if (category == 0)
             {
                 var relic = data as RelicData;
-                var myRelicLevel = PersistentGameState.Instance.CodexState.GetRelic(relic.id)?.Level ?? -1;
+                var myRelicLevel = PersistentGameState.Instance.CodexState.GetRelic(relic.effectName)?.Level ?? -1;
 
                 if (myRelicLevel >= relic.values.Length - 1)
                 {
@@ -49,7 +49,7 @@ namespace LoopLegacy.UI.Helper
                 ConfirmationController.Instance.ShowConfirmation(message, () =>
                 {
                     PersistentGameState.Instance.SpendGold(price);
-                    PersistentGameState.Instance.CodexState.UnlockRelicWithLevel(relic.id, myRelicLevel + 1);
+                    PersistentGameState.Instance.CodexState.UnlockRelicWithLevel(relic.effectName, myRelicLevel + 1);
                     PersistentGameState.Instance.SaveState();
                     onBuy?.Invoke();
                 });
@@ -188,7 +188,7 @@ namespace LoopLegacy.UI.Helper
             {
                 var relic = data as RelicData;
                 var relicName = Utils.GetRelicName(relic.effectName);
-                var ownedRelic = PersistentGameState.Instance.CodexState.GetRelic(relic.id);
+                var ownedRelic = PersistentGameState.Instance.CodexState.GetRelic(relic.effectName);
                 string gradeText = $"<size=90%><color={Utils.GetRelicGradeColorHex(relic.grade)}>{Utils.GetUIString("grade_" + relic.grade.ToString().ToLowerInvariant())}</color></size>";
                 if (ownedRelic == null)
                 {
@@ -293,7 +293,7 @@ namespace LoopLegacy.UI.Helper
                 var relicData = data as RelicData;
                 if (relicData.prices.Length > 0)
                 {
-                    var myRelicLevel = PersistentGameState.Instance.CodexState.GetRelic(relicData.id)?.Level ?? -1;
+                    var myRelicLevel = PersistentGameState.Instance.CodexState.GetRelic(relicData.effectName)?.Level ?? -1;
                     string detailText = myRelicLevel < 0 ?
                         $"{relicData.values[0]} (NEW)" :
                         myRelicLevel < relicData.values.Length - 1 ?

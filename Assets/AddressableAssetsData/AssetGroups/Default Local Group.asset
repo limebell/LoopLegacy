@@ -465,6 +465,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 551cc8d3895b4db42bc2724782998d97
+    m_Address: Images/Enemies/forest-ice-1_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 55e83ec492efd6d47a5bd3ed210ddfeb
     m_Address: Images/Enemies/lake-6_0
     m_ReadOnly: 0
@@ -791,7 +796,7 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 940d00617c59d9043a358a0af100864b
-    m_Address: Images/Enemies/forest-ice-2_0
+    m_Address: Images/Enemies/forest-ice-3_0
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -990,6 +995,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bba4ffb1ac3086a479a32ce224c97527
+    m_Address: Images/Relics/dmg_boost_any
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: bbff00261cbfa3949ba6a633b8920d13
     m_Address: Images/Enemies/castle-7_0
     m_ReadOnly: 0
@@ -1146,7 +1156,7 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: df13787bc3e06a240bc59b7f5c36000a
-    m_Address: Images/Enemies/forest-ice-1_0
+    m_Address: Images/Enemies/forest-ice-2_0
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

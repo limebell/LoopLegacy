@@ -143,7 +143,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 21335966075060248
-    m_Localized: Prevent loss of battle point on loss by {0}% probability
+    m_Localized: Damage increase by {0}%, and prevent loss of battle point on loss
+      by {1}% probability
     m_Metadata:
       m_Items: []
   - m_Id: 21335966075060249
@@ -151,7 +152,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 21335966075060250
-    m_Localized: Prevent loss of battle point on victory by {0}% probability
+    m_Localized: Damage increase by {0}%, and prevent loss of battle point on victory
+      by {1}% probability
     m_Metadata:
       m_Items: []
   - m_Id: 21335966075060251
@@ -211,7 +213,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 21335966083448839
-    m_Localized: No Pain No Gain
+    m_Localized: Rainbow
     m_Metadata:
       m_Items: []
   - m_Id: 21335966083448840
@@ -258,7 +260,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 21335966083448850
-    m_Localized: Reduce damage taken by {0}% from higher level monster.
+    m_Localized: Increase damage dealt by {0}% to higher level monster and reduce
+      damage taken by {0}% from higher level monster.
     m_Metadata:
       m_Items: []
   - m_Id: 21335966083448851
@@ -266,7 +269,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 21335966083448852
-    m_Localized: Execute on lower level monster with {0}% probability.
+    m_Localized: Increase damage dealt by {0}% to lower level monster and execute
+      on lower level monster with {1}% probability.
     m_Metadata:
       m_Items: []
   - m_Id: 21335966083448853
@@ -403,6 +407,14 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 21335966087643156
     m_Localized: Restart with owned gold.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36278324185006080
+    m_Localized: Red Candy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36278324222754816
+    m_Localized: Increase damage dealt to any enemy by {0}%
     m_Metadata:
       m_Items: []
   references:

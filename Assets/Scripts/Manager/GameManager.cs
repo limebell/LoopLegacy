@@ -136,10 +136,10 @@ namespace LoopLegacy.Manager
             InitializeStats();
 
             // 초기 유물
-            int initialRelicId = PersistentGameState.Instance.HouseState.InitialRelic.Value;
-            if (initialRelicId != -1)
+            string initialRelicEffectName = PersistentGameState.Instance.HouseState.InitialRelic.Value;
+            if (initialRelicEffectName != string.Empty)
             {
-                AcquireRelic(initialRelicId);
+                AcquireRelic(initialRelicEffectName);
             }
 
             Save();
@@ -285,18 +285,18 @@ namespace LoopLegacy.Manager
             _relicRewardController.Show(weight, pickedRelics, alreadyRolledRelics);
         }
 
-        public void UnlockRelic(int relicId, int level)
+        public void UnlockRelic(string effectName, int level)
         {
-            PersistentGameState.Instance.CodexState.UnlockRelicWithLevel(relicId, level);
+            PersistentGameState.Instance.CodexState.UnlockRelicWithLevel(effectName, level);
             Save();
         }
 
-        public void AcquireRelic(int relicId)
+        public void AcquireRelic(string effectName)
         {
-            var relic = PersistentGameState.Instance.CodexState.GetRelic(relicId);
+            var relic = PersistentGameState.Instance.CodexState.GetRelic(effectName);
             if (relic == null)
             {
-                Debug.LogError($"[GameManager] AcquireRelic: Relic not found. (relicId: {relicId})");
+                Debug.LogError($"[GameManager] AcquireRelic: Relic not found. (effectName: {effectName})");
                 return;
             }
 
@@ -326,9 +326,9 @@ namespace LoopLegacy.Manager
             Save();
         }
 
-        public void DiscardRelic(int relicId)
+        public void DiscardRelic(string relicEffectName)
         {
-            var removedRelic = GameState.OwnedRelics.Value.FirstOrDefault(r => r.Id == relicId);
+            var removedRelic = GameState.OwnedRelics.Value.FirstOrDefault(r => r.EffectName == relicEffectName);
             if (removedRelic == null)
             {
                 return;

@@ -96,7 +96,7 @@ namespace LoopLegacy.UI.Component
             _monsterCodexDetail.gameObject.SetActive(false);
             _equipmentCodexDetail.gameObject.SetActive(false);
             _relicCodexDetail.gameObject.SetActive(true);
-            var relic = PersistentGameState.Instance.CodexState.GetRelic(relicData.id);
+            var relic = PersistentGameState.Instance.CodexState.GetRelic(relicData.effectName);
             if (relic == null)
             {
                 SetImage(null);

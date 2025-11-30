@@ -16,11 +16,17 @@ namespace LoopLegacy.Battle.RelicEffects
 
         public override void ApplyEffect(RelicEffectContext context)
         {
+            if (monsterType == MonsterType.Any)
+            {
+                context.DamageMultiplier += damageIncrease / 100f;
+                return;
+            }
+
             if (context.MonsterData == null)
             {
                 return;
             }
-            
+
             if (context.MonsterData.type == monsterType)
             {
                 context.DamageMultiplier += damageIncrease / 100f;
