@@ -834,6 +834,10 @@ MonoBehaviour:
     m_Localized: Are you sure you want to discard relic [{0}]?
     m_Metadata:
       m_Items: []
+  - m_Id: 44842806763061248
+    m_Localized: You reflected {1} damage to {0}!
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

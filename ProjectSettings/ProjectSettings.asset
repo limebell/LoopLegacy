@@ -142,7 +142,7 @@ PlayerSettings:
   loadStoreDebugModeEnabled: 0
   visionOSBundleVersion: 1.0
   tvOSBundleVersion: 1.0
-  bundleVersion: 0.09
+  bundleVersion: 0.10
   preloadedAssets:
   - {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   - {fileID: 11400000, guid: fbb70499c2693fc4db44edb605addc11, type: 2}
@@ -169,14 +169,14 @@ PlayerSettings:
   applicationIdentifier:
     Android: com.limebeluga.looplegacy
     Standalone: com.DefaultCompany.2D-URP
-    iPhone: com.LimeBeluga.LoopLegacy
+    iPhone: com.limebeluga.looplegacy
   buildNumber:
     Standalone: 0
     VisionOS: 0
     iPhone: 0
     tvOS: 0
   overrideDefaultApplicationIdentifier: 1
-  AndroidBundleVersionCode: 9
+  AndroidBundleVersionCode: 10
   AndroidMinSdkVersion: 23
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 1

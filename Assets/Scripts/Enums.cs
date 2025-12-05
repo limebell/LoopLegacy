@@ -72,6 +72,7 @@ namespace LoopLegacy
         Evasion,
         Execution,
         Heal,
+        Reflect,
     }
 
     public enum TutorialType

@@ -243,14 +243,22 @@ namespace LoopLegacy.UI.Controller
                 _playerImage.transform.parent));
         }
 
-        public void RenderPlayerAttack(int damage, bool isCrit, int combo, string monsterName)
+        public void RenderPlayerAttack(int damage, string monsterName, bool isCrit, int combo, bool isReflect)
         {
             _playerImage.GetComponent<Animator>().SetTrigger("Attack");
 
             string criticalText = Utils.GetUIString("battle-log_critical");
             string comboTextString = Utils.GetUIString("battle-log_combo", new object[] { combo });
             string comboText = combo > 1 ? $" ({comboTextString})" : "";
-            string damageText = Utils.GetUIString("battle-log_player-attack", new object[] { monsterName, damage });
+            string damageText;
+            if (isReflect)
+            {
+                damageText = Utils.GetUIString("battle-log_player-attack-reflect", new object[] { monsterName, damage });
+            }
+            else
+            {
+                damageText = Utils.GetUIString("battle-log_player-attack", new object[] { monsterName, damage });
+            }
             AddBattleLog($"{damageText} {comboText} {(isCrit ? $"{criticalText}" : "")}");
             AudioManager.Instance.PlaySFXSound(_playerAttackSound);
             StartCoroutine(SummonHitEffectCoroutine(
@@ -258,7 +266,7 @@ namespace LoopLegacy.UI.Controller
                 new Vector2(0, _enemyImage.rectTransform.sizeDelta.y / 2)));
             StartCoroutine(SummonDamageTextCoroutine(
                 damage,
-                isCrit ? DamageTextType.Critical : DamageTextType.Normal,
+                isReflect ? DamageTextType.Reflect : isCrit ? DamageTextType.Critical : DamageTextType.Normal,
                 combo,
                 _enemyImage.transform.parent,
                 new Vector2(0, _enemyImage.rectTransform.sizeDelta.y / 2)));

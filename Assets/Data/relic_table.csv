@@ -18,10 +18,10 @@ grade,effect_type,value,price
 0,bp_loss_prevent_victory,10:2|12:4|14:6|16:8,40000|200000|800000|1200000
 0,decrease_encounter_increment,10|20|30|50,3000|9000|32000|130000
 0,stat_boost_per_relic_count,400|900|1600|3000,40000
-1,fixed_dmg_per_gold,7|10|13|16,35000|99000
 0,equipment_base_spec_boost,300|500|800|1200,50000|140000
 0,fixed_dmg,2000|10000|80000,60000|200000|1000000
 0,dmg_boost_any,15|20|40,
+1,fixed_dmg_per_gold,7|10|13|16,35000|99000
 1,chain_rate,7|11|15|20,15000|80000
 1,execute_low_health,10|15|20,90000|270000
 1,dmg_boost_per_defeat,3|4|6|8,99000|299000|999000|2999000
@@ -38,7 +38,7 @@ grade,effect_type,value,price
 1,dmg_boost_weak,20|30|50,
 2,crit_first_n,1|2|3|5,
 2,chain_first,2|3|4,
-2,reflect,70|90|120,
+2,reflect,10|20|30,
 2,execute,0.5|1.0|2.0,
 2,drain,2|4|6,
 2,dmg_boost_when_full_hp,30|42|60,

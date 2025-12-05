@@ -18,9 +18,22 @@ namespace LoopLegacy.UI.Component
                 DamageTextType.Heal => $"+{damage}",
                 _ => $"-{damage}",
             };
-            _critText.gameObject.SetActive(type == DamageTextType.Critical);
+            _critText.gameObject.SetActive(type == DamageTextType.Critical || type == DamageTextType.Reflect);
             _comboText.gameObject.SetActive(combo > 1);
             _comboText.text = $"{combo} combo";
+            _critText.text = type switch
+            {
+                DamageTextType.Critical => "Critical!",
+                DamageTextType.Reflect => "Reflect!",
+                _ => "",
+            };
+            
+            _critText.color = type switch
+            {
+                DamageTextType.Critical => Color.red,
+                DamageTextType.Reflect => Color.orange,
+                _ => Color.white,
+            };
 
             _damageText.color = type switch
             {

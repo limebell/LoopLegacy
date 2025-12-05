@@ -795,6 +795,10 @@ MonoBehaviour:
     m_Key: relic_discard-confirmation
     m_Metadata:
       m_Items: []
+  - m_Id: 44842806763061248
+    m_Key: battle-log_player-attack-reflect
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

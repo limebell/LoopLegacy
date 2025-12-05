@@ -134,7 +134,7 @@ namespace LoopLegacy.Battle
                 return;
             }
 
-            battleController?.RenderPlayerAttack(damage, isCritical, multiHitCount, monsterName);
+            battleController?.RenderPlayerAttack(damage, monsterName, isCritical, multiHitCount, isReflect: false);
 
             // 흡혈 적용
             if (relicContext.DrainPercentage > 0)
@@ -234,10 +234,18 @@ namespace LoopLegacy.Battle
             // 반사 피해 적용
             if (context.ReflectDamage > 0)
             {
-                CurrentMonsterHP.Value = Math.Max(0, CurrentMonsterHP.Value - context.ReflectDamage);
+                var reflectDamage = context.ReflectDamage;
+                if (MonsterATK > 0)
+                {
+                    // 몬스터 방어력 적용
+                    float reductionRate = MonsterATK / (damage + MonsterATK);
+                    reflectDamage = (int)(reflectDamage * (1 - reductionRate));
+                }
+                reflectDamage = (int)Math.Ceiling(reflectDamage * context.DamageMultiplier);
+                CurrentMonsterHP.Value = Math.Max(0, CurrentMonsterHP.Value - reflectDamage);
                 // 각종 추가 피해가 반사 피해에도 적용
-                battleContext.TotalDamageDealt += (int)Math.Ceiling(context.ReflectDamage * context.DamageMultiplier);
-                battleController?.RenderPlayerAttack(context.ReflectDamage, false, 1, monsterName);
+                battleContext.TotalDamageDealt += reflectDamage;
+                battleController?.RenderPlayerAttack(reflectDamage, monsterName, false, 1, isReflect: true);
             }
 
             battleController?.RenderEnemyAttack(damage, context.Evaded, monsterName);
