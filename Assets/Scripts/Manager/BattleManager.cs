@@ -19,6 +19,8 @@ namespace LoopLegacy.Manager
         private static BattleManager _instance;
         public static BattleManager Instance => _instance;
 
+        public event Action OnBattleEnd;
+
         [SerializeField]
         private BattleController _battleController;
         [SerializeField]
@@ -27,8 +29,8 @@ namespace LoopLegacy.Manager
         private const float BATTLE_STEP_DELAY_INTERVAL = 0.3f; // 옵션에 따른 딜레이 증가 (초)
         private const float HIT_DELAY = 0.6f;
         private const float HIT_DELAY_INTERVAL = 0.1f;
-        private bool _giveupBattle = false;
         private MonsterData _monsterData;
+        private RegionEffectType _regionEffect;
         public ReactiveProperty<BattleStep> CurrentBattleStep { get; private set; }
 
         private ReactiveProperty<BattleContext> _currentBattleResult;
@@ -36,10 +38,11 @@ namespace LoopLegacy.Manager
 
         private BattleSimulator _simulator;
         private Task<LevelUpResult> _levelUpTask; // 비동기 레벨업 계산 Task
-        private System.Threading.CancellationTokenSource _levelUpCts; // 레벨업 계산 취소용 CTS
+        private CancellationTokenSource _levelUpCts; // 레벨업 계산 취소용 CTS
         private BigInteger _expectedEXP; // 미리 계산된 예상 경험치
         private int _expectedGold; // 미리 계산된 예상 골드
         private LevelUpResult? _completedLevelUpResult; // ShowBattleResult에서 완료된 레벨업 결과 (ApplyBattleResult에서 재사용)
+        private Coroutine _simulateBattleCoroutine;
 
         private void Awake()
         {
@@ -73,7 +76,6 @@ namespace LoopLegacy.Manager
                     _battleResultController.HideBattleResult();
                     ApplyBattleResult(_currentBattleResult.Value);
                     GameManager.Instance.EncounterManager.ResetGauge();
-                    CurrentBattleStep.Value = BattleStep.None;
                     break;
                 case BattleStep.None:
                     break;
@@ -82,6 +84,7 @@ namespace LoopLegacy.Manager
         
         private IEnumerator ShowBattleResultWithTaskCoroutine()
         {
+            CurrentBattleStep.Value = BattleStep.PreResult;
             var result = _currentBattleResult.Value;
             
             // Task가 있고 승리한 경우 완료될 때까지 대기
@@ -159,7 +162,8 @@ namespace LoopLegacy.Manager
             
             // LUC 스탯에 따른 보정
             int luc = GameManager.GetStat(StatType.LUC);
-            float lucMultiplier = 1.0f + Mathf.Min(1.0f, (float)luc / (300 + luc + monsterData.level));
+            float lucMultiplier = CalculateLucMultiplier(luc, monsterData.level);
+            lucMultiplier = Mathf.Min(lucMultiplier, 2.0f);
             
             // Relic 효과를 보상에 적용
             var context = new RelicEffectContext
@@ -174,7 +178,15 @@ namespace LoopLegacy.Manager
                     baseExp,
                     GameManager.Instance.GameState.PlayerStats.Level.Value,
                     monsterData.level) * Mathf.RoundToInt(context.ExpMultiplier * 100f) / 100;
+            if (_regionEffect == RegionEffectType.BoostExpSmall || _regionEffect == RegionEffectType.BoostExpLarge)
+            {
+                _expectedEXP = _expectedEXP * (_regionEffect == RegionEffectType.BoostExpSmall ? 15 : 20) / 10;
+            }
             _expectedGold = Mathf.RoundToInt(baseGold * context.GoldMultiplier);
+            if (_regionEffect == RegionEffectType.BoostGoldSmall || _regionEffect == RegionEffectType.BoostGoldLarge)
+            {
+                _expectedGold = _expectedGold * (_regionEffect == RegionEffectType.BoostGoldSmall ? 15 : 20) / 10;
+            }
             
             // CancellationTokenSource 생성
             _levelUpCts = new CancellationTokenSource();
@@ -183,7 +195,7 @@ namespace LoopLegacy.Manager
             _levelUpTask = GameManager.Instance.GameState.PlayerStats.CalculateLevelUpAsync(_expectedEXP, _levelUpCts.Token);
         }
 
-        public ReactiveProperty<BattleContext> StartBattle(MonsterData monsterData, Action<BattleContext> onBattleEnd)
+        public ReactiveProperty<BattleContext> StartBattle(MonsterData monsterData, RegionEffectType regionEffect, Action<BattleContext> onBattleEnd)
         {
             // 전투가 이미 진행 중이면 무시
             if (CurrentBattleStep.Value != BattleStep.None)
@@ -199,11 +211,9 @@ namespace LoopLegacy.Manager
             }
 
             CurrentBattleStep.Value = BattleStep.Prepare;
-            
-            _giveupBattle = false;
-            GameManager.Instance.GameState.CombatInfo.IncrementCombatCount(monsterData);
 
             _monsterData = monsterData;
+            _regionEffect = regionEffect;
             _onBattleEnd = onBattleEnd;
 
             var weapon = PersistentGameState.Instance.GetCurrentWeapon();
@@ -220,6 +230,7 @@ namespace LoopLegacy.Manager
                 weapon,
                 armor,
                 monsterData,
+                regionEffect,
                 _battleController,
                 HIT_DELAY - HIT_DELAY_INTERVAL * OptionState.Instance.CombatSpeed.Value
             );
@@ -247,9 +258,11 @@ namespace LoopLegacy.Manager
 
         public void GiveupBattle()
         {
-            if (CurrentBattleStep.Value != BattleStep.Simulating) return;
-            if (_giveupBattle == true) return;
-            _giveupBattle = true;
+            if (CurrentBattleStep.Value != BattleStep.Prepare &&
+                CurrentBattleStep.Value != BattleStep.PrepareComplete &&
+                CurrentBattleStep.Value != BattleStep.Simulating &&
+                CurrentBattleStep.Value != BattleStep.PreEnd &&
+                CurrentBattleStep.Value != BattleStep.End) return;
             
             // 레벨업 계산 Task 취소
             CancelLevelUpCalculation();
@@ -262,7 +275,8 @@ namespace LoopLegacy.Manager
                 EarnedGold = 0,
                 DroppedItems = new List<DropEntry>(),
             };
-            EndBattle(looseContext, null, _monsterData);
+            EndBattle(looseContext, null, _monsterData, false);
+            OnClickBattleUI();
         }
 
         private void ExecuteBattle(MonsterData monsterData)
@@ -271,7 +285,7 @@ namespace LoopLegacy.Manager
             CurrentBattleStep.Value = BattleStep.Simulating;
 
             // 전투 시뮬레이션 실행
-            StartCoroutine(SimulateBattleCoroutine(_simulator, monsterData));
+            _simulateBattleCoroutine = StartCoroutine(SimulateBattleCoroutine(_simulator, monsterData));
         }
 
         private IEnumerator SimulateBattleCoroutine(BattleSimulator simulator, MonsterData monsterData)
@@ -279,7 +293,7 @@ namespace LoopLegacy.Manager
             var result = new BattleContext();
 
             // 전투 시작
-            while (!simulator.IsBattleEnded && !_giveupBattle)
+            while (!simulator.IsBattleEnded)
             {
                 // 플레이어의 공격
                 yield return simulator.SimulatePlayerAttackCoroutine(result);
@@ -289,25 +303,37 @@ namespace LoopLegacy.Manager
                 yield return new WaitForSeconds(BATTLE_STEP_DELAY - BATTLE_STEP_DELAY_INTERVAL * OptionState.Instance.CombatSpeed.Value);
                 simulator.SimulateMonsterAttack(result);
                 if (simulator.IsPlayerDead) break;
-                yield return new WaitForSeconds(BATTLE_STEP_DELAY - BATTLE_STEP_DELAY_INTERVAL * OptionState.Instance.CombatSpeed.Value);
 
                 // 매 턴 체력 회복
                 if (GameManager.Instance.TryGetRelic<HealEveryTurnEffect>(out Relic relic))
                 {
+                    yield return new WaitForSeconds((BATTLE_STEP_DELAY - BATTLE_STEP_DELAY_INTERVAL * OptionState.Instance.CombatSpeed.Value) / 2);
                     int healAmount = (relic.Effect as HealEveryTurnEffect).GetHealAmount();
                     simulator.CurrentPlayerHP.Value =
                         Math.Min(simulator.CurrentPlayerHP.Value + healAmount, simulator.MaxPlayerHP);
                     _battleController.RenderHeal(healAmount);
+                    yield return new WaitForSeconds((BATTLE_STEP_DELAY - BATTLE_STEP_DELAY_INTERVAL * OptionState.Instance.CombatSpeed.Value) / 2);
+                }
+                else
+                {
                     yield return new WaitForSeconds(BATTLE_STEP_DELAY - BATTLE_STEP_DELAY_INTERVAL * OptionState.Instance.CombatSpeed.Value);
                 }
+                
                 result.TurnCount++;
             }
 
-            EndBattle(result, simulator, monsterData);
+            EndBattle(result, simulator, monsterData, true);
         }
 
-        private void EndBattle(BattleContext result, BattleSimulator simulator, MonsterData monsterData)
+        private void EndBattle(BattleContext result, BattleSimulator simulator, MonsterData monsterData, bool wait)
         {
+            if (_simulateBattleCoroutine != null)
+            {
+                StopCoroutine(_simulateBattleCoroutine);
+            }
+
+            _simulateBattleCoroutine = null;
+
             CurrentBattleStep.Value = BattleStep.PreEnd;
             
             // 전투 결과 메시지
@@ -326,7 +352,7 @@ namespace LoopLegacy.Manager
                 
                 // 드롭 아이템 계산 (LUC 스탯 및 Relic 효과 적용)
                 int luc = GameManager.GetStat(StatType.LUC);
-                float lucMultiplier = 1.0f + Mathf.Min(1.0f, (float)luc / (300 + luc + monsterData.level));
+                float lucMultiplier = CalculateLucMultiplier(luc, monsterData.level);
                 Debug.Log($"Luc Multiplier: {lucMultiplier}");
                 var context = new RelicEffectContext
                 {
@@ -412,7 +438,14 @@ namespace LoopLegacy.Manager
             _currentBattleResult.Value = result;
             _simulator = null;
             
-            StartCoroutine(SetBattleStepEndDelayedCoroutine());
+            if (wait)
+            {
+                StartCoroutine(SetBattleStepEndDelayedCoroutine());
+            }
+            else
+            {
+                CurrentBattleStep.Value = BattleStep.End;
+            }
         }
         
         private IEnumerator SetBattleStepEndDelayedCoroutine()
@@ -423,6 +456,7 @@ namespace LoopLegacy.Manager
 
         private void ApplyBattleResult(BattleContext result)
         {
+            GameManager.Instance.GameState.CombatInfo.IncrementCombatCount(_monsterData);
             if (result.IsVictory)
             {
                 // 경험치 적용 (ShowBattleResult에서 이미 완료된 결과 사용)
@@ -494,7 +528,8 @@ namespace LoopLegacy.Manager
                                 new UnityEngine.Vector2(float.Parse(action.values[1]), float.Parse(action.values[2])));
                             break;
                         case MonsterActionType.RewardRelic:
-                            GameManager.Instance.RelicReward(int.Parse(action.values[0]), new Relic[] { });
+                            CurrentBattleStep.Value = BattleStep.RelicReward;
+                            GameManager.Instance.RelicReward(int.Parse(action.values[0]), new Relic[] { }, () => CurrentBattleStep.Value = BattleStep.None);
                             break;
                         case MonsterActionType.None:
                             break;
@@ -507,8 +542,20 @@ namespace LoopLegacy.Manager
             }
 
             GameManager.Instance.GameState.PlayerStats.AddBattlePoint(result.EarnedBattlePoint);
+            GameManager.Instance.GameState.UpdateRegionEffect();
+            _onBattleEnd?.Invoke(result);   
+            OnBattleEnd?.Invoke();
             GameManager.Instance.Save();
-            _onBattleEnd?.Invoke(result);
+            if (CurrentBattleStep.Value != BattleStep.RelicReward)
+            {
+                CurrentBattleStep.Value = BattleStep.None;
+            }
+        }
+
+        private float CalculateLucMultiplier(int luc, int monsterLevel)
+        {
+            float level = Mathf.Max(monsterLevel, 1f);
+            return 1.0f + 1.66f * Mathf.Log10(1f + (float)luc / level);
         }
     }
 } 

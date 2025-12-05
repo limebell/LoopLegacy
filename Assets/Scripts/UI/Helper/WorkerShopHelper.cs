@@ -57,6 +57,10 @@ namespace LoopLegacy.UI.Helper
             {
                 shopList.Add((byte)Shortcut.Desert);
             }
+            if (codexState.IsRegionVisited("deep-forest-0") || codexState.IsRegionVisited("deep-forest-1"))
+            {
+                shopList.Add((byte)Shortcut.DeepForest);
+            }
             if (codexState.IsRegionVisited("castle-0"))
             {
                 shopList.Add((byte)Shortcut.Castle);
@@ -102,7 +106,9 @@ namespace LoopLegacy.UI.Helper
             switch (shortcut)
             {
                 case Shortcut.Desert:
-                    return 199000;
+                    return 100000;
+                case Shortcut.DeepForest:
+                    return 400000;
                 case Shortcut.Castle:
                     return 3000000;
                 default:

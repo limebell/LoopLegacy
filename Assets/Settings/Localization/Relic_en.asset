@@ -326,7 +326,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 21335966087643136
-    m_Localized: Reflect {0}% of received damage.
+    m_Localized: Deals {0}% of protection reflect damage to enemy.
     m_Metadata:
       m_Items: []
   - m_Id: 21335966087643137
@@ -415,6 +415,14 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 36278324222754816
     m_Localized: Increase damage dealt to any enemy by {0}%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335166083448864
+    m_Localized: Double-Edged Dagger
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335166083448865
+    m_Localized: Increase damage dealt by {0}%, but increase damage taken by 20%.
     m_Metadata:
       m_Items: []
   references:

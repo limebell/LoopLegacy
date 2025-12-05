@@ -22,7 +22,9 @@ namespace LoopLegacy
         Simulating,
         PreEnd,
         End,
+        PreResult,
         Result,
+        RelicReward,
         None,
     }
 
@@ -89,5 +91,21 @@ namespace LoopLegacy
         Bard,
         Worker,
         Library,
+    }
+
+    public enum RegionEffectType
+    {
+        None,
+        BoostExpSmall,
+        BoostExpLarge,
+        BoostGoldSmall,
+        BoostGoldLarge,
+        ReduceEnemyHPSmall,
+        ReduceEnemyHPLarge,
+        ReduceEnemyATKSmall,
+        ReduceEnemyATKLarge,
+        SpecialA,
+        SpecialB,
+        SpecialC,
     }
 }

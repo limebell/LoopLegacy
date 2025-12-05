@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using LoopLegacy.Loader;
 using LoopLegacy.Manager;
 using LoopLegacy.State;
@@ -9,6 +10,8 @@ namespace LoopLegacy.Region
 {
     public class Region : MonoBehaviour
     {
+        private const float REGION_EFFECT_PROBABILITY = 0.07f;
+
         [SerializeField] private string _regionCode;
         private float _lineWidth = 0.08f;
 
@@ -66,20 +69,25 @@ namespace LoopLegacy.Region
         private void Start()
         {
             _regionEntry = TableManager.GetRegion(_regionCode);
-            _levelText.text = "Lv. " + _regionEntry.label.ToString();
-
-            Color color = GetColor(GameManager.Instance.GameState.PlayerStats.Level.Value);
-            _lineRenderer.startColor = color;
-            _lineRenderer.endColor = color;
 
             var d = Disposable.CreateBuilder();
             GameManager.Instance.GameState.PlayerStats.Level.Subscribe(level =>
             {
-                var color1 = GetColor(level);
-                _lineRenderer.startColor = color1;
-                _lineRenderer.endColor = color1;
+                var color = GetColor(level);
+                _lineRenderer.startColor = color;
+                _lineRenderer.endColor = color;
+            }).AddTo(ref d);
+            GameManager.Instance.GameState.AppliedRegionEffects.Subscribe(appliedRegionEffects =>
+            {
+                UpdateLevelText();
             }).AddTo(ref d);
             d.RegisterTo(this.destroyCancellationToken);
+            BattleManager.Instance.OnBattleEnd += ProcessRegionEffect;
+        }
+
+        private void Oestroy()
+        {
+            BattleManager.Instance.OnBattleEnd -= ProcessRegionEffect;
         }
 
         public int GetRelativeLevel(int level)
@@ -135,6 +143,78 @@ namespace LoopLegacy.Region
         public RegionEntry GetRegionEntry()
         {
             return _regionEntry;
+        }
+
+        private void ProcessRegionEffect()
+        {
+            if (UnityEngine.Random.value > REGION_EFFECT_PROBABILITY)
+            {
+                return;
+            }
+
+            Dictionary<RegionEffectType, float> regionEffectWeights = new Dictionary<RegionEffectType, float>()
+            {
+                {RegionEffectType.None, 0.0f},
+                {RegionEffectType.BoostExpSmall, 1.2f},
+                {RegionEffectType.BoostExpLarge, 1.0f},
+                {RegionEffectType.BoostGoldSmall, 1.2f},
+                {RegionEffectType.BoostGoldLarge, 1.0f},
+                {RegionEffectType.ReduceEnemyHPSmall, 1.0f},
+                {RegionEffectType.ReduceEnemyHPLarge, 1.0f},
+                {RegionEffectType.ReduceEnemyATKSmall, 1.0f},
+                {RegionEffectType.ReduceEnemyATKLarge, 1.0f},
+            };
+
+            if (int.TryParse(_regionEntry.label, out int level))
+            {
+                if (level <= 300)
+                {
+                    // No Region Effect in start region
+                    return;
+                }
+                
+                if (_regionEntry.code.StartsWith("pyramid-"))
+                {
+                    regionEffectWeights.Remove(RegionEffectType.BoostExpSmall);
+                    regionEffectWeights.Remove(RegionEffectType.BoostExpLarge);
+                    regionEffectWeights.Remove(RegionEffectType.ReduceEnemyHPSmall);
+                    regionEffectWeights.Remove(RegionEffectType.ReduceEnemyHPLarge);
+                    regionEffectWeights.Remove(RegionEffectType.ReduceEnemyATKSmall);
+                    regionEffectWeights.Remove(RegionEffectType.ReduceEnemyATKLarge);
+                }
+
+                if (level >= 1830)
+                {
+                    regionEffectWeights.Add(RegionEffectType.SpecialA, 0.5f);
+                }
+
+                if (level >= 2830)
+                {
+                    regionEffectWeights.Add(RegionEffectType.SpecialB, 0.5f);
+                }
+
+                if (level >= 51111)
+                {
+                    regionEffectWeights.Add(RegionEffectType.SpecialC, 0.5f);
+                }
+            }
+            else
+            {
+            }
+
+            RegionEffectType regionEffectType = Utils.PickRegionEffectType(regionEffectWeights);
+            GameManager.Instance.GameState.AddRegionEffect(_regionCode, regionEffectType, UnityEngine.Random.Range(3, 7));
+        }
+
+        private void UpdateLevelText()
+        {
+            _levelText.text = "Lv. " + _regionEntry.label.ToString();
+            RegionEffect regionEffect = GameManager.Instance.GameState.GetRegionEffect(_regionCode);
+            if (regionEffect.Type != RegionEffectType.None)
+            {
+                string effectText = Utils.GetRegionEffectText(regionEffect.Type);
+                _levelText.text += $"\n<size=90%>{effectText} ({regionEffect.Duration})</size>";
+            }
         }
 
         private void OnTriggerEnter2D(Collider2D other)

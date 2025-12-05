@@ -90,6 +90,15 @@ namespace LoopLegacy.Manager
                 GameObject.Find("Region-pyramid-shortcut")?.SetActive(false);
             }
 
+            if (PersistentGameState.Instance.HouseState.GetShortcut(Shortcut.DeepForest))
+            {
+                GameObject.Find("Shortcut_DeepForest-cover")?.SetActive(false);
+            }
+            else
+            {
+                GameObject.Find("Shortcut_DeepForest-cover")?.SetActive(true);
+            }
+
             if (PersistentGameState.Instance.HouseState.GetShortcut(Shortcut.Castle))
             {
                 GameObject.Find("Shortcut_Castle-cover_0")?.SetActive(false);

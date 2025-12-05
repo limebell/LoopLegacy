@@ -25,7 +25,7 @@ namespace LoopLegacy.Battle.RelicEffects
             
             if (context.MonsterData.level < GameManager.Instance.GameState.PlayerStats.Level.Value)
             {
-                context.EnemyAttackReductionRate += damageIncresase / 100f;
+                context.DamageMultiplier += damageIncresase / 100f;
                 if (UnityEngine.Random.Range(0, 100) < executeProbability)
                 {
                     context.ShouldExecute = true;

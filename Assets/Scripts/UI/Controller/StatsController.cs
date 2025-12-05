@@ -7,6 +7,7 @@ using R3;
 using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 namespace LoopLegacy.UI.Controller
@@ -45,6 +46,7 @@ namespace LoopLegacy.UI.Controller
         [SerializeField] private Sprite _lockedRelicSprite;
 
         private Action _onClose;
+        private InputAction _quitApplicationAction;
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
@@ -67,6 +69,15 @@ namespace LoopLegacy.UI.Controller
             _backButton.onClick.AddListener(OnBackButtonClicked);
 
             SubscribeToState();
+            _quitApplicationAction = InputSystem.actions.FindActionMap("UI").FindAction("Cancel");
+        }
+
+        void Update()
+        {
+            if (_quitApplicationAction.triggered && !ConfirmationController.Instance.IsVisible)
+            {
+                Hide();
+            }
         }
 
         public void Show(Action onClose)
@@ -80,6 +91,7 @@ namespace LoopLegacy.UI.Controller
             UpdateAutoDistributePresetText();
             UpdateFinalStats();
             UpdateRelics();
+            _addStatController.Hide();
             gameObject.SetActive(true);
 
             _onClose = onClose;
@@ -235,9 +247,7 @@ namespace LoopLegacy.UI.Controller
                     int index = i;
                     var relic = GameManager.Instance.GameState.OwnedRelics.Value[index];
                     _relicContainers[i].SetRelic(relic);
-                    _relicContainers[i].onClick.AddListener(() => {
-                        ConfirmationController.Instance.ShowRelic(relic);
-                    });
+                    _relicContainers[i].onClick.AddListener(() => ShowRelicInfo(relic));
                 }
                 else if (i < PersistentGameState.Instance.GetMaxRelicCount())
                 {
@@ -250,6 +260,22 @@ namespace LoopLegacy.UI.Controller
                     _relicContainers[i].onClick.RemoveAllListeners();
                 }
             }
+        }
+
+        private void ShowRelicInfo(Relic relic)
+        {
+            ConfirmationController.Instance.ShowRelicDiscard(
+                relic,
+                () => { ShowRelicDiscardConfirmation(relic); });
+        }
+
+        private void ShowRelicDiscardConfirmation(Relic relic)
+        {
+            ConfirmationController.Instance.ShowConfirmation(
+                message: Utils.GetUIString("relic_discard-confirmation", new[] { relic.Effect.GetName() }),
+                onConfirm: () => { GameManager.Instance.DiscardRelic(relic.EffectName); UpdateRelics(); },
+                onClose: () => { ShowRelicInfo(relic); }
+            );
         }
 
         private void OpenEquipmentUI(EquipmentType equipmentType)

@@ -193,40 +193,43 @@ class MonsterStatCalculator:
             atk = int(2590 + 1.6 * (level - 1800))
         elif level <= 5000:
             # 후반부: 몬스터 압도적
-            hp = int(133817 + 64.0 * (level - 3333))
-            atk = int(5042 + 1.85 * (level - 3333))
+            hp = int(133817 + 63.0 * (level - 3333))
+            atk = int(5042 + 1.75 * (level - 3333))
         elif level <= 20000:
             # 극후반부: 매우 어려움 (ATK 증가율 완만화)
-            hp = int(240505 + 82.0 * (level - 5000))
-            atk = int(8125 + 2.0 * (level - 5000))
+            hp = int(238838 + 81.0 * (level - 5000))
+            atk = int(7959 + 1.9 * (level - 5000))
         elif level <= 30000:
             # 초극후반부: 극한 난이도 (ATK 증가율 완만화)
-            hp = int(1470505 + 135.0 * (level - 20000))
-            atk = int(38125 + 2.3 * (level - 20000))
+            hp = int(1453838 + 129.0 * (level - 20000))
+            atk = int(36459 + 2.2 * (level - 20000))
         elif level <= 50000:
             # 초극후반부2: 극한 난이도 (ATK 증가율 완만화)
-            hp = int(2820505 + 182.0 * (level - 30000))
-            atk = int(61125 + 2.45 * (level - 30000))
+            hp = int(2743838 + 172.0 * (level - 30000))
+            atk = int(58459 + 2.5 * (level - 30000))
         elif level <= 60000:
             # 초극후반부3: 극한 난이도 (ATK 증가율 완만화)
-            hp = int(6460505 + 240.0 * (level - 50000))
-            atk = int(110125 + 2.7 * (level - 50000))
+            hp = int(6183838 + 281.0 * (level - 50000))
+            atk = int(108459 + 2.9 * (level - 50000))
         elif level <= 70000:
             # 초극후반부4: 극한 난이도 (ATK 증가율 완만화)
-            hp = int(8860505 + 273.0 * (level - 60000))
-            atk = int(137125 + 2.9 * (level - 60000))
+            hp = int(8993838 + 334.0 * (level - 60000))
+            atk = int(137459 + 3.2 * (level - 60000))
         elif level <= 80000:
             # 초극후반부5: 극한 난이도 (ATK 증가율 완만화)
-            hp = int(11590505 + 296.0 * (level - 70000))
-            atk = int(166125 + 3.1 * (level - 70000))
+            hp = int(12333838 + 387.0 * (level - 70000))
+            atk = int(169459 + 3.6 * (level - 70000))
         elif level <= 90000:
             # 초극후반부6: 극한 난이도 (ATK 증가율 완만화)
-            hp = int(14550505 + 315.0 * (level - 80000))
-            atk = int(197125 + 3.3 * (level - 80000))
+            hp = int(16203838 + 440.0 * (level - 80000))
+            atk = int(205459 + 4.0 * (level - 80000))
         else:
             # 최종구간: 최종 난이도 (ATK 증가율 완만화)
-            hp = int(17700505 + 390.0 * (level - 90000))
-            atk = int(230125 + 3.5 * (level - 90000))
+            hp = int(20603838 + 493.0 * (level - 90000))
+            atk = int(245459 + 4.5 * (level - 90000))
+
+        hp = int(hp * 0.9)
+        atk = int(atk * 1.1)
         
         # 지수함수 근사 (참고용 주석)
         # hp = int(8.9 * (level ** 1.19))

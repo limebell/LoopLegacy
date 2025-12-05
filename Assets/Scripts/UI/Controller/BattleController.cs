@@ -96,7 +96,11 @@ namespace LoopLegacy.UI.Controller
 
         private void OnGiveUpButtonClicked()
         {
-            BattleManager.Instance.GiveupBattle();
+            ConfirmationController.Instance.ShowConfirmation(
+                Utils.GetUIString("battle_giveup-confirmation"),
+                onConfirm: () => {
+                    BattleManager.Instance.GiveupBattle();
+                });
         }
 
         public void AddBattleLog(string message)

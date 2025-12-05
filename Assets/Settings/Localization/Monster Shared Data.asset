@@ -95,6 +95,10 @@ MonoBehaviour:
     m_Key: forest-7_0
     m_Metadata:
       m_Items: []
+  - m_Id: 2850508051578881
+    m_Key: forest-8_0
+    m_Metadata:
+      m_Items: []
   - m_Id: 39090467653550080
     m_Key: spring-pool-0_0
     m_Metadata:
@@ -569,6 +573,18 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 39218436736811008
     m_Key: castle-24_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 100000000000000
+    m_Key: special-a-0_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 100000000000001
+    m_Key: special-a-0_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 100000000000002
+    m_Key: special-a-0_2
     m_Metadata:
       m_Items: []
   - m_Id: 39220327583580160

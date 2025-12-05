@@ -19,6 +19,7 @@ namespace LoopLegacy.Battle
         private readonly Armor armor;
         private readonly string monsterName;
         private readonly MonsterData monster;
+        private readonly RegionEffectType regionEffect;
         private readonly BattleController battleController;
         public readonly float hitDelay;
 
@@ -36,12 +37,14 @@ namespace LoopLegacy.Battle
             Weapon weapon,
             Armor armor,
             MonsterData monster,
+            RegionEffectType regionEffect,
             BattleController battleController,
             float hitDelay)
         {
             this.weapon = weapon;
             this.armor = armor;
             this.monster = monster;
+            this.regionEffect = regionEffect;
             this.monsterName = Utils.GetMonsterName(monster);
             this.battleController = battleController;
             this.hitDelay = hitDelay;
@@ -59,6 +62,15 @@ namespace LoopLegacy.Battle
             {
                 this.MaxMonsterHP = monster.hp;
                 this.MonsterATK = monster.atk;
+            }
+
+            if (regionEffect == RegionEffectType.ReduceEnemyHPSmall || regionEffect == RegionEffectType.ReduceEnemyHPLarge)
+            {
+                this.MaxMonsterHP = (int)(this.MaxMonsterHP * (1 - 0.3f));
+            }
+            if (regionEffect == RegionEffectType.ReduceEnemyATKSmall || regionEffect == RegionEffectType.ReduceEnemyATKLarge)
+            {
+                this.MonsterATK = (int)(this.MonsterATK * (1 - 0.3f));
             }
 
             // 체력 ReactiveProperty 초기화

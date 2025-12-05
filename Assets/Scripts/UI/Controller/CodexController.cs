@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
+using UnityEngine.InputSystem;
 
 namespace LoopLegacy.UI.Controller
 {
@@ -25,7 +26,8 @@ namespace LoopLegacy.UI.Controller
         private List<object> _currentDataList = new List<object>(); // 현재 표시할 데이터 리스트
         private string _currentCodexType = "";
         private int _selectedIndex = -1;
-
+        private InputAction _quitApplicationAction;
+        
         void Awake()
         {
             SetupVirtualizedScrollRect();
@@ -40,6 +42,7 @@ namespace LoopLegacy.UI.Controller
             _relicButton.onClick.AddListener(() => PopulateCodexList("Relic"));
 
             _backButton.onClick.AddListener(OnBackButtonClicked);
+            _quitApplicationAction = InputSystem.actions.FindActionMap("UI").FindAction("Cancel");
         }
 
         public void Show(Action onClose)
@@ -47,6 +50,14 @@ namespace LoopLegacy.UI.Controller
             gameObject.SetActive(true);
             PopulateCodexList("Monster");
             _onClose = onClose;
+        }
+
+        void Update()
+        {
+            if (_quitApplicationAction.triggered)
+            {
+                Hide();
+            }
         }
 
         public void Hide(bool invokeOnClose = true)

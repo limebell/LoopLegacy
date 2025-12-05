@@ -511,11 +511,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 39215649902821376
-    m_Localized: Crawling Hatred
+    m_Localized: Crawling Disgust
     m_Metadata:
       m_Items: []
   - m_Id: 39215671520264192
-    m_Localized: Crawling Disgust
+    m_Localized: Crawling Hatred
     m_Metadata:
       m_Items: []
   - m_Id: 39216350271897600
@@ -620,6 +620,22 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 39120998202081281
     m_Localized: Snow Toad
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2850508051578881
+    m_Localized: Deadly Poison Mushroom
+    m_Metadata:
+      m_Items: []
+  - m_Id: 100000000000000
+    m_Localized: Golden Bat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 100000000000001
+    m_Localized: Golden Statue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 100000000000002
+    m_Localized: Golden Skull
     m_Metadata:
       m_Items: []
   references:

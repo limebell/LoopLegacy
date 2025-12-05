@@ -841,6 +841,14 @@ MonoBehaviour:
       \uBC1B\uC558\uC2B5\uB2C8\uB2E4."
     m_Metadata:
       m_Items: []
+  - m_Id: 44156351388581888
+    m_Localized: "\uC774 \uC804\uD22C\uB97C \uC815\uB9D0 \uD3EC\uAE30\uD558\uC2DC\uACA0\uC2B5\uB2C8\uAE4C?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44757325895434240
+    m_Localized: "\uC815\uB9D0 \uC720\uBB3C [{0}]\uC744(\uB97C) \uBC84\uB9AC\uC2DC\uACA0\uC2B5\uB2C8\uAE4C?"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

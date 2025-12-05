@@ -3,6 +3,7 @@ using LoopLegacy.State;
 using LoopLegacy.UI.Controller;
 using R3;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace LoopLegacy.Manager
 {
@@ -33,6 +34,8 @@ namespace LoopLegacy.Manager
         private GameObject _library;
 
         public ReactiveProperty<bool> IsInteractionInProgress { get; private set; }
+
+        private InputAction _quitApplicationAction;
 
         private void Awake()
         {
@@ -84,11 +87,10 @@ namespace LoopLegacy.Manager
             }
 
             _shopEquipment.SetActive(level > 0);
-            _codexNPC.SetActive(level > 1);
+            _shopUpgrade.SetActive(level > 1);
             _shopRelic.SetActive(level > 2);
-            _shopUpgrade.SetActive(level > 3);
-            _worker.SetActive(level > 4);
-            _library.SetActive(level > 5);
+            _worker.SetActive(level > 3);
+            _library.SetActive(level > 4);
         }
 
         private void EndTerritoryTutorial()
@@ -170,7 +172,7 @@ namespace LoopLegacy.Manager
                     }
                     else
                     {
-                        ScriptManager.Instance.StartScript(Utils.GetNPCCode(npcType), () => IsInteractionInProgress.Value = false, startIndex: Random.Range(0, 9));
+                        ScriptManager.Instance.StartScript(Utils.GetNPCCode(npcType), () => IsInteractionInProgress.Value = false, startIndex: Random.Range(0, 10));
                     }
                     break;
             }

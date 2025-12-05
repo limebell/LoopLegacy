@@ -50,29 +50,21 @@ namespace LoopLegacy.UI.Controller
                 _giveUpButton.gameObject.SetActive(false);
             }
 
-            var uiActionMap = InputSystem.actions.FindActionMap("UI");
-            _quitApplicationAction = uiActionMap.FindAction("Cancel");
+            _quitApplicationAction = InputSystem.actions.FindActionMap("UI").FindAction("Cancel");
         }
 
         void Update()
         {
-            if (_quitApplicationAction.triggered)
+            if (_quitApplicationAction.triggered && !ConfirmationController.Instance.IsVisible)
             {
-                if (gameObject.activeSelf)
-                {
-                    Hide();
-                }
-                else
-                {
-                    Show();
-                }
+                Hide();
             }
         }
 
         public void Show()
         {
             gameObject.SetActive(true);
-            _codexButton.gameObject.SetActive(PersistentGameState.Instance.HouseState.CanViewCodex);
+
         }
 
         public void Hide()

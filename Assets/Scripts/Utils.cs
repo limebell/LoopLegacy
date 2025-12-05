@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using LoopLegacy.Battle;
+using LoopLegacy.Battle.RelicEffects;
 using LoopLegacy.Loader;
 using LoopLegacy.State;
 using UnityEngine;
@@ -37,6 +38,11 @@ namespace LoopLegacy
             return color;
         }
 
+        public static string ColorToHex(Color color)
+        {
+            return ColorUtility.ToHtmlStringRGB(color);
+        }
+
         // Weighted Random Sampling (Efraimidis–Spirakis)
         public static List<Relic> PickRelics(
             IEnumerable<Relic> relics,
@@ -67,6 +73,24 @@ namespace LoopLegacy
             // 키가 작은 상위 N개 선택
             keyed.Sort((a, b) => a.key.CompareTo(b.key));
             return keyed.Take(count).Select(x => x.relic).ToList();
+        }
+
+        public static RegionEffectType PickRegionEffectType(
+            IReadOnlyDictionary<RegionEffectType, float> regionEffectWeights
+        )
+        {
+            float totalWeight = regionEffectWeights.Values.Sum();
+            if (totalWeight == 0)
+                return RegionEffectType.None;
+            float randomValue = UnityEngine.Random.value * totalWeight;
+            foreach (var entry in regionEffectWeights)
+            {
+                randomValue -= entry.Value;
+                if (randomValue <= 0)
+                    return entry.Key;
+            }
+
+            return regionEffectWeights.Keys.Last();
         }
 
         public static string GetStatName(StatType statType)
@@ -298,6 +322,25 @@ namespace LoopLegacy
             }
 
             return null;
+        }
+
+        public static string GetRegionEffectText(RegionEffectType regionEffectType)
+        {
+            return regionEffectType switch
+            {
+                RegionEffectType.BoostExpSmall => $"Exp x1.5",
+                RegionEffectType.BoostExpLarge => $"Exp x2.0",
+                RegionEffectType.BoostGoldSmall => $"Gold x1.5",
+                RegionEffectType.BoostGoldLarge => $"Gold x2.0",
+                RegionEffectType.ReduceEnemyHPSmall => $"Enemy HP x0.7",
+                RegionEffectType.ReduceEnemyHPLarge => $"Enemy HP x0.7",
+                RegionEffectType.ReduceEnemyATKSmall => $"Enemy ATK x0.7",
+                RegionEffectType.ReduceEnemyATKLarge => $"Enemy ATK x0.7",
+                RegionEffectType.SpecialA => $"Special A",
+                RegionEffectType.SpecialB => $"Special B",
+                RegionEffectType.SpecialC => $"Special C",
+                _ => "",
+            };
         }
     }
 }

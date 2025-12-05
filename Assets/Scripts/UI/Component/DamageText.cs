@@ -25,7 +25,7 @@ namespace LoopLegacy.UI.Component
             _damageText.color = type switch
             {
                 DamageTextType.Critical => Color.red,
-                DamageTextType.Evasion => Color.lightCoral,
+                DamageTextType.Evasion => Color.skyBlue,
                 DamageTextType.Execution => Color.red,
                 DamageTextType.Heal => Color.green,
                 _ => Color.white,

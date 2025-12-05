@@ -244,7 +244,7 @@ namespace LoopLegacy.Manager
             return Mathf.RoundToInt((Instance.GameState.PlayerStats.Stats[(int)statType].Value + Instance.RelicManager.GetStatBoost()[statType]) * LibraryManager.GetStatMultiplier(PersistentGameState.Instance.AccumulatedLevel));
         }
 
-        public void RelicReward(int weight, Relic[] alreadyRolledRelics)
+        public void RelicReward(int weight, Relic[] alreadyRolledRelics, Action onComplete)
         {
             int relicCount = PersistentGameState.Instance.HouseState.GetUpgradeValue(UpgradeType.RelicRewardChoiceCount);
             List<Relic> relics = PersistentGameState.Instance.CodexState.GetAvailableRelics();
@@ -282,7 +282,7 @@ namespace LoopLegacy.Manager
                     { RelicGrade.Epic, Mathf.Lerp(baseEpic, targetWeight, t) },
                 },
                 count: relicCount);
-            _relicRewardController.Show(weight, pickedRelics, alreadyRolledRelics);
+            _relicRewardController.Show(weight, pickedRelics, alreadyRolledRelics, onComplete);
         }
 
         public void UnlockRelic(string effectName, int level)

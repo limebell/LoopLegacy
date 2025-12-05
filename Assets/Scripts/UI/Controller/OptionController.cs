@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.Localization.Settings;
 using UnityEngine.UI;
 
@@ -51,6 +52,8 @@ namespace LoopLegacy.UI.Controller
         private const int CONTROL_COUNT = 3;
         [SerializeField]
         private Button[] _controlButtons;
+
+        private InputAction _quitApplicationAction;
 
         void Awake()
         {
@@ -127,6 +130,16 @@ namespace LoopLegacy.UI.Controller
 
             _closeButton.onClick.AddListener(() => Hide());
             RegisterOptionValues();
+
+            _quitApplicationAction = InputSystem.actions.FindActionMap("UI").FindAction("Cancel");
+        }
+
+        void Update()
+        {
+            if (_quitApplicationAction.triggered && !ConfirmationController.Instance.IsVisible)
+            {
+                Hide();
+            }
         }
         
         public void Show(Action onClose)

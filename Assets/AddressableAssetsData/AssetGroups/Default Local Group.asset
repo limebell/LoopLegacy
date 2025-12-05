@@ -310,6 +310,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 382a6568cc2b33e48869f886b5733386
+    m_Address: Images/Enemies/special-a-0_1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 38e04abdcfc5f374d9d8f6685a9e5452
     m_Address: Images/Enemies/deep-forest-swamp-3_0
     m_ReadOnly: 0
@@ -337,6 +342,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 3a9879edfc11c0f4db714deafc5d6616
     m_Address: Images/Enemies/ice-6_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3df5e070491186c48b70c28beef2efe6
+    m_Address: Images/Relics/dmg_boost_when_low_hp
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -590,11 +600,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 68465def02575a843a54b1dfb2aaaf1a
-    m_Address: Images/Relics/reflect
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 68fc300c74d6d6b489e882bcfdbadf09
     m_Address: Images/Enemies/castle-1_0
     m_ReadOnly: 0
@@ -617,6 +622,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 6d290da2a407ed14dac0d7ebbc20f55c
     m_Address: Images/Enemies/swamp-0_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6dafc38dabfebc04993000a0abb9799e
+    m_Address: Images/Enemies/forest-8_0
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -950,11 +960,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: b1e1601a3f2e40249b48c9a31fa58526
-    m_Address: Images/Relics/dmg_boost_when_low_hp
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: b24b7b7a6b3d44c4790a804b713ef59a
     m_Address: Images/Enemies/castle-12_0
     m_ReadOnly: 0
@@ -1007,6 +1012,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: bd7fb066a8b34e54a95d5b0da13a4c2b
     m_Address: Images/Enemies/start-1_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bdb13191560824f4fae86911e23cc3d5
+    m_Address: Images/Enemies/special-a-0_2
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -1097,6 +1107,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d3cd411dddf45a8478a7b55c70241837
     m_Address: Images/Enemies/pyramid-4_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d54119d34516e714fb78d1d6d6b318d8
+    m_Address: Images/Relics/dmg_boost_weak
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -1217,6 +1232,16 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: eb779df90c17c424c987c99620b96ea4
     m_Address: Images/Relics/stat_boost_atk
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ec3b1717e0e29624c8b04d486b44a4d6
+    m_Address: Images/Enemies/special-a-0_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ecbf5b855c579e040823cf80db57afe9
+    m_Address: Images/Relics/reflect
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

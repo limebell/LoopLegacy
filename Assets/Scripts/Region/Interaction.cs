@@ -112,7 +112,9 @@ namespace LoopLegacy.Region
         private void StartBattle()
         {
             MonsterData monsterData = TableManager.GetBoss(_monsterCode);
-            var battleResult = BattleManager.Instance.StartBattle(monsterData, OnBattleEnd);
+            Region region = GameManager.Instance.RegionDetector.LastRegion.Value;
+            var regionEffect = GameManager.Instance.GameState.GetRegionEffect(region.GetRegionEntry().code);
+            var battleResult = BattleManager.Instance.StartBattle(monsterData, regionEffect.Type, OnBattleEnd);
         }
 
         private void OnBattleEnd(BattleContext result)

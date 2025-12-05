@@ -1,15 +1,16 @@
 using System;
 using LoopLegacy.State;
+using LoopLegacy.UI.Component;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 namespace LoopLegacy.UI.Controller
 {
     public class AutoDistributeController : MonoBehaviour
     {
-        [SerializeField] private Button _onButton;
-        [SerializeField] private Button _offButton;
+        [SerializeField] private ToggleSwitch _onOffSwitch;
         [SerializeField] private TMP_InputField[] _inputFields;
         [SerializeField] private Button[] _presetButtons;
         [SerializeField] private Button _applyButton;
@@ -19,11 +20,12 @@ namespace LoopLegacy.UI.Controller
         private bool _isDirty = false;
 
         private Action _onClose;
-
+        private InputAction _quitApplicationAction;
+        
         void Start()
         {
-            _onButton.onClick.AddListener(OnOnButtonClicked);
-            _offButton.onClick.AddListener(OnOffButtonClicked);
+            _onOffSwitch.onToggleOn.AddListener(OnOnButtonClicked);
+            _onOffSwitch.onToggleOff.AddListener(OnOffButtonClicked);
             _applyButton.onClick.AddListener(OnApplyButtonClicked);
             _cancelButton.onClick.AddListener(OnCancelButtonClicked);
             foreach (var inputField in _inputFields)
@@ -41,8 +43,7 @@ namespace LoopLegacy.UI.Controller
         {
             _isDirty = false;
             gameObject.SetActive(true);
-            _onButton.interactable = !PersistentGameState.Instance.AutoDistributeStats;
-            _offButton.interactable = PersistentGameState.Instance.AutoDistributeStats;
+            _onOffSwitch.SetValue(PersistentGameState.Instance.AutoDistributeStats);
             for (int i = 0; i < PersistentGameState.Instance.GetAutoDistributeRate().Length; i++)
             {
                 _inputFields[i].text = PersistentGameState.Instance.GetAutoDistributeRate()[i].ToString();
@@ -53,6 +54,15 @@ namespace LoopLegacy.UI.Controller
                 _presetButtons[i].interactable = i != _tempPresetIndex;
             }
             _onClose = onClose;
+            _quitApplicationAction = InputSystem.actions.FindActionMap("UI").FindAction("Cancel");
+        }
+
+        void Update()
+        {
+            if (_quitApplicationAction.triggered && !ConfirmationController.Instance.IsVisible)
+            {
+                Hide();
+            }
         }
 
         public void Hide()
@@ -64,21 +74,17 @@ namespace LoopLegacy.UI.Controller
 
         private void OnOnButtonClicked()
         {
-            _onButton.interactable = false;
-            _offButton.interactable = true;
             _isDirty = true;
         }
 
         private void OnOffButtonClicked()
         {
-            _onButton.interactable = true;
-            _offButton.interactable = false;
             _isDirty = true;
         }
 
         private void OnApplyButtonClicked()
         {
-            PersistentGameState.Instance.SetAutoDistributeStats(!_onButton.interactable);
+            PersistentGameState.Instance.SetAutoDistributeStats(_onOffSwitch.CurrentValue);
             int[] autoDistributeRate = new int[Enum.GetValues(typeof(StatType)).Length];
             for (int i = 0; i < autoDistributeRate.Length; i++)
             {

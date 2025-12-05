@@ -5,12 +5,15 @@ using TMPro;
 using LoopLegacy.Battle;
 using LoopLegacy.Loader;
 using LoopLegacy.State;
+using UnityEngine.InputSystem;
 
 namespace LoopLegacy.UI.Controller
 {
     public class ConfirmationController : MonoBehaviour
     {
         public static ConfirmationController Instance;
+
+        public bool IsVisible => gameObject.activeSelf;
 
         [SerializeField]
         private TextMeshProUGUI _messageText;
@@ -20,6 +23,7 @@ namespace LoopLegacy.UI.Controller
         private Button _closeButton;
         private Action _onConfirm;
         private Action _onClose;
+        private InputAction _quitApplicationAction;
 
         void Awake()
         {
@@ -32,6 +36,15 @@ namespace LoopLegacy.UI.Controller
         {
             _confirmButton.onClick.AddListener(OnConfirmButtonClick);
             _closeButton.onClick.AddListener(OnCloseButtonClick);
+            _quitApplicationAction = InputSystem.actions.FindActionMap("UI").FindAction("Cancel");
+        }
+
+        void Update()
+        {
+            if (_quitApplicationAction.triggered && IsVisible)
+            {
+                OnCloseButtonClick();
+            }
         }
 
         public void ShowConfirmation(string message, Action onConfirm, Action onClose = null, string confirmButtonText = "", string closeButtonText = "")
@@ -86,6 +99,21 @@ namespace LoopLegacy.UI.Controller
             _onClose = () => Hide();
         }
 
+        public void ShowRelicDiscard(Relic relic, Action onDiscard)
+        {
+            gameObject.SetActive(true);
+            _confirmButton.gameObject.SetActive(true);
+            string defaultConfirmButtonText = Utils.GetUIString("discard");
+            _confirmButton.GetComponentInChildren<TextMeshProUGUI>().text = defaultConfirmButtonText;
+            string defaultCloseButtonText = Utils.GetUIString("close");
+            _closeButton.GetComponentInChildren<TextMeshProUGUI>().text = defaultCloseButtonText;
+            _messageText.text = $"<size=120%>[{relic.Effect.GetName()} Lv. {relic.Level + 1}]</size>\n";
+            _messageText.text += $"<color={Utils.GetRelicGradeColorHex(relic.Grade)}>{Utils.GetUIString("grade_" + relic.Grade.ToString().ToLowerInvariant())}</color>\n\n";
+            _messageText.text += relic.Effect.GetDescription();
+            _onConfirm = onDiscard;
+            _onClose = () => Hide();
+        }
+
         public void Hide()
         {
             gameObject.SetActive(false);
@@ -93,6 +121,7 @@ namespace LoopLegacy.UI.Controller
 
         private void OnConfirmButtonClick()
         {
+            Hide();
             try
             {
                 _onConfirm?.Invoke();
@@ -101,14 +130,11 @@ namespace LoopLegacy.UI.Controller
             {
                 Debug.LogError(e);
             }
-            finally
-            {
-                Hide();
-            }
         }
 
         private void OnCloseButtonClick()
         {
+            Hide();
             try
             {
                 _onClose?.Invoke();
@@ -116,10 +142,6 @@ namespace LoopLegacy.UI.Controller
             catch (Exception e)
             {
                 Debug.LogError(e);
-            }
-            finally
-            {
-                Hide();
             }
         }
     }

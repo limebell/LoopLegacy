@@ -346,7 +346,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 21335966087643136
-    m_Localized: "\uC785\uC740 \uD53C\uD574\uC758 {0}%\uB9CC\uD07C\uC744 \uBC18\uC0AC\uD55C\uB2E4."
+    m_Localized: "\uACF5\uACA9 \uBC1B\uC558\uC744 \uB54C \uC790\uC2E0\uC758 \uBCF4\uD638
+      \uC218\uCE58\uC758 {0}%\uB9CC\uD07C\uC744 \uBC18\uC0AC\uD55C\uB2E4."
     m_Metadata:
       m_Items: []
   - m_Id: 21335966087643137
@@ -445,6 +446,15 @@ MonoBehaviour:
   - m_Id: 36278324222754816
     m_Localized: "\uBAA8\uB4E0 \uC801\uC5D0\uAC8C \uC785\uD788\uB294 \uD53C\uD574\uB7C9\uC774
       {0}%\uB9CC\uD07C \uC99D\uAC00\uD55C\uB2E4"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335166083448864
+    m_Localized: "\uC591\uB0A0\uC758 \uAC80"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335166083448865
+    m_Localized: "\uC785\uD788\uB294 \uD53C\uD574\uB7C9\uC774 {0}% \uC99D\uAC00\uD558\uB294
+      \uB300\uC2E0, \uBC1B\uB294 \uD53C\uD574\uB7C9\uC774 20%\uB9CC\uD07C \uC99D\uAC00\uD55C\uB2E4."
     m_Metadata:
       m_Items: []
   references:

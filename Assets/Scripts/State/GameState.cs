@@ -1,5 +1,6 @@
 using LoopLegacy.Battle;
 using LoopLegacy.Loader;
+using LoopLegacy.Region;
 using R3;
 using System;
 using System.Collections.Generic;
@@ -20,6 +21,8 @@ namespace LoopLegacy.State
 
         public ReactiveProperty<IReadOnlyList<Relic>> OwnedRelics { get; private set; }
 
+        public ReactiveProperty<IReadOnlyDictionary<string, RegionEffect>> AppliedRegionEffects { get; private set; }
+
         public List<DropEntryData> DroppedItems { get; private set; }
 
         public string CurrentMapCode;
@@ -36,6 +39,7 @@ namespace LoopLegacy.State
             int relicRewardRerollCount = PersistentGameState.Instance.HouseState.GetUpgradeValue(UpgradeType.RelicRewardRerollCount);
             RelicRewardRerollCount = new ReactiveProperty<int>(relicRewardRerollCount);
             OwnedRelics = new ReactiveProperty<IReadOnlyList<Relic>>(new List<Relic>());
+            AppliedRegionEffects = new ReactiveProperty<IReadOnlyDictionary<string, RegionEffect>>(new Dictionary<string, RegionEffect>());
             DroppedItems = new List<DropEntryData>();
             IsAdvertised = false;
             IsRestartingWithGold = false;
@@ -52,6 +56,10 @@ namespace LoopLegacy.State
             RelicRewardRerollCount = new ReactiveProperty<int>(saveData.relicRewardRerollCount);
             OwnedRelics = new ReactiveProperty<IReadOnlyList<Relic>>(
                 saveData.ownedRelics?.Select(effectName => PersistentGameState.Instance.CodexState.GetRelic(effectName)).ToList() ?? new List<Relic>());
+            AppliedRegionEffects =
+                new ReactiveProperty<IReadOnlyDictionary<string, RegionEffect>>(
+                    saveData.appliedRegionEffects?.ToDictionary(entry => entry.regionCode, entry => new RegionEffect(entry.type, entry.duration))
+                    ?? new Dictionary<string, RegionEffect>());
             CurrentMapCode = saveData.currentMapCode;
             PlayerPosition = new Vector2(saveData.playerPositionX, saveData.playerPositionY);
             CurrentEncounterGauge = saveData.currentEncounterGauge;
@@ -62,13 +70,28 @@ namespace LoopLegacy.State
 
         public void AddDroppedItem(DropEntryData droppedItem)
         {
-            if (DroppedItems.Any(item => item.itemType == droppedItem.itemType && item.itemId == droppedItem.itemId))
+            if (droppedItem.itemType == DropType.Weapon || droppedItem.itemType == DropType.Armor)
             {
-                DroppedItems.Find(item => item.itemType == droppedItem.itemType && item.itemId == droppedItem.itemId).count += droppedItem.count;
+                if (DroppedItems.Any(item => item.itemType == droppedItem.itemType && item.itemId == droppedItem.itemId))
+                {
+                    DroppedItems.Find(item => item.itemType == droppedItem.itemType && item.itemId == droppedItem.itemId).count += droppedItem.count;
+                }
+                else
+                {
+                    DroppedItems.Add(droppedItem);
+                }
             }
-            else
+            else if (droppedItem.itemType == DropType.Relic)
             {
-                DroppedItems.Add(droppedItem);
+                if (DroppedItems.Any(item => item.itemType == droppedItem.itemType && item.relicEffectName == droppedItem.relicEffectName))
+                {
+                    DropEntryData existingItem = DroppedItems.Find(item => item.itemType == droppedItem.itemType && item.relicEffectName == droppedItem.relicEffectName);
+                    existingItem.relicLevel = Math.Max(existingItem.relicLevel, droppedItem.relicLevel);
+                }
+                else
+                {
+                    DroppedItems.Add(droppedItem);
+                }
             }
         }
 
@@ -89,6 +112,7 @@ namespace LoopLegacy.State
                 defeatedBosses = DefeatedBosses.ToArray(),
                 relicRewardRerollCount = RelicRewardRerollCount.Value,
                 ownedRelics = OwnedRelics.Value.Select(relic => relic.EffectName).ToArray(),
+                appliedRegionEffects = AppliedRegionEffects.Value.Select(entry => new RegionEffectData { regionCode = entry.Key, type = entry.Value.Type, duration = entry.Value.Duration }).ToArray(),
                 currentMapCode = CurrentMapCode,
                 playerPositionX = PlayerPosition.x,
                 playerPositionY = PlayerPosition.y,
@@ -97,6 +121,35 @@ namespace LoopLegacy.State
                 isAdvertised = IsAdvertised,
                 isRestartingWithGold = IsRestartingWithGold,
             });
+        }
+
+        public void AddRegionEffect(string regionCode, RegionEffectType regionEffectType, int duration)
+        {
+            if (!AppliedRegionEffects.Value.ContainsKey(regionCode))
+            {
+                Dictionary<string, RegionEffect> newAppliedRegionEffects = new Dictionary<string, RegionEffect>(AppliedRegionEffects.Value);
+                newAppliedRegionEffects[regionCode] = new RegionEffect(regionEffectType, duration);
+                AppliedRegionEffects.Value = newAppliedRegionEffects;
+            }
+        }
+
+        public RegionEffect GetRegionEffect(string regionCode)
+        {
+            if (AppliedRegionEffects.Value.TryGetValue(regionCode, out RegionEffect regionEffect))
+            {
+                return regionEffect;
+            }
+            return new RegionEffect(RegionEffectType.None, 0);
+        }
+
+        public void UpdateRegionEffect()
+        {
+            foreach (var entry in AppliedRegionEffects.Value)
+            {
+                entry.Value.ReduceDuration();
+            }
+
+            AppliedRegionEffects.Value = AppliedRegionEffects.Value.Where(entry => entry.Value.Duration > 0).ToDictionary(entry => entry.Key, entry => entry.Value);
         }
     }
 
@@ -108,6 +161,7 @@ namespace LoopLegacy.State
         public string[] defeatedBosses;
         public int relicRewardRerollCount;
         public string[] ownedRelics;
+        public RegionEffectData[] appliedRegionEffects;
         public string currentMapCode;
         public float playerPositionX;
         public float playerPositionY;
@@ -125,5 +179,13 @@ namespace LoopLegacy.State
         public string relicEffectName;
         public int relicLevel;
         public int count;
+    }
+
+    [Serializable]
+    public class RegionEffectData
+    {
+        public string regionCode;
+        public RegionEffectType type;
+        public int duration;
     }
 } 

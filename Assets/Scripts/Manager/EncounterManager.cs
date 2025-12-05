@@ -115,8 +115,34 @@ namespace LoopLegacy.Manager
                 return;
             }
 
+            var regionEffect = GameManager.Instance.GameState.GetRegionEffect(entry.code);
+            MonsterData selectedMonster = null;
+            if (regionEffect.Type == RegionEffectType.SpecialA)
+            {
+                if (int.TryParse(entry.label, out int level) && level <= 5000)
+                {
+                    selectedMonster = SelectMonsterFromRegion(TableManager.GetRegion("special-a-0"), exclude: new string[] { "special-a-0_2" });
+                }
+                else
+                {
+                    selectedMonster = SelectMonsterFromRegion(TableManager.GetRegion("special-a-0"));
+                }
+            }
+            else if (regionEffect.Type == RegionEffectType.SpecialB)
+            {
+                selectedMonster = SelectMonsterFromRegion(TableManager.GetRegion("special-b-0"));
+            }
+            else if (regionEffect.Type == RegionEffectType.SpecialC)
+            {
+                selectedMonster = SelectMonsterFromRegion(TableManager.GetRegion("special-c-0"));
+            }
+
             // 몬스터 선택
-            var selectedMonster = SelectMonsterFromRegion(entry);
+            if (selectedMonster == null)
+            {
+                selectedMonster = SelectMonsterFromRegion(entry);
+            }
+
             if (selectedMonster == null)
             {
                 Debug.LogError("[Encounter] Monster selection failed");
@@ -124,10 +150,10 @@ namespace LoopLegacy.Manager
             }
             
             // 전투 시작
-            BattleManager.Instance.StartBattle(selectedMonster, _ => { });
+            BattleManager.Instance.StartBattle(selectedMonster, regionEffect.Type, _ => { });
         }
 
-        private MonsterData SelectMonsterFromRegion(RegionEntry region)
+        private MonsterData SelectMonsterFromRegion(RegionEntry region, string[] exclude = null)
         {
             if (region.monsters == null || region.monsters.Count == 0)
             {
@@ -136,11 +162,13 @@ namespace LoopLegacy.Manager
             }
 
             // 확률에 따른 몬스터 선택
+            exclude ??= new string[0];
+            MonsterSpawnInfo[] monsters = region.monsters.Where(monster => !exclude.Contains(monster.monsterCode)).ToArray();
             float random = UnityEngine.Random.value;
-            float total = region.monsters.Sum(monster => monster.spawnRate);
+            float total = monsters.Sum(monster => monster.spawnRate);
             float cumulativeProbability = 0f;
 
-            foreach (var monsterInfo in region.monsters)
+            foreach (var monsterInfo in monsters)
             {
                 cumulativeProbability += monsterInfo.spawnRate / total;
                 if (random <= cumulativeProbability)
@@ -150,7 +178,7 @@ namespace LoopLegacy.Manager
             }
 
             // 기본값으로 첫 번째 몬스터 반환
-            return TableManager.GetMonster(region.monsters[0].monsterCode);
+            return TableManager.GetMonster(monsters[0].monsterCode);
         }
 
         public void Dispose()

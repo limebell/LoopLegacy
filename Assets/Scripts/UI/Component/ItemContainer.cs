@@ -46,9 +46,7 @@ namespace LoopLegacy.UI.Component
 
         void OnEnable()
         {
-#if UNITY_EDITOR
             UpdateVisuals();
-#endif
         }
 
         void OnValidate()
@@ -111,7 +109,7 @@ namespace LoopLegacy.UI.Component
 
         private void UpdateVisuals()
         {
-            if (_outline is not null)
+            if (_outline != null)
             {
                 _outline.color = _outlineColor;
             }

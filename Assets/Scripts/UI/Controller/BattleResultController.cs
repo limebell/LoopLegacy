@@ -148,7 +148,7 @@ namespace LoopLegacy.UI.Controller
         {
             _isAnimatingResult = true;
             _skipResultAnimation = false;
-            bool hasNewDrop = false; // 새 드랍이 있는지 체크
+            bool hasDrop = false; // 드랍이 있는지 체크
             
             var currentBattlePoint = GameManager.Instance.GameState.PlayerStats.BattlePoint.Value;
             _dropContainer.SetActive(result.IsVictory);
@@ -207,6 +207,7 @@ namespace LoopLegacy.UI.Controller
                 // 4. Drop이 있을 때만 대기 후 표시
                 if (result.DroppedItems.Count > 0)
                 {
+                    hasDrop = true;
                     yield return WaitForSecondsSkippable(RESULT_ANIMATION_DELAY);
                     
                     // Drop 다이얼로그 표시 (빈 상태로 먼저 표시)
@@ -215,29 +216,7 @@ namespace LoopLegacy.UI.Controller
                     
                     // 5. Drop 아이템 하나씩 표시 (텍스트도 함께 추가)
                     for (int i = 0; i < result.DroppedItems.Count && i < _drops.Length; i++)
-                    {
-                        var drop = result.DroppedItems[i];
-                        
-                        // 새 드랍인지 체크
-                        if (drop.itemType == DropType.Relic)
-                        {
-                            hasNewDrop = true; // 유물은 항상 새 드랍
-                        }
-                        else
-                        {
-                            var equipmentData = TableManager.GetEquipment(drop.itemType switch
-                            {
-                                DropType.Weapon => EquipmentType.Weapon,
-                                DropType.Armor => EquipmentType.Armor,
-                                _ => EquipmentType.Weapon,
-                            }, drop.itemId);
-                            var isNew = PersistentGameState.Instance.InventoryState.GetOwnedEquipments(equipmentData.type)[equipmentData.id] == 0;
-                            if (isNew)
-                            {
-                                hasNewDrop = true;
-                            }
-                        }
-                        
+                    {                        
                         // 스킵되었다면 모든 아이템 즉시 표시 (소리 없이)
                         if (_skipResultAnimation)
                         {
@@ -266,21 +245,8 @@ namespace LoopLegacy.UI.Controller
                             yield return WaitForSecondsSkippable(RESULT_ANIMATION_DELAY);
                     }
                 }
-                
-                // 승리 시 마지막에 infoText 표시 (소리 없이)
-                if (!_skipResultAnimation)
-                {
-                    // Drop이 있었다면 대기, 없었다면 대기 없음
-                    yield return WaitForSecondsSkippable(RESULT_ANIMATION_DELAY);
-                    
-                    // 새 드랍이 있었다면 추가로 0.6초 대기
-                    if (hasNewDrop)
-                    {
-                        yield return new WaitForSeconds(0.6f);
-                    }
-                    
-                    _infoText.SetActive(true);
-                }
+
+                yield return WaitForSecondsSkippable(RESULT_ANIMATION_DELAY);
             }
             else
             {
@@ -307,13 +273,7 @@ namespace LoopLegacy.UI.Controller
                 _levelLabel.text = "-";
                 _levelLabel.gameObject.SetActive(true);
                 PlayDisplaySFX();
-                
-                // 패배 시 마지막에 infoText 표시 (소리 없이)
-                if (!_skipResultAnimation)
-                {
-                    yield return WaitForSecondsSkippable(RESULT_ANIMATION_DELAY);
-                    _infoText.SetActive(true);
-                }
+                yield return WaitForSecondsSkippable(RESULT_ANIMATION_DELAY);
             }
             
             // 스킵되었을 경우 남은 요소들 즉시 표시 (소리 없이)
@@ -341,17 +301,15 @@ namespace LoopLegacy.UI.Controller
                     }
                     _dropDialogueText.text = completeText.ToString();
                 }
-                
-                // 새 드랍이 있으면 스킵했어도 0.6초 대기 (스킵 불가)
-                if (hasNewDrop)
-                {
-                    yield return new WaitForSeconds(0.6f);
-                }
-                
-                // 스킵 시 infoText도 소리 없이 표시
-                _infoText.SetActive(true);
             }
             
+            // 드랍이 있었다면 추가로 0.6초 대기
+            if (hasDrop)
+            {
+                yield return new WaitForSeconds(0.6f);
+            }
+            
+            _infoText.SetActive(true);
             _isAnimatingResult = false;
         }
 

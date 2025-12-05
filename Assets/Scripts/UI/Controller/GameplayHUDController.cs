@@ -6,6 +6,7 @@ using LoopLegacy.UI.Component;
 using R3;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 namespace LoopLegacy.UI.Controller
@@ -31,8 +32,10 @@ namespace LoopLegacy.UI.Controller
         [SerializeField] private Gauge _encounterGauge;
         [SerializeField] private TMP_Text _levelLabel;
         [SerializeField] private TMP_Text _regionLabel;
+        [SerializeField] private TMP_Text _effectLabel;
         [SerializeField] private TMP_Text _battlePointLabel;
         [SerializeField] private GameObject _warningElement;
+        private InputAction _quitApplicationAction;
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
@@ -47,6 +50,30 @@ namespace LoopLegacy.UI.Controller
             // GameState 상태 구독 설정
             SubscribeToGameState();
             SubscribeToControllerInput();
+            _quitApplicationAction = InputSystem.actions.FindActionMap("UI").FindAction("Cancel");
+        }
+
+        void Update()
+        {
+            if (_quitApplicationAction.triggered &&
+                !ConfirmationController.Instance.IsVisible &&
+                !GameManager.Instance.IsMovingMap.Value &&
+                !ScriptManager.Instance.IsScriptPlaying &&
+                BattleManager.Instance.CurrentBattleStep.Value == BattleStep.None &&
+                !IsMenuVisible())
+            {
+                OnMenuButtonClicked();
+            }
+        }
+
+        private bool IsMenuVisible()
+        {
+            return (GameObject.Find("MenuPanel")?.gameObject.activeSelf ?? false) ||
+                   (GameObject.Find("StatsPanel")?.gameObject.activeSelf ?? false) ||
+                   (GameObject.Find("AutoDistributePanel")?.gameObject.activeSelf ?? false) ||
+                   (GameObject.Find("EquipmentsPanel")?.gameObject.activeSelf ?? false) ||
+                   (GameObject.Find("CodexPanel")?.gameObject.activeSelf ?? false) ||
+                   (GameObject.Find("OptionPanel")?.gameObject.activeSelf ?? false);
         }
 
 #region Tutorial
@@ -77,12 +104,19 @@ namespace LoopLegacy.UI.Controller
                 })
                 .AddTo(ref d);
 
+            GameManager.Instance.GameState.AppliedRegionEffects
+                .Subscribe(appliedRegionEffects =>
+                {
+                    UpdateRegionLabel();
+                })
+                .AddTo(ref d);
+
             // 플레이어 레벨 구독
             GameManager.Instance.GameState.PlayerStats.Level
                 .Subscribe(level => 
                 {
                     _levelLabel.text = $"{level:N0}";
-                    UpdateRegionLabel(GameManager.Instance.RegionDetector.LastRegion.Value);
+                    UpdateRegionLabel();
                 })
                 .AddTo(ref d);
 
@@ -123,6 +157,11 @@ namespace LoopLegacy.UI.Controller
             d.RegisterTo(this.destroyCancellationToken);
         }
 
+        private void UpdateRegionLabel()
+        {
+            UpdateRegionLabel(GameManager.Instance.RegionDetector.LastRegion.Value);
+        }
+
         private void UpdateRegionLabel(Region.Region region)
         {
             if (region != null)
@@ -141,6 +180,17 @@ namespace LoopLegacy.UI.Controller
 
                     _regionLabel.color = region.GetColor(
                         GameManager.Instance.GameState.PlayerStats.Level.Value);
+                    
+                    if (GameManager.Instance.GameState.GetRegionEffect(entry.code).Type != RegionEffectType.None)
+                    {
+                        var regionEffect = GameManager.Instance.GameState.GetRegionEffect(entry.code);
+                        _effectLabel.text = $"{Utils.GetRegionEffectText(regionEffect.Type)} ({regionEffect.Duration})";
+                    }
+                    else
+                    {
+                        _effectLabel.text = "-";
+                    }
+
                     if (region.GetRelativeLevel(GameManager.Instance.GameState.PlayerStats.Level.Value) > 0)
                     {
                         _warningElement.SetActive(true);
@@ -153,12 +203,15 @@ namespace LoopLegacy.UI.Controller
                 else
                 {
                     _regionLabel.text = "Unknown Region";
+                    _regionLabel.color = Color.white;
+                    _effectLabel.text = "-";
                 }
             }
             else
             {
                 _regionLabel.text = "-";
                 _regionLabel.color = Color.white;
+                _effectLabel.text = "-";
                 _warningElement.SetActive(false);
             }
         }

@@ -33,7 +33,8 @@ namespace LoopLegacy.UI.Controller
         private Relic[] _relicRewards;
         private Relic[] _alreadyRolledRelics;
         private (ItemContainer conatiner, Relic relic, bool isReward) _selectedRelic;
-
+        private Action _onComplete;
+        
         void Start()
         {
             _rerollButton.onClick.AddListener(OnRerollButtonClicked);
@@ -54,19 +55,23 @@ namespace LoopLegacy.UI.Controller
             d.RegisterTo(this.destroyCancellationToken);
         }
 
-        public void Show(int weight, IEnumerable<Relic> relics, IEnumerable<Relic> alreadyRolledRelics)
+        public void Show(int weight, IEnumerable<Relic> relics, IEnumerable<Relic> alreadyRolledRelics, Action onComplete)
         {
             if (!relics.Any())
             {
                 Debug.Log("RelicRewardController: No any rewarded relics");
+                onComplete?.Invoke();
                 return;
             }
 
             if (relics.Count() > _relicRewardContainers.Length)
             {
                 Debug.LogError("RelicRewardController: relics count must be between 1 and " + _relicRewardContainers.Length + ", but got " + relics.Count());
+                onComplete?.Invoke();
                 return;
             }
+            
+            _onComplete = onComplete;
 
             _weight = weight;
             _relicRewards = relics.ToArray();
@@ -99,6 +104,8 @@ namespace LoopLegacy.UI.Controller
         public void Hide()
         {
             gameObject.SetActive(false);
+            _onComplete?.Invoke();
+            _onComplete = null;
         }
 
         private void RefreshOwnedRelics()
@@ -176,7 +183,7 @@ namespace LoopLegacy.UI.Controller
             {
                 AddToAlreadyRolledRelics(_relicRewards);
                 GameManager.Instance.GameState.RelicRewardRerollCount.Value--;
-                GameManager.Instance.RelicReward(_weight, _alreadyRolledRelics);
+                GameManager.Instance.RelicReward(_weight, _alreadyRolledRelics, _onComplete);
             }
             catch (Exception e)
             {

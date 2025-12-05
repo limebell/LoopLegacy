@@ -5,6 +5,7 @@ using LoopLegacy.UI.Component;
 using R3;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 namespace LoopLegacy.UI.Controller
@@ -28,6 +29,8 @@ namespace LoopLegacy.UI.Controller
         [Space(10f)]
         [SerializeField] private TMP_Text _goldLabel;
 
+        private InputAction _quitApplicationAction;
+
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
         {
@@ -37,6 +40,29 @@ namespace LoopLegacy.UI.Controller
 
             SubscribeToPlayerStats();
             SubscribeToControllerInput();
+            _quitApplicationAction = InputSystem.actions.FindActionMap("UI").FindAction("Cancel");
+        }
+
+        void Update()
+        {
+            if (_quitApplicationAction.triggered &&
+                !TerritoryManager.Instance.IsInteractionInProgress.Value &&
+                !ScriptManager.Instance.IsScriptPlaying &&
+                !ConfirmationController.Instance.IsVisible &&
+                !IsMenuVisible())
+            {
+                OnMenuButtonClicked();
+            }
+        }
+
+        private bool IsMenuVisible()
+        {
+            return (GameObject.Find("MenuPanel")?.gameObject.activeSelf ?? false) ||
+                   (GameObject.Find("StatsPanel")?.gameObject.activeSelf ?? false) ||
+                   (GameObject.Find("AutoDistributePanel")?.gameObject.activeSelf ?? false) ||
+                   (GameObject.Find("EquipmentsPanel")?.gameObject.activeSelf ?? false) ||
+                   (GameObject.Find("CodexPanel")?.gameObject.activeSelf ?? false) ||
+                   (GameObject.Find("OptionPanel")?.gameObject.activeSelf ?? false);
         }
 
         private void SubscribeToPlayerStats()

@@ -188,6 +188,34 @@ namespace LoopLegacy.State
 
             HouseState.Upgrade(UpgradeType.RelicRewardChoiceCount);
             HouseState.Upgrade(UpgradeType.RelicRewardChoiceCount);
+
+            HouseState.Upgrade(UpgradeType.BaseHP);
+            HouseState.Upgrade(UpgradeType.BaseHP);
+            HouseState.Upgrade(UpgradeType.BaseHP);
+            HouseState.Upgrade(UpgradeType.BaseHP);
+            HouseState.Upgrade(UpgradeType.BaseHP);
+            HouseState.Upgrade(UpgradeType.BaseHP);
+            HouseState.Upgrade(UpgradeType.BaseATK);
+            HouseState.Upgrade(UpgradeType.BaseATK);
+            HouseState.Upgrade(UpgradeType.BaseATK);
+            HouseState.Upgrade(UpgradeType.BaseATK);
+            HouseState.Upgrade(UpgradeType.BaseATK);
+            HouseState.Upgrade(UpgradeType.BaseATK);
+            HouseState.Upgrade(UpgradeType.BaseDEF);
+            HouseState.Upgrade(UpgradeType.BaseDEF);
+            HouseState.Upgrade(UpgradeType.BaseDEF);
+            HouseState.Upgrade(UpgradeType.BaseDEF);
+            HouseState.Upgrade(UpgradeType.BaseDEF);
+            HouseState.Upgrade(UpgradeType.BaseDEF);
+            HouseState.Upgrade(UpgradeType.BaseLUC);
+            HouseState.Upgrade(UpgradeType.BaseLUC);
+            HouseState.Upgrade(UpgradeType.BaseLUC);
+            HouseState.Upgrade(UpgradeType.BaseLUC);
+            HouseState.Upgrade(UpgradeType.BaseLUC);
+            HouseState.Upgrade(UpgradeType.BoostExp);
+            HouseState.Upgrade(UpgradeType.BoostExp);
+            HouseState.Upgrade(UpgradeType.BoostGold);
+            HouseState.Upgrade(UpgradeType.BoostGold);
         }
 
         private void SetCurrentSlotIndex(int slotIndex)

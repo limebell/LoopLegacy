@@ -17,8 +17,6 @@ namespace LoopLegacy.State
 
         public ReactiveProperty<int> TerritoryLevel { get; private set; }
 
-        public bool CanViewCodex => TerritoryLevel.Value >= 2;
-
         public ReactiveProperty<string> InitialRelic { get; private set; }
 
         public HouseState()
@@ -60,7 +58,7 @@ namespace LoopLegacy.State
             {
                 TerritoryLevel.Value = Upgrades[type];
 
-                if (TerritoryLevel.Value == 6)
+                if (TerritoryLevel.Value == 5)
                 {
                     // 도서관 해금하면서 도서관관리 1레벨
                     Upgrades[UpgradeType.LibraryManagement] = 1;
@@ -128,11 +126,20 @@ namespace LoopLegacy.State
             {
                 if (i < Enum.GetValues(typeof(UpgradeType)).Length)
                 {
+                    if (saveData.upgrades.Length <= i)
+                    {
+                        Debug.LogError($"[HouseState] Upgrade level of {((UpgradeType)i).ToString()} is not found in save data");
+                        saveData.upgrades[i] = 0;
+                        continue;
+                    }
+
                     if (saveData.upgrades[i] > TableManager.GetUpgrade((UpgradeType)i).maxLevel - 1)
                     {
                         Debug.LogError($"[HouseState] Upgrade level of {((UpgradeType)i).ToString()} is greater than the max level: {saveData.upgrades[i]} > {TableManager.GetUpgrade((UpgradeType)i).maxLevel - 1}");
-                        saveData.upgrades[i] = TableManager.GetUpgrade((UpgradeType)i).maxLevel - 1;
+                        houseState.Upgrades[(UpgradeType)i] = TableManager.GetUpgrade((UpgradeType)i).maxLevel - 1;
+                        continue;
                     }
+
                     houseState.Upgrades[(UpgradeType)i] = saveData.upgrades[i];
                 }
             }
@@ -140,6 +147,13 @@ namespace LoopLegacy.State
             {
                 if (i < Enum.GetValues(typeof(Shortcut)).Length)
                 {
+                    if (saveData.shortcuts.Length <= i)
+                    {
+                        Debug.LogError($"[HouseState] Shortcut level of {((Shortcut)i).ToString()} is not found in save data");
+                        saveData.shortcuts[i] = false;
+                        continue;
+                    }
+                    
                     houseState.Shortcuts[(Shortcut)i] = saveData.shortcuts[i];
                 }
             }
@@ -160,6 +174,7 @@ namespace LoopLegacy.State
     public enum Shortcut : byte
     {
         Desert,
+        DeepForest,
         Castle,
     }
 }

@@ -7,13 +7,33 @@ Shader "Sprites/SpriteOutlineURP"
         _OutlineColor ("Outline Color", Color) = (0,0,0,1)
         _OutlineThickness ("Outline Thickness (px)", Range(0,8)) = 1
         _AlphaCutoff ("Alpha Cutoff", Range(0,1)) = 0.1
+
+        // UI Mask 지원을 위한 스텐실 프로퍼티
+        [HideInInspector] _StencilComp ("Stencil Comparison", Float) = 8
+        [HideInInspector] _Stencil ("Stencil ID", Float) = 0
+        [HideInInspector] _StencilOp ("Stencil Operation", Float) = 0
+        [HideInInspector] _StencilWriteMask ("Stencil Write Mask", Float) = 255
+        [HideInInspector] _StencilReadMask ("Stencil Read Mask", Float) = 255
+        [HideInInspector] _ColorMask ("Color Mask", Float) = 15
     }
     SubShader
     {
-        Tags { "Queue"="Transparent" "RenderType"="Transparent" "IgnoreProjector"="True" "CanUseSpriteAtlas"="True" }
+        Tags { "Queue"="Transparent" "RenderType"="Transparent" "IgnoreProjector"="True" "CanUseSpriteAtlas"="True" "PreviewType"="Plane" }
+        
+        Stencil
+        {
+            Ref [_Stencil]
+            Comp [_StencilComp]
+            Pass [_StencilOp]
+            ReadMask [_StencilReadMask]
+            WriteMask [_StencilWriteMask]
+        }
+
         Blend SrcAlpha OneMinusSrcAlpha
         ZWrite Off
+        ZTest [unity_GUIZTestMode]
         Cull Off
+        ColorMask [_ColorMask]
 
         Pass
         {

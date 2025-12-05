@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 namespace LoopLegacy.UI.Controller
@@ -20,7 +21,8 @@ namespace LoopLegacy.UI.Controller
         private Action _onClose;
         private EquipmentType _category;
         private List<object> _currentDataList = new List<object>();
-
+        private InputAction _quitApplicationAction;
+        
         void Awake()
         {
             SetupVirtualizedScrollRect();
@@ -30,6 +32,15 @@ namespace LoopLegacy.UI.Controller
         void Start()
         {
             _backButton.onClick.AddListener(OnBackButtonClicked);
+            _quitApplicationAction = InputSystem.actions.FindActionMap("UI").FindAction("Cancel");
+        }
+
+        void Update()
+        {
+            if (_quitApplicationAction.triggered && !ConfirmationController.Instance.IsVisible)
+            {
+                Hide();
+            }
         }
 
         public void Show(EquipmentType equipmentType, Action onClose)

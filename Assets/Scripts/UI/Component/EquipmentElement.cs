@@ -63,17 +63,19 @@ namespace LoopLegacy.UI.Component
             if (weapon != null)
             {
                 string weaponNameString = Utils.GetEquipmentName(EquipmentType.Weapon, weapon.Id);
-                _nameText.text = weaponNameString;
-                _baseStatText.text =
+                _nameText.text = weaponNameString + (weapon.EnchantmentLevel > 0 ? $" (+{weapon.EnchantmentLevel})" : "");
+                _baseStatText.text = $"{(int)weapon.GetCalculatedBaseDamage():n0}";
+                /*_baseStatText.text =
                     $"{(int)weapon.GetBaseDamage():n0} " +
                     (weapon.EnchantmentLevel == 1
                         ? ""
-                        : $"<color=#4FC1FF>+{(int)weapon.GetEnchantedBaseDamage():n0}</color>");
-                _multiplierText.text =
+                        : $"<color=#4FC1FF>+{(int)weapon.GetEnchantedBaseDamage():n0}</color>");*/
+                _multiplierText.text = $"{(int)weapon.GetCalculatedDamageMultiplier()}%";
+                /*_multiplierText.text =
                     $"{(int)weapon.GetDamageMultiplier()}%" +
                     (weapon.EnchantmentLevel == 1
                         ? ""
-                        : $" <color=#4FC1FF>+{(int)weapon.GetEnchantedDamageMultiplier()}%</color>");
+                        : $" <color=#4FC1FF>+{(int)weapon.GetEnchantedDamageMultiplier()}%</color>");*/
                 _itemContainer.SetImage(weapon.Sprite);
             }
             else
@@ -91,17 +93,19 @@ namespace LoopLegacy.UI.Component
             if (armor != null)
             {
                 string armorNameString = Utils.GetEquipmentName(EquipmentType.Armor, armor.Id);
-                _nameText.text = armorNameString;
-                _baseStatText.text =
+                _nameText.text = armorNameString + (armor.EnchantmentLevel > 0 ? $" (+{armor.EnchantmentLevel})" : "");
+                _baseStatText.text = $"{(int)armor.GetCalculatedBaseDefense():n0}";
+                /*_baseStatText.text =
                     $"{(int)armor.GetBaseDefense():n0} " +
                     (armor.EnchantmentLevel == 1
                         ? ""
-                        : $"<color=#4FC1FF>+{(int)armor.GetEnchantedBaseDefense():n0}</color>");
-                _multiplierText.text =
+                        : $"<color=#4FC1FF>+{(int)armor.GetEnchantedBaseDefense():n0}</color>");*/
+                _multiplierText.text = $"{(int)armor.GetCalculatedDefenseMultiplier()}%";
+                /*_multiplierText.text =
                     $"{(int)armor.GetDefenseMultiplier()}%" +
                     (armor.EnchantmentLevel == 1
                         ? ""
-                        : $" <color=#4FC1FF>+{(int)armor.GetEnchantedDefenseMultiplier()}%</color>");
+                        : $" <color=#4FC1FF>+{(int)armor.GetEnchantedDefenseMultiplier()}%</color>");*/
                 
                 _itemContainer.SetImage(armor.Sprite);
             }

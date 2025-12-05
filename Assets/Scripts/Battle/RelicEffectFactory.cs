@@ -121,6 +121,8 @@ namespace LoopLegacy.Battle
                     return new DrainEffect(effectType, int.Parse(value));
                 case "dmg_boost_when_full_hp":
                     return new DamageBoostWhenFullHealthEffect(effectType, int.Parse(value));
+                case "dmg_boost_weak":
+                    return new DamageBoostWeakEffect(effectType, int.Parse(value));
                 case "fixed_dmg_per_hit":
                     return new FixedDamagePerHitEffect(effectType, int.Parse(value));
 

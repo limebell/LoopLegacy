@@ -353,7 +353,7 @@ namespace LoopLegacy.UI.Controller
                         MonsterData monster;
                         monster = TableManager.GetBoss(args[0]);
                         GameManager.Instance.EncounterManager.ResetGauge();
-                        BattleManager.Instance.StartBattle(monster, _ => { });
+                        BattleManager.Instance.StartBattle(monster, RegionEffectType.None, _ => { });
                         Trace($"Encountered {args[0]}");
                     }
                     else
@@ -467,7 +467,7 @@ namespace LoopLegacy.UI.Controller
                     }
                     else
                     {
-                        GameManager.Instance.RelicReward(int.Parse(args[0]), Array.Empty<Relic>());
+                        GameManager.Instance.RelicReward(int.Parse(args[0]), Array.Empty<Relic>(), () => { });
                         Trace($"Rewarded relic with weight {args[0]}");
                     }
                     break;

@@ -3,7 +3,6 @@ using LoopLegacy.Battle;
 using LoopLegacy.Manager;
 using LoopLegacy.State;
 using LoopLegacy.UI.Component;
-using R3;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,16 +11,16 @@ namespace LoopLegacy.UI.Controller
 {
     public class GameOverController : MonoBehaviour
     {
-        private const int MAX_VISIBLE_DROPS_COUNT = 10;
-
         [SerializeField] private TMP_Text _commentText;
+        [SerializeField] private GameObject _ownedRelicPrefab;
+        [SerializeField] private Transform _ownedRelicContainer;
         [SerializeField] private GameObject _dropElementPrefab;
         [SerializeField] private Transform _dropElementContainer;
-        [SerializeField] private TMP_Text _extraCountText;
         [SerializeField] private TMP_Text _summaryText;
         [SerializeField] private Button _advertiseButton;
         [SerializeField] Button _territoryButton;
 
+        private List<ItemContainer> _ownedRelics = new List<ItemContainer>();
         private List<DropElement> _dropElements = new List<DropElement>();
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -43,19 +42,24 @@ namespace LoopLegacy.UI.Controller
             string commentary = Utils.GetUIString("game-over_commentary", new object[] { Utils.Ordinal(generation) });
             _commentText.text = commentary;
 
+            _ownedRelics.ForEach(itemContainer => Destroy(itemContainer.gameObject));
+            _ownedRelics.Clear();
+            foreach (Relic ownedRelic in GameManager.Instance.GameState.OwnedRelics.Value)
+            {
+                var itemContainer = Instantiate(_ownedRelicPrefab, _ownedRelicContainer);
+                itemContainer.gameObject.SetActive(true);
+                _ownedRelics.Add(itemContainer.GetComponent<ItemContainer>());
+                itemContainer.GetComponent<ItemContainer>().SetRelic(ownedRelic);
+                itemContainer.GetComponent<ItemContainer>().onClick.AddListener(() => ConfirmationController.Instance.ShowRelic(ownedRelic));
+            }
+
             // Update dropped items
             Debug.Log($"Dropped items: {droppedItems.Length}");
             _dropElements.ForEach(dropElement => Destroy(dropElement.gameObject));
             _dropElements.Clear();
-            int droppedCount = 0;
             foreach (DropEntryData dropEntryData in droppedItems)
             {
                 Debug.Log($"Drop entry data: {dropEntryData.itemType} {dropEntryData.itemId} {dropEntryData.relicLevel} {dropEntryData.count}");
-                droppedCount++;
-                if (droppedCount > MAX_VISIBLE_DROPS_COUNT)
-                {
-                    break;
-                }
 
                 var dropElement = Instantiate(_dropElementPrefab, _dropElementContainer);
                 dropElement.gameObject.SetActive(true);
@@ -90,15 +94,6 @@ namespace LoopLegacy.UI.Controller
                         count: dropEntryData.count,
                         onClick: () => ConfirmationController.Instance.ShowEquipment(equipment));
                 }
-            }
-
-            if (droppedCount > MAX_VISIBLE_DROPS_COUNT)
-            {
-                _extraCountText.text = Utils.GetUIString("extra-drops", new object[] {droppedCount - MAX_VISIBLE_DROPS_COUNT});
-            }
-            else
-            {
-                _extraCountText.gameObject.SetActive(false);
             }
 
             // Update summary

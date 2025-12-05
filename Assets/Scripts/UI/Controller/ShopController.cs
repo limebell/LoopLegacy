@@ -6,6 +6,7 @@ using TMPro;
 using System.Collections.Generic;
 using UnityEngine.AddressableAssets;
 using LoopLegacy.UI.Helper;
+using UnityEngine.InputSystem;
 
 namespace LoopLegacy.UI.Controller
 {
@@ -32,6 +33,7 @@ namespace LoopLegacy.UI.Controller
         protected int _selectedIndex;
         protected List<object> _shopList = new List<object>();
         private Action _onClose;
+        private InputAction _quitApplicationAction;
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
@@ -44,6 +46,15 @@ namespace LoopLegacy.UI.Controller
             {
                 int index = i;
                 CategoryButtons[i].onClick.AddListener(() => SetCategory(index));
+            }
+            _quitApplicationAction = InputSystem.actions.FindActionMap("UI").FindAction("Cancel");
+        }
+
+        void Update()
+        {
+            if (_quitApplicationAction.triggered && !ConfirmationController.Instance.IsVisible)
+            {
+                Hide();
             }
         }
 

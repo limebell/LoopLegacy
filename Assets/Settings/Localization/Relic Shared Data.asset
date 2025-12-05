@@ -303,6 +303,14 @@ MonoBehaviour:
     m_Key: dmg_boost_when_low_hp-description
     m_Metadata:
       m_Items: []
+  - m_Id: 21335166083448864
+    m_Key: dmg_boost_weak
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21335166083448865
+    m_Key: dmg_boost_weak-description
+    m_Metadata:
+      m_Items: []
   - m_Id: 21335966083448861
     m_Key: crit_first_n
     m_Metadata:

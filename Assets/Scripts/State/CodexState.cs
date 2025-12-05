@@ -179,11 +179,4 @@ namespace LoopLegacy.State
         public DictionaryElement[] mobKillCount;
         public DictionaryElement[] relicLevels;
     }
-
-    [Serializable]
-    public class DictionaryElement
-    {
-        public string key;
-        public int value;
-    }
 }

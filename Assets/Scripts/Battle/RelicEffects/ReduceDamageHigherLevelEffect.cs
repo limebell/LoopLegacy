@@ -25,7 +25,7 @@ namespace LoopLegacy.Battle.RelicEffects
             
             if (context.MonsterData.level > GameManager.Instance.GameState.PlayerStats.Level.Value)
             {
-                context.EnemyAttackReductionRate += damageIncrease / 100f;
+                context.DamageMultiplier += damageIncrease / 100f;
                 context.EnemyAttackReductionRate *= 1.0f - damageReductionPercentage / 100f;
             }
         }

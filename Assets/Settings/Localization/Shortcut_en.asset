@@ -23,16 +23,24 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 71032111104
-    m_Localized: Castle
+    m_Localized: DeepForest
     m_Metadata:
       m_Items: []
   - m_Id: 49410473984
-    m_Localized: I'll Break down a valley below the starting point to open a canyon
+    m_Localized: I'll break down a valley below the starting point to open a canyon
       that leads to the desert!
     m_Metadata:
       m_Items: []
   - m_Id: 86177742848
-    m_Localized: I'll gonna dig a tunnel to the castle from forest for ya!
+    m_Localized: I'll remove the rocks in the deep forest!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10136381713547264
+    m_Localized: Castle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10136395743494144
+    m_Localized: I'll dig a tunnel to the castle from forest for ya!
     m_Metadata:
       m_Items: []
   references:

@@ -68,13 +68,28 @@ namespace LoopLegacy.UI.Controller
 
         void Update()
         {
-            if (_quitApplicationAction.triggered)
+            if (_quitApplicationAction.triggered &&
+                !ConfirmationController.Instance.IsVisible &&
+                !IsMenuVisible())
             {
-                string message = Utils.GetUIString("quit-confirmation");
-                ConfirmationController.Instance.ShowConfirmation(
-                    message,
-                    () => Application.Quit());
+                if (GameObject.Find("StartPanel")?.gameObject.activeSelf ?? false)
+                {
+                    OnStartBackButtonClicked();
+                }
+                else
+                {
+                    string message = Utils.GetUIString("quit-confirmation");
+                    ConfirmationController.Instance.ShowConfirmation(
+                        message,
+                        () => Application.Quit());
+                }
             }
+        }
+
+        private bool IsMenuVisible()
+        {
+            return (GameObject.Find("OptionPanel")?.gameObject.activeSelf ?? false) ||
+                   (GameObject.Find("CreditPanel")?.gameObject.activeSelf ?? false);
         }
 
         public void ShowMainPanel()
