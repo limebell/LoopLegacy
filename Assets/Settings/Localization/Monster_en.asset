@@ -638,6 +638,38 @@ MonoBehaviour:
     m_Localized: Golden Skull
     m_Metadata:
       m_Items: []
+  - m_Id: 100000000000010
+    m_Localized: SpecialB-0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 100000000000011
+    m_Localized: SpecialB-1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 100000000000012
+    m_Localized: SpecialB-2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 100000000000020
+    m_Localized: Microcosm A
+    m_Metadata:
+      m_Items: []
+  - m_Id: 100000000000021
+    m_Localized: Microcosm B
+    m_Metadata:
+      m_Items: []
+  - m_Id: 100000000000022
+    m_Localized: Microcosm C
+    m_Metadata:
+      m_Items: []
+  - m_Id: 100000000000023
+    m_Localized: Microcosm D
+    m_Metadata:
+      m_Items: []
+  - m_Id: 100000000000024
+    m_Localized: Microcosm E
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

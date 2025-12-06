@@ -587,6 +587,38 @@ MonoBehaviour:
     m_Key: special-a-0_2
     m_Metadata:
       m_Items: []
+  - m_Id: 100000000000010
+    m_Key: special-b-0_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 100000000000011
+    m_Key: special-b-0_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 100000000000012
+    m_Key: special-b-0_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 100000000000020
+    m_Key: special-c-0_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 100000000000021
+    m_Key: special-c-0_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 100000000000022
+    m_Key: special-c-0_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 100000000000023
+    m_Key: special-c-0_3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 100000000000024
+    m_Key: special-c-0_4
+    m_Metadata:
+      m_Items: []
   - m_Id: 39220327583580160
     m_Key: boss_0
     m_Metadata:

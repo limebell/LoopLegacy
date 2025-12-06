@@ -50,6 +50,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 055c2d7cc32e94b25bba8e73fe0f3fa1
+    m_Address: Images/Enemies/special-c-0_2
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 0636a85d473db5b44954a38683f4e810
     m_Address: Images/Equipments/Weapons/23
     m_ReadOnly: 0
@@ -122,6 +127,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 13b2d3bc05f812d478613aa21736ad7e
     m_Address: Images/Equipments/Weapons/9
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 14085fad973f4413bbb999e8934cf85e
+    m_Address: Images/Enemies/special-c-0_3
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -312,6 +322,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 382a6568cc2b33e48869f886b5733386
     m_Address: Images/Enemies/special-a-0_1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 387865268ce72c84683bfaf053a7ae80
+    m_Address: Images/Enemies/special-c-0_0
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -1090,6 +1105,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ce6a6901e673e404db6fd2318348b176
+    m_Address: Images/Enemies/special-c-0_4
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: cf0791c697ad2f3409e5fa0cec1fdcf3
     m_Address: Images/Enemies/castle-20_0
     m_ReadOnly: 0
@@ -1102,6 +1122,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d15121600ef77964d81ce38e774fd3bf
     m_Address: Images/Enemies/lake-deep-forest-1_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d32046c1b8b8441319ff8c6d4bcee3ef
+    m_Address: Images/Enemies/special-c-0_1
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

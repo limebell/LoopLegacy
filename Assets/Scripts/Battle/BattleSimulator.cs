@@ -64,11 +64,19 @@ namespace LoopLegacy.Battle
                 this.MonsterATK = monster.atk;
             }
 
-            if (regionEffect == RegionEffectType.ReduceEnemyHPSmall || regionEffect == RegionEffectType.ReduceEnemyHPLarge)
+            if (regionEffect == RegionEffectType.ReduceEnemyHPSmall)
+            {
+                this.MaxMonsterHP = (int)(this.MaxMonsterHP * (1 - 0.1f));
+            }
+            if (regionEffect == RegionEffectType.ReduceEnemyHPLarge)
             {
                 this.MaxMonsterHP = (int)(this.MaxMonsterHP * (1 - 0.3f));
             }
-            if (regionEffect == RegionEffectType.ReduceEnemyATKSmall || regionEffect == RegionEffectType.ReduceEnemyATKLarge)
+            if (regionEffect == RegionEffectType.ReduceEnemyATKSmall)
+            {
+                this.MonsterATK = (int)(this.MonsterATK * (1 - 0.1f));
+            }
+            if (regionEffect == RegionEffectType.ReduceEnemyATKLarge)
             {
                 this.MonsterATK = (int)(this.MonsterATK * (1 - 0.3f));
             }

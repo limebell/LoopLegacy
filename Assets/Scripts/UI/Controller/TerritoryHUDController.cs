@@ -55,6 +55,7 @@ namespace LoopLegacy.UI.Controller
             }
         }
 
+
         private bool IsMenuVisible()
         {
             return (GameObject.Find("MenuPanel")?.gameObject.activeSelf ?? false) ||

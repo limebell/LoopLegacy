@@ -159,9 +159,9 @@ namespace LoopLegacy.Region
                 {RegionEffectType.BoostExpLarge, 1.0f},
                 {RegionEffectType.BoostGoldSmall, 1.2f},
                 {RegionEffectType.BoostGoldLarge, 1.0f},
-                {RegionEffectType.ReduceEnemyHPSmall, 1.0f},
+                {RegionEffectType.ReduceEnemyHPSmall, 1.2f},
                 {RegionEffectType.ReduceEnemyHPLarge, 1.0f},
-                {RegionEffectType.ReduceEnemyATKSmall, 1.0f},
+                {RegionEffectType.ReduceEnemyATKSmall, 1.2f},
                 {RegionEffectType.ReduceEnemyATKLarge, 1.0f},
             };
 
@@ -188,12 +188,12 @@ namespace LoopLegacy.Region
                     regionEffectWeights.Add(RegionEffectType.SpecialA, 0.5f);
                 }
 
-                if (level >= 2830)
+                if (level > 5000 && level < 51111)
                 {
                     regionEffectWeights.Add(RegionEffectType.SpecialB, 0.5f);
                 }
 
-                if (level >= 51111)
+                if (level >= 51111 && level <= 100000)
                 {
                     regionEffectWeights.Add(RegionEffectType.SpecialC, 0.5f);
                 }
