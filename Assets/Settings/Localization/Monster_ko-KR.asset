@@ -639,15 +639,15 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 100000000000010
-    m_Localized: "\uC2A4\uD398\uC15CB-0"
+    m_Localized: "\uC2A4\uCE90\uB108 A\uD615"
     m_Metadata:
       m_Items: []
   - m_Id: 100000000000011
-    m_Localized: "\uC2A4\uD398\uC15CB-1"
+    m_Localized: "\uC2A4\uCE90\uB108 B\uD615"
     m_Metadata:
       m_Items: []
   - m_Id: 100000000000012
-    m_Localized: "\uC2A4\uD398\uC15CB-2"
+    m_Localized: "\uC2A4\uCE90\uB108 C\uD615"
     m_Metadata:
       m_Items: []
   - m_Id: 100000000000020

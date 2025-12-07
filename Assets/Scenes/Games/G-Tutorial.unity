@@ -314,6 +314,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f0e34722edd85e469cf6a4a7b57f4b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnWaypointReached:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &455406370
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,7 +9,7 @@ using UnityEngine;
 
 namespace LoopLegacy.State
 {
-    public class GameState
+    public class GameState : IDisposable
     {
         public PlayerStats PlayerStats { get; private set; }
 
@@ -66,6 +66,14 @@ namespace LoopLegacy.State
             DroppedItems = saveData.droppedItems?.ToList() ?? new List<DropEntryData>();
             IsAdvertised = saveData.isAdvertised;
             IsRestartingWithGold = saveData.isRestartingWithGold;
+        }
+
+        public void Dispose()
+        {
+            RelicRewardRerollCount?.Dispose();
+            OwnedRelics?.Dispose();
+            AppliedRegionEffects?.Dispose();
+            PlayerStats?.Dispose();
         }
 
         public void AddDroppedItem(DropEntryData droppedItem)

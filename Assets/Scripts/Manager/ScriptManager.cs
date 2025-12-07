@@ -1,5 +1,6 @@
 using LoopLegacy.UI.Controller;
 using LoopLegacy.Loader;
+using R3;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,24 +13,32 @@ namespace LoopLegacy.Manager
     {
         public static ScriptManager Instance { get; private set; }
         [SerializeField] private ScriptController _scriptController;
+        public ScriptController ScriptController => _scriptController;
         
         private List<CutsceneDialogue> _currentScript;
         private int _currentDialogueIndex = 0;
         private Action _onScriptComplete;
         private bool _isScriptPlaying = false;
         private Dictionary<string, Sprite> _scriptImages;
+        
+        /// <summary>
+        /// 현재 대사 인덱스를 구독할 수 있는 ReactiveProperty
+        /// </summary>
+        public ReactiveProperty<int> CurrentDialogueIndex { get; private set; }
 
         void Awake()
         {
             Instance = this;
+            CurrentDialogueIndex = new ReactiveProperty<int>(-1);
         }
 
-        void Oestroy()
+        void OnDestroy()
         {
             if (Instance == this)
             {
                 Instance = null;
             }
+            CurrentDialogueIndex?.Dispose();
         }
 
         /// <summary>
@@ -94,6 +103,7 @@ namespace LoopLegacy.Manager
             _currentDialogueIndex = startIndex;
             _onScriptComplete = onComplete;
             _isScriptPlaying = true;
+            CurrentDialogueIndex.Value = startIndex;
             
             // 첫 번째 대사 시작
             PlayCurrentDialogue();
@@ -145,6 +155,7 @@ namespace LoopLegacy.Manager
             }
             
             _currentDialogueIndex++;
+            CurrentDialogueIndex.Value = _currentDialogueIndex;
             
             if (_currentDialogueIndex >= _currentScript.Count)
             {
@@ -162,6 +173,7 @@ namespace LoopLegacy.Manager
         private void CompleteScript()
         {
             _isScriptPlaying = false;
+            CurrentDialogueIndex.Value = -1;
             _onScriptComplete?.Invoke();
             _scriptController.Hide();
             _scriptImages.Clear();

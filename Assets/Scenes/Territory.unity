@@ -35736,8 +35736,8 @@ RectTransform:
   m_Children:
   - {fileID: 1097523018}
   - {fileID: 788259164}
-  - {fileID: 1895527594}
   - {fileID: 198670474}
+  - {fileID: 1895527594}
   - {fileID: 369228005}
   - {fileID: 289146795}
   m_Father: {fileID: 0}
@@ -40679,10 +40679,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0
-    y: 0.08974359
-    width: 1
-    height: 0.82051283
+    x: 0.7367601
+    y: 0
+    width: 0.28606892
+    height: 0.23506118
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60

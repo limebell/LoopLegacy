@@ -45,6 +45,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0437c6ac0eb160a448752b02407b5d76
+    m_Address: Images/Enemies/special-b-0_1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 04fffce729b96674dbc2a2093c338628
     m_Address: Images/Equipments/Weapons/0
     m_ReadOnly: 0
@@ -845,6 +850,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9a35d0341bd472641aede61fb0a7cf4d
+    m_Address: Images/Enemies/special-b-0_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 9a7b688dc5182a44d99951efcbe9d7bc
     m_Address: Images/Enemies/castle-3_0
     m_ReadOnly: 0
@@ -1222,6 +1232,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e3417ef9410b90a4683fdbd726ab8d8c
     m_Address: Images/Enemies/deep-forest-swamp-1_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e4637a14e9872104595107411e0f45a8
+    m_Address: Images/Enemies/special-b-0_2
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

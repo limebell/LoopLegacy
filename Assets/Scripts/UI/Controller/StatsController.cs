@@ -29,6 +29,7 @@ namespace LoopLegacy.UI.Controller
         [Header("Stats")]
         [SerializeField] private TMP_Text _autoDistributePresetText;
         [SerializeField] private Button _autoDistributeButton;
+        public RectTransform AutoDistributeButtonRect => _autoDistributeButton != null ? _autoDistributeButton.GetComponent<RectTransform>() : null;
         [SerializeField] private TMP_Text _statPointsText;
         [SerializeField] private StatElement[] _statElements;
 

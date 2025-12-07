@@ -12,7 +12,7 @@ using UnityEngine;
 
 namespace LoopLegacy.State
 {
-    public class PlayerStats
+    public class PlayerStats : IDisposable
     {
         public ReactiveProperty<int> BattlePoint { get; private set; }
         public ReactiveProperty<int> StatPoints { get; private set; }
@@ -44,6 +44,18 @@ namespace LoopLegacy.State
             BattlePoint = new ReactiveProperty<int>(saveData.battlePoint);
             EXP = new ReactiveProperty<BigInteger>(saveData.exp);
             Level = new ReactiveProperty<int>(saveData.level);
+        }
+
+        public void Dispose()
+        {
+            BattlePoint?.Dispose();
+            StatPoints?.Dispose();
+            EXP?.Dispose();
+            Level?.Dispose();
+            foreach (var stat in Stats)
+            {
+                stat?.Dispose();
+            }
         }
 
         public void InitializeDefaultValues()

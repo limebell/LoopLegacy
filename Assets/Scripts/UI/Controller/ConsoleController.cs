@@ -432,10 +432,10 @@ namespace LoopLegacy.UI.Controller
                     }
                     break;
 
-                case "addRelic":
+                case "acquireRelic":
                     if (args.Length != 1)
                     {
-                        Trace("Usage: addRelic <effectName>");
+                        Trace("Usage: acquireRelic <effectName>");
                     }
                     else
                     {
@@ -597,7 +597,7 @@ namespace LoopLegacy.UI.Controller
                     Trace("unlockRelic <effectName> <level>: Unlock a relic with a specific level");
                     Trace("unlockAllRelics: Unlock all relics");
                     Trace("addRerollCount <count>: Add reroll count to the player's stats");
-                    Trace("addRelic <effectName>: Add a relic to the player's inventory");
+                    Trace("acquireRelic <effectName>: Acquire a relic");
                     Trace("removeRelic <effectName>: Remove a relic from the player's inventory");
                     Trace("rewardRelic <weight>: Reward a relic from a monster");
                     Trace("upgrade <upgradeType>: Upgrade a specific upgrade");

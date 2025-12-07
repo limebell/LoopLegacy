@@ -179,6 +179,9 @@ namespace LoopLegacy.Manager
             // 현재 열린 슬롯에 PersistentGameState 저장
             PersistentGameState.Instance.SaveState();
             GameEssentials.Instance.DestroyEssentials();
+
+            GameState?.Dispose();
+            GameState = null;
         }
 
         public void Save()

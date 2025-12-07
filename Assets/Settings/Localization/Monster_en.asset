@@ -639,15 +639,15 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 100000000000010
-    m_Localized: SpecialB-0
+    m_Localized: Scanner Type-A
     m_Metadata:
       m_Items: []
   - m_Id: 100000000000011
-    m_Localized: SpecialB-1
+    m_Localized: Scanner Type-B
     m_Metadata:
       m_Items: []
   - m_Id: 100000000000012
-    m_Localized: SpecialB-2
+    m_Localized: Scanner Type-C
     m_Metadata:
       m_Items: []
   - m_Id: 100000000000020
