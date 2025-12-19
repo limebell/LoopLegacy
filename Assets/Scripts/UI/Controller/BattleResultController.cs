@@ -64,12 +64,10 @@ namespace LoopLegacy.UI.Controller
             if (drop.itemType == DropType.Relic)
             {
                 var relicData = TableManager.GetRelic(drop.relicEffectName);
+                var relic = new Relic(relicData, drop.relicLevel);
                 _drops[index].UpdateElement(
-                    image: relicData.sprite,
-                    type: "UNLOCK",
-                    isNew: true,
-                    count: 1,
-                    onClick: () => ConfirmationController.Instance.ShowRelic(new Relic(relicData, drop.relicLevel)));
+                    relic: relic,
+                    onClick: () => ConfirmationController.Instance.ShowRelic(relic));
             }
             else
             {
@@ -81,8 +79,7 @@ namespace LoopLegacy.UI.Controller
                 }, drop.itemId);
                 var isNew = PersistentGameState.Instance.InventoryState.GetOwnedEquipments(equipmentData.type)[equipmentData.id] == 0;
                 _drops[index].UpdateElement(
-                    image: equipmentData.sprite,
-                    type: "DROP",
+                    equipment: equipmentData,
                     isNew: isNew,
                     count: 1,
                     onClick: () => ConfirmationController.Instance.ShowEquipment(equipmentData));

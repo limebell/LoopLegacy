@@ -41,7 +41,7 @@ namespace LoopLegacy.UI.Controller
 
         void Update()
         {
-            if (_quitApplicationAction.triggered && IsVisible)
+            if (_quitApplicationAction?.triggered ?? false && IsVisible)
             {
                 OnCloseButtonClick();
             }

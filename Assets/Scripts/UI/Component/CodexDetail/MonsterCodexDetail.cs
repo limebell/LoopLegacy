@@ -16,6 +16,7 @@ namespace LoopLegacy.UI.Component.CodexDetail
         [SerializeField] private TMP_Text _killCountText;
         [SerializeField] private TMP_Text _hpText;
         [SerializeField] private TMP_Text _atkText;
+        [SerializeField] private TMP_Text _defText;
         [SerializeField] private TMP_Text _goldText;
         [SerializeField] private TMP_Text _expText;
         [SerializeField] private TMP_Text _specialEffectText;
@@ -38,6 +39,7 @@ namespace LoopLegacy.UI.Component.CodexDetail
                 _killCountText.text = "???";
                 _hpText.text = "???";
                 _atkText.text = "???";
+                _defText.text = "???";
                 _goldText.text = "???";
                 _expText.text = "???";
                 _specialEffectText.text = "";
@@ -52,6 +54,7 @@ namespace LoopLegacy.UI.Component.CodexDetail
             _killCountText.text = killCount.ToString("n0");
             _hpText.text = monsterData.hp.ToString("n0");
             _atkText.text = monsterData.atk.ToString("n0");
+            _defText.text = monsterData.def.ToString("n0");
             _goldText.text = monsterData.gold.ToString("n0");
             _expText.text = monsterData.exp.ToString("n0");
             _dropTitleText.SetActive(monsterData.drops.Any());

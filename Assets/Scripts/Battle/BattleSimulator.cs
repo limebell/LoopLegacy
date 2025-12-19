@@ -28,6 +28,7 @@ namespace LoopLegacy.Battle
         public int MaxPlayerHP { get; private set; }
         public int MaxMonsterHP { get; private set; }
         public int MonsterATK { get; private set; }
+        public int MonsterDEF { get; private set; }
 
         public bool IsMonsterDead => CurrentMonsterHP.Value <= 0;
         public bool IsPlayerDead => CurrentPlayerHP.Value <= 0;
@@ -57,11 +58,13 @@ namespace LoopLegacy.Battle
                 int leftGuardians = 4 - defeatedGuardiansCount;
                 this.MaxMonsterHP = monster.hp * (1 + leftGuardians);
                 this.MonsterATK = (int)(monster.atk * (1 + leftGuardians * 0.25f));
+                this.MonsterDEF = (int)(monster.def * (1 + leftGuardians * 0.25f));
             }
             else
             {
                 this.MaxMonsterHP = monster.hp;
                 this.MonsterATK = monster.atk;
+                this.MonsterDEF = monster.def;
             }
 
             if (regionEffect == RegionEffectType.ReduceEnemyHPSmall)
@@ -115,10 +118,10 @@ namespace LoopLegacy.Battle
                 battleContext.CritHits++;
             }
 
-            // 몬스터 ATK 기반 대미지 감소 (실험적 기능)
-            if (damage > 0 && MonsterATK > 0)
+            // 몬스터 DEF 기반 대미지 감소
+            if (damage > 0 && MonsterDEF > 0)
             {
-                float reductionRate = MonsterATK / (damage + MonsterATK);
+                float reductionRate = MonsterDEF / (1 + damage + MonsterDEF);
                 damage = (int)(damage * (1 - reductionRate));
             }
 

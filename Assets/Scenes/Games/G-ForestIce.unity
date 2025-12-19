@@ -277,7 +277,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7505376499474655536, guid: da247f1e93dc6d540967660136513d59, type: 3}
       propertyPath: _regionCode
-      value: forest-ice-1
+      value: forest_ice-1
       objectReference: {fileID: 0}
     - target: {fileID: 7505376499474655536, guid: da247f1e93dc6d540967660136513d59, type: 3}
       propertyPath: _regionName
@@ -466,7 +466,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7505376499474655536, guid: da247f1e93dc6d540967660136513d59, type: 3}
       propertyPath: _regionCode
-      value: forest-ice-3
+      value: forest_ice-3
       objectReference: {fileID: 0}
     - target: {fileID: 7505376499474655536, guid: da247f1e93dc6d540967660136513d59, type: 3}
       propertyPath: _regionName
@@ -746,7 +746,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7505376499474655536, guid: da247f1e93dc6d540967660136513d59, type: 3}
       propertyPath: _regionCode
-      value: forest-ice-2
+      value: forest_ice-2
       objectReference: {fileID: 0}
     - target: {fileID: 7505376499474655536, guid: da247f1e93dc6d540967660136513d59, type: 3}
       propertyPath: _regionName
@@ -58277,7 +58277,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7505376499474655536, guid: da247f1e93dc6d540967660136513d59, type: 3}
       propertyPath: _regionCode
-      value: forest-ice-0
+      value: forest_ice-0
       objectReference: {fileID: 0}
     - target: {fileID: 7505376499474655536, guid: da247f1e93dc6d540967660136513d59, type: 3}
       propertyPath: _regionName

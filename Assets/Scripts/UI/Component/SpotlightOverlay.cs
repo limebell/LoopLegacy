@@ -131,7 +131,7 @@ namespace LoopLegacy.UI.Component
         /// <param name="margin">강조 영역 주변에 추가할 여백 (모든 방향에 동일하게 적용)</param>
         public void SetHighlightArea(RectTransform targetRect, float margin = 0f)
         {
-            if (targetRect == null || _canvasRect == null)
+            if (targetRect == null || _rectTransform == null)
                 return;
 
             // targetRect가 속한 Canvas 찾기
@@ -157,13 +157,14 @@ namespace LoopLegacy.UI.Component
                 }
             }
             
-            // 스크린 좌표를 SpotlightOverlay가 속한 Canvas의 로컬 좌표로 변환
+            // 스크린 좌표를 SpotlightOverlay 자신의 RectTransform 로컬 좌표로 변환
+            // (배너 광고 등으로 Canvas 자식들의 offset이 변경되어도 정확한 위치 계산 가능)
             Vector2[] localCorners = new Vector2[4];
-            Camera overlayCamera = _canvas.worldCamera;
+            Camera overlayCamera = _canvas != null ? _canvas.worldCamera : null;
             for (int i = 0; i < 4; i++)
             {
                 RectTransformUtility.ScreenPointToLocalPointInRectangle(
-                    _canvasRect,
+                    _rectTransform,
                     screenCorners[i],
                     overlayCamera,
                     out localCorners[i]);
@@ -187,15 +188,16 @@ namespace LoopLegacy.UI.Component
         /// <param name="size">강조할 영역의 크기</param>
         public void SetHighlightAreaScreen(Vector2 screenPosition, Vector2 size)
         {
-            if (_canvasRect == null)
+            if (_rectTransform == null)
                 return;
 
-            // 스크린 좌표를 Canvas의 로컬 좌표로 변환
+            // 스크린 좌표를 SpotlightOverlay 자신의 RectTransform 로컬 좌표로 변환
             Vector2 localPosition;
+            Camera overlayCamera = _canvas != null ? _canvas.worldCamera : Camera.main;
             RectTransformUtility.ScreenPointToLocalPointInRectangle(
-                _canvasRect,
+                _rectTransform,
                 screenPosition,
-                _canvas.worldCamera ?? Camera.main,
+                overlayCamera,
                 out localPosition);
 
             Vector2 min = localPosition - size * 0.5f;
@@ -212,11 +214,11 @@ namespace LoopLegacy.UI.Component
         /// </summary>
         private void UpdateOverlay(Vector2 min, Vector2 max)
         {
-            if (_canvasRect == null)
+            if (_rectTransform == null)
                 return;
 
-            float canvasWidth = _canvasRect.rect.width;
-            float canvasHeight = _canvasRect.rect.height;
+            float canvasWidth = _rectTransform.rect.width;
+            float canvasHeight = _rectTransform.rect.height;
             
             // Canvas의 중심이 (0, 0)이므로 좌표 변환
             float canvasLeft = -canvasWidth * 0.5f;
@@ -274,7 +276,7 @@ namespace LoopLegacy.UI.Component
         /// </summary>
         private void UpdateOutlines(Vector2 min, Vector2 max)
         {
-            if (_canvasRect == null)
+            if (_rectTransform == null)
                 return;
 
             _currentMin = min;
@@ -292,11 +294,11 @@ namespace LoopLegacy.UI.Component
         /// </summary>
         private void UpdateOutlineThickness(float thickness)
         {
-            if (_canvasRect == null)
+            if (_rectTransform == null)
                 return;
 
-            float canvasWidth = _canvasRect.rect.width;
-            float canvasHeight = _canvasRect.rect.height;
+            float canvasWidth = _rectTransform.rect.width;
+            float canvasHeight = _rectTransform.rect.height;
             
             // Canvas의 중심이 (0, 0)이므로 좌표 변환
             float canvasLeft = -canvasWidth * 0.5f;
@@ -368,8 +370,8 @@ namespace LoopLegacy.UI.Component
                 {
                     Color originalColor = _outlineColor;
                     _outlineAnimation.Join(
-                        outline.DOColor(new Color(originalColor.r, originalColor.g, originalColor.b, 0.5f), 0.8f)
-                            .SetEase(DG.Tweening.Ease.InOutSine)
+                        outline.DOColor(new Color(originalColor.r, originalColor.g, originalColor.b, 0.7f), 0.8f)
+                            .SetEase(Ease.InOutSine)
                     );
                 }
             }
@@ -387,7 +389,7 @@ namespace LoopLegacy.UI.Component
                     },
                     maxThickness,
                     0.8f
-                ).SetEase(DG.Tweening.Ease.InOutSine)
+                ).SetEase(Ease.InOutSine)
             );
             
             _outlineAnimation.SetLoops(-1, LoopType.Yoyo);

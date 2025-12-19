@@ -45,7 +45,7 @@ namespace LoopLegacy.UI.Controller
 
         void Update()
         {
-            if (_quitApplicationAction.triggered &&
+            if (_quitApplicationAction?.triggered ?? false &&
                 !TerritoryManager.Instance.IsInteractionInProgress.Value &&
                 !ScriptManager.Instance.IsScriptPlaying &&
                 !ConfirmationController.Instance.IsVisible &&

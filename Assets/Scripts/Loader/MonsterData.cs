@@ -40,6 +40,11 @@ namespace LoopLegacy.Loader
         public int atk;
         
         /// <summary>
+        /// 방어력
+        /// </summary>
+        public int def;
+        
+        /// <summary>
         /// 골드 보상
         /// </summary>
         public int gold;

@@ -57,7 +57,7 @@ namespace LoopLegacy.UI.Helper
             {
                 shopList.Add((byte)Shortcut.Desert);
             }
-            if (codexState.IsRegionVisited("deep-forest-0") || codexState.IsRegionVisited("deep-forest-1"))
+            if (codexState.IsRegionVisited("deep_forest-0") || codexState.IsRegionVisited("deep_forest-1"))
             {
                 shopList.Add((byte)Shortcut.DeepForest);
             }

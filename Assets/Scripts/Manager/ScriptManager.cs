@@ -174,9 +174,11 @@ namespace LoopLegacy.Manager
         {
             _isScriptPlaying = false;
             CurrentDialogueIndex.Value = -1;
-            _onScriptComplete?.Invoke();
             _scriptController.Hide();
             _scriptImages.Clear();
+            
+            // 콜백에서 새 스크립트를 시작할 수 있으므로 Hide 후에 호출
+            _onScriptComplete?.Invoke();
         }
         
         /// <summary>

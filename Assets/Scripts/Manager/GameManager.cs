@@ -145,7 +145,10 @@ namespace LoopLegacy.Manager
             Save();
 
             #if UNITY_EDITOR
-            EncounterManager.SetEnabled(false);
+            if (PersistentGameState.Instance.CurrentSlotIndex == -1)
+            {
+                EncounterManager.SetEnabled(false);
+            }
             #endif
         }
 
@@ -241,10 +244,10 @@ namespace LoopLegacy.Manager
         {
             if (Instance == null)
             {
-                return Mathf.RoundToInt(PersistentGameState.Instance.GetBaseStat(statType) * LibraryManager.GetStatMultiplier(PersistentGameState.Instance.AccumulatedLevel));
+                return Mathf.RoundToInt(PersistentGameState.Instance.GetBaseStat(statType) * LibraryManager.GetStatMultiplier());
             }
 
-            return Mathf.RoundToInt((Instance.GameState.PlayerStats.Stats[(int)statType].Value + Instance.RelicManager.GetStatBoost()[statType]) * LibraryManager.GetStatMultiplier(PersistentGameState.Instance.AccumulatedLevel));
+            return Mathf.RoundToInt((Instance.GameState.PlayerStats.Stats[(int)statType].Value + Instance.RelicManager.GetStatBoost()[statType]) * LibraryManager.GetStatMultiplier());
         }
 
         public void RelicReward(int weight, Relic[] alreadyRolledRelics, Action onComplete)
@@ -261,14 +264,14 @@ namespace LoopLegacy.Manager
             // type이 증가할수록 모든 등급의 가중치가 1:1:1:1로 수렴
             // type에 따른 보간 계수 (0.0 ~ 1.0)
             weight += PersistentGameState.Instance.HouseState.GetUpgradeValue(UpgradeType.RelicRewardRarity);
-            weight = Mathf.Clamp(weight, 0, 10);
-            float t = Mathf.Clamp01(weight * 0.1f); // weight 10이면 완전히 1:1:1:1
+            weight = Mathf.Clamp(weight, 0, 20);
+            float t = Mathf.Clamp01(weight * 0.05f); // weight 20이면 완전히 1:1:1:1
             
             // 원래 가중치
-            float baseCommon = 120f;
-            float baseUncommon = 60f;
+            float baseCommon = 150f;
+            float baseUncommon = 70f;
             float baseRare = 20f;
-            float baseEpic = 5f;
+            float baseEpic = 4f;
             
             // 목표 가중치 (모두 동일)
             float targetWeight = 1.0f;

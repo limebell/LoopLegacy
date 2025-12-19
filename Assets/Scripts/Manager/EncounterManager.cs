@@ -121,20 +121,20 @@ namespace LoopLegacy.Manager
             {
                 if (int.TryParse(entry.label, out int level) && level <= 5000)
                 {
-                    selectedMonster = SelectMonsterFromRegion(TableManager.GetRegion("special-a-0"), exclude: new string[] { "special-a-0_2" });
+                    selectedMonster = SelectMonsterFromRegion(TableManager.GetRegion("special_a-0"), exclude: new string[] { "special_a-0_2" });
                 }
                 else
                 {
-                    selectedMonster = SelectMonsterFromRegion(TableManager.GetRegion("special-a-0"));
+                    selectedMonster = SelectMonsterFromRegion(TableManager.GetRegion("special_a-0"));
                 }
             }
             else if (regionEffect.Type == RegionEffectType.SpecialB)
             {
-                selectedMonster = SelectMonsterFromRegion(TableManager.GetRegion("special-b-0"));
+                selectedMonster = SelectMonsterFromRegion(TableManager.GetRegion("special_b-0"));
             }
             else if (regionEffect.Type == RegionEffectType.SpecialC)
             {
-                selectedMonster = SelectMonsterFromRegion(TableManager.GetRegion("special-c-0"));
+                selectedMonster = SelectMonsterFromRegion(TableManager.GetRegion("special_c-0"));
             }
 
             // 몬스터 선택

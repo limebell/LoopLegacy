@@ -39,7 +39,6 @@ namespace LoopLegacy.Manager
             if (GameManager.Instance.GameState.CurrentMapCode != "Tutorial" &&
                 !PersistentGameState.Instance.CompletedTutorials[TutorialType.GameStart])
             {
-                Debug.Log("[MapManager] Start: ShowConfirmation");
                 string startTutorialConfirmation = Utils.GetUIString("start-tutorial-confirmation_basic");
                 string yesText = Utils.GetUIString("yes");
                 string noText = Utils.GetUIString("no");

@@ -535,6 +535,18 @@ namespace LoopLegacy.Manager
                             break;
                     }
                 }
+                
+                if (_monsterData.type == MonsterType.Boss)
+                {
+                    PersistentGameState.Instance.AddSlainedBoss(_monsterData.code);
+                    
+                    // TODO: 임시 - 최종 보스(boss_11) 처치 시 경고 표시
+                    if (_monsterData.code == "boss_11")
+                    {
+                        ConfirmationController.Instance.ShowWarning(Utils.GetUIString("wait-for-update"));
+                    }
+                }
+
             }
             else
             {

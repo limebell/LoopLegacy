@@ -159,6 +159,74 @@ MonoBehaviour:
     m_Key: tutorial_objective-2
     m_Metadata:
       m_Items: []
+  - m_Id: 35470736392454145
+    m_Key: tutorial_objective-3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 35470736392454146
+    m_Key: tutorial_objective-4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 50001000000000000
+    m_Key: relic_tutorial_script-0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 50001000000000001
+    m_Key: relic_tutorial_script-1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 50001000000000002
+    m_Key: relic_tutorial_script-2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 50001000000000003
+    m_Key: relic_tutorial_script-3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 50001000000000004
+    m_Key: relic_tutorial_script-4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 50001000000000005
+    m_Key: relic_tutorial_script-5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 50001000000000006
+    m_Key: relic_tutorial_script-6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 50001000000000007
+    m_Key: relic_tutorial_script-7
+    m_Metadata:
+      m_Items: []
+  - m_Id: 50001000000000008
+    m_Key: relic_tutorial_script-8
+    m_Metadata:
+      m_Items: []
+  - m_Id: 50001000000000009
+    m_Key: relic_tutorial_script-9
+    m_Metadata:
+      m_Items: []
+  - m_Id: 50002000000000000
+    m_Key: relic_tutorial_objective-0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 50002000000000001
+    m_Key: relic_tutorial_objective-1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 50002000000000002
+    m_Key: relic_tutorial_objective-2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 50002000000000003
+    m_Key: relic_tutorial_objective-3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 50002000000000004
+    m_Key: relic_tutorial_objective-4
+    m_Metadata:
+      m_Items: []
   - m_Id: 36168274162483200
     m_Key: tip-0
     m_Metadata:
@@ -197,6 +265,10 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 43385586301009920
     m_Key: tip-9
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44927660007620608
+    m_Key: tip-10
     m_Metadata:
       m_Items: []
   m_Metadata:

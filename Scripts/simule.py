@@ -51,6 +51,32 @@ def calculate_levelups_from_exp(start_level: int, exp_amount: int) -> Tuple[int,
     return current_level, remaining_exp
 
 
+def calculate_adjusted_exp(base_exp: int, player_level: int, monster_level: int) -> int:
+    """플레이어와 몬스터 레벨 차이에 따른 경험치 보정
+    
+    - 몬스터 레벨이 높으면 경험치 증가 (최대 2배)
+    - 몬스터 레벨이 낮으면 경험치 감소 (최소 0.3배)
+    - 플레이어 레벨이 높을수록 보정 효과가 강해짐 (easing factor)
+    
+    Args:
+        base_exp: 기본 경험치
+        player_level: 플레이어 레벨
+        monster_level: 몬스터 레벨
+        
+    Returns:
+        보정된 경험치
+    """
+    # 레벨 비율의 4제곱
+    level_ratio = (monster_level / player_level) ** 4
+    
+    easing_factor = monster_level / (4000 + monster_level)
+    
+    # 최소 0.3배, 최대 2배
+    adjusted_ratio = max(0.3, min(2.0, 1.0 + (level_ratio - 1.0) * easing_factor))
+    
+    return int(base_exp * adjusted_ratio)
+
+
 class StatType(IntEnum):
     """스탯 타입 열거형"""
     HP = 0
@@ -68,9 +94,10 @@ class MonsterStats:
     gold: int
     exp: int
     bp: int = -1
+    defense: int = 0  # 방어력 (ATK와 동일한 값)
     
     def __str__(self):
-        return f"Lv.{self.level} - HP:{self.hp}, ATK:{self.atk}, Gold:{self.gold}, EXP:{self.exp}"
+        return f"Lv.{self.level} - HP:{self.hp}, ATK:{self.atk}, DEF:{self.defense}, Gold:{self.gold}, EXP:{self.exp}"
 
 
 class Weapon:
@@ -202,31 +229,31 @@ class MonsterStatCalculator:
         elif level <= 30000:
             # 초극후반부: 극한 난이도 (ATK 증가율 완만화)
             hp = int(1453838 + 129.0 * (level - 20000))
-            atk = int(36459 + 2.2 * (level - 20000))
+            atk = int(36459 + 2.15 * (level - 20000))
         elif level <= 50000:
             # 초극후반부2: 극한 난이도 (ATK 증가율 완만화)
             hp = int(2743838 + 172.0 * (level - 30000))
-            atk = int(58459 + 2.5 * (level - 30000))
+            atk = int(57959 + 2.35 * (level - 30000))
         elif level <= 60000:
             # 초극후반부3: 극한 난이도 (ATK 증가율 완만화)
-            hp = int(6183838 + 281.0 * (level - 50000))
-            atk = int(108459 + 2.9 * (level - 50000))
+            hp = int(6183838 + 261.0 * (level - 50000))
+            atk = int(104959 + 2.7 * (level - 50000))
         elif level <= 70000:
             # 초극후반부4: 극한 난이도 (ATK 증가율 완만화)
-            hp = int(8993838 + 334.0 * (level - 60000))
-            atk = int(137459 + 3.2 * (level - 60000))
-        elif level <= 80000:
-            # 초극후반부5: 극한 난이도 (ATK 증가율 완만화)
-            hp = int(12333838 + 387.0 * (level - 70000))
-            atk = int(169459 + 3.6 * (level - 70000))
+            hp = int(8793838 + 314.0 * (level - 60000))
+            atk = int(131959 + 2.9 * (level - 60000))
         elif level <= 90000:
+            # 초극후반부5: 극한 난이도 (ATK 증가율 완만화)
+            hp = int(11933838 + 367.0 * (level - 70000))
+            atk = int(160959 + 3.1 * (level - 70000))
+        elif level <= 110000:
             # 초극후반부6: 극한 난이도 (ATK 증가율 완만화)
-            hp = int(16203838 + 440.0 * (level - 80000))
-            atk = int(205459 + 4.0 * (level - 80000))
+            hp = int(19273838 + 420.0 * (level - 90000))
+            atk = int(222959 + 3.3 * (level - 90000))
         else:
             # 최종구간: 최종 난이도 (ATK 증가율 완만화)
-            hp = int(20603838 + 493.0 * (level - 90000))
-            atk = int(245459 + 4.5 * (level - 90000))
+            hp = int(27673838 + 473.0 * (level - 110000))
+            atk = int(288959 + 3.8 * (level - 110000))
 
         hp = int(hp * 0.9)
         atk = int(atk * 1.1)
@@ -240,14 +267,18 @@ class MonsterStatCalculator:
         # n^1.4 필요 경험치 시스템에 맞춰 조정됨
         log_val = math.log(level + 1)
         level_factor = level * 2 / (10000 + level)  # 저레벨 억제, 고레벨 성장
-        exp = int(self.base_exp * (level ** 1.4) * log_val * level_factor)
+        if (level <= 140000):
+            exp = int(self.base_exp * (level ** 1.39) * log_val * level_factor)
+        else:
+            exp = int(self.base_exp * (level ** 1.7) * level_factor)
         
         return MonsterStats(
             level=level,
             hp=hp,
             atk=atk,
             gold=gold,
-            exp=exp
+            exp=exp,
+            defense=atk  # 방어력은 공격력과 동일
         )
 
 
@@ -608,7 +639,8 @@ def main():
             hp=monster_hp,
             atk=monster_atk,
             gold=0,
-            exp=0
+            exp=0,
+            defense=monster_atk  # 방어력은 공격력과 동일
         )
         
         # 플레이어 생성
@@ -673,7 +705,8 @@ def main():
             hp=monster_hp,
             atk=monster_atk,
             gold=0,  # 골드는 전투에 영향 없음
-            exp=0    # 경험치는 전투에 영향 없음
+            exp=0,   # 경험치는 전투에 영향 없음
+            defense=monster_atk  # 방어력은 공격력과 동일
         )
         
         # 결과 출력
@@ -692,6 +725,7 @@ def main():
         print(f"Lv.{monster.level}")
         print(f"HP: {monster.hp:,}")
         print(f"ATK: {monster.atk:,}")
+        print(f"DEF: {monster.defense:,}")
         
         print(f"\n=== 플레이어 스탯 (레벨 {player_level}) ===")
         print(f"HP: {player.get_stat(StatType.HP):,}")
@@ -770,6 +804,7 @@ def main():
         print(f"레벨 {args.monster_level} 몬스터 스탯:")
         print(f"  HP: {monster.hp:,} ({monster.hp})")
         print(f"  ATK: {monster.atk:,} ({monster.atk})")
+        print(f"  DEF: {monster.defense:,} ({monster.defense})")
         print(f"  Gold: {monster.gold:,} ({monster.gold})")
         print(f"  EXP: {monster.exp:,} ({monster.exp})")
         
@@ -787,8 +822,9 @@ def main():
         initial_exp = 0
         initial_stat_points = 0
         
-        # 몬스터 처치 시 획득 경험치
-        exp_gain = monster.exp
+        # 몬스터 처치 시 획득 경험치 (레벨 차이 보정 적용)
+        base_exp = monster.exp
+        exp_gain = calculate_adjusted_exp(base_exp, initial_level, args.monster_level)
         
         # 레벨업 계산
         current_level = initial_level
@@ -802,7 +838,8 @@ def main():
         current_level = final_level
         
         print(f"레벨 {initial_level} 플레이어가 레벨 {args.monster_level} 몬스터를 처치했을 때:")
-        print(f"몬스터 경험치: {exp_gain:,}")
+        print(f"몬스터 기본 경험치: {base_exp:,}")
+        print(f"보정된 경험치: {exp_gain:,} ({exp_gain / base_exp * 100:.1f}%)")
         print(f"초기 레벨: {initial_level}")
         print(f"최종 레벨: {current_level}")
         print(f"레벨업 횟수: {levels_gained}")

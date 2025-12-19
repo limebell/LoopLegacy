@@ -38,6 +38,7 @@ namespace LoopLegacy.UI.Controller
             int gold
         )
         {
+            _advertiseButton.interactable = true;
             gameObject.SetActive(true);
             string commentary = Utils.GetUIString("game-over_commentary", new object[] { Utils.Ordinal(generation) });
             _commentText.text = commentary;
@@ -70,10 +71,7 @@ namespace LoopLegacy.UI.Controller
                     var relicData = TableManager.GetRelic(dropEntryData.relicEffectName);
                     var image = relicData.sprite;
                     dropElement.GetComponent<DropElement>().UpdateElement(
-                        image: image,
-                        type: "UNLOCK",
-                        isNew: true,
-                        count: dropEntryData.count,
+                        relic: new Relic(relicData, dropEntryData.relicLevel),
                         onClick: () => ConfirmationController.Instance.ShowRelic(new Relic(relicData, dropEntryData.relicLevel)));
                 }
                 else
@@ -88,8 +86,7 @@ namespace LoopLegacy.UI.Controller
                     var image = equipment.sprite;
                     var isNew = PersistentGameState.Instance.InventoryState.GetOwnedEquipments(equipment.type)[equipment.id] == dropEntryData.count;
                     dropElement.GetComponent<DropElement>().UpdateElement(
-                        image: image,
-                        type: "DROP",
+                        equipment: equipment,
                         isNew: isNew,
                         count: dropEntryData.count,
                         onClick: () => ConfirmationController.Instance.ShowEquipment(equipment));
@@ -116,29 +113,33 @@ namespace LoopLegacy.UI.Controller
         {
             if (GameManager.Instance.GameState.IsAdvertised)
             {
-                ConfirmationController.Instance.ShowWarning(Utils.GetUIString("game-over_advertise_already_advertised"));
+                ConfirmationController.Instance.ShowWarning(Utils.GetUIString("game-over_advertise_already-advertised"));
                 return;
             }
 
 #if UNITY_ANDROID || UNITY_IOS
-
-            if (!RewardedAdManager.Instance.IsLoaded.Value)
-            {
-                ConfirmationController.Instance.ShowWarning(Utils.GetUIString("game-over_advertise_not_ready"));
-                return;
-            }
-
             if (Debug.isDebugBuild)
             {
                 RewardAdvertise();
+                return;
             }
-            else
-            {
-                RewardedAdManager.Instance.ShowRewardedAd(_ =>
+
+            _advertiseButton.interactable = false;
+            RewardedAdManager.Instance.LoadAd(
+                onLoaded: () =>
                 {
-                    RewardAdvertise();
-                });
-            }
+                    RewardedAdManager.Instance.ShowRewardedAd(_ =>
+                    {
+                        RewardAdvertise();
+                    });
+                    _advertiseButton.interactable = true;
+                },
+                onFailed: () =>
+                {
+                    ConfirmationController.Instance.ShowWarning(Utils.GetUIString("game-over_advertise_error"));
+                    _advertiseButton.interactable = true;
+                }
+            );
 #else
             RewardAdvertise();
 #endif

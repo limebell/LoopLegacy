@@ -22,6 +22,7 @@ namespace LoopLegacy.UI.Controller
         [SerializeField] private ScrollRect _scrollRect;
         [SerializeField] private TMP_Text _logs;
         [SerializeField] private TMP_InputField _inputField;
+        [SerializeField] private Button _submitButton;
         [SerializeField] private Button _closeButton;
 
         private List<string> _previousCommands = new List<string>();
@@ -42,6 +43,7 @@ namespace LoopLegacy.UI.Controller
         {
             InitializeInputActions();
 
+            _submitButton.onClick.AddListener(OnSubmit);
             _closeButton.onClick.AddListener(OnCloseButtonClicked);
 
             Hide();

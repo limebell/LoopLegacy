@@ -696,7 +696,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 37623214584102912
-    m_Localized: Accumulated Level
+    m_Localized: Accumulated Level (A.L.)
     m_Metadata:
       m_Items: []
   - m_Id: 39033700634591232
@@ -756,11 +756,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 39022558625398784
-    m_Localized: Player base level by accumulated level
+    m_Localized: Base level by A.L.
     m_Metadata:
       m_Items: []
   - m_Id: 39022560458309632
-    m_Localized: Stat multiplier by player base level
+    m_Localized: Stat multiplier (Base Level + Slained Bosses)
     m_Metadata:
       m_Items: []
   - m_Id: 39022794554998784
@@ -776,7 +776,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 39023360450494464
-    m_Localized: Monster killed moner than {0}
+    m_Localized: '{0}+'
     m_Metadata:
       m_Items: []
   - m_Id: 39033738970529792
@@ -823,7 +823,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 42245640257273856
-    m_Localized: The advertisement is not ready yet.
+    m_Localized: An error occurred while retrieving the advertisement.
     m_Metadata:
       m_Items: []
   - m_Id: 44156351388581888
@@ -836,6 +836,55 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 44842806763061248
     m_Localized: You reflected {1} damage to {0}!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 46054268441460736
+    m_Localized: Defeated bosses
+    m_Metadata:
+      m_Items: []
+  - m_Id: 46400701845733376
+    m_Localized: Would you like to proceed with the relic tutorial?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 46584610353053696
+    m_Localized: Base
+    m_Metadata:
+      m_Items: []
+  - m_Id: 46584625855201280
+    m_Localized: Multiplier
+    m_Metadata:
+      m_Items: []
+  - m_Id: 46602219370840064
+    m_Localized: You have just defeated last boss of the current version. Please
+      wait for the update!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47118945170751488
+    m_Localized: Remove Ads
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47200000000000001
+    m_Localized: Would you like to remove ads?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47200000000000002
+    m_Localized: Would you like to remove ads for {0}?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47200000000000003
+    m_Localized: Ads have already been removed.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47200000000000004
+    m_Localized: Purchase successful! Ads have been removed.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47200000000000005
+    m_Localized: 'Purchase failed: {0}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47200000000000006
+    m_Localized: Purchase is currently unavailable.
     m_Metadata:
       m_Items: []
   references:

@@ -1,3 +1,4 @@
+using LoopLegacy.Manager;
 using LoopLegacy.State;
 using LoopLegacy.UI.Component;
 using R3;
@@ -9,6 +10,10 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Localization.Settings;
 using UnityEngine.UI;
+
+#if UNITY_ANDROID || UNITY_IOS
+using UnityEngine.Purchasing;
+#endif
 
 namespace LoopLegacy.UI.Controller
 {
@@ -52,6 +57,10 @@ namespace LoopLegacy.UI.Controller
         private const int CONTROL_COUNT = 3;
         [SerializeField]
         private Button[] _controlButtons;
+
+        // Remove Ads
+        [SerializeField]
+        private Button _removeAdsButton;
 
         private InputAction _quitApplicationAction;
 
@@ -131,12 +140,18 @@ namespace LoopLegacy.UI.Controller
             _closeButton.onClick.AddListener(() => Hide());
             RegisterOptionValues();
 
+            // 광고 제거 버튼
+            if (_removeAdsButton != null)
+            {
+                _removeAdsButton.onClick.AddListener(OnRemoveAdsButtonClicked);
+            }
+
             _quitApplicationAction = InputSystem.actions.FindActionMap("UI").FindAction("Cancel");
         }
 
         void Update()
         {
-            if (_quitApplicationAction.triggered && !ConfirmationController.Instance.IsVisible)
+            if (_quitApplicationAction?.triggered ?? false && !ConfirmationController.Instance.IsVisible)
             {
                 Hide();
             }
@@ -147,6 +162,7 @@ namespace LoopLegacy.UI.Controller
             _onClose = onClose;
             gameObject.SetActive(true);
             UpdateOptionValues();
+            UpdateRemoveAdsButtonVisibility();
         }
 
         public void Hide()
@@ -228,6 +244,77 @@ namespace LoopLegacy.UI.Controller
                 _qualityButtons[value].interactable = false;
             }).AddTo(ref d);
             d.RegisterTo(this.destroyCancellationToken);
+        }
+
+        private void OnRemoveAdsButtonClicked()
+        {
+#if UNITY_ANDROID || UNITY_IOS
+            // 이미 광고가 제거된 경우
+            if (IAPManager.Instance != null && IAPManager.Instance.IsAdsRemoved)
+            {
+                ConfirmationController.Instance.ShowWarning(
+                    Utils.GetUIString("ads-already-removed"));
+                return;
+            }
+
+            string price = IAPManager.Instance?.GetRemoveAdsPrice() ?? "";
+            string message = string.IsNullOrEmpty(price)
+                ? Utils.GetUIString("remove-ads-confirmation")
+                : Utils.GetUIString("remove-ads-confirmation-price", new object[] { price });
+
+            ConfirmationController.Instance.ShowConfirmation(
+                message,
+                () => {
+                    // IAP 구매 시작
+                    if (IAPManager.Instance != null && IAPManager.Instance.IsInitialized)
+                    {
+                        IAPManager.Instance.OnPurchaseSuccessEvent += OnIAPPurchaseSuccess;
+                        IAPManager.Instance.OnPurchaseFailedEvent += OnIAPPurchaseFailed;
+                        IAPManager.Instance.PurchaseRemoveAds();
+                    }
+                    else
+                    {
+                        ConfirmationController.Instance.ShowWarning(
+                            Utils.GetUIString("purchase-unavailable"));
+                    }
+                });
+#else
+            ConfirmationController.Instance.ShowWarning(
+                Utils.GetUIString("purchase-unavailable"));
+#endif
+        }
+
+#if UNITY_ANDROID || UNITY_IOS
+        private void OnIAPPurchaseSuccess()
+        {
+            IAPManager.Instance.OnPurchaseSuccessEvent -= OnIAPPurchaseSuccess;
+            IAPManager.Instance.OnPurchaseFailedEvent -= OnIAPPurchaseFailed;
+
+            ConfirmationController.Instance.ShowWarning(
+                Utils.GetUIString("purchase-success"));
+            UpdateRemoveAdsButtonVisibility();
+        }
+
+        private void OnIAPPurchaseFailed(string reason)
+        {
+            IAPManager.Instance.OnPurchaseSuccessEvent -= OnIAPPurchaseSuccess;
+            IAPManager.Instance.OnPurchaseFailedEvent -= OnIAPPurchaseFailed;
+
+            ConfirmationController.Instance.ShowWarning(
+                Utils.GetUIString("purchase-failed", new object[] { reason }));
+        }
+#endif
+
+        private void UpdateRemoveAdsButtonVisibility()
+        {
+            if (_removeAdsButton == null) return;
+
+#if UNITY_ANDROID || UNITY_IOS
+            bool shouldShow = IAPManager.Instance == null || !IAPManager.Instance.IsAdsRemoved;
+            _removeAdsButton.gameObject.SetActive(shouldShow);
+#else
+            _removeAdsButton.gameObject.SetActive(false);
+#endif
         }
     }
 }

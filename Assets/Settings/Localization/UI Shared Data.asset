@@ -732,7 +732,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 39022560458309632
-    m_Key: library_stat-multiplier-by-accumulated-level
+    m_Key: library_stat-multiplier-by-accumulated-level-and-defeated-boss-count
     m_Metadata:
       m_Items: []
   - m_Id: 39022794554998784
@@ -780,11 +780,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 42245613787021312
-    m_Key: game-over_advertise_already_advertised
+    m_Key: game-over_advertise_already-advertised
     m_Metadata:
       m_Items: []
   - m_Id: 42245640257273856
-    m_Key: game-over_advertise_not_ready
+    m_Key: game-over_advertise_error
     m_Metadata:
       m_Items: []
   - m_Id: 44156351388581888
@@ -797,6 +797,54 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 44842806763061248
     m_Key: battle-log_player-attack-reflect
+    m_Metadata:
+      m_Items: []
+  - m_Id: 46054268441460736
+    m_Key: library_defeated-boss-count
+    m_Metadata:
+      m_Items: []
+  - m_Id: 46400701845733376
+    m_Key: start-tutorial-confirmation_relic
+    m_Metadata:
+      m_Items: []
+  - m_Id: 46584610353053696
+    m_Key: equipment_base
+    m_Metadata:
+      m_Items: []
+  - m_Id: 46584625855201280
+    m_Key: equipment_multiplier
+    m_Metadata:
+      m_Items: []
+  - m_Id: 46602219370840064
+    m_Key: wait-for-update
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47118945170751488
+    m_Key: remove-advertisement
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47200000000000001
+    m_Key: remove-ads-confirmation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47200000000000002
+    m_Key: remove-ads-confirmation-price
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47200000000000003
+    m_Key: ads-already-removed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47200000000000004
+    m_Key: purchase-success
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47200000000000005
+    m_Key: purchase-failed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47200000000000006
+    m_Key: purchase-unavailable
     m_Metadata:
       m_Items: []
   m_Metadata:

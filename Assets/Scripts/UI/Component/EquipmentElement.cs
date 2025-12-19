@@ -63,7 +63,7 @@ namespace LoopLegacy.UI.Component
             if (weapon != null)
             {
                 string weaponNameString = Utils.GetEquipmentName(EquipmentType.Weapon, weapon.Id);
-                _nameText.text = weaponNameString + (weapon.EnchantmentLevel > 0 ? $" (+{weapon.EnchantmentLevel})" : "");
+                _nameText.text = weaponNameString;// + (weapon.EnchantmentLevel > 0 ? $" (+{weapon.EnchantmentLevel})" : "");
                 _baseStatText.text = $"{(int)weapon.GetCalculatedBaseDamage():n0}";
                 /*_baseStatText.text =
                     $"{(int)weapon.GetBaseDamage():n0} " +
@@ -93,7 +93,7 @@ namespace LoopLegacy.UI.Component
             if (armor != null)
             {
                 string armorNameString = Utils.GetEquipmentName(EquipmentType.Armor, armor.Id);
-                _nameText.text = armorNameString + (armor.EnchantmentLevel > 0 ? $" (+{armor.EnchantmentLevel})" : "");
+                _nameText.text = armorNameString;// + (armor.EnchantmentLevel > 0 ? $" (+{armor.EnchantmentLevel})" : "");
                 _baseStatText.text = $"{(int)armor.GetCalculatedBaseDefense():n0}";
                 /*_baseStatText.text =
                     $"{(int)armor.GetBaseDefense():n0} " +

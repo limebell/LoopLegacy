@@ -49,18 +49,19 @@ def update_region_table(input_file: str, output_file: str):
                 level = int(parts[0])
                 hp = int(parts[1])
                 atk = int(parts[2])
-                gold = int(parts[3])
-                exp = int(parts[4])
+                defense = int(parts[3])
+                gold = int(parts[4])
+                exp = int(parts[5])
                 
                 # 새로운 몬스터 스탯 계산
                 monster_stats = calculator.calculate_stats(level)
                 
-                # HP, ATK만 업데이트, gold와 exp는 원본 유지
-                newe_line = f"{level},{monster_stats.hp},{monster_stats.atk},{gold},{exp}"
+                # HP, ATK, DEF 업데이트, gold와 exp는 원본 유지
+                new_line = f"{level},{monster_stats.hp},{monster_stats.atk},{monster_stats.defense},{gold},{monster_stats.exp}"
                 
                 # 나머지 컬럼들 추가 (bp, drops, actions 등)
-                if len(parts) > 5:
-                    new_line += ',' + ','.join(parts[5:])
+                if len(parts) > 6:
+                    new_line += ',' + ','.join(parts[6:])
                 
                 updated_lines.append(new_line + '\n')
                 
@@ -75,7 +76,6 @@ def update_region_table(input_file: str, output_file: str):
             outfile.writelines(updated_lines)
         
         print(f"새 파일 생성 완료: {output_file}")
-        print(f"원본 파일({input_file})은 변경되지 않았습니다.")
         
     except Exception as e:
         print(f"오류 발생: {e}")
@@ -84,7 +84,6 @@ def update_region_table(input_file: str, output_file: str):
 def main():
     """메인 함수"""
     print("region_table.csv 업데이트 스크립트")
-    print("gold_growth: 5 → 3으로 변경된 값 적용")
     print("="*50)
     
     input_file = 'Assets/Data/region_table.csv'
@@ -99,8 +98,7 @@ def main():
     print()
     
     # 자동 실행 (사용자 확인 생략)
-    print("gold_growth를 5에서 3으로 변경하여 파일을 생성합니다...")
-    print("HP, ATK, Gold만 업데이트되며, EXP는 원본 값을 유지합니다.")
+    print("HP, ATK, DEF만 업데이트되며, Gold와 EXP는 원본 값을 유지합니다.")
     print()
     
     update_region_table(input_file, output_file)

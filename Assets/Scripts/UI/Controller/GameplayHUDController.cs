@@ -24,14 +24,12 @@ namespace LoopLegacy.UI.Controller
         [Header("Buttons")]
         [SerializeField] private Button _menuButton;
         [SerializeField] private Button _statsButton;
-        public RectTransform StatsButtonRect => _statsButton != null ? _statsButton.GetComponent<RectTransform>() : null;
         [SerializeField] private GameObject _statsRedDot;
         [SerializeField] private Button _encounterButton;
 
         [Space(10f)]
         [SerializeField] private TMP_Text _goldLabel;
         [SerializeField] private Gauge _encounterGauge;
-        public RectTransform EncounterGaugeRect => _encounterGauge != null ? _encounterGauge.GetComponent<RectTransform>() : null;
         [SerializeField] private TMP_Text _levelLabel;
         [SerializeField] private TMP_Text _regionLabel;
         [SerializeField] private TMP_Text _effectLabel;
@@ -57,7 +55,7 @@ namespace LoopLegacy.UI.Controller
 
         void Update()
         {
-            if (_quitApplicationAction.triggered &&
+            if (_quitApplicationAction?.triggered ?? false &&
                 !ConfirmationController.Instance.IsVisible &&
                 !GameManager.Instance.IsMovingMap.Value &&
                 !ScriptManager.Instance.IsScriptPlaying &&

@@ -66,6 +66,9 @@ namespace LoopLegacy.State
         // 누적 레벨
         public int AccumulatedLevel { get; private set; }
 
+        // 최초로 처치한 보스 목록
+        public List<string> SlainedBosses { get; private set; }
+
         // 튜토리얼 완료 여부
         public Dictionary<TutorialType, bool> CompletedTutorials { get; private set; }
 
@@ -94,7 +97,7 @@ namespace LoopLegacy.State
             CodexState = new CodexState();
 
             AccumulatedLevel = 0;
-
+            SlainedBosses = new List<string>();
             AutoDistributeStats = false;
             _currentAutoDistributePreset = 0;
             _autoDistributeRate = new int[AUTO_DISTRIBUTE_PRESET_COUNT][];
@@ -128,7 +131,7 @@ namespace LoopLegacy.State
             // 기본 스탯 초기화
             InventoryState.InitializeDefaultState();
             AccumulatedLevel = 0;
-
+            SlainedBosses = new List<string>();
             // 기본 장비 장착
             Equip(EquipmentType.Armor, 0);
             Equip(EquipmentType.Weapon, 0);
@@ -244,6 +247,7 @@ namespace LoopLegacy.State
                     inventoryStateData = InventoryState.ToJson(),
                     codexStateData = CodexState.ToJson(),
                     accumulatedLevel = AccumulatedLevel,
+                    slainedBosses = SlainedBosses.ToArray(),
                     currentWeapon = CurrentEquipments[(int)EquipmentType.Weapon].Value,
                     currentArmor = CurrentEquipments[(int)EquipmentType.Armor].Value,
                     autoDistributeStats = AutoDistributeStats,
@@ -291,6 +295,7 @@ namespace LoopLegacy.State
             state.InventoryState = InventoryState.FromJson(saveData.inventoryStateData);
             state.CodexState = CodexState.FromJson(saveData.codexStateData);
             state.AccumulatedLevel = saveData.accumulatedLevel;
+            state.SlainedBosses = saveData.slainedBosses?.ToList() ?? new List<string>();
 
             state.CurrentEquipments[(int)EquipmentType.Weapon].Value = saveData.currentWeapon;
             state.CurrentEquipments[(int)EquipmentType.Armor].Value = saveData.currentArmor;
@@ -359,6 +364,15 @@ namespace LoopLegacy.State
         public void IncrementAccumulatedLevel(int amount)
         {
             AccumulatedLevel += amount;
+        }
+
+        public void AddSlainedBoss(string bossCode)
+        {
+            if (SlainedBosses.Contains(bossCode))
+            {
+                return;
+            }
+            SlainedBosses.Add(bossCode);
         }
 
         public void AddGold(int amount)
@@ -489,6 +503,7 @@ namespace LoopLegacy.State
         public string inventoryStateData;
         public string codexStateData;
         public int accumulatedLevel;
+        public string[] slainedBosses;
         public int currentWeapon;
         public int currentArmor;
         public bool autoDistributeStats;

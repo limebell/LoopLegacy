@@ -21,7 +21,7 @@ namespace LoopLegacy.State
         public ReactiveProperty<BigInteger> EXP { get; private set; }
         public ReactiveProperty<int> Level { get; private set; }
 
-        public static float CRIT_MULTIPLIER = 1.5f;
+        public static float CRIT_MULTIPLIER = 2.0f;
 
         public PlayerStats()
         {
@@ -165,7 +165,7 @@ namespace LoopLegacy.State
             // 레벨업 가능한 만큼 처리
             while (EXP.Value > 0)
             {
-                BigInteger needed = new BigInteger((long)Math.Pow(Level.Value, 1.4));
+                BigInteger needed = CalculateRequiredEXP(Level.Value);
                 if (EXP.Value >= needed)
                 {
                     EXP.Value -= needed;
@@ -191,7 +191,7 @@ namespace LoopLegacy.State
             // 레벨업 가능한 만큼 계산
             while (remainingEXP > 0)
             {
-                BigInteger needed = new BigInteger((long)Math.Pow(level, 1.4));
+                BigInteger needed = CalculateRequiredEXP(level);
                 if (remainingEXP >= needed)
                 {
                     remainingEXP -= needed;
@@ -250,7 +250,7 @@ namespace LoopLegacy.State
                         cancellationToken.ThrowIfCancellationRequested();
                     }
                     
-                    BigInteger needed = new BigInteger((long)Math.Pow(currentLevel, 1.4));
+                    BigInteger needed = CalculateRequiredEXP(currentLevel);
                     if (remainingEXP >= needed)
                     {
                         remainingEXP -= needed;
@@ -336,9 +336,7 @@ namespace LoopLegacy.State
         {
             double levelRatio = Math.Pow((double)monsterLevel / playerLevel, 2);
             
-            // 지수적 완화: (1 - 0.99^level) 공식 사용
-            // 레벨 1: 0.01, 레벨 10: 0.096, 레벨 50: 0.39, 레벨 100: 0.63
-            double easingFactor = 1.0 - Math.Pow(0.99, playerLevel);
+            double easingFactor = monsterLevel / (4000 + monsterLevel);
             // 최소 0.3배, 최대 2배
             double adjustedRatio = Math.Clamp(1.0 + (levelRatio - 1.0) * easingFactor, 0.3, 2.0);
             

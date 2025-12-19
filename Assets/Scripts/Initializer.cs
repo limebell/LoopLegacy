@@ -1,4 +1,4 @@
-using GoogleMobileAds;
+using System.Threading.Tasks;
 using GoogleMobileAds.Api;
 using LoopLegacy.Manager;
 using LoopLegacy.State;
@@ -17,12 +17,10 @@ namespace LoopLegacy
             InitializeLocalization();
             InitializeQuality();
 #if UNITY_ANDROID || UNITY_IOS
-            InitializeGoogleAdMob();
-            // Disable Banner Ad for now, first resolve canvas view issue
-            //BannerAdManager.Instance?.Initialize();
-#endif
-
+            InitializeAd();
+#else
             SceneManager.LoadScene("Title");
+#endif
         }
 
         private void InitializeData()
@@ -59,6 +57,14 @@ namespace LoopLegacy
             };
         }
 
+        private async void InitializeAd()
+        {
+            await IAPManager.Instance.Initialize();
+            InitializeGoogleAdMob();
+            InitializeBannerAd();
+            await SceneManager.LoadSceneAsync("Title");
+        }
+
         private void InitializeGoogleAdMob()
         {
             MobileAds.Initialize((InitializationStatus initstatus) =>
@@ -76,6 +82,18 @@ namespace LoopLegacy
                 // use MobileAdsEventExecutor.ExecuteInUpdate(). For more information, see:
                 // https://developers.google.com/admob/unity/global-settings#raise_ad_events_on_the_unity_main_thread
             });
+        }
+
+        private void InitializeBannerAd()
+        {
+            // 광고 제거 구매 여부 확인
+            if (IAPManager.Instance != null && IAPManager.Instance.IsAdsRemoved)
+            {
+                Debug.Log("[InitialManager] 광고가 제거되어 배너 광고를 초기화하지 않습니다.");
+                return;
+            }
+
+            BannerAdManager.Instance?.Initialize();
         }
     }
 }

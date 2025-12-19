@@ -79,6 +79,7 @@ namespace LoopLegacy
     {
         GameStart,
         Territory,
+        RelicReward,
     }
 
     public enum NPCType

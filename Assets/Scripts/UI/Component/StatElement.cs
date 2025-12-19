@@ -81,14 +81,14 @@ namespace LoopLegacy.UI.Component
         {
             if (GameManager.Instance == null)
             {
-                _statValueText.text = $"{Mathf.RoundToInt(PersistentGameState.Instance.GetBaseStat(statType) * LibraryManager.GetStatMultiplier(PersistentGameState.Instance.AccumulatedLevel)):n0}";
+                _statValueText.text = $"{Mathf.RoundToInt(PersistentGameState.Instance.GetBaseStat(statType) * LibraryManager.GetStatMultiplier()):n0}";
                 return;
             }
             
             var statBoosts = GameManager.Instance.RelicManager.GetStatBoost();
-            int boost = Mathf.RoundToInt(statBoosts[statType] * LibraryManager.GetStatMultiplier(PersistentGameState.Instance.AccumulatedLevel));
+            int boost = Mathf.RoundToInt(statBoosts[statType] * LibraryManager.GetStatMultiplier());
 
-            var baseStat = Mathf.RoundToInt(GameManager.Instance.GameState.PlayerStats.Stats[(int)statType].Value * LibraryManager.GetStatMultiplier(PersistentGameState.Instance.AccumulatedLevel));
+            var baseStat = Mathf.RoundToInt(GameManager.Instance.GameState.PlayerStats.Stats[(int)statType].Value * LibraryManager.GetStatMultiplier());
             string statText = $"{baseStat:n0}";
             if (boost > 0) statText += $" (+ {boost:n0})";
             _statValueText.text = statText;

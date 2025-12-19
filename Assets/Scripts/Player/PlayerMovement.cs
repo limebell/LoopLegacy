@@ -115,14 +115,17 @@ namespace LoopLegacy.Player
             if (_isMoving)
             {
                 var movementSpeedMultiplier = 1.0f;
-                movementSpeedMultiplier *= 1.0f + PersistentGameState.Instance.HouseState.GetUpgradeValue(UpgradeType.MovementSpeed) / 100f;
-                if (GameManager.Instance is { } manager)
+                if (PersistentGameState.Instance.IsInGame)
                 {
-                    // GameManager가 존재 할 때 이동 시도가 있을 때마다 엔카운터 게이지 증가
-                    manager.EncounterManager.AddGauge(_moveDirection.magnitude * Time.fixedDeltaTime);
-                    if (manager.TryGetRelic<SpeedBoostEffect>(out Relic relic))
+                    movementSpeedMultiplier *= 1.0f + PersistentGameState.Instance.HouseState.GetUpgradeValue(UpgradeType.MovementSpeed) / 100f;
+                    if (GameManager.Instance is { } manager)
                     {
-                        movementSpeedMultiplier *= 1.0f + (relic.Effect as SpeedBoostEffect).GetSpeedIncreasePercentage() / 100f;
+                        // GameManager가 존재 할 때 이동 시도가 있을 때마다 엔카운터 게이지 증가
+                        manager.EncounterManager.AddGauge(_moveDirection.magnitude * Time.fixedDeltaTime);
+                        if (manager.TryGetRelic<SpeedBoostEffect>(out Relic relic))
+                        {
+                            movementSpeedMultiplier *= 1.0f + (relic.Effect as SpeedBoostEffect).GetSpeedIncreasePercentage() / 100f;
+                        }
                     }
                 }
 

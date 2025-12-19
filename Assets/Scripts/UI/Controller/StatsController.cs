@@ -29,7 +29,6 @@ namespace LoopLegacy.UI.Controller
         [Header("Stats")]
         [SerializeField] private TMP_Text _autoDistributePresetText;
         [SerializeField] private Button _autoDistributeButton;
-        public RectTransform AutoDistributeButtonRect => _autoDistributeButton != null ? _autoDistributeButton.GetComponent<RectTransform>() : null;
         [SerializeField] private TMP_Text _statPointsText;
         [SerializeField] private StatElement[] _statElements;
 
@@ -75,7 +74,10 @@ namespace LoopLegacy.UI.Controller
 
         void Update()
         {
-            if (_quitApplicationAction.triggered && !ConfirmationController.Instance.IsVisible)
+            // 튜토리얼 중에는 닫기 비활성화
+            bool isTutorialActive = TutorialManager.Instance != null && TutorialManager.Instance.IsTutorialActive;
+            
+            if (_quitApplicationAction?.triggered ?? false && !ConfirmationController.Instance.IsVisible && !isTutorialActive)
             {
                 Hide();
             }
@@ -106,6 +108,14 @@ namespace LoopLegacy.UI.Controller
                 _onClose?.Invoke();
                 _onClose = null;
             }
+        }
+        
+        /// <summary>
+        /// Expand 버튼의 활성화 상태를 설정합니다.
+        /// </summary>
+        public void SetExpandButtonEnabled(bool enabled)
+        {
+            _expandButton.interactable = enabled;
         }
 
         private void OpenStatsDetail()

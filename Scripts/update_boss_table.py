@@ -37,9 +37,10 @@ def update_boss_table(input_file: str, output_file: str):
                     # 새로운 몬스터 스탯 계산
                     monster_stats = calculator.calculate_stats(stat_level)
                     
-                    # HP, ATK, Gold, EXP 업데이트
+                    # HP, ATK, DEF, Gold, EXP 업데이트
                     old_hp = row['hp']
                     old_atk = row['atk']
+                    old_def = row.get('def', '0')
                     old_gold = row['gold']
                     old_exp = row['exp']
                     
@@ -48,15 +49,9 @@ def update_boss_table(input_file: str, output_file: str):
                     
                     row['hp'] = str(monster_stats.hp)
                     row['atk'] = str(monster_stats.atk)
+                    row['def'] = str(monster_stats.defense)
                     row['gold'] = str(boss_gold)
                     row['exp'] = str(monster_stats.exp)
-                    
-                    print(f"{row['code']} (Level {stat_level}):")
-                    print(f"  HP:   {old_hp:>12} -> {monster_stats.hp:>12}")
-                    print(f"  ATK:  {old_atk:>12} -> {monster_stats.atk:>12}")
-                    print(f"  Gold: {old_gold:>12} -> {boss_gold:>12} (x2)")
-                    print(f"  EXP:  {old_exp:>12} -> {monster_stats.exp:>12}")
-                    print()
                     
                     update_count += 1
                     
@@ -100,7 +95,7 @@ def main():
     print(f"출력 파일: {output_file}")
     print()
     
-    print("statLevel을 기준으로 HP, ATK, Gold, EXP를 업데이트합니다...")
+    print("statLevel을 기준으로 HP, ATK, DEF, Gold, EXP를 업데이트합니다...")
     print("BP, Drops, Actions는 원본 값을 유지합니다.")
     print()
     

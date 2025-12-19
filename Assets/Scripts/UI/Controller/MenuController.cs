@@ -55,7 +55,7 @@ namespace LoopLegacy.UI.Controller
 
         void Update()
         {
-            if (_quitApplicationAction.triggered && !ConfirmationController.Instance.IsVisible)
+            if (_quitApplicationAction?.triggered ?? false && !ConfirmationController.Instance.IsVisible)
             {
                 Hide();
             }

@@ -172,7 +172,7 @@ namespace LoopLegacy.Manager
                     }
                     else
                     {
-                        ScriptManager.Instance.StartScript(Utils.GetNPCCode(npcType), () => IsInteractionInProgress.Value = false, startIndex: Random.Range(0, 10));
+                        ScriptManager.Instance.StartScript(Utils.GetNPCCode(npcType), () => IsInteractionInProgress.Value = false, startIndex: Random.Range(0, 11));
                     }
                     break;
             }

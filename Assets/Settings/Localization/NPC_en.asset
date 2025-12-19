@@ -19,7 +19,7 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 8406958080
-    m_Localized: Blacksmith
+    m_Localized: Hammer
     m_Metadata:
       m_Items: []
   - m_Id: 65923448832
@@ -31,11 +31,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 27120389655625728
-    m_Localized: Maid
+    m_Localized: May
     m_Metadata:
       m_Items: []
   - m_Id: 358924943360
-    m_Localized: Trainer
+    m_Localized: Lyn & Lisa
     m_Metadata:
       m_Items: []
   - m_Id: 399475474432
@@ -51,7 +51,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 28193216873889792
-    m_Localized: Astrologer
+    m_Localized: Lumi
     m_Metadata:
       m_Items: []
   - m_Id: 28193268434468864
@@ -63,19 +63,23 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 33639150604779520
-    m_Localized: Worker
+    m_Localized: Fluffy
     m_Metadata:
       m_Items: []
   - m_Id: 33639114319855616
-    m_Localized: Bard
+    m_Localized: Moss
     m_Metadata:
       m_Items: []
   - m_Id: 33641272624807936
-    m_Localized: Library
+    m_Localized: Memoria
     m_Metadata:
       m_Items: []
   - m_Id: 37212319924092928
     m_Localized: Collections provides beneficial effect on you.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47965429344763904
+    m_Localized: Loop Legacy
     m_Metadata:
       m_Items: []
   references:

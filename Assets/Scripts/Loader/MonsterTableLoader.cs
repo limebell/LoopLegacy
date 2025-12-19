@@ -89,11 +89,12 @@ namespace LoopLegacy.Loader
                 level = int.Parse(properties[0]),
                 hp = int.Parse(properties[1]),
                 atk = int.Parse(properties[2]),
-                gold = int.Parse(properties[3]),
-                exp = BigInteger.Parse(properties[4]),
-                bp = int.Parse(properties[5]),
-                drops = ParseDropEntries(properties[6]),
-                actions = ParseActions(properties[7])
+                def = int.Parse(properties[3]),
+                gold = int.Parse(properties[4]),
+                exp = BigInteger.Parse(properties[5]),
+                bp = int.Parse(properties[6]),
+                drops = ParseDropEntries(properties[7]),
+                actions = ParseActions(properties[8])
             };
         }
 

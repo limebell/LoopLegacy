@@ -26,6 +26,7 @@ MonoBehaviour:
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-ko-KR
+    - Preload
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 3474c596f529fa244a4582af65057a91
     m_Address: Shortcut_ko-KR

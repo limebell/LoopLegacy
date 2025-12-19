@@ -99,6 +99,9 @@ namespace LoopLegacy.UI.Controller
             RefreshOwnedRelics();
             SelectRelic(null, null, true);
             gameObject.SetActive(true);
+            
+            // 튜토리얼 시작 시도
+            RelicTutorialManager.Instance?.TryStartTutorial();
         }
 
         public void Hide()
@@ -169,10 +172,22 @@ namespace LoopLegacy.UI.Controller
             _gradeText.color = Utils.GetRelicGradeColor(relic.Grade);
             _descriptionText.text = description;
             _selectedRelic = (container, relic, isReward);
+            
+            // 튜토리얼에 선택 알림
+            if (isReward)
+            {
+                RelicTutorialManager.Instance?.OnRewardSelected();
+            }
         }
 
         private void OnRerollButtonClicked()
         {
+            // 튜토리얼에서 리롤을 차단하는 경우
+            if (RelicTutorialManager.Instance?.ShouldBlockInteraction("reroll") == true)
+            {
+                return;
+            }
+            
             if (GameManager.Instance.GameState.RelicRewardRerollCount.Value <= 0)
             {
                 ConfirmationController.Instance.ShowWarning(Utils.GetUIString("relic-reward_no-reroll-count"));
@@ -181,6 +196,9 @@ namespace LoopLegacy.UI.Controller
 
             try
             {
+                // 튜토리얼에 리롤 알림
+                RelicTutorialManager.Instance?.OnRerolled();
+                
                 AddToAlreadyRolledRelics(_relicRewards);
                 GameManager.Instance.GameState.RelicRewardRerollCount.Value--;
                 GameManager.Instance.RelicReward(_weight, _alreadyRolledRelics, _onComplete);
@@ -194,6 +212,12 @@ namespace LoopLegacy.UI.Controller
 
         private void OnAcquireDiscardButtonClicked()
         {
+            // 튜토리얼에서 획득을 차단하는 경우
+            if (RelicTutorialManager.Instance?.ShouldBlockInteraction("acquire") == true)
+            {
+                return;
+            }
+            
             if (_selectedRelic.relic == null)
             {
                 ConfirmationController.Instance.ShowWarning(Utils.GetUIString("relic-reward_no-relic-selected"));
@@ -210,6 +234,9 @@ namespace LoopLegacy.UI.Controller
 
                 try
                 {
+                    // 튜토리얼에 획득 알림
+                    RelicTutorialManager.Instance?.OnRelicAcquired();
+                    
                     GameManager.Instance.AcquireRelic(_selectedRelic.relic.EffectName);
                     Hide();
                 }
@@ -256,6 +283,12 @@ namespace LoopLegacy.UI.Controller
 
         private void OnSkipRewardButtonClicked()
         {
+            // 튜토리얼에서 스킵을 차단하는 경우
+            if (RelicTutorialManager.Instance?.ShouldBlockInteraction("skip") == true)
+            {
+                return;
+            }
+            
             Hide();
         }
     }

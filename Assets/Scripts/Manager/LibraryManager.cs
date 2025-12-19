@@ -112,14 +112,14 @@ namespace LoopLegacy.Manager
             return multiplier * (weaponCount + armorCount);
         }
 
-        public static float GetStatMultiplier(int accumulatedLevel)
+        public static float GetStatMultiplier()
         {
             if (!IsLibraryUnlocked())
             {
                 return 1f;
             }
 
-            int bonus = GetAccumulatedLevelBonus(accumulatedLevel);
+            int bonus = GetAccumulatedLevelBonus(PersistentGameState.Instance.AccumulatedLevel) + PersistentGameState.Instance.SlainedBosses.Count;
             return 1f + (bonus / 100f);
         }
 

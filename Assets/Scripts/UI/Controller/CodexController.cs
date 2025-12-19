@@ -54,7 +54,7 @@ namespace LoopLegacy.UI.Controller
 
         void Update()
         {
-            if (_quitApplicationAction.triggered)
+            if (_quitApplicationAction?.triggered ?? false)
             {
                 Hide();
             }

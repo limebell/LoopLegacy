@@ -142,7 +142,7 @@ PlayerSettings:
   loadStoreDebugModeEnabled: 0
   visionOSBundleVersion: 1.0
   tvOSBundleVersion: 1.0
-  bundleVersion: 0.10
+  bundleVersion: 0.11
   preloadedAssets:
   - {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   - {fileID: 11400000, guid: fbb70499c2693fc4db44edb605addc11, type: 2}
@@ -884,7 +884,8 @@ PlayerSettings:
   XboxOneOverrideIdentityName: 
   XboxOneOverrideIdentityPublisher: 
   vrEditorSettings: {}
-  cloudServicesEnabled: {}
+  cloudServicesEnabled:
+    Purchasing: 1
   luminIcon:
     m_Name: 
     m_ModelFolderPath: 
@@ -907,7 +908,7 @@ PlayerSettings:
   activeInputHandler: 1
   windowsGamepadBackendHint: 0
   cloudProjectId: bcfe7964-2ed1-4726-9682-75c6ec7758e3
-  framebufferDepthMemorylessMode: 0
+  framebufferDepthMemorylessMode: 1
   qualitySettingsNames: []
   projectName: LoopLegacy
   organizationId: limebeluga

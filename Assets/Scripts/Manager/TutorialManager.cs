@@ -1,57 +1,63 @@
 using System;
-using System.Collections;
 using LoopLegacy.Manager;
 using LoopLegacy.Player;
 using LoopLegacy.Region;
 using LoopLegacy.State;
 using LoopLegacy.UI.Component;
+using LoopLegacy.UI.Controller;
 using R3;
 using TMPro;
 using UnityEngine;
 
 namespace LoopLegacy
 {
-    // Hard-coded tutorial process
     public class TutorialManager : MonoBehaviour
     {
+        public static TutorialManager Instance { get; private set; }
+        public bool IsTutorialActive { get; private set; } = false;
         public TutorialStep CurrentStep { get; private set; }
-        private IDisposable _battlePointSubscription;
-        private IDisposable _statPointSubscription;
-
+        
         [SerializeField] private GameObject _waypoint;
         [SerializeField] private GameObject _tutorialPanel;
         [SerializeField] private TMP_Text _tutorialText;
         
         private IDisposable _dialogueIndexSubscription;
-        private bool _waitingForStatsPanelOpen = false;
-        private bool _hasShownStatInvestmentScript = false;
+        private IDisposable _battlePointSubscription;
+        private IDisposable _statPointSubscription;
+        
         private SpotlightOverlay _spotlightOverlay;
-        private bool _isStatsButtonHighlighted = false;
-        private bool _isStatsHighlighted = false;
+        private bool _waitingForStatsPanelOpen;
+        private bool _hasShownStatInvestmentScript;
+        
+        // 강조 상태 플래그
+        private bool _isStatsButtonHighlighted;
+        private bool _isStatsHighlighted;
+        private bool _isAddStatHighlighted;
+        private bool _isAutoDistributeButtonHighlighted;
+        private bool _isToggleSwitchHighlighted;
+        private bool _isApplyButtonHighlighted;
+        
+        // 대기 상태 플래그
+        private bool _waitingForAutoDistributePanel;
+        private bool _waitingForToggleSwitchOn;
+        private bool _waitingForAutoDistribute;
+        
+        // 캐싱된 GameObject
+        private GameObject _addStatGameObject;
+        private GameObject _autoDistributePanelGameObject;
+        private GameObject _applyButtonGameObject;
+        private ToggleSwitch _toggleSwitch;
 
-
-        // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
         {
+            Instance = this;
             _waypoint.SetActive(false);
             _tutorialPanel.SetActive(false);
             GameManager.Instance.HUDController.HideEncounterGauge();
             GameManager.Instance.Save();
             
-            // SpotlightOverlay를 한 번만 찾아서 저장
-            GameObject spotlightObj = GameObject.Find("SpotlightOverlay");
-            if (spotlightObj != null)
-            {
-                _spotlightOverlay = spotlightObj.GetComponent<SpotlightOverlay>();
-                if (_spotlightOverlay == null)
-                {
-                    Debug.LogError("SpotlightOverlay component not found on SpotlightOverlay GameObject");
-                }
-            }
-            else
-            {
-                Debug.LogError("SpotlightOverlay GameObject not found");
-            }
+            _spotlightOverlay = GameObject.Find("SpotlightOverlay")?.GetComponent<SpotlightOverlay>();
+            if (_spotlightOverlay == null) Debug.LogError("SpotlightOverlay not found");
             
             StartTutorial();
         }
@@ -59,13 +65,12 @@ namespace LoopLegacy
         void Update()
         {
             if (CurrentStep == TutorialStep.Begin || CurrentStep == TutorialStep.Movement)
-            {
-                // Keep encounter gauge at in tutorial 0
                 GameManager.Instance.EncounterManager.ResetGauge();
-            }
             
-            // 스탯창이 열렸는지 확인
-            if (_waitingForStatsPanelOpen && CurrentStep == TutorialStep.PlayerStats)
+            if (CurrentStep != TutorialStep.PlayerStats) return;
+            
+            // 스탯창 열림 대기
+            if (_waitingForStatsPanelOpen)
             {
                 var statsController = GameManager.Instance.HUDController.StatsController;
                 if (statsController != null && statsController.gameObject.activeSelf)
@@ -73,6 +78,22 @@ namespace LoopLegacy
                     _waitingForStatsPanelOpen = false;
                     OnStatsPanelOpened();
                 }
+            }
+            
+            // AddStat 패널 상태 모니터링
+            if (_isStatsHighlighted) CheckAddStatPanelState();
+            
+            // 자동 분배 패널 열림 모니터링
+            if (_waitingForAutoDistributePanel) CheckAutoDistributePanelState();
+            
+            // 토글 스위치 On 모니터링
+            if (_waitingForToggleSwitchOn) CheckToggleSwitchState();
+            
+            // 자동 분배 설정 모니터링
+            if (_waitingForAutoDistribute && PersistentGameState.Instance.AutoDistributeStats)
+            {
+                _waitingForAutoDistribute = false;
+                OnAutoDistributeEnabled();
             }
         }
 
@@ -83,206 +104,69 @@ namespace LoopLegacy
             _dialogueIndexSubscription?.Dispose();
         }
 
+        #region Spotlight Helpers
+        
+        private bool SetSpotlight(string objectName, float margin = 5f)
+        {
+            if (_spotlightOverlay == null) return false;
+            
+            var rect = GameObject.Find(objectName)?.GetComponent<RectTransform>();
+            if (rect == null)
+            {
+                Debug.LogError($"{objectName} GameObject not found");
+                return false;
+            }
+            
+            _spotlightOverlay.Show();
+            _spotlightOverlay.SetHighlightArea(rect, margin);
+            return true;
+        }
+        
+        private void HideHighlight()
+        {
+            _spotlightOverlay?.Hide();
+        }
+        
+        #endregion
+
+        #region Tutorial Flow
+        
         private void StartTutorial()
         {
             CurrentStep = TutorialStep.Begin;
+            IsTutorialActive = true;
             _waypoint.SetActive(false);
             
-            // 대사 인덱스 구독하여 특정 대사에서 UI 강조
             _dialogueIndexSubscription = ScriptManager.Instance.CurrentDialogueIndex
-                .Subscribe(index => OnDialogueIndexChanged(index));
+                .Subscribe(OnDialogueIndexChanged);
             
             ScriptManager.Instance.StartScript("tutorial_script", PracticeMovement);
         }
         
-        /// <summary>
-        /// 대사 인덱스가 변경될 때 호출됩니다.
-        /// 특정 대사에서 UI 요소를 강조합니다.
-        /// </summary>
         private void OnDialogueIndexChanged(int index)
         {
-            // 스탯 버튼이 강조 중이면 대사 인덱스 변경과 무관하게 유지
-            if (_isStatsButtonHighlighted)
-            {
+            // 강조 중이면 대사 인덱스 변경 무시
+            if (_isStatsButtonHighlighted || _isStatsHighlighted || 
+                _isAutoDistributeButtonHighlighted || _isToggleSwitchHighlighted || _isApplyButtonHighlighted)
                 return;
-            }
             
-            // Stats가 강조 중이면 대사 인덱스 변경과 무관하게 유지
-            if (_isStatsHighlighted)
+            switch (index)
             {
-                return;
-            }
-            
-            // 위험도 게이지 설명 (tutorial_script-5, 6, 7, 8)
-            if (index >= 6 && index <= 8)
-            {
-                HighlightEncounterGauge();
-            }
-            // 스탯 버튼 설명 (tutorial_script-13은 CSV에서 인덱스 13)
-            else if (index == 13)
-            {
-                HighlightStatsButton();
-            }
-            // Stats 설명 (tutorial_script-14는 CSV에서 인덱스 14)
-            else if (index == 14)
-            {
-                HighlightStats();
-            }
-            // 자동 분배 설명 (tutorial_script-15는 CSV에서 인덱스 15)
-            else if (index == 15)
-            {
-                HighlightAutoDistributeButton();
-            }
-            // 그 외의 경우 오버레이 숨김
-            else
-            {
-                HideHighlight();
-            }
-        }
-        
-        /// <summary>
-        /// 강조를 숨깁니다.
-        /// </summary>
-        private void HideHighlight()
-        {
-            if (_spotlightOverlay == null) return;
-            _spotlightOverlay.Hide();
-        }
-        
-        /// <summary>
-        /// 위험도 게이지를 강조합니다.
-        /// </summary>
-        private void HighlightEncounterGauge()
-        {
-            if (_spotlightOverlay == null) return;
-            
-            var hudController = GameManager.Instance?.HUDController;
-            RectTransform gaugeRect = hudController?.EncounterGaugeRect;
-            
-            if (gaugeRect == null)
-            {
-                // Fallback: GameObject.Find 사용
-                GameObject encounterGaugeObj = GameObject.Find("EncounterGauge");
-                if (encounterGaugeObj != null)
-                {
-                    gaugeRect = encounterGaugeObj.GetComponent<RectTransform>();
-                }
-            }
-            
-            if (gaugeRect != null)
-            {
-                _spotlightOverlay.Show();
-                _spotlightOverlay.SetHighlightArea(gaugeRect, 10f);
-            }
-        }
-        
-        /// <summary>
-        /// 스탯 버튼을 강조합니다.
-        /// </summary>
-        private void HighlightStatsButton()
-        {
-            if (_spotlightOverlay == null) return;
-            
-            var hudController = GameManager.Instance?.HUDController;
-            RectTransform buttonRect = hudController?.StatsButtonRect;
-            
-            if (buttonRect == null)
-            {
-                // Fallback: GameObject.Find 사용
-                GameObject statsButtonObj = GameObject.Find("StatsButton");
-                if (statsButtonObj == null)
-                {
-                    // 다른 방법으로 찾기 시도
-                    var buttons = FindObjectsByType<UnityEngine.UI.Button>(FindObjectsSortMode.None);
-                    foreach (var button in buttons)
-                    {
-                        if (button.name.Contains("Stat") || button.name.Contains("stat"))
-                        {
-                            statsButtonObj = button.gameObject;
-                            break;
-                        }
-                    }
-                }
-                
-                if (statsButtonObj != null)
-                {
-                    buttonRect = statsButtonObj.GetComponent<RectTransform>();
-                }
-            }
-            
-            if (buttonRect != null)
-            {
-                _isStatsButtonHighlighted = true;
-                _spotlightOverlay.Show();
-                _spotlightOverlay.SetHighlightArea(buttonRect, 10f);
-            }
-        }
-        
-        /// <summary>
-        /// Stats GameObject를 강조합니다.
-        /// </summary>
-        private void HighlightStats()
-        {
-            if (_spotlightOverlay == null) return;
-            
-            // "Stats"라는 이름의 GameObject 찾기
-            GameObject statsObj = GameObject.Find("Stats");
-            if (statsObj == null)
-            {
-                Debug.LogError("Stats GameObject not found");
-                return;
-            }
-            
-            RectTransform statsRect = statsObj.GetComponent<RectTransform>();
-            if (statsRect == null)
-            {
-                Debug.LogError("Stats GameObject does not have RectTransform");
-                return;
-            }
-            
-            _isStatsHighlighted = true;
-            _spotlightOverlay.Show();
-            _spotlightOverlay.SetHighlightArea(statsRect, 10f);
-        }
-        
-        /// <summary>
-        /// 자동 분배 버튼을 강조합니다.
-        /// </summary>
-        private void HighlightAutoDistributeButton()
-        {
-            if (_spotlightOverlay == null) return;
-            
-            var statsController = GameManager.Instance?.HUDController?.StatsController;
-            RectTransform buttonRect = statsController?.AutoDistributeButtonRect;
-            
-            if (buttonRect == null)
-            {
-                // Fallback: GameObject.Find 사용
-                GameObject autoDistributeButtonObj = GameObject.Find("AutoDistributeButton");
-                if (autoDistributeButtonObj == null)
-                {
-                    // 다른 방법으로 찾기 시도
-                    var buttons = FindObjectsByType<UnityEngine.UI.Button>(FindObjectsSortMode.None);
-                    foreach (var button in buttons)
-                    {
-                        if (button.name.Contains("AutoDistribute") || button.name.Contains("auto") || button.name.Contains("distribute"))
-                        {
-                            autoDistributeButtonObj = button.gameObject;
-                            break;
-                        }
-                    }
-                }
-                
-                if (autoDistributeButtonObj != null)
-                {
-                    buttonRect = autoDistributeButtonObj.GetComponent<RectTransform>();
-                }
-            }
-            
-            if (buttonRect != null)
-            {
-                _spotlightOverlay.Show();
-                _spotlightOverlay.SetHighlightArea(buttonRect, 10f);
+                case >= 6 and <= 8:
+                    SetSpotlight("EncounterGauge", 5f);
+                    break;
+                case 13:
+                    _isStatsButtonHighlighted = SetSpotlight("StatButton", 5f);
+                    break;
+                case 14:
+                    HighlightStats();
+                    break;
+                case 15:
+                    HighlightAutoDistributionButton();
+                    break;
+                default:
+                    HideHighlight();
+                    break;
             }
         }
         
@@ -291,8 +175,7 @@ namespace LoopLegacy
             CurrentStep = TutorialStep.Movement;
             _waypoint.SetActive(true);
             _waypoint.GetComponent<Waypoint>().OnWaypointReached.AddListener(OnWaypointReached);
-            _tutorialPanel.SetActive(true);
-            _tutorialText.text = Utils.GetCutsceneText("tutorial_objective-0");
+            ShowTutorialObjective("tutorial_objective-0");
         }
 
         public void OnWaypointReached()
@@ -308,14 +191,14 @@ namespace LoopLegacy
         {
             PlayerMovement.Instance.SetCannotMove(false);
             CurrentStep = TutorialStep.Encounter;
-            _battlePointSubscription = GameManager.Instance.GameState.PlayerStats.BattlePoint.Subscribe(x => OnBattlePointChanged(x));
-            _tutorialPanel.SetActive(true);
-            _tutorialText.text = Utils.GetCutsceneText("tutorial_objective-1");
+            _battlePointSubscription = GameManager.Instance.GameState.PlayerStats.BattlePoint
+                .Subscribe(OnBattlePointChanged);
+            ShowTutorialObjective("tutorial_objective-1");
         }
 
         private void OnBattlePointChanged(int battlePoints)
         {
-            if (battlePoints == 29)
+            if (battlePoints <= 29)
             {
                 _battlePointSubscription?.Dispose();
                 _tutorialPanel.SetActive(false);
@@ -327,92 +210,75 @@ namespace LoopLegacy
         {
             CurrentStep = TutorialStep.PlayerStats;
             PlayerMovement.Instance.SetCannotMove(true);
-            _statPointSubscription = GameManager.Instance.GameState.PlayerStats.StatPoints.Subscribe(x => OnStatPointChanged(x));
+            _statPointSubscription = GameManager.Instance.GameState.PlayerStats.StatPoints
+                .Subscribe(OnStatPointChanged);
             
-            // 스탯 버튼을 강조하고 스탯창을 열도록 유도
             _waitingForStatsPanelOpen = true;
             _hasShownStatInvestmentScript = false;
-            
-            // 스탯창 열기 유도 스크립트 재생 (12번부터 시작, 13번에서 스탯 버튼 강조)
             _tutorialPanel.SetActive(false);
-            ScriptManager.Instance.StartScript(
-                "tutorial_script", ShowTutorialPanelForStats, 12);
+            ScriptManager.Instance.StartScript("tutorial_script", () => ShowTutorialObjective("tutorial_objective-2"), 12);
         }
 
-        private void ShowTutorialPanelForStats()
-        {
-            _tutorialPanel.SetActive(true);
-            _tutorialText.text = Utils.GetCutsceneText("tutorial_objective-2");
-        }
-        
-        /// <summary>
-        /// 스탯창이 열렸을 때 호출됩니다.
-        /// </summary>
         private void OnStatsPanelOpened()
         {
             if (_hasShownStatInvestmentScript) return;
             
             _hasShownStatInvestmentScript = true;
             _tutorialPanel.SetActive(false);
-            
-            // 스탯 버튼 강조 상태 해제 및 숨김
             _isStatsButtonHighlighted = false;
             HideHighlight();
             
-            // 스탯 투자 설명 스크립트 재생 (tutorial_script-14부터 시작, 인덱스 14)
-            ScriptManager.Instance.StartScript("tutorial_script", ShowTutorialPanelForStatsInvestment, 14);
-        }
-
-        private void ShowTutorialPanelForStatsInvestment()
-        {
-            _tutorialPanel.SetActive(true);
-            _tutorialText.text = Utils.GetCutsceneText("tutorial_objective-3");
+            ScriptManager.Instance.StartScript("tutorial_script", () => ShowTutorialObjective("tutorial_objective-3"), 14);
         }
 
         private void OnStatPointChanged(int statPoints)
         {
             if (statPoints == 0)
             {
-                // Stats 강조 상태 해제 및 숨김
-                if (_isStatsHighlighted)
-                {
-                    _isStatsHighlighted = false;
-                    HideHighlight();
-                }
-                
-                // 스탯 포인트가 모두 소모되면 자동 분배 유도
-                StartCoroutine(GuideAutoDistribute());
+                _isStatsHighlighted = false;
+                _isAddStatHighlighted = false;
+                HideHighlight();
+                GuideAutoDistribute();
             }
         }
         
-        /// <summary>
-        /// 자동 분배를 유도합니다.
-        /// </summary>
-        private IEnumerator GuideAutoDistribute()
+        private void GuideAutoDistribute()
         {
-            // 스탯창이 열려있으면 잠시 대기
             var statsController = GameManager.Instance.HUDController.StatsController;
             if (statsController != null && statsController.gameObject.activeSelf)
             {
-                yield return new WaitForSeconds(0.5f);
-                
-                // 자동 분배 설명 스크립트 재생 (tutorial_script-15부터 시작, 인덱스 15)
                 _tutorialPanel.SetActive(false);
-                ScriptManager.Instance.StartScript("tutorial_script", OnAutoDistributeScriptComplete, 15);
+                ScriptManager.Instance.StartScript("tutorial_script", StartAutoDistributeTutorial, 15);
             }
             else
             {
-                // 스탯창이 닫혀있으면 바로 종료
                 EndStatPointTutorial();
             }
         }
         
-        /// <summary>
-        /// 자동 분배 설명 스크립트가 완료된 후 호출됩니다.
-        /// </summary>
-        private void OnAutoDistributeScriptComplete()
+        private void StartAutoDistributeTutorial()
         {
-            GameManager.Instance.HUDController.StatsController.Hide(false);
+            ShowTutorialObjective("tutorial_objective-4");
+            
+            if (PersistentGameState.Instance.AutoDistributeStats)
+            {
+                EndStatPointTutorial();
+            }
+            else
+            {
+                HighlightAutoDistributionButton();
+                _waitingForAutoDistributePanel = true;
+            }
+        }
+        
+        private void OnAutoDistributeEnabled()
+        {
+            _isAutoDistributeButtonHighlighted = false;
+            _isToggleSwitchHighlighted = false;
+            _isApplyButtonHighlighted = false;
+            HideHighlight();
+            
+            GameManager.Instance.HUDController.StatsController.SetExpandButtonEnabled(true);
             EndStatPointTutorial();
         }
 
@@ -420,22 +286,155 @@ namespace LoopLegacy
         {
             _statPointSubscription?.Dispose();
             _tutorialPanel.SetActive(false);
+            GameManager.Instance.HUDController.StatsController.Hide(false);
             ScriptManager.Instance.StartScript("tutorial_script", EndTutorial, 16);
-
-        }
-
-        private void PracticeEquipment()
-        {
-            Debug.Log("PracticeEquipment");
         }
 
         private void EndTutorial()
         {
+            IsTutorialActive = false;
             GameManager.Instance.HUDController.ShowEncounterGauge();
             PlayerMovement.Instance.SetCannotMove(false);
             PersistentGameState.Instance.CompleteTutorial(TutorialType.GameStart);
             GameManager.Instance.Save();
             GameManager.Instance.MoveToMap("Start", new Vector2(0, 0));
         }
+        
+        #endregion
+
+        #region Highlight Methods
+        
+        private void HighlightStats()
+        {
+            if (SetSpotlight("Stats", 0f))
+            {
+                _isStatsHighlighted = true;
+                _isAddStatHighlighted = false;
+            }
+        }
+        
+        private void HighlightAutoDistributionButton()
+        {
+            if (SetSpotlight("AutoDistributionButton", 3f))
+            {
+                _isAutoDistributeButtonHighlighted = true;
+                GameManager.Instance.HUDController.StatsController.SetExpandButtonEnabled(false);
+            }
+        }
+        
+        private void HighlightToggleSwitch()
+        {
+            if (SetSpotlight("ToggleSwitch", 10f))
+                _isToggleSwitchHighlighted = true;
+        }
+        
+        private void HighlightApplyButton()
+        {
+            if (_spotlightOverlay == null) return;
+            
+            if (_applyButtonGameObject == null && _autoDistributePanelGameObject != null)
+            {
+                var transform = _autoDistributePanelGameObject.transform.Find("ApplyButton");
+                _applyButtonGameObject = transform?.gameObject ?? GameObject.Find("ApplyButton");
+            }
+            
+            if (_applyButtonGameObject == null)
+            {
+                Debug.LogError("ApplyButton not found");
+                return;
+            }
+            
+            var rect = _applyButtonGameObject.GetComponent<RectTransform>();
+            if (rect != null)
+            {
+                _isApplyButtonHighlighted = true;
+                _spotlightOverlay.Show();
+                _spotlightOverlay.SetHighlightArea(rect, 10f);
+            }
+        }
+        
+        #endregion
+
+        #region State Checkers
+        
+        private void CheckAddStatPanelState()
+        {
+            if (_addStatGameObject == null)
+            {
+                _addStatGameObject = GameObject.Find("AddStat");
+                if (_addStatGameObject == null)
+                {
+                    var statsController = GameManager.Instance?.HUDController?.StatsController;
+                    _addStatGameObject = statsController?.transform.Find("AddStat")?.gameObject;
+                }
+            }
+            
+            if (_addStatGameObject == null) return;
+            
+            bool isActive = _addStatGameObject.activeSelf;
+            
+            if (isActive && !_isAddStatHighlighted)
+            {
+                var rect = _addStatGameObject.GetComponent<RectTransform>();
+                if (rect != null)
+                {
+                    _isAddStatHighlighted = true;
+                    _spotlightOverlay?.Show();
+                    _spotlightOverlay?.SetHighlightArea(rect, 0f);
+                }
+            }
+            else if (!isActive && _isAddStatHighlighted)
+            {
+                _isAddStatHighlighted = false;
+                SetSpotlight("Stats", 0f);
+            }
+        }
+        
+        private void CheckAutoDistributePanelState()
+        {
+            if (_autoDistributePanelGameObject == null)
+            {
+                _autoDistributePanelGameObject = GameObject.Find("AutoDistributePanel");
+                if (_autoDistributePanelGameObject == null)
+                {
+                    var controller = FindAnyObjectByType<AutoDistributeController>();
+                    _autoDistributePanelGameObject = controller?.gameObject;
+                }
+            }
+            
+            if (_autoDistributePanelGameObject != null && _autoDistributePanelGameObject.activeSelf)
+            {
+                _waitingForAutoDistributePanel = false;
+                _isAutoDistributeButtonHighlighted = false;
+                HighlightToggleSwitch();
+                _waitingForToggleSwitchOn = true;
+            }
+        }
+        
+        private void CheckToggleSwitchState()
+        {
+            if (_toggleSwitch == null)
+                _toggleSwitch = GameObject.Find("ToggleSwitch")?.GetComponent<ToggleSwitch>();
+            
+            if (_toggleSwitch != null && _toggleSwitch.CurrentValue)
+            {
+                _waitingForToggleSwitchOn = false;
+                _isToggleSwitchHighlighted = false;
+                HighlightApplyButton();
+                _waitingForAutoDistribute = true;
+            }
+        }
+        
+        #endregion
+
+        #region Helpers
+        
+        private void ShowTutorialObjective(string key)
+        {
+            _tutorialPanel.SetActive(true);
+            _tutorialText.text = Utils.GetCutsceneText(key);
+        }
+        
+        #endregion
     }
 }

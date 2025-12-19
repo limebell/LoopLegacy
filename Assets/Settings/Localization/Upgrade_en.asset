@@ -89,7 +89,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 4703584228212738
-    m_Localized: There will be (0) options for relic reward.
+    m_Localized: There will be {0} options for relic reward.
     m_Metadata:
       m_Items: []
   - m_Id: 4703584228212739
@@ -108,7 +108,7 @@ MonoBehaviour:
     m_Localized: 'Able to choose one relic to start with.
 
       You''ll be able
-      to select up to (0) graded relic.'
+      to select up to {0} graded relic.'
     m_Metadata:
       m_Items: []
   - m_Id: 4783163525562368

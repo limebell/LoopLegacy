@@ -41,12 +41,12 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 03c396bd609e94f4aa32195ab3939929
-    m_Address: Images/Enemies/deep-forest-swamp-0_0
+    m_Address: Images/Enemies/deep_forest_swamp-0_0
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 0437c6ac0eb160a448752b02407b5d76
-    m_Address: Images/Enemies/special-b-0_1
+    m_Address: Images/Enemies/special_b-0_1
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -56,7 +56,7 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 055c2d7cc32e94b25bba8e73fe0f3fa1
-    m_Address: Images/Enemies/special-c-0_2
+    m_Address: Images/Enemies/special_c-0_2
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -66,7 +66,7 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 080691f8a23ebca4db56dfadef59e4e8
-    m_Address: Images/Enemies/spring-pool-1_0
+    m_Address: Images/Enemies/spring_pool-1_0
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -76,7 +76,7 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 08b1e8cdb2d18d04f8dc98835db0f388
-    m_Address: Images/Enemies/forest-ice-0_0
+    m_Address: Images/Enemies/forest_ice-0_0
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -111,7 +111,7 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 0feeaf61a4d3f80439ed616910733a64
-    m_Address: Images/Enemies/high-mountain-1_0
+    m_Address: Images/Enemies/high_mountain-1_0
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -121,12 +121,12 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 1287075456d9f8c48a2ee10e0b1516e3
-    m_Address: Images/Enemies/spring-pool-4_0
+    m_Address: Images/Enemies/spring_pool-4_0
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 12c6711f216b2bb47936dd25ef32163d
-    m_Address: Images/Enemies/deep-forest-2_0
+    m_Address: Images/Enemies/deep_forest-2_0
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -136,12 +136,12 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 14085fad973f4413bbb999e8934cf85e
-    m_Address: Images/Enemies/special-c-0_3
+    m_Address: Images/Enemies/special_c-0_3
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 14746587a698a414db60d3bcc0a95d90
-    m_Address: Images/Enemies/spring-pool-4_1
+    m_Address: Images/Enemies/spring_pool-4_1
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -161,7 +161,7 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 19fc9823bb52a6740bd99279a6baa9c3
-    m_Address: Images/Enemies/lake-deep-forest-2_0
+    m_Address: Images/Enemies/lake_deep_forest-2_0
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -191,7 +191,7 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 1f61a1bdc20fc4b4695ff6b30731a915
-    m_Address: Images/Enemies/swamp-deep-forest-0_1
+    m_Address: Images/Enemies/swamp_deep_forest-0_1
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -211,7 +211,7 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 226a44e5752fa4d4d9003ace4da2628c
-    m_Address: Images/Enemies/lake-deep-forest-0_0
+    m_Address: Images/Enemies/lake_deep_forest-0_0
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -321,22 +321,22 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 37a68fa83a0fc194d931e15e49c02eb8
-    m_Address: Images/Enemies/forest-lake-2_0
+    m_Address: Images/Enemies/forest_lake-2_0
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 382a6568cc2b33e48869f886b5733386
-    m_Address: Images/Enemies/special-a-0_1
+    m_Address: Images/Enemies/special_a-0_1
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 387865268ce72c84683bfaf053a7ae80
-    m_Address: Images/Enemies/special-c-0_0
+    m_Address: Images/Enemies/special_c-0_0
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 38e04abdcfc5f374d9d8f6685a9e5452
-    m_Address: Images/Enemies/deep-forest-swamp-3_0
+    m_Address: Images/Enemies/deep_forest_swamp-3_0
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -401,7 +401,7 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 4631700c81c2c284897619e108d9eb1a
-    m_Address: Images/Enemies/secret-hallway-2_0
+    m_Address: Images/Enemies/secret_hallway-2_0
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -411,7 +411,7 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 478805610b86d5a42bf8725f819661b7
-    m_Address: Images/Enemies/lake-deep-forest-3_0
+    m_Address: Images/Enemies/lake_deep_forest-3_0
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -441,7 +441,7 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 4d6a4f915088476458fd82f5126fc095
-    m_Address: Images/Enemies/spring-pool-6_1
+    m_Address: Images/Enemies/spring_pool-6_1
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -496,7 +496,7 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 551cc8d3895b4db42bc2724782998d97
-    m_Address: Images/Enemies/forest-ice-1_0
+    m_Address: Images/Enemies/forest_ice-1_0
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -506,7 +506,7 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 570b54de3e5956f429e5ea5fbba02ce7
-    m_Address: Images/Enemies/spring-pool-5_0
+    m_Address: Images/Enemies/spring_pool-5_0
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -541,12 +541,17 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 5ae741d44edb4b546a835ddb6677d14f
-    m_Address: Images/Enemies/high-mountain-3_0
+    m_Address: Images/Enemies/high_mountain-3_0
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 5d4d82cf3c8be134a9831299a76d6265
     m_Address: Images/Enemies/pyramid-1_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5d83bbbf761dbda4785ea3f41868c0af
+    m_Address: Data/Cutscenes/relic_tutorial_script
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -556,7 +561,7 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 5f549cf658e0680478e6b12713827fb5
-    m_Address: Images/Enemies/spring-pool-3_0
+    m_Address: Images/Enemies/spring_pool-3_0
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -576,7 +581,7 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 652360dbbf6d8694692e42b311bd64ec
-    m_Address: Images/Enemies/deep-forest-swamp-2_0
+    m_Address: Images/Enemies/deep_forest_swamp-2_0
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -586,7 +591,7 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 658ab4b150d6a3f4dab85da2cd81b086
-    m_Address: Images/Enemies/deep-forest-3_0
+    m_Address: Images/Enemies/deep_forest-3_0
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -596,7 +601,7 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 674046a5603328b4c989b737229dc210
-    m_Address: Images/Enemies/forest-lake-0_0
+    m_Address: Images/Enemies/forest_lake-0_0
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -706,7 +711,7 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 7aff9a13e7f1d50479f7d009592836e0
-    m_Address: Images/Enemies/deep-forest-5_0
+    m_Address: Images/Enemies/deep_forest-5_0
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -746,12 +751,12 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 83ce39cd76d652a4f9970991286e74f7
-    m_Address: Images/Enemies/high-mountain-5_0
+    m_Address: Images/Enemies/high_mountain-5_0
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 84161701c8154744b967e0f1727997ff
-    m_Address: Images/Enemies/secret-hallway-1_0
+    m_Address: Images/Enemies/secret_hallway-1_0
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -826,7 +831,7 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 940d00617c59d9043a358a0af100864b
-    m_Address: Images/Enemies/forest-ice-3_0
+    m_Address: Images/Enemies/forest_ice-3_0
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -836,12 +841,12 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 952e30148270a824cbfa087231318760
-    m_Address: Images/Enemies/spring-pool-6_0
+    m_Address: Images/Enemies/spring_pool-6_0
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 959d31e61d838f7418bfcec8591eb134
-    m_Address: Images/Enemies/high-mountain-2_1
+    m_Address: Images/Enemies/high_mountain-2_1
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -851,7 +856,7 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 9a35d0341bd472641aede61fb0a7cf4d
-    m_Address: Images/Enemies/special-b-0_0
+    m_Address: Images/Enemies/special_b-0_0
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -880,18 +885,13 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 9e0f3643e40766d47abf35f1604a71ff
-    m_Address: Images/Enemies/84-0
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 9e3ab854d3a98684898c88e9719873c9
     m_Address: Images/Enemies/swamp-7_1
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 9f0e86205d3008849b2c93d420e286a6
-    m_Address: Images/Enemies/high-mountain-4_0
+    m_Address: Images/Enemies/high_mountain-4_0
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -926,7 +926,7 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a3c4cd0df38be044dad65a1aba4cd6ec
-    m_Address: Images/Enemies/spring-pool-0_0
+    m_Address: Images/Enemies/spring_pool-0_0
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -946,7 +946,7 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a5cec87d47497aa4793740803b4f77f0
-    m_Address: Images/Enemies/forest-lake-3_0
+    m_Address: Images/Enemies/forest_lake-3_0
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -991,7 +991,7 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: b3197358c71697d439417a331d0db478
-    m_Address: Images/Enemies/deep-forest-4_0
+    m_Address: Images/Enemies/deep_forest-4_0
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -1041,7 +1041,7 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: bdb13191560824f4fae86911e23cc3d5
-    m_Address: Images/Enemies/special-a-0_2
+    m_Address: Images/Enemies/special_a-0_2
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -1101,12 +1101,12 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ccde2727052b70e468c23b2cdec5abef
-    m_Address: Images/Enemies/deep-forest-0_0
+    m_Address: Images/Enemies/deep_forest-0_0
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: cd20712a370ced54581497a3fc86292d
-    m_Address: Images/Enemies/swamp-deep-forest-0_0
+    m_Address: Images/Enemies/swamp_deep_forest-0_0
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -1116,7 +1116,7 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ce6a6901e673e404db6fd2318348b176
-    m_Address: Images/Enemies/special-c-0_4
+    m_Address: Images/Enemies/special_c-0_4
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -1126,17 +1126,17 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: cf7fc70b4e6f4c54b844f9f471b4911a
-    m_Address: Images/Enemies/high-mountain-2_0
+    m_Address: Images/Enemies/high_mountain-2_0
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d15121600ef77964d81ce38e774fd3bf
-    m_Address: Images/Enemies/lake-deep-forest-1_0
+    m_Address: Images/Enemies/lake_deep_forest-1_0
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d32046c1b8b8441319ff8c6d4bcee3ef
-    m_Address: Images/Enemies/special-c-0_1
+    m_Address: Images/Enemies/special_c-0_1
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -1156,17 +1156,17 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d83b01c8f9e86f540b9c3860b8a8dcf1
-    m_Address: Images/Enemies/spring-pool-2_0
+    m_Address: Images/Enemies/spring_pool-2_0
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d8474af90d165e6498b5ab2049af7346
-    m_Address: Images/Enemies/forest-lake-1_0
+    m_Address: Images/Enemies/forest_lake-1_0
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d84f9ff26cc68b248a579ade703d69ec
-    m_Address: Images/Enemies/secret-hallway-3_0
+    m_Address: Images/Enemies/secret_hallway-3_0
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -1176,7 +1176,7 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: db888aba895544d4cb646f8947c758ec
-    m_Address: Images/Enemies/deep-forest-1_0
+    m_Address: Images/Enemies/deep_forest-1_0
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -1206,7 +1206,7 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: df13787bc3e06a240bc59b7f5c36000a
-    m_Address: Images/Enemies/forest-ice-2_0
+    m_Address: Images/Enemies/forest_ice-2_0
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -1231,12 +1231,12 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e3417ef9410b90a4683fdbd726ab8d8c
-    m_Address: Images/Enemies/deep-forest-swamp-1_0
+    m_Address: Images/Enemies/deep_forest_swamp-1_0
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e4637a14e9872104595107411e0f45a8
-    m_Address: Images/Enemies/special-b-0_2
+    m_Address: Images/Enemies/special_b-0_2
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -1276,7 +1276,7 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ec3b1717e0e29624c8b04d486b44a4d6
-    m_Address: Images/Enemies/special-a-0_0
+    m_Address: Images/Enemies/special_a-0_0
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -1291,7 +1291,7 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: edb45d9a2706cf1409dcc4c45b8a5fb9
-    m_Address: Images/Enemies/high-mountain-0_0
+    m_Address: Images/Enemies/high_mountain-0_0
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -1366,7 +1366,7 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: f835c5de1b1d27d4ab1f4191e36c3fdd
-    m_Address: Images/Enemies/secret-hallway-0_0
+    m_Address: Images/Enemies/secret_hallway-0_0
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

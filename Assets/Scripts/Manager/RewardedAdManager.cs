@@ -10,8 +10,6 @@ namespace LoopLegacy
     {
         public static RewardedAdManager Instance { get; private set; }
 
-        public ReactiveProperty<bool> IsLoaded { get; private set; }
-
         private RewardedAd _rewardedAd;
 
         // These ad units are configured to always serve test ads.
@@ -32,16 +30,6 @@ namespace LoopLegacy
         void Awake()
         {
             Instance = this;
-            IsLoaded = new ReactiveProperty<bool>(false);
-        }
-
-        void Start()
-        {
-#if UNITY_ANDROID || UNITY_IOS
-            LoadAd(() => { IsLoaded.Value = true; });
-#else
-            IsLoaded.Value = true;
-#endif
         }
 
         void OnDestroy()
@@ -60,7 +48,7 @@ namespace LoopLegacy
         /// <summary>
         /// Loads the ad.
         /// </summary>
-        public void LoadAd(Action onLoaded)
+        public void LoadAd(Action onLoaded, Action onFailed)
         {
             // Clean up the old ad before loading a new one.
             if (_rewardedAd != null)
@@ -78,6 +66,7 @@ namespace LoopLegacy
                 if (error != null)
                 {
                     Debug.LogError("Rewarded ad failed to load an ad with error : " + error);
+                    onFailed?.Invoke();
                     return;
                 }
                 // If the operation failed for unknown reasons.
@@ -85,6 +74,7 @@ namespace LoopLegacy
                 if (ad == null)
                 {
                     Debug.LogError("Unexpected error: Rewarded load event fired with null ad and null error.");
+                    onFailed?.Invoke();
                     return;
                 }
 

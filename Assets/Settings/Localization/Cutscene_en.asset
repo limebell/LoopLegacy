@@ -53,87 +53,138 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 2775847699742720
-    m_Localized: 0
+    m_Localized: 'Thank you for your hard work, our hero!
+
+      We are Lyn & Lisa
+      sisters who will help you train.'
     m_Metadata:
       m_Items: []
   - m_Id: 2775870026022912
-    m_Localized: 1
+    m_Localized: I will train you the basic skills needed for the hero's adventure
+      to defeat  the evil king.
     m_Metadata:
       m_Items: []
   - m_Id: 2775877923897344
-    m_Localized: 2
+    m_Localized: 'First of all, I''ll tell you how to move!
+
+      Keep the touch
+      away from the button on the screen and the character will move in that direction.'
     m_Metadata:
       m_Items: []
   - m_Id: 2775893728034816
-    m_Localized: 3
+    m_Localized: I'll show you the destination on the screen, so please go to that
+      place.
     m_Metadata:
       m_Items: []
   - m_Id: 2775906629713920
-    m_Localized: 4
+    m_Localized: 'It''s really <size=110%>GREAT</size> sir!
+
+      You can change
+      the way you move in the settings, so check it out.'
     m_Metadata:
       m_Items: []
   - m_Id: 2775914577920000
-    m_Localized: 6
+    m_Localized: 'Can you see the gauge bar at the top of the screen?
+
+      This
+      bar is called a risk gauge, and it gets full every time the warrior moves.'
     m_Metadata:
       m_Items: []
   - m_Id: 2775930671464448
-    m_Localized: 7
+    m_Localized: 'The amount of danger increases depends on the level of the monster
+      and you,
+
+      The higher the risk, the higher the probability of encountering
+      a monster.'
     m_Metadata:
       m_Items: []
   - m_Id: 2851736588386304
-    m_Localized: 8
+    m_Localized: Combat monsters by increasing the risk gauge through movement.
     m_Metadata:
       m_Items: []
   - m_Id: 2851746344337408
-    m_Localized: 9
+    m_Localized: 'It''s really <size=110%>GREAT, OUTSTANDING</size> sir!
+
+      As
+      you just experienced, the battle is done automatically.
+
+      You and the
+      monster take turns attacking.'
     m_Metadata:
       m_Items: []
   - m_Id: 2852407261790208
-    m_Localized: 10
+    m_Localized: 'If you win the battle, your battle point will be reduced by <color=#F13A4E>1</color>,
+
+      If
+      you lose, the battle point will be reduced by <color=#F13A4E>3</color>.'
     m_Metadata:
       m_Items: []
   - m_Id: 2852408792711168
-    m_Localized: 11
+    m_Localized: 'When the battle point becomes <color=#F13A4E>0</color>, you will
+      collapse with all your strength.
+
+      It would be important to use battle
+      points limited to 30 wisely.'
     m_Metadata:
       m_Items: []
   - m_Id: 2852876910592000
-    m_Localized: 12
+    m_Localized: If you win the battle, your level rises and you earn stat points
+      of <color=#45b0f7>4</color> per level.
     m_Metadata:
       m_Items: []
   - m_Id: 2852884384841728
-    m_Localized: 14
+    m_Localized: 'You can invest the stat by pressing the <color=#45b0f7>+</color>
+      button next to each stat.
+
+      At first, I recommend you not to invest LUC,
+      but to invest only HP, ATK, and DEF in a balanced way.'
     m_Metadata:
       m_Items: []
   - m_Id: 3133915335753728
-    m_Localized: 18
+    m_Localized: I pray for your luck. Please defeat the evil king!
     m_Metadata:
       m_Items: []
   - m_Id: 2854499225436160
-    m_Localized: 15
+    m_Localized: 'That''s great! You''ve invested all your stat points.
+
+      You
+      can also set stat points to be distributed automatically every time you level
+      up in the future.
+
+      Press the auto distribution button to set it up!'
     m_Metadata:
       m_Items: []
   - m_Id: 2863382492872704
-    m_Localized: 16
+    m_Localized: 'It''s really <size=110%>GREAT, OUTSTANDING, EXCELLENT</size> sir!
+
+      Among
+      the stats, the LUC (Lucky) stats are not directly involved in combat, but they
+      say they get more money from monsters or higher odds of getting the monster''s
+      loot.'
     m_Metadata:
       m_Items: []
   - m_Id: 2879520270450688
-    m_Localized: 17
+    m_Localized: I think I've explained all the basics!
     m_Metadata:
       m_Items: []
   - m_Id: 29277458202624000
-    m_Localized: 
+    m_Localized: 'Welcome to your Territory, Hero!
+
+      This is the territory
+      granted to you.'
     m_Metadata:
       m_Items: []
   - m_Id: 29308698968457216
-    m_Localized: 
+    m_Localized: By talking with different merchants, you can use the money gathered
+      by your predecessors to train yourself or acquire new gear.
     m_Metadata:
       m_Items: []
   - m_Id: 35473328967254016
-    m_Localized: 5
+    m_Localized: Next, I'll explain about the battle with monsters!
     m_Metadata:
       m_Items: []
   - m_Id: 35470736392454144
-    m_Localized: Consume all stat points
+    m_Localized: Press stat button to open Stats window
     m_Metadata:
       m_Items: []
   - m_Id: 35470623037194240
@@ -145,7 +196,133 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 2852876910592001
-    m_Localized: 13
+    m_Localized: Invest all the stat you get after opening the stat window by pressing
+      the stat button at the top right of the screen.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 35470736392454145
+    m_Localized: Press + button to open stat distribute window and invest all stat
+      points
+    m_Metadata:
+      m_Items: []
+  - m_Id: 35470736392454146
+    m_Localized: Press Auto Distribute button to open Auto Distribute window, and
+      turn on the Auto Distribue setting
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29277588377042944
+    m_Localized: When you get close to the various merchants here, you can speak
+      with them.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29277588788084736
+    m_Localized: 'Try talking to me to upgrade your territory!
+
+      For the first
+      time, I''ll upgrade it for you <color=#45b0f7>for free</color>.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29308654248787968
+    m_Localized: Great! Upgrading the territory has attracted a new equipment merchant.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29308687186657280
+    m_Localized: As you continue to develop your territory, more and more people
+      will visit.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29309554367397888
+    m_Localized: "When you're ready, begin your adventure.\r\nBe careful\u2014<color=#F13A4E>all
+      the gold you currently have will disappear when you start!</color>"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 50001000000000000
+    m_Localized: 'Congratulations on your first boss victory!
+
+      You''ve earned
+      a relic reward. Let me explain how it works.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 50001000000000001
+    m_Localized: 'You can choose one of the relics displayed here.
+
+      Try select
+      one relic.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 50001000000000002
+    m_Localized: 'This area shows the selected relic''s name, grade, and effect.
+
+      Higher
+      grade relics provide stronger effects.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 50001000000000003
+    m_Localized: 'Relics provide passive effects that help you in battle.
+
+      Choose
+      wisely based on your playstyle!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 50001000000000004
+    m_Localized: 'If you don''t like the current relics,
+
+      you can use the
+      reroll button to get new ones!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 50001000000000005
+    m_Localized: 'Reroll chances are limited, so use them wisely.
+
+      I''ll add
+      reroll count for you, so try pressing the reroll button now!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 50002000000000000
+    m_Localized: Select a reward relic
+    m_Metadata:
+      m_Items: []
+  - m_Id: 50002000000000001
+    m_Localized: Press the reroll button to see new relics
+    m_Metadata:
+      m_Items: []
+  - m_Id: 50002000000000002
+    m_Localized: Select one of the new relics
+    m_Metadata:
+      m_Items: []
+  - m_Id: 50002000000000003
+    m_Localized: Press the acquire button to obtain the relic
+    m_Metadata:
+      m_Items: []
+  - m_Id: 50001000000000006
+    m_Localized: 'Great job! You''ve successfully rerolled.
+
+      Now, let''s choose
+      a relic and acquire it!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 50001000000000007
+    m_Localized: 'Congratulations on getting your relic!
+
+      You can check your
+      owned relics in the Stats window.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 50002000000000004
+    m_Localized: Press the stat button to check the acquired relic
+    m_Metadata:
+      m_Items: []
+  - m_Id: 50001000000000008
+    m_Localized: 'The relics you acquire will be displayed here.
+
+      Relics provide
+      various passive effects to help you in battle.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 50001000000000009
+    m_Localized: 'That''s all for the relic tutorial!
+
+      Good luck on your adventure!'
     m_Metadata:
       m_Items: []
   references:

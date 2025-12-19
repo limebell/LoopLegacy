@@ -75,6 +75,10 @@ MonoBehaviour:
     m_Key: library-description
     m_Metadata:
       m_Items: []
+  - m_Id: 47965429344763904
+    m_Key: display-name
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

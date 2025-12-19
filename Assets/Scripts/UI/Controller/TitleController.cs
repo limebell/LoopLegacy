@@ -9,6 +9,10 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
+#if UNITY_ANDROID || UNITY_IOS
+using UnityEngine.Purchasing;
+#endif
+
 namespace LoopLegacy.UI.Controller
 {
     public class TitleController : MonoBehaviour
@@ -19,6 +23,8 @@ namespace LoopLegacy.UI.Controller
         private Button _startButton;
         [SerializeField]
         private Button _optionButton;
+        [SerializeField]
+        private Button _removeAdsButton;
         [SerializeField]
         private Button _creditButton;
         [SerializeField]
@@ -53,6 +59,7 @@ namespace LoopLegacy.UI.Controller
 
             _startButton.onClick.AddListener(OnStartButtonClicked);
             _optionButton.onClick.AddListener(OnOptionButtonClicked);
+            _removeAdsButton.onClick.AddListener(OnRemoveAdsButtonClicked);
             _creditButton.onClick.AddListener(OnCreditButtonClicked);
             _startCloseButton.onClick.AddListener(OnStartBackButtonClicked);
 
@@ -64,11 +71,14 @@ namespace LoopLegacy.UI.Controller
             ShowMainPanel();
             HideStartPanel();
             _versionText.text = Application.version;
+
+            // 광고 제거 버튼 표시/숨기기
+            UpdateRemoveAdsButtonVisibility();
         }
 
         void Update()
         {
-            if (_quitApplicationAction.triggered &&
+            if (_quitApplicationAction?.triggered ?? false &&
                 !ConfirmationController.Instance.IsVisible &&
                 !IsMenuVisible())
             {
@@ -123,6 +133,75 @@ namespace LoopLegacy.UI.Controller
         {
             HideMainPanel();
             _optionController.Show(() => ShowMainPanel());
+        }
+
+        private void OnRemoveAdsButtonClicked()
+        {
+#if UNITY_ANDROID || UNITY_IOS
+            // 이미 광고가 제거된 경우
+            if (IAPManager.Instance != null && IAPManager.Instance.IsAdsRemoved)
+            {
+                ConfirmationController.Instance.ShowWarning(
+                    Utils.GetUIString("ads-already-removed"));
+                return;
+            }
+
+            string price = IAPManager.Instance?.GetRemoveAdsPrice() ?? "";
+            string message = string.IsNullOrEmpty(price)
+                ? Utils.GetUIString("remove-ads-confirmation")
+                : Utils.GetUIString("remove-ads-confirmation-price", new object[] { price });
+
+            ConfirmationController.Instance.ShowConfirmation(
+                message,
+                () => {
+                    // IAP 구매 시작
+                    if (IAPManager.Instance != null && IAPManager.Instance.IsInitialized)
+                    {
+                        IAPManager.Instance.OnPurchaseSuccessEvent += OnIAPPurchaseSuccess;
+                        IAPManager.Instance.OnPurchaseFailedEvent += OnIAPPurchaseFailed;
+                        IAPManager.Instance.PurchaseRemoveAds();
+                    }
+                    else
+                    {
+                        ConfirmationController.Instance.ShowWarning(
+                            Utils.GetUIString("purchase-unavailable"));
+                    }
+                });
+#else
+            ConfirmationController.Instance.ShowWarning(
+                Utils.GetUIString("purchase-unavailable"));
+#endif
+        }
+
+#if UNITY_ANDROID || UNITY_IOS
+        private void OnIAPPurchaseSuccess()
+        {
+            IAPManager.Instance.OnPurchaseSuccessEvent -= OnIAPPurchaseSuccess;
+            IAPManager.Instance.OnPurchaseFailedEvent -= OnIAPPurchaseFailed;
+
+            ConfirmationController.Instance.ShowWarning(
+                Utils.GetUIString("purchase-success"));
+            UpdateRemoveAdsButtonVisibility();
+        }
+
+        private void OnIAPPurchaseFailed(string reason)
+        {
+            IAPManager.Instance.OnPurchaseSuccessEvent -= OnIAPPurchaseSuccess;
+            IAPManager.Instance.OnPurchaseFailedEvent -= OnIAPPurchaseFailed;
+
+            ConfirmationController.Instance.ShowWarning(
+                Utils.GetUIString("purchase-failed", new object[] { reason }));
+        }
+#endif
+
+        private void UpdateRemoveAdsButtonVisibility()
+        {
+#if UNITY_ANDROID || UNITY_IOS
+            bool shouldShow = IAPManager.Instance == null || !IAPManager.Instance.IsAdsRemoved;
+            _removeAdsButton.gameObject.SetActive(shouldShow);
+#else
+            _removeAdsButton.gameObject.SetActive(false);
+#endif
         }
 
         private void OnCreditButtonClicked()
