@@ -42,8 +42,8 @@ Shader "Sprites/SpriteOutlineURP_Lit"
             #pragma multi_compile _ DEBUG_DISPLAY
             
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
+            #include "Packages/com.unity.render-pipelines.universal/Shaders/2D/Include/InputData2D.hlsl"
             #include "Packages/com.unity.render-pipelines.universal/Shaders/2D/Include/SurfaceData2D.hlsl"
-            #include "Packages/com.unity.render-pipelines.universal/Shaders/2D/Include/LightingUtility.hlsl"
 
             CBUFFER_START(UnityPerMaterial)
                 float4 _Color;
@@ -54,21 +54,7 @@ Shader "Sprites/SpriteOutlineURP_Lit"
 
             TEXTURE2D(_MainTex); SAMPLER(sampler_MainTex);
             float4 _MainTex_TexelSize;
-            
-            // SHAPE_LIGHT 매크로는 CombinedShapeLightShared.hlsl include 전에 선언해야 함
-            #if defined(USE_SHAPE_LIGHT_TYPE_0)
-            SHAPE_LIGHT(0)
-            #endif
-            #if defined(USE_SHAPE_LIGHT_TYPE_1)
-            SHAPE_LIGHT(1)
-            #endif
-            #if defined(USE_SHAPE_LIGHT_TYPE_2)
-            SHAPE_LIGHT(2)
-            #endif
-            #if defined(USE_SHAPE_LIGHT_TYPE_3)
-            SHAPE_LIGHT(3)
-            #endif
-            
+
             #include "Packages/com.unity.render-pipelines.universal/Shaders/2D/Include/CombinedShapeLightShared.hlsl"
 
             struct appdata
