@@ -21,6 +21,11 @@ namespace LoopLegacy.UI.Controller
     {
         public static LogController Instance;
 
+        [Header("Log overlay")]
+        [Tooltip("에디터/빌드에서 이 오버레이를 사용할지 여부입니다.")]
+        [SerializeField] private bool _isEnabled = true;
+
+        [Header("UI references")]
         [SerializeField] private GameObject _element;
         [SerializeField] private Button _openButton;
         [SerializeField] private Button _consoleButton;
@@ -32,11 +37,19 @@ namespace LoopLegacy.UI.Controller
 
         void Awake()
         {
+#if UNITY_EDITOR
+            if (!_isEnabled)
+            {
+                Destroy(gameObject);
+                return;
+            }
+#else
             if (!Debug.isDebugBuild)
             {
                 Destroy(gameObject);
                 return;
             }
+#endif
 
             if (Instance == null)
             {

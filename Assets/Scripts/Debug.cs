@@ -31,7 +31,7 @@ public static class Debug
     
     public static bool isDebugBuild
     {
-	get { return UnityEngine.Debug.isDebugBuild; }
+	get { /*return UnityEngine.Debug.isDebugBuild; */ return false; }
     }
     
     // Debug 클래스 초기화 - Application.logMessageReceived 이벤트 등록
