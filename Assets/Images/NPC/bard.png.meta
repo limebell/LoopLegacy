@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: 7fe69c1f619eb4c499347081ee87e3a8
+guid: 91498b55e35242d4b8c2989de9396a36
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4580114669832741008
-    second: KakaoTalk_20251125_214529068_01_0
+      213: -6537906801971904012
+    second: bard 1_0
+  - first:
+      213: 6293635033875482579
+    second: bard 1_1
+  - first:
+      213: -1021707981820910732
+    second: bard 1_2
+  - first:
+      213: -9024513034724100791
+    second: bard 1_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +46,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -46,12 +55,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -74,7 +83,7 @@ TextureImporter:
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 4
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -126,13 +135,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: KakaoTalk_20251125_214529068_01_0
+      name: bard 1_0
       rect:
         serializedVersion: 2
-        x: 77
-        y: 0
-        width: 1414
-        height: 2077
+        x: 5
+        y: 6
+        width: 22
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +150,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 090afe59606df8f30800000000000000
-      internalID: 4580114669832741008
+      spriteID: 4f1cad52760b445a0800000000000000
+      internalID: -6537906801971904012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bard 1_1
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 6
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d70a1cd7bb775750800000000000000
+      internalID: 6293635033875482579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bard 1_2
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 6
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4732267f00a22d1f0800000000000000
+      internalID: -1021707981820910732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bard 1_3
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 6
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9453366753d72c280800000000000000
+      internalID: -9024513034724100791
       vertices: []
       indices: 
       edges: []
@@ -151,7 +226,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -161,7 +236,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      KakaoTalk_20251125_214529068_01_0: 4580114669832741008
+      bard 1_0: -6537906801971904012
+      bard 1_1: 6293635033875482579
+      bard 1_2: -1021707981820910732
+      bard 1_3: -9024513034724100791
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

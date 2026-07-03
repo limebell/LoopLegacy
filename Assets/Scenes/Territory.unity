@@ -1503,6 +1503,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!483693784 &191606879
 TilemapRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1548,6 +1549,7 @@ TilemapRenderer:
   m_SortingLayerID: 958045791
   m_SortingLayer: 1
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -1555,7 +1557,6 @@ TilemapRenderer:
   m_SortOrder: 0
   m_Mode: 0
   m_DetectChunkCullingBounds: 0
-  m_MaskInteraction: 0
 --- !u!1839735485 &191606880
 Tilemap:
   m_ObjectHideFlags: 0
@@ -5849,7 +5850,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 20
-      m_TileSpriteIndex: 16
+      m_TileSpriteIndex: 17
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -6069,7 +6070,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 17
-      m_TileSpriteIndex: 3
+      m_TileSpriteIndex: 16
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -10208,8 +10209,8 @@ Tilemap:
     m_Data: {fileID: -6173213913583867665, guid: afda4cedd10beb942a0a9fcb40a307b0, type: 3}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 1
-    m_Data: {fileID: -5365471554681010012, guid: 26d435702dedb784694895af12418eff, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
   - m_RefCount: 0
@@ -10235,9 +10236,9 @@ Tilemap:
   - m_RefCount: 6
     m_Data: {fileID: -3679392975428061546, guid: afda4cedd10beb942a0a9fcb40a307b0, type: 3}
   - m_RefCount: 1
+    m_Data: {fileID: -5365471554681010012, guid: 26d435702dedb784694895af12418eff, type: 3}
+  - m_RefCount: 1
     m_Data: {fileID: -6313461547279499565, guid: 26d435702dedb784694895af12418eff, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: -3393596117029463946, guid: 26d435702dedb784694895af12418eff, type: 3}
   - m_RefCount: 1
@@ -10799,6 +10800,7 @@ MonoBehaviour:
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -11209,6 +11211,7 @@ MonoBehaviour:
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -11795,6 +11798,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!483693784 &451311264
 TilemapRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -11840,6 +11844,7 @@ TilemapRenderer:
   m_SortingLayerID: 958045791
   m_SortingLayer: 1
   m_SortingOrder: 2
+  m_MaskInteraction: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -11847,7 +11852,6 @@ TilemapRenderer:
   m_SortOrder: 0
   m_Mode: 0
   m_DetectChunkCullingBounds: 0
-  m_MaskInteraction: 0
 --- !u!1839735485 &451311265
 Tilemap:
   m_ObjectHideFlags: 0
@@ -15824,6 +15828,7 @@ MonoBehaviour:
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -16104,6 +16109,7 @@ MonoBehaviour:
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 20
   m_lineSpacingMax: 0
@@ -16155,19 +16161,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 575908049106178152, guid: 4e03ca2bd36222f478fe15c8c6ab7d61, type: 3}
       propertyPath: m_Size.x
-      value: 2.9127417
+      value: 3.008999
       objectReference: {fileID: 0}
     - target: {fileID: 575908049106178152, guid: 4e03ca2bd36222f478fe15c8c6ab7d61, type: 3}
       propertyPath: m_Size.y
-      value: 4.6924043
+      value: 3.3998704
       objectReference: {fileID: 0}
     - target: {fileID: 575908049106178152, guid: 4e03ca2bd36222f478fe15c8c6ab7d61, type: 3}
       propertyPath: m_Offset.x
-      value: 0.010986328
+      value: -0.06769192
       objectReference: {fileID: 0}
     - target: {fileID: 575908049106178152, guid: 4e03ca2bd36222f478fe15c8c6ab7d61, type: 3}
       propertyPath: m_Offset.y
-      value: 0.08788419
+      value: 0.27275825
       objectReference: {fileID: 0}
     - target: {fileID: 575908049106178152, guid: 4e03ca2bd36222f478fe15c8c6ab7d61, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.x
@@ -16179,11 +16185,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 575908049106178152, guid: 4e03ca2bd36222f478fe15c8c6ab7d61, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 3.9375
+      value: 2.9375
       objectReference: {fileID: 0}
     - target: {fileID: 575908049106178152, guid: 4e03ca2bd36222f478fe15c8c6ab7d61, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 4.875
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 1442758900401261622, guid: 4e03ca2bd36222f478fe15c8c6ab7d61, type: 3}
       propertyPath: m_LocalScale.x
@@ -16497,6 +16503,7 @@ MonoBehaviour:
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -18491,6 +18498,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!483693784 &920144107
 TilemapRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -18536,6 +18544,7 @@ TilemapRenderer:
   m_SortingLayerID: 1677781173
   m_SortingLayer: 5
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -18543,7 +18552,6 @@ TilemapRenderer:
   m_SortOrder: 0
   m_Mode: 0
   m_DetectChunkCullingBounds: 0
-  m_MaskInteraction: 0
 --- !u!1839735485 &920144108
 Tilemap:
   m_ObjectHideFlags: 0
@@ -19235,6 +19243,7 @@ MonoBehaviour:
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 20
   m_lineSpacingMax: 0
@@ -20729,6 +20738,7 @@ Animator:
   m_WriteDefaultValuesOnDisable: 0
 --- !u!212 &1003888547
 SpriteRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -20774,6 +20784,7 @@ SpriteRenderer:
   m_SortingLayerID: -1127566361
   m_SortingLayer: 2
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_Sprite: {fileID: 7610994666730515619, guid: 1680777086c060a448bd13ca050c8d0d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -20783,7 +20794,6 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!61 &1003888548
 BoxCollider2D:
@@ -21079,7 +21089,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 10.8515625
+  orthographic size: 15
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -21282,6 +21292,7 @@ MonoBehaviour:
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -21728,6 +21739,7 @@ MonoBehaviour:
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 20
   m_lineSpacingMax: 0
@@ -21858,19 +21870,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 575908049106178152, guid: 4e03ca2bd36222f478fe15c8c6ab7d61, type: 3}
       propertyPath: m_Size.x
-      value: 2.9127417
+      value: 3.008999
       objectReference: {fileID: 0}
     - target: {fileID: 575908049106178152, guid: 4e03ca2bd36222f478fe15c8c6ab7d61, type: 3}
       propertyPath: m_Size.y
-      value: 4.6924043
+      value: 3.3998704
       objectReference: {fileID: 0}
     - target: {fileID: 575908049106178152, guid: 4e03ca2bd36222f478fe15c8c6ab7d61, type: 3}
       propertyPath: m_Offset.x
-      value: 0.010986328
+      value: -0.06769192
       objectReference: {fileID: 0}
     - target: {fileID: 575908049106178152, guid: 4e03ca2bd36222f478fe15c8c6ab7d61, type: 3}
       propertyPath: m_Offset.y
-      value: 0.08788419
+      value: 0.27275825
       objectReference: {fileID: 0}
     - target: {fileID: 575908049106178152, guid: 4e03ca2bd36222f478fe15c8c6ab7d61, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.x
@@ -21882,19 +21894,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 575908049106178152, guid: 4e03ca2bd36222f478fe15c8c6ab7d61, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 3.9375
+      value: 2.9375
       objectReference: {fileID: 0}
     - target: {fileID: 575908049106178152, guid: 4e03ca2bd36222f478fe15c8c6ab7d61, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 4.875
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 1442758900401261622, guid: 4e03ca2bd36222f478fe15c8c6ab7d61, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1442758900401261622, guid: 4e03ca2bd36222f478fe15c8c6ab7d61, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1442758900401261622, guid: 4e03ca2bd36222f478fe15c8c6ab7d61, type: 3}
       propertyPath: m_ConstrainProportionsScale
@@ -21951,7 +21963,7 @@ PrefabInstance:
     - target: {fileID: 3753015895961589874, guid: 4e03ca2bd36222f478fe15c8c6ab7d61, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: c8ee7089018fb43438dd813c580efb64, type: 3}
+      objectReference: {fileID: 6187921338879160427, guid: 33f9e5f0fbff8954e87f3918f3b681b6, type: 3}
     - target: {fileID: 3753015895961589874, guid: 4e03ca2bd36222f478fe15c8c6ab7d61, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
@@ -22034,11 +22046,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6602977991577389367, guid: 4e03ca2bd36222f478fe15c8c6ab7d61, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.38
+      value: -7.44
       objectReference: {fileID: 0}
     - target: {fileID: 6602977991577389367, guid: 4e03ca2bd36222f478fe15c8c6ab7d61, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.05
+      value: 4.55
       objectReference: {fileID: 0}
     - target: {fileID: 6602977991577389367, guid: 4e03ca2bd36222f478fe15c8c6ab7d61, type: 3}
       propertyPath: m_LocalPosition.z
@@ -22384,6 +22396,7 @@ MonoBehaviour:
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -23743,6 +23756,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!483693784 &1276792081
 TilemapRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -23788,6 +23802,7 @@ TilemapRenderer:
   m_SortingLayerID: 958045791
   m_SortingLayer: 1
   m_SortingOrder: 1
+  m_MaskInteraction: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -23795,7 +23810,6 @@ TilemapRenderer:
   m_SortOrder: 0
   m_Mode: 0
   m_DetectChunkCullingBounds: 0
-  m_MaskInteraction: 0
 --- !u!1839735485 &1276792082
 Tilemap:
   m_ObjectHideFlags: 0
@@ -24976,6 +24990,7 @@ MonoBehaviour:
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -25334,19 +25349,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 575908049106178152, guid: 4e03ca2bd36222f478fe15c8c6ab7d61, type: 3}
       propertyPath: m_Size.x
-      value: 2.9127417
+      value: 3.008999
       objectReference: {fileID: 0}
     - target: {fileID: 575908049106178152, guid: 4e03ca2bd36222f478fe15c8c6ab7d61, type: 3}
       propertyPath: m_Size.y
-      value: 4.6924043
+      value: 3.3998704
       objectReference: {fileID: 0}
     - target: {fileID: 575908049106178152, guid: 4e03ca2bd36222f478fe15c8c6ab7d61, type: 3}
       propertyPath: m_Offset.x
-      value: 0.010986328
+      value: -0.06769192
       objectReference: {fileID: 0}
     - target: {fileID: 575908049106178152, guid: 4e03ca2bd36222f478fe15c8c6ab7d61, type: 3}
       propertyPath: m_Offset.y
-      value: 0.08788419
+      value: 0.27275825
       objectReference: {fileID: 0}
     - target: {fileID: 575908049106178152, guid: 4e03ca2bd36222f478fe15c8c6ab7d61, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.x
@@ -25358,19 +25373,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 575908049106178152, guid: 4e03ca2bd36222f478fe15c8c6ab7d61, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 3.9375
+      value: 2.9375
       objectReference: {fileID: 0}
     - target: {fileID: 575908049106178152, guid: 4e03ca2bd36222f478fe15c8c6ab7d61, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 4.875
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 1442758900401261622, guid: 4e03ca2bd36222f478fe15c8c6ab7d61, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1442758900401261622, guid: 4e03ca2bd36222f478fe15c8c6ab7d61, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1442758900401261622, guid: 4e03ca2bd36222f478fe15c8c6ab7d61, type: 3}
       propertyPath: m_ConstrainProportionsScale
@@ -25427,7 +25442,7 @@ PrefabInstance:
     - target: {fileID: 3753015895961589874, guid: 4e03ca2bd36222f478fe15c8c6ab7d61, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: c8ee7089018fb43438dd813c580efb64, type: 3}
+      objectReference: {fileID: -5406531530088523295, guid: 278b82a85c42e5b439a12f3c13e5080d, type: 3}
     - target: {fileID: 3753015895961589874, guid: 4e03ca2bd36222f478fe15c8c6ab7d61, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
@@ -25510,7 +25525,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6602977991577389367, guid: 4e03ca2bd36222f478fe15c8c6ab7d61, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.82
+      value: 6.65
       objectReference: {fileID: 0}
     - target: {fileID: 6602977991577389367, guid: 4e03ca2bd36222f478fe15c8c6ab7d61, type: 3}
       propertyPath: m_LocalPosition.y
@@ -25815,19 +25830,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 575908049106178152, guid: 4e03ca2bd36222f478fe15c8c6ab7d61, type: 3}
       propertyPath: m_Size.x
-      value: 2.9127417
+      value: 3.008999
       objectReference: {fileID: 0}
     - target: {fileID: 575908049106178152, guid: 4e03ca2bd36222f478fe15c8c6ab7d61, type: 3}
       propertyPath: m_Size.y
-      value: 4.6924043
+      value: 3.3998704
       objectReference: {fileID: 0}
     - target: {fileID: 575908049106178152, guid: 4e03ca2bd36222f478fe15c8c6ab7d61, type: 3}
       propertyPath: m_Offset.x
-      value: 0.010986328
+      value: -0.06769192
       objectReference: {fileID: 0}
     - target: {fileID: 575908049106178152, guid: 4e03ca2bd36222f478fe15c8c6ab7d61, type: 3}
       propertyPath: m_Offset.y
-      value: 0.08788419
+      value: 0.27275825
       objectReference: {fileID: 0}
     - target: {fileID: 575908049106178152, guid: 4e03ca2bd36222f478fe15c8c6ab7d61, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.x
@@ -25839,11 +25854,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 575908049106178152, guid: 4e03ca2bd36222f478fe15c8c6ab7d61, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 3.9375
+      value: 2.9375
       objectReference: {fileID: 0}
     - target: {fileID: 575908049106178152, guid: 4e03ca2bd36222f478fe15c8c6ab7d61, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 4.875
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 1442758900401261622, guid: 4e03ca2bd36222f478fe15c8c6ab7d61, type: 3}
       propertyPath: m_LocalScale.x
@@ -26104,11 +26119,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1442758900401261622, guid: 4e03ca2bd36222f478fe15c8c6ab7d61, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1442758900401261622, guid: 4e03ca2bd36222f478fe15c8c6ab7d61, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1685446033409669864, guid: 4e03ca2bd36222f478fe15c8c6ab7d61, type: 3}
       propertyPath: _code
@@ -26161,7 +26176,7 @@ PrefabInstance:
     - target: {fileID: 3753015895961589874, guid: 4e03ca2bd36222f478fe15c8c6ab7d61, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 683c018cbe2373b46845197f8846b842, type: 3}
+      objectReference: {fileID: 3002740266577848037, guid: d1ce40f90dd20b84fb9b07e08d7910f3, type: 3}
     - target: {fileID: 3753015895961589874, guid: 4e03ca2bd36222f478fe15c8c6ab7d61, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
@@ -26244,11 +26259,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6602977991577389367, guid: 4e03ca2bd36222f478fe15c8c6ab7d61, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.68
+      value: 4.51
       objectReference: {fileID: 0}
     - target: {fileID: 6602977991577389367, guid: 4e03ca2bd36222f478fe15c8c6ab7d61, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.37
+      value: 8.01
       objectReference: {fileID: 0}
     - target: {fileID: 6602977991577389367, guid: 4e03ca2bd36222f478fe15c8c6ab7d61, type: 3}
       propertyPath: m_LocalPosition.z
@@ -27440,6 +27455,7 @@ MonoBehaviour:
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -27890,6 +27906,7 @@ MonoBehaviour:
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 20
   m_lineSpacingMax: 0
@@ -28046,6 +28063,7 @@ MonoBehaviour:
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 20
   m_lineSpacingMax: 0
@@ -28655,6 +28673,7 @@ MonoBehaviour:
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -28812,6 +28831,7 @@ MonoBehaviour:
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -28949,6 +28969,7 @@ MonoBehaviour:
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -29217,6 +29238,7 @@ MonoBehaviour:
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -29445,6 +29467,7 @@ MonoBehaviour:
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -30155,6 +30178,7 @@ MonoBehaviour:
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 20
   m_lineSpacingMax: 0
@@ -30391,6 +30415,7 @@ MonoBehaviour:
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0

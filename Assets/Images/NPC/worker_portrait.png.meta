@@ -1,19 +1,10 @@
 fileFormatVersion: 2
-guid: 33f9e5f0fbff8954e87f3918f3b681b6
+guid: 9a907276c7b2efe4ca9ca4993f064665
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6187921338879160427
-    second: upgrade_0
-  - first:
-      213: -3505230433971597065
-    second: upgrade_1
-  - first:
-      213: -6277551224957661635
-    second: upgrade_2
-  - first:
-      213: 5477912376385644484
-    second: upgrade_3
+      213: 6621083671784667584
+    second: npc_worker_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -55,12 +46,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -83,7 +74,7 @@ TextureImporter:
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: 4
+    textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -135,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: upgrade_0
+      name: npc_worker_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 6
-        width: 32
-        height: 20
+        x: 193
+        y: 0
+        width: 1249
+        height: 1849
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,74 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b60b3f53ca9efd550800000000000000
-      internalID: 6187921338879160427
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: upgrade_1
-      rect:
-        serializedVersion: 2
-        x: 39
-        y: 6
-        width: 22
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7f01c37ed7bea5fc0800000000000000
-      internalID: -3505230433971597065
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: upgrade_2
-      rect:
-        serializedVersion: 2
-        x: 71
-        y: 6
-        width: 22
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d3e8419bb68a1e8a0800000000000000
-      internalID: -6277551224957661635
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: upgrade_3
-      rect:
-        serializedVersion: 2
-        x: 103
-        y: 6
-        width: 22
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4c7ae297844750c40800000000000000
-      internalID: 5477912376385644484
+      spriteID: 0c93ddcf480d2eb50800000000000000
+      internalID: 6621083671784667584
       vertices: []
       indices: 
       edges: []
@@ -226,7 +151,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -236,10 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      upgrade_0: 6187921338879160427
-      upgrade_1: -3505230433971597065
-      upgrade_2: -6277551224957661635
-      upgrade_3: 5477912376385644484
+      npc_worker_0: 6621083671784667584
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

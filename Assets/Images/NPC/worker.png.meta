@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: 9a907276c7b2efe4ca9ca4993f064665
+guid: 278b82a85c42e5b439a12f3c13e5080d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6621083671784667584
-    second: npc_worker_0
+      213: -5406531530088523295
+    second: worker_0
+  - first:
+      213: 8094105171276361706
+    second: worker_1
+  - first:
+      213: 5542130700589112359
+    second: worker_2
+  - first:
+      213: -6335232653234012424
+    second: worker_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +46,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -46,12 +55,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -74,7 +83,7 @@ TextureImporter:
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 4
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -126,13 +135,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: npc_worker_0
+      name: worker_0
       rect:
         serializedVersion: 2
-        x: 193
-        y: 0
-        width: 1249
-        height: 1849
+        x: 7
+        y: 6
+        width: 24
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +150,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0c93ddcf480d2eb50800000000000000
-      internalID: 6621083671784667584
+      spriteID: 1e9df1ae73428f4b0800000000000000
+      internalID: -5406531530088523295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: worker_1
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 6
+        width: 24
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aef6494d4c9045070800000000000000
+      internalID: 8094105171276361706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: worker_2
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 6
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72c966b328a99ec40800000000000000
+      internalID: 5542130700589112359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: worker_3
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 6
+        width: 24
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fef786a77bb418a0800000000000000
+      internalID: -6335232653234012424
       vertices: []
       indices: 
       edges: []
@@ -151,7 +226,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -161,7 +236,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      npc_worker_0: 6621083671784667584
+      worker_0: -5406531530088523295
+      worker_1: 8094105171276361706
+      worker_2: 5542130700589112359
+      worker_3: -6335232653234012424
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
