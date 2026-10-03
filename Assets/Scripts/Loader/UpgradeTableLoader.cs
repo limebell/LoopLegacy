@@ -15,9 +15,9 @@ namespace LoopLegacy.Loader
             try
             {
                 TextAsset csv = handle.WaitForCompletion();
-            if (csv == null)
+                if (csv == null)
                 {
-                    throw new Exception("upgrade_table을 로드할 수 없습니다.");
+                    throw new Exception("Cannot load upgrade_table");
                 }
 
                 var lines = csv.text.Split('\n');

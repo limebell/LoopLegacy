@@ -21,8 +21,8 @@ namespace LoopLegacy.Region
         [SerializeField] private Vector2 _position;
         [SerializeField] private NPCType _npcType;
         [SerializeField] private string _monsterCode;
-        [SerializeField] private BoxCollider2D _trigger; // 트리거
-        [SerializeField] private Signboard _signboard; // 표지판 오브젝트
+        [SerializeField] private BoxCollider2D _trigger;
+        [SerializeField] private Signboard _signboard;
         private LineRenderer _lineRenderer;
 
         private void Awake()
@@ -38,11 +38,11 @@ namespace LoopLegacy.Region
             }
         }
 
+        // Debug용 충돌 범위 표시
         private void SetupLineRenderer()
         {
             if (Debug.isDebugBuild && (_trigger == null || _lineRenderer == null)) return;
 
-            // LineRenderer 기본 설정
             _lineRenderer.useWorldSpace = false;
             _lineRenderer.loop = true;
             _lineRenderer.startWidth = 0.05f;
@@ -50,17 +50,15 @@ namespace LoopLegacy.Region
             _lineRenderer.startColor = Color.lightGreen;
             _lineRenderer.endColor = Color.lightGreen;
 
-            // BoxCollider2D의 범위를 사각형으로 그리기
             Vector2 size = _trigger.size;
             Vector2 offset = _trigger.offset;
             
-            // 사각형의 네 모서리 점들
-            Vector3[] points = new Vector3[5]; // 5개 점으로 닫힌 사각형 만들기
+            Vector3[] points = new Vector3[5];
             points[0] = new Vector3(offset.x - size.x / 2, offset.y - size.y / 2, 0);
             points[1] = new Vector3(offset.x + size.x / 2, offset.y - size.y / 2, 0);
             points[2] = new Vector3(offset.x + size.x / 2, offset.y + size.y / 2, 0);
             points[3] = new Vector3(offset.x - size.x / 2, offset.y + size.y / 2, 0);
-            points[4] = points[0]; // 닫힌 사각형을 위해 첫 번째 점으로 돌아가기
+            points[4] = points[0];
 
             _lineRenderer.positionCount = points.Length;
             for (int i = 0; i < points.Length; i++)
@@ -76,7 +74,6 @@ namespace LoopLegacy.Region
                 _signboard.gameObject.SetActive(true);
                 UpdateSignboardText();
                 
-                // Locale 변경 시 표지판 텍스트 업데이트
                 LocalizationSettings.SelectedLocaleChanged += OnLocaleChanged;
             }
             else
@@ -154,24 +151,20 @@ namespace LoopLegacy.Region
             }
         }
 
+        // 플레이어가 Interaction 영역을 벗어나는 가장 가까운 위치로 강제 이동
         private void AdjustPlayerPosition(Collider2D collision)
         {
-            // 중앙으로부터 플레이어 바깥쪽으로 Trigger 범위 벗어날 때 까지 밀기
-            // 플레이어 collider의 실제 중심 위치 계산 (오프셋 고려)
             Bounds playerBounds = collision.bounds;
             Vector2 playerColliderCenter = playerBounds.center;
             Vector2 playerTransformPos = collision.transform.position;
             Vector2 colliderOffset = playerColliderCenter - playerTransformPos;
             
-            // 방향 계산 (collider 중심 기준)
             Vector2 triggerCenter = (Vector2)transform.position + _trigger.offset;
             Vector2 direction = (playerColliderCenter - triggerCenter).normalized;
             
-            // 트리거의 경계 계산 (BoxCollider2D 기준)
             Vector2 triggerHalfSize = _trigger.size * 0.5f;
             var tangent = Mathf.Abs(direction.y / Mathf.Max(Mathf.Abs(direction.x), Mathf.Epsilon));
             
-            // 플레이어 collider의 크기 계산
             Vector3 playerExtents = playerBounds.extents;
             const float MARGIN = 0.3f;
             
@@ -184,7 +177,6 @@ namespace LoopLegacy.Region
                     moveDistanceY = -moveDistanceY;
                 }
                 
-                // collider를 목표 위치로 이동시키기 위해 transform 위치 계산
                 float targetColliderY = triggerCenter.y + moveDistanceY;
                 collision.transform.position = new Vector2(playerTransformPos.x, targetColliderY - colliderOffset.y);
             }
@@ -197,7 +189,6 @@ namespace LoopLegacy.Region
                     moveDistanceX = -moveDistanceX;
                 }
                 
-                // collider를 목표 위치로 이동시키기 위해 transform 위치 계산
                 float targetColliderX = triggerCenter.x + moveDistanceX;
                 collision.transform.position = new Vector2(targetColliderX - colliderOffset.x, playerTransformPos.y);
             }
@@ -207,22 +198,18 @@ namespace LoopLegacy.Region
         {
             if (_trigger == null) return;
 
-            // 에디터에서만 콜라이더 영역 표시
             Gizmos.color = Color.lightGreen;
             Gizmos.matrix = transform.localToWorldMatrix;
 
-            // BoxCollider2D의 범위를 사각형으로 그리기
             Vector2 size = _trigger.size;
             Vector2 offset = _trigger.offset;
             
-            // 사각형의 네 모서리 점들
             Vector2[] points = new Vector2[4];
             points[0] = new Vector2(offset.x - size.x / 2, offset.y - size.y / 2);
             points[1] = new Vector2(offset.x + size.x / 2, offset.y - size.y / 2);
             points[2] = new Vector2(offset.x + size.x / 2, offset.y + size.y / 2);
             points[3] = new Vector2(offset.x - size.x / 2, offset.y + size.y / 2);
 
-            // 사각형의 각 변을 그리기
             for (int i = 0; i < points.Length; i++)
             {
                 Vector2 currentPoint = points[i];

@@ -7,7 +7,7 @@
       "dependencies": {
         "com.unity.test-framework": "1.1.9"
       },
-      "hash": "38fecf55e4fd94ccfe58a92ed8ad1a529ba1694e"
+      "hash": "fd8ff1fb700caf062eb5cce364c1d0a85f99ebe6"
     },
     "com.github-glitchenzo.nugetforunity": {
       "version": "https://github.com/GlitchEnzo/NuGetForUnity.git?path=/src/NuGetForUnity",

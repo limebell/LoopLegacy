@@ -16,7 +16,7 @@ namespace LoopLegacy.Loader
                 TextAsset csv = handle.WaitForCompletion();
                 if (csv == null)
                 {
-                    throw new Exception("weapon_table을 로드할 수 없습니다.");
+                    throw new Exception("Cannot load weapon_table");
                 }
 
                 var lines = csv.text.Split('\n');
@@ -72,7 +72,7 @@ namespace LoopLegacy.Loader
                 TextAsset csv = handle.WaitForCompletion();
                 if (csv == null)
                 {
-                    throw new Exception("equipment_table을 로드할 수 없습니다.");
+                    throw new Exception("Cannot load armor_table");
                 }
 
                 var lines = csv.text.Split('\n');

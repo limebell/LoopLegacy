@@ -7,7 +7,7 @@ namespace LoopLegacy.UI.Component
 {
     /// <summary>
     /// 가상화된 스크롤 리스트 컴포넌트
-    /// 고정된 수의 GameObject를 재사용하여 대량의 데이터를 효율적으로 표시
+    /// 고정된 수의 Object Pool을 생성해 대량의 데이터를 효율적으로 표시
     /// </summary>
     public class VirtualizedScrollRect : MonoBehaviour
     {
@@ -46,7 +46,6 @@ namespace LoopLegacy.UI.Component
             {
                 var itemElement = Instantiate(_itemPrefab, _content.transform);
                 
-                // RectTransform 설정 - Content의 전체 width를 사용하도록 설정
                 var rectTransform = itemElement.GetComponent<RectTransform>();
                 rectTransform.anchorMin = new Vector2(0, 1);
                 rectTransform.anchorMax = new Vector2(1, 1);

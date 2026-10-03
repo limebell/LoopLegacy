@@ -27,7 +27,6 @@ namespace LoopLegacy.Manager
                 if (isInitialized) return;
 
                 (_regions, _monsters) = RegionTableLoader.Load();
-                //_monsters = MonsterTableLoader.Load();
                 _bosses = MonsterTableLoader.LoadBosses();
                 _weapons = EquipmentTableLoader.LoadWeapons();
                 _armors = EquipmentTableLoader.LoadArmors();
@@ -127,8 +126,8 @@ namespace LoopLegacy.Manager
             }
             catch(Exception e)
             {
-                Debug.LogError($"[TableManager] 장비 정보 {id} 를 찾을 수 없습니다. : {e.Message}");
-                throw e;
+                Debug.LogError($"[TableManager] Equipment {type} {id} not found: {e.Message}");
+                throw new Exception($"[TableManager] Equipment {type} {id} not found: {e.Message}");
             }
         }
 

@@ -17,7 +17,7 @@ namespace LoopLegacy.Loader
                 TextAsset csv = handle.WaitForCompletion();
                 if (csv == null)
                 {
-                    throw new Exception("relic_table을 로드할 수 없습니다.");
+                    throw new Exception("Cannot load relic_table");
                 }
 
                 var lines = csv.text.Split('\n');
@@ -30,7 +30,7 @@ namespace LoopLegacy.Loader
                     var tokens = line.Split(',');
                     if (tokens.Length < 3) continue;
 
-                    int id = list.Count; // 동적으로 ID 할당
+                    int id = list.Count;
                     
                     Sprite sprite = null;
                     try

@@ -129,12 +129,10 @@ namespace LoopLegacy.UI.Component
 
         private Vector2 GetCurrentInputPosition()
         {
-            // 터치 입력이 있는 경우 마지막 터치 확인
             if (Touchscreen.current != null && Touchscreen.current.touches.Count > 0)
             {
                 var touches = Touchscreen.current.touches;
                 
-                // 마지막 터치를 찾기 (역순으로 순회)
                 for (int i = touches.Count - 1; i >= 0; i--)
                 {
                     var touch = touches[i];
@@ -145,7 +143,6 @@ namespace LoopLegacy.UI.Component
                 }
             }
             
-            // 마우스 입력이 있는 경우 마우스 확인
             if (Mouse.current != null && Mouse.current.leftButton.isPressed)
             {
                 return Mouse.current.position.ReadValue();
@@ -161,7 +158,6 @@ namespace LoopLegacy.UI.Component
             {
                 var touches = Touchscreen.current.touches;
                 
-                // 마지막 터치를 찾기 (역순으로 순회)
                 for (int i = touches.Count - 1; i >= 0; i--)
                 {
                     var touch = touches[i];
@@ -206,7 +202,6 @@ namespace LoopLegacy.UI.Component
 
         public void OnPointerUp(PointerEventData eventData)
         {
-            // 다른 터치가 여전히 활성화되어 있는지 확인
             if (!HasActiveTouch())
             {
                 ResetControll();

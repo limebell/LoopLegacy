@@ -216,7 +216,7 @@ namespace LoopLegacy
             _waitingForStatsPanelOpen = true;
             _hasShownStatInvestmentScript = false;
             _tutorialPanel.SetActive(false);
-            ScriptManager.Instance.StartScript("tutorial_script", () => ShowTutorialObjective("tutorial_objective-2"), 12);
+            ShowTutorialObjective("tutorial_objective-2");
         }
 
         private void OnStatsPanelOpened()
